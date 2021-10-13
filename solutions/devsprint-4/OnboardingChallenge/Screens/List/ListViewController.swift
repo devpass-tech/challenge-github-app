@@ -15,6 +15,8 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -32,7 +34,16 @@ final class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Type a GitHub user name"
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        self.definesPresentationContext = true
+        self.navigationItem.searchController = searchController
+        self.navigationItem.title = "Repositories"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         self.fetchList()
     }
 
@@ -47,3 +58,8 @@ final class ListViewController: UIViewController {
     }
 }
 
+extension ListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        //
+    }
+}
