@@ -7,6 +7,10 @@ Neste desafio, vamos integrar com a API do GitHub para mostrar a lista de reposi
 
 <p float="left">
 <img src="screenshots/mockup.png" alt="drawing" width="500"/>
+<img src="screenshots/screenshot-1.png" alt="drawing" width="200"/>
+<img src="screenshots/screenshot-2.png" alt="drawing" width="200"/>
+<img src="screenshots/screenshot-3.png" alt="drawing" width="200"/>
+<img src="screenshots/screenshot-4.png" alt="drawing" width="200"/>
 </p>
 
 # Iniciando os trabalhos
