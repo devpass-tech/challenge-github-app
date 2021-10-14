@@ -20,6 +20,7 @@
 		98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0A270E407D0088A775 /* UIColor+Extensions.swift */; };
 		98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */; };
 		98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0E270E41DF0088A775 /* String+Extensions.swift */; };
+		EB365AEF2718A6FC007D2CD7 /* StringUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB365AEE2718A6FC007D2CD7 /* StringUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		98586A0A270E407D0088A775 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0E270E41DF0088A775 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		EB365AEE2718A6FC007D2CD7 /* StringUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		985869FD270E3E4E0088A775 /* OnboardingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				EB365AED2718A6AC007D2CD7 /* UnitTests */,
 				985869FE270E3E4E0088A775 /* OnboardingChallengeTests.swift */,
 			);
 			path = OnboardingChallengeTests;
@@ -177,6 +180,14 @@
 				98586A0E270E41DF0088A775 /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB365AED2718A6AC007D2CD7 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB365AEE2718A6FC007D2CD7 /* StringUnitTests.swift */,
+			);
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB365AEF2718A6FC007D2CD7 /* StringUnitTests.swift in Sources */,
 				985869FF270E3E4E0088A775 /* OnboardingChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
