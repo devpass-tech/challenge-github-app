@@ -1,7 +1,7 @@
 
 # Onboarding Challenge 
 
-Ao entrar na Devpass, o seu primeiro Dev Sprint será implementar o Desafio Onboarding junto com a equipe. Seguimos todas as boas práticos de desenvolvimento ágil e Git flow.
+Ao entrar na Devpass, o seu primeiro Dev Sprint será implementar o Desafio Onboarding junto com a equipe. Seguimos todas as boas práticas de desenvolvimento ágil e Git flow.
 
 Neste desafio, vamos integrar com a API do GitHub para mostrar a lista de repositórios de um usuário, com a navegação para os detalhes de um repositório.
 
