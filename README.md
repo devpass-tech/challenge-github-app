@@ -6,6 +6,7 @@ Ao entrar na Devpass, o seu primeiro Dev Sprint será implementar o Desafio Onbo
 Neste desafio, vamos integrar com a API do GitHub para mostrar a lista de repositórios de um usuário, com a navegação para os detalhes de um repositório.
 
 <p float="left">
+<img src="screenshots/mockup.png" alt="drawing" width="500"/>
 <img src="screenshots/screenshot-1.png" alt="drawing" width="200"/>
 <img src="screenshots/screenshot-2.png" alt="drawing" width="200"/>
 <img src="screenshots/screenshot-3.png" alt="drawing" width="200"/>
