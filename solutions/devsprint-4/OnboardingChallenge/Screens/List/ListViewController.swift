@@ -14,7 +14,7 @@ final class ListViewController: UIViewController {
         return ListView()
     }()
 
-    private let service = Service()
+    private let service = Service(userName: "")
     
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -49,11 +49,15 @@ final class ListViewController: UIViewController {
 
     private func fetchList() {
 
-        self.service.fetchList { items in
+        self.service.fetchList(userName: "rdgborges") { items in
 
-            let configuration = ListViewConfiguration(listItems: items)
+            let names = items.map { $0.name }
 
-            self.listView.updateView(with: configuration)
+            let configuration = ListViewConfiguration(listItems: names)
+
+            DispatchQueue.main.async {
+                self.listView.updateView(with: configuration)
+            }
         }
     }
 }

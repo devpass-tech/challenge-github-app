@@ -14,7 +14,7 @@ struct UserInfoModel: Codable {
     var forks_count: Int
     var stargazers_count: Int
     var owner: Owner
-    var license: License
+    var license: License?
     
 }
 
@@ -27,5 +27,5 @@ struct License: Codable {
     var key: String
     var name: String
     var spdx_id: String
-    var url: String
+    var url: String?
 }
