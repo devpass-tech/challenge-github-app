@@ -38,18 +38,18 @@ final class ListViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Type a GitHub user name"
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
         
         self.definesPresentationContext = true
         self.navigationItem.searchController = searchController
         self.navigationItem.title = "Repositories"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        self.fetchList()
     }
 
-    private func fetchList() {
+    private func fetchList(with userName: String) {
 
-        self.service.fetchList(userName: "rdgborges") { items in
+        self.service.fetchList(userName: userName) { items in
 
             let names = items.map { $0.name }
 
@@ -60,10 +60,20 @@ final class ListViewController: UIViewController {
             }
         }
     }
+
 }
 
 extension ListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         //
     }
+}
+
+extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        let text = searchBar.text ?? ""
+        self.fetchList(with: text)
+    }
+
 }
