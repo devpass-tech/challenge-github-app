@@ -16,8 +16,6 @@ class DetailViewController: UIViewController {
         return detailView
     }()
 
-    private let service = Service()
-
     init() {
         super.init(nibName: nil, bundle: nil)
 

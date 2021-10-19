@@ -15,7 +15,9 @@ final class ListViewController: UIViewController, ClickCellDelegate {
         return listView
     }()
 
-    private let service = Service()
+    private let service = Service(userName: "")
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -33,25 +35,49 @@ final class ListViewController: UIViewController, ClickCellDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.fetchList()
         
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Type a GitHub user name"
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
+        
+        self.definesPresentationContext = true
+        self.navigationItem.searchController = searchController
+        self.navigationItem.title = "Repositories"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 
-    private func fetchList() {
+    private func fetchList(with userName: String) {
 
-        self.service.fetchList { items in
+        self.service.fetchList(userName: userName) { items in
 
-            let configuration = ListViewConfiguration(listItems: items)
+            let names = items.map { $0.name }
 
-            self.listView.updateView(with: configuration)
+            let configuration = ListViewConfiguration(listItems: names)
+
+            DispatchQueue.main.async {
+                self.listView.updateView(with: configuration)
+            }
         }
     }
-    
+
     func segueDetailViewController() {
         let vc = DetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
+extension ListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        //
+    }
+}
+
+extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        let userName = searchBar.text ?? ""
+        self.fetchList(with: userName)
+    }
+
+}
