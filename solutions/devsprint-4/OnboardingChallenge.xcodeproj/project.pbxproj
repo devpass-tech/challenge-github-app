@@ -32,6 +32,7 @@
 		EB04A787271B59D2000D14C3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04A786271B59D2000D14C3 /* EmptyView.swift */; };
 		EB04A78A271DAB78000D14C3 /* EmptyViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04A789271DAB78000D14C3 /* EmptyViewConfiguration.swift */; };
 		EB365AEF2718A6FC007D2CD7 /* StringUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB365AEE2718A6FC007D2CD7 /* StringUnitTests.swift */; };
+		EBE76C98271F3A0F008D00A9 /* EmptyViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE76C97271F3A0F008D00A9 /* EmptyViewSnapshotTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		EB04A786271B59D2000D14C3 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		EB04A789271DAB78000D14C3 /* EmptyViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewConfiguration.swift; sourceTree = "<group>"; };
 		EB365AEE2718A6FC007D2CD7 /* StringUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUnitTests.swift; sourceTree = "<group>"; };
+		EBE76C97271F3A0F008D00A9 /* EmptyViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewSnapshotTests.swift; sourceTree = "<group>"; };
 		F993198A9D0077B10BC6028B /* Pods_OnboardingChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 		985869FD270E3E4E0088A775 /* OnboardingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				EBE76C96271F39B4008D00A9 /* SnapshotTests */,
 				EB365AED2718A6AC007D2CD7 /* UnitTests */,
 				985869FE270E3E4E0088A775 /* OnboardingChallengeTests.swift */,
 			);
@@ -279,6 +282,14 @@
 				EB365AEE2718A6FC007D2CD7 /* StringUnitTests.swift */,
 			);
 			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		EBE76C96271F39B4008D00A9 /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBE76C97271F3A0F008D00A9 /* EmptyViewSnapshotTests.swift */,
+			);
+			path = SnapshotTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB365AEF2718A6FC007D2CD7 /* StringUnitTests.swift in Sources */,
+				EBE76C98271F3A0F008D00A9 /* EmptyViewSnapshotTests.swift in Sources */,
 				985869FF270E3E4E0088A775 /* OnboardingChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
