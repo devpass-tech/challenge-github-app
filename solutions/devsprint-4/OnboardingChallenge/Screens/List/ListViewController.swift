@@ -7,11 +7,12 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
-
+final class ListViewController: UIViewController, ClickCellDelegate {
+    
     private lazy var listView: ListView = {
-
-        return ListView()
+        let listView = ListView()
+        listView.delegate = self
+        return listView
     }()
 
     private let service = Service(userName: "")
@@ -44,7 +45,6 @@ final class ListViewController: UIViewController {
         self.navigationItem.searchController = searchController
         self.navigationItem.title = "Repositories"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
 
     private func fetchList(with userName: String) {
@@ -61,6 +61,10 @@ final class ListViewController: UIViewController {
         }
     }
 
+    func segueDetailViewController() {
+        let vc = DetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ListViewController: UISearchResultsUpdating {
