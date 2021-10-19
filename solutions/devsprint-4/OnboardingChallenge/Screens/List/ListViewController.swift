@@ -72,8 +72,8 @@ extension ListViewController: UISearchResultsUpdating {
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        let text = searchBar.text ?? ""
-        self.fetchList(with: text)
+        let userName = searchBar.text ?? ""
+        self.fetchList(with: userName)
     }
 
 }
