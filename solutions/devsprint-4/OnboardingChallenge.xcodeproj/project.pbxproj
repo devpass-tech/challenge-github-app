@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7CC8B52715EDCD00BF729A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CC8B42715EDCD00BF729A /* DetailViewController.swift */; };
+		0C7CC8B72715EDF600BF729A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CC8B62715EDF600BF729A /* DetailView.swift */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
 		980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2F2705077B00F8100A /* SceneDelegate.swift */; };
 		980C0C322705077B00F8100A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C312705077B00F8100A /* ListViewController.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C7CC8B42715EDCD00BF729A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0C7CC8B62715EDF600BF729A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		980C0C2D2705077B00F8100A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		980C0C2F2705077B00F8100A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C7CC8B32715EDAC00BF729A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0C7CC8B42715EDCD00BF729A /* DetailViewController.swift */,
+				0C7CC8B62715EDF600BF729A /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		980C0C212705077B00F8100A = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +125,8 @@
 		980C0C4227061ED300F8100A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0C7CC8B32715EDAC00BF729A /* Detail */,
 				980C0C4327061EDF00F8100A /* List */,
-				980C0C4427061EE600F8100A /* Detail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -126,13 +139,6 @@
 				98586A05270E3EC40088A775 /* ListViewConfiguration.swift */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		980C0C4427061EE600F8100A /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		980C0C4527061F3B00F8100A /* Resources */ = {
@@ -282,7 +288,9 @@
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,
 				980C0C4827061F8900F8100A /* Service.swift in Sources */,
+				0C7CC8B52715EDCD00BF729A /* DetailViewController.swift in Sources */,
 				980C0C4A27061FBA00F8100A /* ListView.swift in Sources */,
+				0C7CC8B72715EDF600BF729A /* DetailView.swift in Sources */,
 				98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */,
 				98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */,
 				98586A06270E3EC40088A775 /* ListViewConfiguration.swift in Sources */,

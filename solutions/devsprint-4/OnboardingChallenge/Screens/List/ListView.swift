@@ -7,26 +7,34 @@
 
 import UIKit
 
+protocol ClickCellDelegate {
+    func segueDetailViewController()
+}
+
 final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var listItems: [String] = []
-
+    
+    var delegate: ClickCellDelegate?
+    
     private lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
     init() {
 
         super.init(frame: .zero)
-
+      
         self.customizeInterface()
+        
     }
 
     required init?(coder: NSCoder) {
@@ -85,3 +93,10 @@ extension ListView: UITableViewDataSource {
     }
 }
 
+extension ListView: UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.segueDetailViewController()
+        
+    }
+}

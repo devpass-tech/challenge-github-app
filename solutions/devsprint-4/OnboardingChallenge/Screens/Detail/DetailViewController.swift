@@ -7,10 +7,33 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
 
+class DetailViewController: UIViewController {
+
+    private lazy var detailView: DetailView = {
+        let detailView = DetailView()
+        detailView.backgroundColor = .white
+        return detailView
+    }()
+
+    private let service = Service()
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func loadView() {
+
+        self.view = self.detailView
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

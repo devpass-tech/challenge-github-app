@@ -7,11 +7,12 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
-
+final class ListViewController: UIViewController, ClickCellDelegate {
+    
     private lazy var listView: ListView = {
-
-        return ListView()
+        let listView = ListView()
+        listView.delegate = self
+        return listView
     }()
 
     private let service = Service()
@@ -34,6 +35,7 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
 
         self.fetchList()
+        
     }
 
     private func fetchList() {
@@ -45,5 +47,11 @@ final class ListViewController: UIViewController {
             self.listView.updateView(with: configuration)
         }
     }
+    
+    func segueDetailViewController() {
+        let vc = DetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
