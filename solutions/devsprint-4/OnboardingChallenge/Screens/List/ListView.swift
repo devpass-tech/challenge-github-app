@@ -8,7 +8,7 @@
 import UIKit
 
 final class ListView: UIView {
-
+    
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var listItems: [String] = []
@@ -17,8 +17,9 @@ final class ListView: UIView {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -47,6 +48,7 @@ private extension ListView {
     func configureSubviews() {
 
         self.addSubview(self.tableView)
+        
     }
 
     func configureSubviewsConstraints() {
@@ -79,9 +81,20 @@ extension ListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier, for: indexPath) as! RepositoryCellView
+        
+        let cellConfiguration: RepositoryCellViewConfiguration = RepositoryCellViewConfiguration(ownerImage: UIImage(named: "dev")!, repoName: self.listItems[indexPath.row], ownerName: "Devpass")
+        
+        cell.setUpCell(configuration: cellConfiguration)
+
+        
         return cell
     }
 }
 
+extension ListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+}
