@@ -90,7 +90,7 @@ extension ListView: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier, for: indexPath) as! RepositoryCellView
         
-        let cellConfiguration: RepositoryCellViewConfiguration = RepositoryCellViewConfiguration(ownerImage: UIImage(named: "dev")!, repoName: self.listItems[indexPath.row], ownerName: "Devpass")
+        let cellConfiguration: RepositoryCellViewConfiguration = RepositoryCellViewConfiguration(ownerImage: UIImage(named: "dev")!, repoName: self.listItems[indexPath.row], ownerName: "Owner name")
         
         cell.setUpCell(configuration: cellConfiguration)
 

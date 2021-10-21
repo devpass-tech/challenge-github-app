@@ -45,7 +45,6 @@ class RepositoryCellView: UITableViewCell {
     lazy var ownerName: UILabel = {
         let ownerName = UILabel()
         ownerName.translatesAutoresizingMaskIntoConstraints = false
-        ownerName.text = "Owner"
         ownerName.textColor = .gray
         ownerName.font = UIFont.systemFont(ofSize: 14)
         return ownerName
