@@ -25,6 +25,8 @@
 		98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0E270E41DF0088A775 /* String+Extensions.swift */; };
 		98E80674271E35E800E94038 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E80672271E35E800E94038 /* RepositoryInfoView.swift */; };
 		98E80675271E35E800E94038 /* RepositoryInfoViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E80673271E35E800E94038 /* RepositoryInfoViewConfiguration.swift */; };
+		AFD7CE792717506E00BCA025 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7CE782717506E00BCA025 /* RepositoryCellView.swift */; };
+		AFF4763A272083B8002A8D3E /* RepositoryCellViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF47639272083B8002A8D3E /* RepositoryCellViewConfiguration.swift */; };
 		E17B9D62CC9EB5E67AFBDE82 /* Pods_OnboardingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F993198A9D0077B10BC6028B /* Pods_OnboardingChallengeTests.framework */; };
 		E461480A271E2F510031E7B9 /* LoadingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4614808271E2F510031E7B9 /* LoadingViewConfiguration.swift */; };
 		E461480B271E2F510031E7B9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4614809271E2F510031E7B9 /* LoadingView.swift */; };
@@ -72,6 +74,8 @@
 		98E80672271E35E800E94038 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		98E80673271E35E800E94038 /* RepositoryInfoViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryInfoViewConfiguration.swift; sourceTree = "<group>"; };
 		9C9A6A4B0954AF85A954620E /* Pods-OnboardingChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingChallenge.debug.xcconfig"; path = "Target Support Files/Pods-OnboardingChallenge/Pods-OnboardingChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		AFD7CE782717506E00BCA025 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		AFF47639272083B8002A8D3E /* RepositoryCellViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewConfiguration.swift; sourceTree = "<group>"; };
 		E4614808271E2F510031E7B9 /* LoadingViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewConfiguration.swift; sourceTree = "<group>"; };
 		E4614809271E2F510031E7B9 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EB04A786271B59D2000D14C3 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
@@ -108,8 +112,8 @@
 				0C7CC8B62715EDF600BF729A /* DetailView.swift */,
 			);
 			path = Detail;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		33048171EBF1D1953E386042 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +171,7 @@
 				0C7CC8B32715EDAC00BF729A /* Detail */,
 				EB04A785271B57DD000D14C3 /* Components */,
 				980C0C4327061EDF00F8100A /* List */,
+				AFD7CE7A2717581000BCA025 /* Repository */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -235,6 +240,15 @@
 				98E80673271E35E800E94038 /* RepositoryInfoViewConfiguration.swift */,
 			);
 			path = RepositoryInfoView;
+			sourceTree = "<group>";
+		};
+		AFD7CE7A2717581000BCA025 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AFD7CE782717506E00BCA025 /* RepositoryCellView.swift */,
+				AFF47639272083B8002A8D3E /* RepositoryCellViewConfiguration.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		DA8EB677477640CE383AA79F /* Pods */ = {
@@ -467,6 +481,10 @@
 				98E80675271E35E800E94038 /* RepositoryInfoViewConfiguration.swift in Sources */,
 				EB04A787271B59D2000D14C3 /* EmptyView.swift in Sources */,
 				980C0C4A27061FBA00F8100A /* ListView.swift in Sources */,
+				98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */,
+				98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */,
+				AFD7CE792717506E00BCA025 /* RepositoryCellView.swift in Sources */,
+				AFF4763A272083B8002A8D3E /* RepositoryCellViewConfiguration.swift in Sources */,
 				0C7CC8B72715EDF600BF729A /* DetailView.swift in Sources */,
 				98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */,
 				98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */,
