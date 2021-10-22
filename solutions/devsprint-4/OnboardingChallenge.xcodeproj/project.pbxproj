@@ -23,8 +23,13 @@
 		98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0A270E407D0088A775 /* UIColor+Extensions.swift */; };
 		98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */; };
 		98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0E270E41DF0088A775 /* String+Extensions.swift */; };
+		98E5C4A22722220C003BECF5 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5C4A12722220C003BECF5 /* LicenseView.swift */; };
+		98E5C4A427222217003BECF5 /* LicenseViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5C4A327222217003BECF5 /* LicenseViewConfiguration.swift */; };
+		98E5C4A627222319003BECF5 /* LicenseViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E5C4A527222319003BECF5 /* LicenseViewSnapshotTests.swift */; };
 		98E80674271E35E800E94038 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E80672271E35E800E94038 /* RepositoryInfoView.swift */; };
 		98E80675271E35E800E94038 /* RepositoryInfoViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E80673271E35E800E94038 /* RepositoryInfoViewConfiguration.swift */; };
+		AFD7CE792717506E00BCA025 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7CE782717506E00BCA025 /* RepositoryCellView.swift */; };
+		AFF4763A272083B8002A8D3E /* RepositoryCellViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF47639272083B8002A8D3E /* RepositoryCellViewConfiguration.swift */; };
 		E17B9D62CC9EB5E67AFBDE82 /* Pods_OnboardingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F993198A9D0077B10BC6028B /* Pods_OnboardingChallengeTests.framework */; };
 		E461480A271E2F510031E7B9 /* LoadingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4614808271E2F510031E7B9 /* LoadingViewConfiguration.swift */; };
 		E461480B271E2F510031E7B9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4614809271E2F510031E7B9 /* LoadingView.swift */; };
@@ -70,9 +75,14 @@
 		98586A0A270E407D0088A775 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0E270E41DF0088A775 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		98E5C4A12722220C003BECF5 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
+		98E5C4A327222217003BECF5 /* LicenseViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewConfiguration.swift; sourceTree = "<group>"; };
+		98E5C4A527222319003BECF5 /* LicenseViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewSnapshotTests.swift; sourceTree = "<group>"; };
 		98E80672271E35E800E94038 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		98E80673271E35E800E94038 /* RepositoryInfoViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryInfoViewConfiguration.swift; sourceTree = "<group>"; };
 		9C9A6A4B0954AF85A954620E /* Pods-OnboardingChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingChallenge.debug.xcconfig"; path = "Target Support Files/Pods-OnboardingChallenge/Pods-OnboardingChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		AFD7CE782717506E00BCA025 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		AFF47639272083B8002A8D3E /* RepositoryCellViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewConfiguration.swift; sourceTree = "<group>"; };
 		E4614808271E2F510031E7B9 /* LoadingViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewConfiguration.swift; sourceTree = "<group>"; };
 		E4614809271E2F510031E7B9 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E527C7B32722F11E00E6968A /* RepositoryInfoViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoViewTests.swift; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 				0C7CC8B32715EDAC00BF729A /* Detail */,
 				EB04A785271B57DD000D14C3 /* Components */,
 				980C0C4327061EDF00F8100A /* List */,
+				AFD7CE7A2717581000BCA025 /* Repository */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -230,6 +241,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		98E5C4A0272221F6003BECF5 /* LicenseView */ = {
+			isa = PBXGroup;
+			children = (
+				98E5C4A12722220C003BECF5 /* LicenseView.swift */,
+				98E5C4A327222217003BECF5 /* LicenseViewConfiguration.swift */,
+			);
+			path = LicenseView;
+			sourceTree = "<group>";
+		};
 		98E80671271E35E800E94038 /* RepositoryInfoView */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +257,15 @@
 				98E80673271E35E800E94038 /* RepositoryInfoViewConfiguration.swift */,
 			);
 			path = RepositoryInfoView;
+			sourceTree = "<group>";
+		};
+		AFD7CE7A2717581000BCA025 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AFD7CE782717506E00BCA025 /* RepositoryCellView.swift */,
+				AFF47639272083B8002A8D3E /* RepositoryCellViewConfiguration.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		DA8EB677477640CE383AA79F /* Pods */ = {
@@ -262,6 +291,7 @@
 		EB04A785271B57DD000D14C3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				98E5C4A0272221F6003BECF5 /* LicenseView */,
 				E4614807271E2F510031E7B9 /* Loading */,
 				98E80671271E35E800E94038 /* RepositoryInfoView */,
 				EB04A788271B6E85000D14C3 /* EmptyView */,
@@ -291,6 +321,7 @@
 			children = (
 				EBE76C97271F3A0F008D00A9 /* EmptyViewSnapshotTests.swift */,
 				E527C7B32722F11E00E6968A /* RepositoryInfoViewTests.swift */,
+				98E5C4A527222319003BECF5 /* LicenseViewSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";
@@ -470,6 +501,12 @@
 				98E80675271E35E800E94038 /* RepositoryInfoViewConfiguration.swift in Sources */,
 				EB04A787271B59D2000D14C3 /* EmptyView.swift in Sources */,
 				980C0C4A27061FBA00F8100A /* ListView.swift in Sources */,
+				98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */,
+				98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */,
+				98E5C4A22722220C003BECF5 /* LicenseView.swift in Sources */,
+				AFD7CE792717506E00BCA025 /* RepositoryCellView.swift in Sources */,
+				AFF4763A272083B8002A8D3E /* RepositoryCellViewConfiguration.swift in Sources */,
+				98E5C4A427222217003BECF5 /* LicenseViewConfiguration.swift in Sources */,
 				0C7CC8B72715EDF600BF729A /* DetailView.swift in Sources */,
 				98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */,
 				98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */,
@@ -491,6 +528,7 @@
 				EB365AEF2718A6FC007D2CD7 /* StringUnitTests.swift in Sources */,
 				EBE76C98271F3A0F008D00A9 /* EmptyViewSnapshotTests.swift in Sources */,
 				E527C7B42722F11E00E6968A /* RepositoryInfoViewTests.swift in Sources */,
+				98E5C4A627222319003BECF5 /* LicenseViewSnapshotTests.swift in Sources */,
 				985869FF270E3E4E0088A775 /* OnboardingChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
