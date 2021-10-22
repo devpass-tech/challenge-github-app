@@ -28,6 +28,14 @@ final class ListView: UIView {
         tableView.delegate = self
         return tableView
     }()
+    
+    private lazy var emptyView: EmptyView = {
+        let configuration = EmptyViewConfiguration(titleMessage: "No repositories found", emptyMessage: "Search for users to see their public repositories here!")
+        let emptyView = EmptyView()
+        emptyView.translatesAutoresizingMaskIntoConstraints = false
+        emptyView.updateView(with: configuration)
+        return emptyView
+    }()
 
     private var loadingView: LoadingView = {
 
@@ -66,6 +74,7 @@ private extension ListView {
     func configureSubviews() {
 
         self.addSubview(self.tableView)
+        self.addSubview(self.emptyView)
         self.addSubview(self.loadingView)
     }
 
@@ -77,10 +86,16 @@ private extension ListView {
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+
             self.loadingView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.loadingView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.loadingView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.loadingView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.loadingView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+
+            self.emptyView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.emptyView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.emptyView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.emptyView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
@@ -88,9 +103,16 @@ private extension ListView {
 extension ListView {
 
     func updateView(with configuration: ListViewConfiguration) {
-
-        self.listItems = configuration.listItems
-        self.tableView.reloadData()
+        if configuration.listItems.isEmpty {
+            self.tableView.isHidden = true
+            self.emptyView.isHidden = false
+            
+        } else {
+            self.emptyView.isHidden = true
+            self.tableView.isHidden = false
+            self.listItems = configuration.listItems
+            self.tableView.reloadData()
+        }
     }
 
     func showLoading() {

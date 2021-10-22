@@ -14,7 +14,7 @@ final class ListViewController: UIViewController, ClickCellDelegate {
         listView.delegate = self
         return listView
     }()
-
+    
     private let service = Service(userName: "")
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -29,7 +29,6 @@ final class ListViewController: UIViewController, ClickCellDelegate {
     }
 
     override func loadView() {
-
         self.view = self.listView
     }
 
