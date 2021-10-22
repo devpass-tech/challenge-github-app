@@ -49,6 +49,8 @@ final class ListViewController: UIViewController, ClickCellDelegate {
 
     private func fetchList(with userName: String) {
 
+        self.listView.showLoading()
+
         self.service.fetchList(userName: userName) { items in
 
             let names = items.map { $0.name }
@@ -56,7 +58,9 @@ final class ListViewController: UIViewController, ClickCellDelegate {
             let configuration = ListViewConfiguration(listItems: names)
 
             DispatchQueue.main.async {
+                
                 self.listView.updateView(with: configuration)
+                self.listView.hideLoading()
             }
         }
     }
