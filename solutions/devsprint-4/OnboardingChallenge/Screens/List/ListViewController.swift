@@ -15,13 +15,6 @@ final class ListViewController: UIViewController, ClickCellDelegate {
         return listView
     }()
     
-    private lazy var emptyView: EmptyView = {
-        let configuration = EmptyViewConfiguration(titleMessage: "No repositories found", emptyMessage: "Search for users to see their public repositories here!")
-        let emptyView = EmptyView()
-        emptyView.updateView(with: configuration)
-        return emptyView
-    }()
-
     private let service = Service(userName: "")
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -36,7 +29,7 @@ final class ListViewController: UIViewController, ClickCellDelegate {
     }
 
     override func loadView() {
-        self.view = self.emptyView
+        self.view = self.listView
     }
 
     override func viewDidLoad() {
@@ -62,12 +55,7 @@ final class ListViewController: UIViewController, ClickCellDelegate {
             let configuration = ListViewConfiguration(listItems: names)
 
             DispatchQueue.main.async {
-                if names.count >= 1 {
-                    self.listView.updateView(with: configuration)
-                    self.view = self.listView
-                } else {
-                    self.view = self.emptyView
-                }
+                self.listView.updateView(with: configuration)
             }
         }
     }
