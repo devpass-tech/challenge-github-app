@@ -9,8 +9,8 @@ import Foundation
 
 extension String {
 
-    func removingSpaces() -> String {
+    static func repositoryInfo(repositoriesCount: Int, bifurcationsCount: Int) -> String {
 
-        return self.replacingOccurrences(of: " ", with: "")
+        return "\(repositoriesCount) stars   \(bifurcationsCount) bifurcations"
     }
 }
