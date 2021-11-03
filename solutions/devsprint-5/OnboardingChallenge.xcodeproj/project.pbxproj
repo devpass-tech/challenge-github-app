@@ -14,6 +14,8 @@
 		980C0C3A2705078100F8100A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 980C0C382705078100F8100A /* LaunchScreen.storyboard */; };
 		980C0C4827061F8900F8100A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C4727061F8900F8100A /* Service.swift */; };
 		980C0C4A27061FBA00F8100A /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C4927061FBA00F8100A /* ListView.swift */; };
+		9824AD64273322AD001044D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9824AD63273322AD001044D2 /* DetailViewController.swift */; };
+		9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9824AD65273322C6001044D2 /* SettingsViewController.swift */; };
 		985869FF270E3E4E0088A775 /* OnboardingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985869FE270E3E4E0088A775 /* OnboardingChallengeTests.swift */; };
 		98586A06270E3EC40088A775 /* ListViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A05270E3EC40088A775 /* ListViewConfiguration.swift */; };
 		98586A09270E40430088A775 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A08270E40430088A775 /* UITableViewCell+Extensions.swift */; };
@@ -42,6 +44,8 @@
 		980C0C3B2705078100F8100A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		980C0C4727061F8900F8100A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		980C0C4927061FBA00F8100A /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		9824AD63273322AD001044D2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9824AD65273322C6001044D2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		985869FC270E3E4E0088A775 /* OnboardingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnboardingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		985869FE270E3E4E0088A775 /* OnboardingChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingChallengeTests.swift; sourceTree = "<group>"; };
 		98586A05270E3EC40088A775 /* ListViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewConfiguration.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			children = (
 				980C0C4327061EDF00F8100A /* List */,
 				980C0C4427061EE600F8100A /* Detail */,
+				9824AD6227332295001044D2 /* Settings */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 		980C0C4427061EE600F8100A /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				9824AD63273322AD001044D2 /* DetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -158,6 +164,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9824AD6227332295001044D2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9824AD65273322C6001044D2 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		985869FD270E3E4E0088A775 /* OnboardingChallengeTests */ = {
@@ -279,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9824AD64273322AD001044D2 /* DetailViewController.swift in Sources */,
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,
 				980C0C4827061F8900F8100A /* Service.swift in Sources */,
@@ -289,6 +304,7 @@
 				98586A09270E40430088A775 /* UITableViewCell+Extensions.swift in Sources */,
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
+				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
