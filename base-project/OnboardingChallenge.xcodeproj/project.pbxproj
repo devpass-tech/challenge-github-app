@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15FA58A12739E9C6008573F0 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA58A02739E9C6008573F0 /* RepositoryCellView.swift */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
 		980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2F2705077B00F8100A /* SceneDelegate.swift */; };
 		980C0C322705077B00F8100A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C312705077B00F8100A /* ListViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15FA58A02739E9C6008573F0 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		980C0C2D2705077B00F8100A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		980C0C2F2705077B00F8100A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15FA589F2739E95A008573F0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				15FA58A02739E9C6008573F0 /* RepositoryCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		980C0C212705077B00F8100A = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		980C0C4327061EDF00F8100A /* List */ = {
 			isa = PBXGroup;
 			children = (
+				15FA589F2739E95A008573F0 /* Cell */,
 				980C0C312705077B00F8100A /* ListViewController.swift */,
 				980C0C4927061FBA00F8100A /* ListView.swift */,
 				98586A05270E3EC40088A775 /* ListViewConfiguration.swift */,
@@ -305,6 +316,7 @@
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
 				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
+				15FA58A12739E9C6008573F0 /* RepositoryCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
