@@ -36,8 +36,8 @@ final class ListViewController: UIViewController {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchList()
         setupUI()
+        fetchList()
     }
     
     override func loadView() {
