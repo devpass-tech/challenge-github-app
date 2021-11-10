@@ -26,7 +26,7 @@ class LoadingView: UIView {
         return label
     }()
     
-    private lazy var StackView:UIStackView = {
+    private lazy var stackView:UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
         loadingMessage,
         loadingSpinner])
@@ -42,9 +42,9 @@ class LoadingView: UIView {
     
     var loadingSpinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
     
-    private func initializeLoadingSpiner(){
+    private func initializeLoadingSpinner(){
         loadingSpinner.transform = CGAffineTransform(scaleX: 1.7,y: 1.7)
-        showLoadingSpiner()
+        showLoadingSpinner()
     }
     
     // MARK: - Layout Setup
@@ -54,9 +54,6 @@ class LoadingView: UIView {
         backgroundColor = .white
         loadView()
         loadConstraints()
-        let configuration = LoadingViewConfiguration(loadingMessageText: "Searching repositories...")
-        ConfigureLoadingView(with: configuration)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -64,8 +61,8 @@ class LoadingView: UIView {
     }
     
     func loadView() {
-        initializeLoadingSpiner()
-        addSubview(StackView)
+        initializeLoadingSpinner()
+        addSubview(stackView)
     }
     
     private func loadConstraints(){
@@ -73,27 +70,27 @@ class LoadingView: UIView {
     }
 
     private func constraintStackView(){
-        StackView.translatesAutoresizingMaskIntoConstraints = false
-        StackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        StackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        StackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        StackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
      }
     
     
     
     // MARK: - Actions
-    @objc func showLoadingSpiner() {
+    @objc func showLoadingSpinner() {
         loadingMessage.isHidden = false
         loadingSpinner.startAnimating()
     }
 
-    @objc func hideLoadingSpiner() {
+    @objc func hideLoadingSpinner() {
         loadingMessage.isHidden = true
         loadingSpinner.stopAnimating()
     }
     
-    func ConfigureLoadingView(with configuration: LoadingViewConfiguration){
+    func configureLoadingView(with configuration: LoadingViewConfiguration){
         loadingMessage.text = configuration.loadingMessageText
     }
 }
