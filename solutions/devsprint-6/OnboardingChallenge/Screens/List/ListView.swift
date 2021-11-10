@@ -9,8 +9,8 @@ import UIKit
 
 final class ListView: UIView {
 
-    private let listViewCellIdentifier = String(describing: RepositoryCellView.self)
-
+    private let listViewCellIdentifier = RepositoryCellView.classIdentifier()
+    
     private var listItems: [String] = []
 
     private lazy var tableView: UITableView = {
