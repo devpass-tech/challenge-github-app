@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15FA5A35273B51C8008573F0 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA5A34273B51C8008573F0 /* RepositoryCellView.swift */; };
+		15FA5A38273B5247008573F0 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA5A37273B5247008573F0 /* ViewCode.swift */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
 		980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2F2705077B00F8100A /* SceneDelegate.swift */; };
 		980C0C322705077B00F8100A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C312705077B00F8100A /* ListViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15FA5A34273B51C8008573F0 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		15FA5A37273B5247008573F0 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		980C0C2D2705077B00F8100A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		980C0C2F2705077B00F8100A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15FA5A33273B5192008573F0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				15FA5A34273B51C8008573F0 /* RepositoryCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		15FA5A36273B5208008573F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15FA5A37273B5247008573F0 /* ViewCode.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		980C0C212705077B00F8100A = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +136,7 @@
 		980C0C4227061ED300F8100A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				15FA5A36273B5208008573F0 /* Views */,
 				980C0C4327061EDF00F8100A /* List */,
 				980C0C4427061EE600F8100A /* Detail */,
 				9824AD6227332295001044D2 /* Settings */,
@@ -126,6 +147,7 @@
 		980C0C4327061EDF00F8100A /* List */ = {
 			isa = PBXGroup;
 			children = (
+				15FA5A33273B5192008573F0 /* Cell */,
 				980C0C312705077B00F8100A /* ListViewController.swift */,
 				980C0C4927061FBA00F8100A /* ListView.swift */,
 				98586A05270E3EC40088A775 /* ListViewConfiguration.swift */,
@@ -296,6 +318,7 @@
 				9824AD64273322AD001044D2 /* DetailViewController.swift in Sources */,
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,
+				15FA5A38273B5247008573F0 /* ViewCode.swift in Sources */,
 				980C0C4827061F8900F8100A /* Service.swift in Sources */,
 				980C0C4A27061FBA00F8100A /* ListView.swift in Sources */,
 				98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */,
@@ -305,6 +328,7 @@
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
 				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
+				15FA5A35273B51C8008573F0 /* RepositoryCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
