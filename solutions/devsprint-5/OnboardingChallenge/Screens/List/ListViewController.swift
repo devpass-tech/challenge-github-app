@@ -9,6 +9,12 @@ import UIKit
 
 final class ListViewController: UIViewController {
 
+    private var emptyView: UIView {
+        let view = EmptyView()
+        return view
+        
+    }
+    
     private lazy var listView: ListView = {
 
         return ListView()
