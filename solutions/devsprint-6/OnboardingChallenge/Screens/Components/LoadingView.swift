@@ -2,30 +2,28 @@
 //  LoadingViewController.swift
 //  OnboardingChallenge
 //
-//  Created by Desenvolvimento on 09/11/21.
+//  Created by Hafsa Nouiri on 09/11/21.
 //
 
 import UIKit
 
-class LoadingViewController: UIViewController {
+struct LoadingViewConfiguration{
+    let loadingMessageText:String
+}
+
+class LoadingView: UIView {
 
     // MARK: - UIComponents
     
     private lazy var loadingMessage:UILabel = {
        let label = UILabel()
-        label.text = "Searching repositories..."
+        label.isHidden = true
         label.font = .boldSystemFont(ofSize: 15)
         label.textColor = .black
         label.textAlignment = .center
         label.numberOfLines = 1
         label.backgroundColor = .clear
         return label
-    }()
-    
-    private lazy var containerView:UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
     }()
     
     private lazy var StackView:UIStackView = {
@@ -50,50 +48,52 @@ class LoadingViewController: UIViewController {
     }
     
     // MARK: - Layout Setup
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    init(){
+        super.init(frame: .zero)
+        backgroundColor = .white
         loadView()
         loadConstraints()
+        let configuration = LoadingViewConfiguration(loadingMessageText: "Searching repositories...")
+        ConfigureLoadingView(with: configuration)
         
     }
     
-    override func loadView() {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func loadView() {
         initializeLoadingSpiner()
-        self.view = self.containerView
-        containerView.addSubview(StackView)
-        
+        addSubview(StackView)
     }
     
     private func loadConstraints(){
-        constraintContenerView()
         constraintStackView()
     }
-    
-    private func constraintContenerView(){
-        containerView.translatesAutoresizingMaskIntoConstraints = true
-        containerView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        containerView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        containerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-     }
-     
+
     private func constraintStackView(){
         StackView.translatesAutoresizingMaskIntoConstraints = false
-        StackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-        StackView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        StackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
-        StackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+        StackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        StackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        StackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        StackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
      }
     
     
     
     // MARK: - Actions
     @objc func showLoadingSpiner() {
+        loadingMessage.isHidden = false
         loadingSpinner.startAnimating()
     }
 
     @objc func hideLoadingSpiner() {
+        loadingMessage.isHidden = true
         loadingSpinner.stopAnimating()
+    }
+    
+    func ConfigureLoadingView(with configuration: LoadingViewConfiguration){
+        loadingMessage.text = configuration.loadingMessageText
     }
 }
