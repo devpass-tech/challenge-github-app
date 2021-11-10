@@ -23,10 +23,13 @@ struct Service: ServiceProtocol {
                     print(error)
                     completion([])
                 }
+                
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
 
                 if let data = data {
                     do {
-                        let repositories = try JSONDecoder().decode([RepositoriesModel].self, from: data)
+                        let repositories = try jsonDecoder.decode([RepositoriesModel].self, from: data)
                         completion(repositories)
 
                     } catch {
