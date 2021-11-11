@@ -10,6 +10,7 @@ import UIKit
 final class ListView: UIView{
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
+    weak var listViewController: ListViewController?
 
     private var listItems: [String] = []
 
@@ -33,8 +34,6 @@ final class ListView: UIView{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var listViewController: ListViewController = ListViewController ()
 }
 
 private extension ListView {
@@ -92,7 +91,7 @@ extension ListView: UITableViewDataSource {
 extension ListView: UITableViewDelegate {
 	
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        listViewController.navigateToDetail()
+        listViewController?.navigateToDetail()
     }
     
 }
