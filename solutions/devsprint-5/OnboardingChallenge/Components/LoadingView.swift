@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+struct LoadingViewConfiguration {
+    var title: String
+}
 
 final class LoadingView: UIView {
     
@@ -16,7 +19,6 @@ final class LoadingView: UIView {
         label.translatesAutoresizingMaskIntoConstraints =  false
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = .black
-        label.text = "Searching repositories..."
         return label
     }()
     
@@ -26,7 +28,6 @@ final class LoadingView: UIView {
         loading.startAnimating()
         return loading
     }()
-    
     
     init() {
         super.init(frame: .zero)
@@ -51,8 +52,7 @@ final class LoadingView: UIView {
         loadIndicator.topAnchor.constraint(equalTo: searching.bottomAnchor, constant: 16).isActive = true
     }
     
-    
-    
+    func updateView(configuration: LoadingViewConfiguration) {
+        searching.text = configuration.title
+    }
 }
-
-
