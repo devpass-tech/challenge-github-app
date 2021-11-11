@@ -65,8 +65,13 @@ final class ListViewController: UIViewController {
     }
     
     private func fetchList() {
-        self.service.fetchList { items in
-            let configuration = ListViewConfiguration(listItems: items)
+
+        self.service.fetchList(for: "devpass-tech") { items in
+            
+            let names = items.map { $0.name }
+
+            let configuration = ListViewConfiguration(listItems: names)
+
             self.listView.updateView(with: configuration)
         }
     }

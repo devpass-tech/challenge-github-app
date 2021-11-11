@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4782FA1F273C3AF500C90AAC /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4782FA1E273C3AF500C90AAC /* RepositoriesModel.swift */; };
 		15FA5A35273B51C8008573F0 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA5A34273B51C8008573F0 /* RepositoryCellView.swift */; };
 		15FA5A38273B5247008573F0 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA5A37273B5247008573F0 /* ViewCode.swift */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4782FA1E273C3AF500C90AAC /* RepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = SOURCE_ROOT; };
 		15FA5A34273B51C8008573F0 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
 		15FA5A37273B5247008573F0 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,14 @@
 				980C0C4727061F8900F8100A /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		9822D796270E45E3005FAAA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4782FA1E273C3AF500C90AAC /* RepositoriesModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9824AD6227332295001044D2 /* Settings */ = {
@@ -334,6 +344,7 @@
 				98586A06270E3EC40088A775 /* ListViewConfiguration.swift in Sources */,
 				98586A09270E40430088A775 /* UITableViewCell+Extensions.swift in Sources */,
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
+				4782FA1F273C3AF500C90AAC /* RepositoriesModel.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
 				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
 				15FA5A35273B51C8008573F0 /* RepositoryCellView.swift in Sources */,
