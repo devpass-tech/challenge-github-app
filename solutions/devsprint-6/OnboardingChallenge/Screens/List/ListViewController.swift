@@ -8,34 +8,62 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-
+    // MARK: Properties
+    private let service = Service()
     private lazy var listView: ListView = {
-
         return ListView()
     }()
-
-    private let service = Service()
-
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Type a GitHub user name"
+        searchController.hidesNavigationBarDuringPresentation = false
+        return searchController
+    }()
+    
+    // MARK: Outlets
+    
+    // MARK: Initializers
     init() {
         super.init(nibName: nil, bundle: nil)
-
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func loadView() {
-
-        self.view = self.listView
-    }
-
+    
+    // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.fetchList()
+        setupUI()
+        fetchList()
     }
-
+    
+    override func loadView() {
+        view = listView
+    }
+    
+    // MARK: Actions
+    @objc
+    func pressedSettings() {
+        debugPrint("Open Settings")
+    }
+    
+    // MARK: Methods
+    private func setupUI() {
+        title = "Repositories"
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        let settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(pressedSettings))
+        navigationItem.rightBarButtonItem = settingsButton
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     private func fetchList() {
 
         self.service.fetchList(for: "devpass-tech") { items in
@@ -49,3 +77,7 @@ final class ListViewController: UIViewController {
     }
 }
 
+// MARK: Extensions
+extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) { }
+}
