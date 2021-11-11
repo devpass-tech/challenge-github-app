@@ -16,7 +16,7 @@ final class ListViewController: UIViewController {
 
     private let service = Service()
     private let search = UISearchController(searchResultsController: nil)
-    private let setting = UIBarButtonItem(title: "Setting", style: .done, target: self, action: #selector(settingBtn(sender:)))
+    private let settings = UIBarButtonItem(title: "Setting", style: .done, target: self, action: #selector(settingBtn(sender:)))
     
     init() {
         super.init(nibName: nil, bundle: nil)
