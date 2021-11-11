@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ListView: UIView {
+final class ListView: UIView{
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
@@ -19,6 +19,7 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -32,6 +33,8 @@ final class ListView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    var listViewController: ListViewController = ListViewController ()
 }
 
 private extension ListView {
@@ -83,5 +86,13 @@ extension ListView: UITableViewDataSource {
         cell.textLabel?.text = self.listItems[indexPath.row]
         return cell
     }
+
 }
 
+extension ListView: UITableViewDelegate {
+	
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        listViewController.navigateToDetail()
+    }
+    
+}
