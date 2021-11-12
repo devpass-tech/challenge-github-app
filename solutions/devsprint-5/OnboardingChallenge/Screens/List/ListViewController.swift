@@ -15,6 +15,8 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
+    private let search = UISearchController(searchResultsController: nil)
+    private let settings = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(settingBtn(sender:)))
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -33,7 +35,24 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchList()
+        setupNavigation()
     }
+    
+    func setupNavigation() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Repositories"
+    
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Type a GitHub user name"
+        navigationItem.searchController = search
+        navigationItem.rightBarButtonItem = self.settings
+    }
+    
+    @objc private func settingBtn(sender: UIBarButtonItem) {
+        print("botão")
+    }
+
     
     private func fetchList() {
 
@@ -43,6 +62,14 @@ final class ListViewController: UIViewController {
 
             self.listView.updateView(with: configuration)
         }
+    }
+}
+
+extension ListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        print(text)
+        //TO DO: implementar os resultado do seach
     }
 }
 
