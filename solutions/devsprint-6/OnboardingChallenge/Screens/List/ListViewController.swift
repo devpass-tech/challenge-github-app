@@ -72,7 +72,9 @@ final class ListViewController: UIViewController {
 
             let configuration = ListViewConfiguration(listItems: names)
 
-            self.listView.updateView(with: configuration)
+            DispatchQueue.main.async {
+                self.listView.updateView(with: configuration)
+            }
         }
     }
 }
