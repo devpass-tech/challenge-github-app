@@ -10,8 +10,10 @@ import UIKit
 final class ListViewController: UIViewController {
 
     private lazy var listView: ListView = {
-
-        return ListView()
+        
+        var listView = ListView()
+        listView.listViewController = self
+        return listView
     }()
 
     private let service = Service()
@@ -62,6 +64,12 @@ final class ListViewController: UIViewController {
 
             self.listView.updateView(with: configuration)
         }
+    }
+    
+    func navigateToDetail () {
+        
+        let newController = DetailViewController()
+        navigationController?.pushViewController(newController, animated: true)
     }
 }
 
