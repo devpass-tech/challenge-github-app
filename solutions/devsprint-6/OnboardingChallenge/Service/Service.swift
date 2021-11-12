@@ -9,13 +9,36 @@ import Foundation
 
 protocol ServiceProtocol {
 
-    func fetchList(_ completion: ([String]) -> Void)
+    func fetchList(for user: String, _ completion: @escaping ([RepositoriesModel]) -> Void)
 }
 
 struct Service: ServiceProtocol {
 
-    func fetchList(_ completion: ([String]) -> Void) {
+    func fetchList(for user: String, _ completion: @escaping ([RepositoriesModel]) -> Void) {
+        if let url = URL(string: "https://api.github.com/users/" + user + "/repos") {
+            
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
 
-        completion(["Item 1", "Item 2", "Item 3"])
+                if let error = error {
+                    print(error)
+                    completion([])
+                }
+                
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                if let data = data {
+                    do {
+                        let repositories = try jsonDecoder.decode([RepositoriesModel].self, from: data)
+                        completion(repositories)
+
+                    } catch {
+                        print("Unexpected error: \(error)")
+                        completion([])
+                    }
+                }
+            }
+            task.resume()
+        }
     }
 }
