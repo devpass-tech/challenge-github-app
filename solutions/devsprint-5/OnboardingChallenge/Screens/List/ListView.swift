@@ -17,7 +17,7 @@ final class ListView: UIView {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.identifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -79,10 +79,8 @@ extension ListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.identifier,  for: indexPath) as? RepositoryCellView else {
-            return UITableViewCell()
-        }
-        cell.updateView(with: RepositoryCellViewModel(name: "Fulano", ownerUsername: "Ciclano"))
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
+        cell.textLabel?.text = self.listItems[indexPath.row]
         return cell
     }
 }
