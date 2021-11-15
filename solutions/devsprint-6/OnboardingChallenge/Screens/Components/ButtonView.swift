@@ -14,15 +14,15 @@ struct ButtonViewConfiguration {
 
 class ButtonView: UIView {
     
+    private(set) var buttonWidth: CGFloat = 300
+    private(set) var buttonHeight: CGFloat = 60
+    
     private lazy var button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .blue
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .blue
-        button.layer.cornerRadius = frame.height/2
-        button.layer.borderWidth = 1
         return button
     }()
     
@@ -36,7 +36,7 @@ class ButtonView: UIView {
     }
     
     func updateView(with buttonViewConfiguration: ButtonViewConfiguration) {
-        button.titleLabel?.text = buttonViewConfiguration.title
+        button.setTitle(buttonViewConfiguration.title, for: .normal)
         button.addAction(buttonViewConfiguration.action, for: .touchUpInside)
     }
 }
@@ -47,9 +47,17 @@ extension ButtonView: ViewCode {
     }
     
     func configureSubviewsConstraints() {
-        button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            button.widthAnchor.constraint(equalToConstant: buttonWidth),
+            button.heightAnchor.constraint(equalToConstant: buttonHeight),
+            button.centerXAnchor.constraint(equalTo: centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
     }
     
-    func configureAdditionalBehaviors() {}
+    func configureAdditionalBehaviors() {
+        backgroundColor = .white
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 1
+    }
 }

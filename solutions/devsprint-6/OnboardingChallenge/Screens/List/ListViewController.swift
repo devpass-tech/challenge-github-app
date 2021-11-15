@@ -21,6 +21,9 @@ final class ListViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         return searchController
     }()
+    private lazy var buttonView: ButtonView = {
+        ButtonView()
+    }()
     
     // MARK: Outlets
     
@@ -41,13 +44,23 @@ final class ListViewController: UIViewController {
     }
     
     override func loadView() {
-        view = listView
+//        view = listView
+        
+        view = buttonView
+        buttonView.updateView(with: ButtonViewConfiguration(title: "Hu3",
+                                                            action: UIAction(handler: { [weak self] _ in
+            self?.buttonAction()
+        })))
     }
     
     // MARK: Actions
     @objc
     func pressedSettings() {
         debugPrint("Open Settings")
+    }
+    
+    private func buttonAction() {
+        print("Button tapped")
     }
     
     // MARK: Methods
