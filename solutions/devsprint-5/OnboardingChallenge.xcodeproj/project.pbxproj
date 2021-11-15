@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AED68B5273B4FBA0024AD85 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED68B4273B4FBA0024AD85 /* Repository.swift */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
 		980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2F2705077B00F8100A /* SceneDelegate.swift */; };
 		980C0C322705077B00F8100A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C312705077B00F8100A /* ListViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AED68B4273B4FBA0024AD85 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		980C0C2D2705077B00F8100A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		980C0C2F2705077B00F8100A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AED68B3273B4FA10024AD85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2AED68B4273B4FBA0024AD85 /* Repository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		980C0C212705077B00F8100A = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +108,7 @@
 				980C0C4127061EC000F8100A /* AppDelegate */,
 				980C0C4227061ED300F8100A /* Screens */,
 				980C0C4627061F6400F8100A /* Service */,
-				9822D796270E45E3005FAAA2 /* Models */,
+				2AED68B3273B4FA10024AD85 /* Model */,
 				98586A07270E3FEF0088A775 /* Extensions */,
 			);
 			path = OnboardingChallenge;
@@ -157,13 +167,6 @@
 				980C0C4727061F8900F8100A /* Service.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		9822D796270E45E3005FAAA2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		9824AD6227332295001044D2 /* Settings */ = {
@@ -296,6 +299,7 @@
 				9824AD64273322AD001044D2 /* DetailViewController.swift in Sources */,
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,
+				2AED68B5273B4FBA0024AD85 /* Repository.swift in Sources */,
 				980C0C4827061F8900F8100A /* Service.swift in Sources */,
 				980C0C4A27061FBA00F8100A /* ListView.swift in Sources */,
 				98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */,
