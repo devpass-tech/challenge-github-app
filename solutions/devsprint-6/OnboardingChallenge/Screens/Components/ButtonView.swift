@@ -14,12 +14,11 @@ struct ButtonViewConfiguration {
 
 class ButtonView: UIView {
     
-    private(set) var buttonWidth: CGFloat = 300
-    private(set) var buttonHeight: CGFloat = 60
+    private(set) var heightButton: CGFloat = 60
     
     private lazy var button: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .blue
+        button.backgroundColor = .systemBlue
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -48,9 +47,9 @@ extension ButtonView: ViewCode {
     
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            button.widthAnchor.constraint(equalToConstant: buttonWidth),
-            button.heightAnchor.constraint(equalToConstant: buttonHeight),
-            button.centerXAnchor.constraint(equalTo: centerXAnchor),
+            button.heightAnchor.constraint(equalToConstant: heightButton),
+            button.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            button.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             button.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
