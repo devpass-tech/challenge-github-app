@@ -48,6 +48,10 @@ final class ListViewController: UIViewController {
     @objc
     func pressedSettings() {
         debugPrint("Open Settings")
+        let settingsViewController = SettingsViewController()
+        let navBarController = UINavigationController(rootViewController: settingsViewController)
+        navBarController.navigationBar.backgroundColor = .systemGray6
+        navigationController?.present(navBarController , animated: true, completion: nil)
     }
     
     // MARK: Methods
