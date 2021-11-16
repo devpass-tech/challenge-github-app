@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AED68B5273B4FBA0024AD85 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED68B4273B4FBA0024AD85 /* Repository.swift */; };
 		5B1E01C4273B001400AA8628 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E01C3273B001400AA8628 /* DetailView.swift */; };
 		504F8705970C1F92CCBDC48A /* Pods_OnboardingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EE86FFB4EF9B7185BC61F8 /* Pods_OnboardingChallenge.framework */; };
 		5B3C31E0273C4FE500142C92 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3C31DF273C4FE500142C92 /* RepositoryCellView.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AED68B4273B4FBA0024AD85 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5B1E01C3273B001400AA8628 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3DF271BFE81059A59B44465C /* Pods-OnboardingChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingChallenge.debug.xcconfig"; path = "Target Support Files/Pods-OnboardingChallenge/Pods-OnboardingChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		4C15CF7BD5EC871358EE68E6 /* Pods-OnboardingChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-OnboardingChallengeTests/Pods-OnboardingChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AED68B3273B4FA10024AD85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2AED68B4273B4FBA0024AD85 /* Repository.swift */,
+			);
+			path = Model;
+      sourceTree = "<group>";
+		};
 		4C95721DE929193195FA9AF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +170,7 @@
 				980C0C4127061EC000F8100A /* AppDelegate */,
 				980C0C4227061ED300F8100A /* Screens */,
 				980C0C4627061F6400F8100A /* Service */,
-				9822D796270E45E3005FAAA2 /* Models */,
+				2AED68B3273B4FA10024AD85 /* Model */,
 				98586A07270E3FEF0088A775 /* Extensions */,
 				5B3C31E3273C547E00142C92 /* Utils */,
 			);
@@ -439,6 +449,7 @@
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,
 				5B3C31E2273C542D00142C92 /* UIView+Constraints.swift in Sources */,
+				2AED68B5273B4FBA0024AD85 /* Repository.swift in Sources */,
 				980C0C4827061F8900F8100A /* Service.swift in Sources */,
 				5B3C31E9273C570700142C92 /* RepositoryCellViewModel.swift in Sources */,
 				980C0C4A27061FBA00F8100A /* ListView.swift in Sources */,
