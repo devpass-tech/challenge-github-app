@@ -48,6 +48,10 @@ final class ListViewController: UIViewController {
     @objc
     func pressedSettings() {
         debugPrint("Open Settings")
+        let settingsViewController = SettingsViewController()
+        let navBarController = UINavigationController(rootViewController: settingsViewController)
+        navBarController.navigationBar.backgroundColor = .systemGray5
+        navigationController?.present(navBarController , animated: true, completion: nil)
     }
     
     // MARK: Methods
@@ -65,9 +69,16 @@ final class ListViewController: UIViewController {
     }
     
     private func fetchList() {
-        self.service.fetchList { items in
-            let configuration = ListViewConfiguration(listItems: items)
-            self.listView.updateView(with: configuration)
+
+        self.service.fetchList(for: "devpass-tech") { items in
+            
+            let names = items.map { $0.name }
+
+            let configuration = ListViewConfiguration(listItems: names)
+
+            DispatchQueue.main.async {
+                self.listView.updateView(with: configuration)
+            }
         }
     }
 }
