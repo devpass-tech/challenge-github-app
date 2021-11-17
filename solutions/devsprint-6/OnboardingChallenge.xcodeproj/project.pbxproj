@@ -27,6 +27,7 @@
 		98E2EA6A273E9B0700203568 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E2EA66273E9B0700203568 /* LaunchScreen.storyboard */; };
 		98E2EA6F273E9B5600203568 /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E2EA6E273E9B5600203568 /* RepositoriesModel.swift */; };
 		9B4C7344186E78682393B2F3 /* Pods_OnboardingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7B3D233DF1C1DD8BC64E28 /* Pods_OnboardingChallenge.framework */; };
+		A247D11A2745A9B30094E908 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A247D1192745A9B30094E908 /* SettingsView.swift */; };
 		A796B75976149E6EAC5BDD8B /* Pods_OnboardingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AC08E5FB584CA08584E5F1 /* Pods_OnboardingChallengeTests.framework */; };
 		BBB08FE3273AE9B800D16BB0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB08FE2273AE9B800D16BB0 /* LoadingView.swift */; };
 		EB9E4B2B273B39C200ECB7C3 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E4B2A273B39C200ECB7C3 /* UINavigationController+Extensions.swift */; };
@@ -69,6 +70,7 @@
 		98E2EA67273E9B0700203568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98E2EA68273E9B0700203568 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98E2EA6E273E9B5600203568 /* RepositoriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = "<group>"; };
+		A247D1192745A9B30094E908 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BBB08FE2273AE9B800D16BB0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E5AC08E5FB584CA08584E5F1 /* Pods_OnboardingChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9E4B2A273B39C200ECB7C3 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		9824AD6227332295001044D2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A247D1192745A9B30094E908 /* SettingsView.swift */,
 				9824AD65273322C6001044D2 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -452,6 +455,7 @@
 				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
 				15FA5A35273B51C8008573F0 /* RepositoryCellView.swift in Sources */,
 				98E2EA6F273E9B5600203568 /* RepositoriesModel.swift in Sources */,
+				A247D11A2745A9B30094E908 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
