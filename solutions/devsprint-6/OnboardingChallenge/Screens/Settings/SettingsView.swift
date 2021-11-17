@@ -11,12 +11,11 @@ class SettingsView: UIView {
 
     let cell = "cell"
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cell)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = .systemGray5
         return tableView
     }()
 
@@ -32,13 +31,12 @@ class SettingsView: UIView {
     
     func tableViewConstraints(){
         NSLayoutConstraint.activate([
-            self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
 }
 
 extension SettingsView: UITableViewDataSource, UITableViewDelegate{
@@ -47,6 +45,7 @@ extension SettingsView: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "APP VERSION"
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -57,6 +56,5 @@ extension SettingsView: UITableViewDataSource, UITableViewDelegate{
         cell.selectionStyle = .none 
         return cell
     }
-    
-    
+
 }

@@ -50,7 +50,7 @@ final class ListViewController: UIViewController {
         debugPrint("Open Settings")
         let settingsViewController = SettingsViewController()
         let navBarController = UINavigationController(rootViewController: settingsViewController)
-        navBarController.navigationBar.backgroundColor = .systemGray6
+        navBarController.navigationBar.backgroundColor = .systemGray5
         navigationController?.present(navBarController , animated: true, completion: nil)
     }
     
