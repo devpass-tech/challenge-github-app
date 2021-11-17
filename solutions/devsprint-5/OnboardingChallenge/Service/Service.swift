@@ -28,7 +28,7 @@ struct Service: ServiceProtocol {
         
         if let data  = data {
             let jsonDecoder = JSONDecoder()
-            let repository = try? jsonDecoder.decode( [Repository]?.self, from: data)
+            let repository = try? jsonDecoder.decode([Repository].self, from: data)
             completion(repository)
             
         }
