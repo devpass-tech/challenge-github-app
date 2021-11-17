@@ -9,8 +9,8 @@ import Foundation
 
 extension String {
 
-    static func repositoryInfo(repositoriesCount: Int, bifurcationsCount: Int) -> String {
+    static func repositoryInfo(starsCount: Int, bifurcationsCount: Int) -> String {
 
-        return "\(repositoriesCount) stars   \(bifurcationsCount) bifurcations"
+        return "\(starsCount) stars   \(bifurcationsCount) bifurcations"
     }
 }
