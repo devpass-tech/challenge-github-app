@@ -8,14 +8,12 @@
 import Foundation
 
 protocol ViewCode {
-    
     func configureSubViews()
     func configureSubviewsConstraints()
     func configureAdditionalBehaviors()
 }
 
 extension ViewCode {
-    
     public func setupViews() {
         configureSubViews()
         configureSubviewsConstraints()

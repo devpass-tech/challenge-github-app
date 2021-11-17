@@ -7,9 +7,10 @@
 
 import UIKit
 
-final class ListView: UIView {
+final class ListView: UIView{
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
+    weak var listViewController: ListViewController?
 
     private var listItems: [String] = []
 
@@ -19,6 +20,7 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -83,5 +85,13 @@ extension ListView: UITableViewDataSource {
         cell.textLabel?.text = self.listItems[indexPath.row]
         return cell
     }
+
 }
 
+extension ListView: UITableViewDelegate {
+	
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        listViewController?.navigateToDetail()
+    }
+    
+}
