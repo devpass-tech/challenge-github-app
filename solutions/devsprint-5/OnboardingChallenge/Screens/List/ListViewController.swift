@@ -61,9 +61,14 @@ final class ListViewController: UIViewController {
 
         self.service.fetchList { items in
 
-            let configuration = ListViewConfiguration(listItems: items)
+            let names = items?.map { $0.name } ?? []
+            
+            let configuration = ListViewConfiguration(listItems: names)
 
-            self.listView.updateView(with: configuration)
+            DispatchQueue.main.async {
+
+                self.listView.updateView(with: configuration)
+            }
         }
     }
     
