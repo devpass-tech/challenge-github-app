@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151390B12744870C005FF6D9 /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151390B02744870C005FF6D9 /* OwnerView.swift */; };
 		15C86361273F47430081E8A0 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C86360273F47430081E8A0 /* ButtonView.swift */; };
 		15FA5A35273B51C8008573F0 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA5A34273B51C8008573F0 /* RepositoryCellView.swift */; };
 		15FA5A38273B5247008573F0 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA5A37273B5247008573F0 /* ViewCode.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		151390B02744870C005FF6D9 /* OwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		15C86360273F47430081E8A0 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		15FA5A34273B51C8008573F0 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
 		15FA5A37273B5247008573F0 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				BBB08FE2273AE9B800D16BB0 /* LoadingView.swift */,
 				15C86360273F47430081E8A0 /* ButtonView.swift */,
+				151390B02744870C005FF6D9 /* OwnerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */,
 				BBB08FE3273AE9B800D16BB0 /* LoadingView.swift in Sources */,
 				98586A06270E3EC40088A775 /* ListViewConfiguration.swift in Sources */,
+				151390B12744870C005FF6D9 /* OwnerView.swift in Sources */,
 				98586A09270E40430088A775 /* UITableViewCell+Extensions.swift in Sources */,
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
