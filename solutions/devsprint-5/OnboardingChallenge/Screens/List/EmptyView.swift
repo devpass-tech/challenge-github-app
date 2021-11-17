@@ -9,17 +9,20 @@ import Foundation
 import UIKit
 
 
+struct EmptyViewConfiguration {
+    var title: String
+    var subtitle: String
+}
+
 final class EmptyView: UIView {
     
     private var emptyTitleLabel: UILabel {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "No repositories found"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textAlignment = .center
-        label.numberOfLines = 0
         
         return label
     }
@@ -28,11 +31,9 @@ final class EmptyView: UIView {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Search for users to see their public repositories here!"
         label.textColor = .gray
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
-        label.numberOfLines = 0
         
         return label
     }
@@ -85,6 +86,12 @@ final class EmptyView: UIView {
                     
       ])
 
+    }
+    
+    func updateView(configuration: EmptyViewConfiguration) {
+        emptyTitleLabel.text = configuration.title
+        emptySubtitleLabel.text = configuration.title
+        
     }
 
 }
