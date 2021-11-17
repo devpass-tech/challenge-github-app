@@ -37,11 +37,22 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindEvents()
         fetchList()
     }
     
     override func loadView() {
         view = listView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     // MARK: Actions
@@ -55,6 +66,12 @@ final class ListViewController: UIViewController {
     }
     
     // MARK: Methods
+    private func bindEvents() {
+        listView.didSelectedRow = { [weak self] item in
+            self?.instanceDetailsOf(item)
+        }
+    }
+    
     private func setupUI() {
         title = "Repositories"
         setupNavigationBar()
@@ -65,7 +82,6 @@ final class ListViewController: UIViewController {
         navigationItem.rightBarButtonItem = settingsButton
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func fetchList() {
@@ -80,6 +96,12 @@ final class ListViewController: UIViewController {
                 self.listView.updateView(with: configuration)
             }
         }
+    }
+    
+    private func instanceDetailsOf(_ item: String) {
+        let viewController = DetailViewController()
+        viewController.title = item
+        navigationController?.pushViewController(viewController, animated: false)
     }
 }
 
