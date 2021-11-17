@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		504F8705970C1F92CCBDC48A /* Pods_OnboardingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EE86FFB4EF9B7185BC61F8 /* Pods_OnboardingChallenge.framework */; };
+		5B1E01C4273B001400AA8628 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E01C3273B001400AA8628 /* DetailView.swift */; };
+		5BB32A17273FFBC6000A11D9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB32A16273FFBC6000A11D9 /* SettingsView.swift */; };
 		2AED68B5273B4FBA0024AD85 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED68B4273B4FBA0024AD85 /* Repository.swift */; };
 		5B1E01C4273B001400AA8628 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E01C3273B001400AA8628 /* DetailView.swift */; };
 		504F8705970C1F92CCBDC48A /* Pods_OnboardingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EE86FFB4EF9B7185BC61F8 /* Pods_OnboardingChallenge.framework */; };
@@ -49,6 +52,8 @@
 		5B1E01C3273B001400AA8628 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3DF271BFE81059A59B44465C /* Pods-OnboardingChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingChallenge.debug.xcconfig"; path = "Target Support Files/Pods-OnboardingChallenge/Pods-OnboardingChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		4C15CF7BD5EC871358EE68E6 /* Pods-OnboardingChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-OnboardingChallengeTests/Pods-OnboardingChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B1E01C3273B001400AA8628 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5BB32A16273FFBC6000A11D9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5D3997C7A27856B0CAC4DC1C /* Pods-OnboardingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnboardingChallenge.release.xcconfig"; path = "Target Support Files/Pods-OnboardingChallenge/Pods-OnboardingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		86EE86FFB4EF9B7185BC61F8 /* Pods_OnboardingChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3C31DF273C4FE500142C92 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				9824AD65273322C6001044D2 /* SettingsViewController.swift */,
+				5BB32A16273FFBC6000A11D9 /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB32A17273FFBC6000A11D9 /* SettingsView.swift in Sources */,
 				9824AD64273322AD001044D2 /* DetailViewController.swift in Sources */,
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,
