@@ -54,8 +54,6 @@ final class ListViewController: UIViewController {
     @objc private func settingBtn(sender: UIBarButtonItem) {
         let settingsScreen = SettingsViewController()
         present(settingsScreen, animated: true)
-        
-        print("botão")
     }
 
     
