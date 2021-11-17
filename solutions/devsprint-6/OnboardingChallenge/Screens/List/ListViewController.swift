@@ -22,6 +22,10 @@ final class ListViewController: UIViewController {
         return searchController
     }()
     
+    private lazy var ownerView: OwnerView = {
+       OwnerView()
+    }()
+    
     // MARK: Outlets
     
     // MARK: Initializers
@@ -41,7 +45,8 @@ final class ListViewController: UIViewController {
     }
     
     override func loadView() {
-        view = listView
+//        view = listView
+       view = ownerView
     }
     
     // MARK: Actions
