@@ -45,8 +45,7 @@ final class ListViewController: UIViewController {
     }
     
     override func loadView() {
-//        view = listView
-       view = ownerView
+        view = listView
     }
     
     // MARK: Actions
