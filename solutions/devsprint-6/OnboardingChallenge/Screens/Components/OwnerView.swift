@@ -15,12 +15,14 @@ struct OwnerViewConfiguration {
 
 final class OwnerView: UIView {
     
+    private(set) var profileImageHeight: CGFloat = 60
+    
     private var ownerProfileStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 20
+        stackView.distribution = .fillProportionally
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
         return stackView
     }()
     
@@ -28,7 +30,7 @@ final class OwnerView: UIView {
         let stackView = UIStackView()
         stackView.distribution = .fillProportionally
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -54,7 +56,6 @@ final class OwnerView: UIView {
     private var titleOwnerNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
-        label.text = "Gustavo Soares"
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -62,8 +63,7 @@ final class OwnerView: UIView {
     
     private var titleOwnerJobTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.text = "iOS Software Engineer"
+        label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = .systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -72,7 +72,6 @@ final class OwnerView: UIView {
     private var ownerImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
-        imageView.backgroundColor = .black
         return imageView
     }()
     
@@ -96,7 +95,9 @@ final class OwnerView: UIView {
     }
     
     func updateView(with configuration: OwnerViewConfiguration) {
-        
+        titleOwnerLabel.text = configuration.ownerName
+        titleOwnerJobTitleLabel.text = configuration.ownerJobTitle
+        ownerImageView.image = configuration.onwerImage
     }
 }
 
@@ -121,15 +122,16 @@ extension OwnerView: ViewCode {
             mainStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             mainStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
             mainStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -15),
-            ownerImageView.heightAnchor.constraint(equalToConstant: 80),
-            ownerImageView.widthAnchor.constraint(equalToConstant: 80),
+            ownerImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            ownerImageView.widthAnchor.constraint(equalToConstant: profileImageHeight),
+            ownerImageView.heightAnchor.constraint(equalTo: ownerImageView.widthAnchor),
             ownerProfileButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
     func configureAdditionalBehaviors() {
         backgroundColor = .white
-        ownerImageView.layer.cornerRadius = 40
+        ownerImageView.layer.cornerRadius = profileImageHeight / 2
         ownerProfileButton.layer.cornerRadius = 8
     }
 }
