@@ -22,12 +22,6 @@ final class ListViewController: UIViewController {
         return searchController
     }()
     
-    private lazy var ownerView: OwnerView = {
-       OwnerView()
-    }()
-    
-    // MARK: Outlets
-    
     // MARK: Initializers
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -42,6 +36,10 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         fetchList()
+        
+        listView.action = { [weak self] in
+            self?.showDetailViewController(DetailViewController(), sender: nil)
+        }
     }
     
     override func loadView() {

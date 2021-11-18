@@ -28,7 +28,7 @@ final class OwnerView: UIView {
     
     private var ownerInformationStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +39,7 @@ final class OwnerView: UIView {
         let stackView = UIStackView()
         stackView.distribution = .fillProportionally
         stackView.axis = .vertical
-        stackView.spacing = 20
+        stackView.spacing = 30
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -72,17 +72,14 @@ final class OwnerView: UIView {
     private var ownerImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 30
         return imageView
     }()
     
-    private var ownerProfileButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemBlue
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("See profile", for: .normal)
-        return button
+    private var ownerProfileButton: ButtonView = {
+        let buttonView = ButtonView()
+        buttonView.updateView(with: ButtonViewConfiguration(title: "See profile", action: nil))
+        return buttonView
     }()
     
     required init?(coder: NSCoder) {
@@ -95,7 +92,7 @@ final class OwnerView: UIView {
     }
     
     func updateView(with configuration: OwnerViewConfiguration) {
-        titleOwnerLabel.text = configuration.ownerName
+        titleOwnerNameLabel.text = configuration.ownerName
         titleOwnerJobTitleLabel.text = configuration.ownerJobTitle
         ownerImageView.image = configuration.onwerImage
     }
@@ -131,8 +128,6 @@ extension OwnerView: ViewCode {
     
     func configureAdditionalBehaviors() {
         backgroundColor = .white
-        ownerImageView.layer.cornerRadius = profileImageHeight / 2
-        ownerProfileButton.layer.cornerRadius = 8
     }
 }
 
