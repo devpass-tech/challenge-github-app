@@ -9,14 +9,13 @@ import Foundation
 
 protocol ServiceProtocol {
 
-    func fetchList(_ completion: @escaping  ([Repository]?) -> Void)
+    func fetchList(username: String, _ completion: @escaping  ([Repository]?) -> Void)
 }
 
 struct Service: ServiceProtocol {
-    
-    func fetchList(_ completion: @escaping ([Repository]?) -> Void) {
-        
-        let url = URL (string: "https://api.github.com/users/rdgborges/repos")!
+    func fetchList(username: String, _ completion: @escaping ([Repository]?) -> Void) {
+        let path: String = "https://api.github.com/users/\(username)/repos"
+        let url = URL(string: path)!
         
        let datatask = URLSession.shared.dataTask(with: url )   {
         data, response, error in
