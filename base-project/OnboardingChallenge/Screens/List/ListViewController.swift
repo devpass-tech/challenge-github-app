@@ -15,7 +15,7 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
-
+ 
     init() {
         super.init(nibName: nil, bundle: nil)
 
@@ -26,13 +26,11 @@ final class ListViewController: UIViewController {
     }
 
     override func loadView() {
-
         self.view = self.listView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.fetchList()
     }
 
@@ -46,4 +44,5 @@ final class ListViewController: UIViewController {
         }
     }
 }
+
 
