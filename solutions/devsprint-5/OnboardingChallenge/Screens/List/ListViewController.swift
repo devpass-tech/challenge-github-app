@@ -54,9 +54,8 @@ final class ListViewController: UIViewController {
     }
     
     private func fetchList(username: String) {
-        self.service.fetchList(username: username) { items in
-            let repositories = items?.map { $0 } ?? []
-            let configuration = ListViewConfiguration(listItems: repositories)
+        self.service.fetchList(username: username) { repositories in
+            let configuration = ListViewConfiguration(listItems: repositories ?? [])
             DispatchQueue.main.async {
                 self.listView.updateView(with: configuration)
             }
