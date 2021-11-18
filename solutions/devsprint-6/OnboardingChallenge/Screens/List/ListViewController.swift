@@ -22,8 +22,6 @@ final class ListViewController: UIViewController {
         return searchController
     }()
     
-    // MARK: Outlets
-    
     // MARK: Initializers
     init() {
         super.init(nibName: nil, bundle: nil)

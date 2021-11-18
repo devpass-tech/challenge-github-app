@@ -7,6 +7,8 @@
 
 import UIKit
 
-class SettingsViewController {
-    
+class SettingsViewController: UIViewController {
+    override func loadView() {
+        self.view = SettingsView()
+    }
 }

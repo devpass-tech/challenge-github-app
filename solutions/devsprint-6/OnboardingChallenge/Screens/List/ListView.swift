@@ -71,7 +71,6 @@ extension ListView: ViewCode {
 extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return self.listItems.count
     }
     
