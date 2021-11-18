@@ -64,8 +64,8 @@ extension RepositoryCellView: ViewCode {
     func configureSubviewsConstraints() {
         
         NSLayoutConstraint.activate([
-            repositoryNameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            repositoryNameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15),
+            repositoryNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            repositoryNameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
             repositoryOwnerNameLabel.topAnchor.constraint(equalTo: repositoryNameLabel.topAnchor, constant: 25),
             repositoryOwnerNameLabel.leftAnchor.constraint(equalTo: repositoryNameLabel.leftAnchor)
         ])

@@ -12,6 +12,8 @@ final class ListView: UIView {
     private let listViewCellIdentifier = RepositoryCellView.classIdentifier()
     
     private var listItems: [String] = []
+    
+    var action: (() -> Void)?
 
     private lazy var tableView: UITableView = {
 
@@ -69,7 +71,6 @@ extension ListView: ViewCode {
 extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return self.listItems.count
     }
     
@@ -88,6 +89,10 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
                                                               repositoryOwnerName: "rdgborges"))
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        action?()
     }
 }
 
