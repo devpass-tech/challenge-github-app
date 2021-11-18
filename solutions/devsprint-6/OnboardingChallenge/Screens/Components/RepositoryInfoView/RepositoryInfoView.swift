@@ -64,10 +64,12 @@ final class RepositoryInfoView: UIView {
     }
     
     private func configureConstraints() {
-        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16)
+        ])
     }
     
     public func updateView(with configuration: RepositoryInfoViewConfiguration) {
