@@ -24,6 +24,7 @@
 		98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0A270E407D0088A775 /* UIColor+Extensions.swift */; };
 		98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */; };
 		98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0E270E41DF0088A775 /* String+Extensions.swift */; };
+		98C02DE8274682370019A76A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C02DE7274682370019A76A /* EmptyView.swift */; };
 		98E2EA69273E9B0700203568 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E2EA65273E9B0700203568 /* Assets.xcassets */; };
 		98E2EA6A273E9B0700203568 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E2EA66273E9B0700203568 /* LaunchScreen.storyboard */; };
 		98E2EA6F273E9B5600203568 /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E2EA6E273E9B5600203568 /* RepositoriesModel.swift */; };
@@ -68,6 +69,7 @@
 		98586A0A270E407D0088A775 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0E270E41DF0088A775 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		98C02DE7274682370019A76A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		98E2EA65273E9B0700203568 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E2EA67273E9B0700203568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98E2EA68273E9B0700203568 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			children = (
 				BBB08FE2273AE9B800D16BB0 /* LoadingView.swift */,
 				15C86360273F47430081E8A0 /* ButtonView.swift */,
+				98C02DE7274682370019A76A /* EmptyView.swift */,
 				151390B02744870C005FF6D9 /* OwnerView.swift */,
 			);
 			path = Components;
@@ -457,6 +460,7 @@
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
 				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
+				98C02DE8274682370019A76A /* EmptyView.swift in Sources */,
 				15FA5A35273B51C8008573F0 /* RepositoryCellView.swift in Sources */,
 				98E2EA6F273E9B5600203568 /* RepositoriesModel.swift in Sources */,
 				A247D11A2745A9B30094E908 /* SettingsView.swift in Sources */,
