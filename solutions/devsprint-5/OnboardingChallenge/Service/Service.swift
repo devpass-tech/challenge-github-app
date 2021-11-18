@@ -14,7 +14,7 @@ protocol ServiceProtocol {
 
 struct Service: ServiceProtocol {
     func fetchList(username: String, _ completion: @escaping ([Repository]?) -> Void) {
-        let path: String = "https://api.github.com/users/\(username)/repos"
+        let path: String = "https://api.github.com/users/\(username)/repos?per_page=100"
         let url = URL(string: path)!
         
        let datatask = URLSession.shared.dataTask(with: url )   {
