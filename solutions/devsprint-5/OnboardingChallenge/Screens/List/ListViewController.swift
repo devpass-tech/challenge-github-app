@@ -39,10 +39,7 @@ final class ListViewController: UIViewController {
 
     override func loadView() {
 
-        _ = EmptyViewConfiguration(title: "No repositories found" , subtitle: "Search for users to see their public repositories here!")
-        
-        
-        self.view = self.emptyView
+        self.view = self.listView
     }
 
     override func viewDidLoad() {
