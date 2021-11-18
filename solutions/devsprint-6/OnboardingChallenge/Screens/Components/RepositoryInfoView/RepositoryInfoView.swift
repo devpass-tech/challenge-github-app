@@ -73,9 +73,12 @@ final class RepositoryInfoView: UIView {
     }
     
     public func updateView(with configuration: RepositoryInfoViewConfiguration) {
-        labelRepositoryName.text = configuration.name
-        labelRepositoryDescription.text = configuration.description
-        labelRepositoryStarsBifurcations.text =
-            "\(configuration.stars) estrelas  \(configuration.bifurcations) bifurcações"
+        let repositoryName = configuration.name
+        let repositoryDescription = configuration.description
+        let repositoryStarsBifurcations = String.repositoryInfo(repositoriesCount: configuration.stars,
+                                                                bifurcationsCount: configuration.bifurcations)
+        labelRepositoryName.text = repositoryName
+        labelRepositoryDescription.text = repositoryDescription
+        labelRepositoryStarsBifurcations.text = repositoryStarsBifurcations
     }
 }
