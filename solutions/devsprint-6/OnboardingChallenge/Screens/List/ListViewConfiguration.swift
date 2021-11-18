@@ -9,5 +9,6 @@ import Foundation
 
 struct ListViewConfiguration {
 
+    let owner: String
     let listItems: [String]
 }

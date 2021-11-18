@@ -13,7 +13,7 @@ struct RepositoriesModel: Codable {
     let name: String
     let owner: Owner
     let stargazersCount: Int
-    let language: String
+    let language: String?
     let forksCount: Int
 }
 

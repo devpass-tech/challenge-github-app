@@ -16,6 +16,7 @@ final class ListViewController: UIViewController {
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.delegate = self
+        searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Type a GitHub user name"
         searchController.hidesNavigationBarDuringPresentation = false
@@ -37,7 +38,6 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        fetchList()
     }
     
     override func loadView() {
@@ -67,14 +67,15 @@ final class ListViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
-    private func fetchList() {
+        
+    private func fetchList(for user: String) {
 
-        self.service.fetchList(for: "devpass-tech") { items in
+        self.service.fetchList(for: user) { items in
             
             let names = items.map { $0.name }
+            let owner = items.map { $0.owner.login }
 
-            let configuration = ListViewConfiguration(listItems: names)
+            let configuration = ListViewConfiguration(owner: owner.first ?? "", listItems: names)
 
             DispatchQueue.main.async {
                 self.listView.updateView(with: configuration)
@@ -84,6 +85,10 @@ final class ListViewController: UIViewController {
 }
 
 // MARK: Extensions
-extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) { }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        fetchList(for: searchController.searchBar.text ?? "")
+    }
 }

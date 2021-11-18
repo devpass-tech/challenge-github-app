@@ -11,6 +11,7 @@ final class ListView: UIView {
 
     private let listViewCellIdentifier = RepositoryCellView.classIdentifier()
     
+    private var owner: String = ""
     private var listItems: [String] = []
 
     private lazy var tableView: UITableView = {
@@ -38,6 +39,7 @@ extension ListView {
     func updateView(with configuration: ListViewConfiguration) {
 
         self.listItems = configuration.listItems
+        self.owner = configuration.owner
         self.tableView.reloadData()
     }
 }
@@ -85,7 +87,7 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
 
         // TODO: removing mock repositoryOwnerName when have defined models
         cell.updateView(with: RepositoryCellViewConfiguration(repositoryName: self.listItems[indexPath.row],
-                                                              repositoryOwnerName: "rdgborges"))
+                                                              repositoryOwnerName: self.owner))
         
         return cell
     }
