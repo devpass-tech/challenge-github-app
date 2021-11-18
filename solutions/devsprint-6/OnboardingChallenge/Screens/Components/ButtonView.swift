@@ -9,7 +9,7 @@ import UIKit
 
 struct ButtonViewConfiguration {
     var title: String
-    var action: UIAction
+    var action: UIAction?
 }
 
 class ButtonView: UIView {
@@ -22,6 +22,7 @@ class ButtonView: UIView {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 15
         return button
     }()
     
@@ -36,7 +37,9 @@ class ButtonView: UIView {
     
     func updateView(with buttonViewConfiguration: ButtonViewConfiguration) {
         button.setTitle(buttonViewConfiguration.title, for: .normal)
-        button.addAction(buttonViewConfiguration.action, for: .touchUpInside)
+        
+        guard let action = buttonViewConfiguration.action else { return }
+        button.addAction(action, for: .touchUpInside)
     }
 }
 
@@ -56,7 +59,5 @@ extension ButtonView: ViewCode {
     
     func configureAdditionalBehaviors() {
         backgroundColor = .white
-        button.layer.cornerRadius = 15
-        button.layer.borderWidth = 1
     }
 }

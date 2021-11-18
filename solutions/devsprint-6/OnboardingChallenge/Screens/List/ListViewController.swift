@@ -22,8 +22,6 @@ final class ListViewController: UIViewController {
         return searchController
     }()
     
-    // MARK: Outlets
-    
     // MARK: Initializers
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -38,6 +36,10 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         fetchList()
+        
+        listView.action = { [weak self] in
+            self?.showDetailViewController(DetailViewController(), sender: nil)
+        }
     }
     
     override func loadView() {
@@ -48,6 +50,10 @@ final class ListViewController: UIViewController {
     @objc
     func pressedSettings() {
         debugPrint("Open Settings")
+        let settingsViewController = SettingsViewController()
+        let navBarController = UINavigationController(rootViewController: settingsViewController)
+        navBarController.navigationBar.backgroundColor = .systemGray5
+        navigationController?.present(navBarController , animated: true, completion: nil)
     }
     
     // MARK: Methods
