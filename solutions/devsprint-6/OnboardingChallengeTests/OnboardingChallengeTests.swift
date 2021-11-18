@@ -4,7 +4,7 @@
 //
 //  Created by Rodrigo Borges on 06/10/21.
 //
-
+import SnapshotTesting
 import XCTest
 
 class OnboardingChallengeTests: XCTestCase {

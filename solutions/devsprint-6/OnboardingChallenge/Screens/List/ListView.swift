@@ -12,12 +12,14 @@ final class ListView: UIView {
     private let listViewCellIdentifier = RepositoryCellView.classIdentifier()
     
     private var listItems: [String] = []
+    
+    var action: (() -> Void)?
 
     private lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -69,7 +71,6 @@ extension ListView: ViewCode {
 extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return self.listItems.count
     }
     
@@ -79,15 +80,19 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier) as? RepositoryCellView else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier, for: indexPath) as? RepositoryCellView else {
             return UITableViewCell()
         }
-        
+
         // TODO: removing mock repositoryOwnerName when have defined models
         cell.updateView(with: RepositoryCellViewConfiguration(repositoryName: self.listItems[indexPath.row],
                                                               repositoryOwnerName: "rdgborges"))
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        action?()
     }
 }
 
