@@ -4,8 +4,10 @@
 //
 //  Created by Karina Martins Silva on 12/11/21.
 //
-import Foundation
+
 import UIKit
+import Foundation
+
 
 struct OwnerViewConfiguration {
     var title: String
@@ -29,9 +31,9 @@ final class OwnerView: UIView {
     private var stackImage: UIStackView = {
        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 5
         stackView.axis = .vertical
-        stackView.alignment = .trailing
+        stackView.spacing = 5
+        stackView.alignment = .fill
         stackView.distribution = .fill
         return stackView
     }()
@@ -40,7 +42,7 @@ final class OwnerView: UIView {
        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 5
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fill
         return stackView
@@ -53,6 +55,8 @@ final class OwnerView: UIView {
         title.font = .boldSystemFont(ofSize: 18)
         title.textColor = .black
         title.text = "Owner"
+        title.numberOfLines = 0
+        title.lineBreakMode = .byWordWrapping
         return title
     }()
 
@@ -62,6 +66,8 @@ final class OwnerView: UIView {
         account.textColor = .black
         account.font = .systemFont(ofSize: 16)
         account.text = "Rodrigo Borges"
+        account.numberOfLines = 0
+        account.lineBreakMode = .byWordWrapping
         return account
     }()
 
@@ -71,16 +77,18 @@ final class OwnerView: UIView {
         bio.font = .systemFont(ofSize: 14)
         bio.textColor = .lightGray
         bio.text = "Mobile Tech Lead"
+        bio.numberOfLines = 0
+        bio.lineBreakMode = .byWordWrapping
         return bio
     }()
 
     private var repositoryImage: UIImageView = {
-        let image = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 100, height: 100))
+        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "100x100.gif")
-        image.contentMode = .scaleToFill
+        image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
-        image.layer.cornerRadius = image.frame.size.height/2
+        image.layer.cornerRadius = 25
         return image
     }()
 
@@ -91,7 +99,6 @@ final class OwnerView: UIView {
         button.backgroundColor = .systemBlue
         button.setTitle("See profile", for: .normal)
         button.layer.cornerRadius = 7
-        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         return button
     }()
 
@@ -118,27 +125,28 @@ final class OwnerView: UIView {
     }
 
     func configureConstraints() {
-        stackData.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        stackData.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        stackData.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive = true
+        stackData.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         stackData.isLayoutMarginsRelativeArrangement = true
-        stackData.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        stackData.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        stackData.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-
-        stackImage.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 20)
-        stackImage.isLayoutMarginsRelativeArrangement = true
-        stackImage.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        stackImage.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        stackImage.bottomAnchor.constraint(equalTo: stackButton.topAnchor).isActive = true
-        stackImage.setCustomSpacing(30, after: repositoryImage)
-
+        
+        
+        stackImage.topAnchor.constraint(equalTo: repositoryTitle.bottomAnchor).isActive = true
+        stackImage.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -25).isActive = true
+        stackImage.bottomAnchor.constraint(equalTo: stackData.bottomAnchor).isActive = true
+        stackImage.leadingAnchor.constraint(equalTo: stackData.trailingAnchor).isActive = true
+        
+        repositoryImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        repositoryImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
+  
+        
         stackButton.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         stackButton.isLayoutMarginsRelativeArrangement = true
-        stackButton.topAnchor.constraint(equalTo: stackData.bottomAnchor, constant: 30).isActive = true
         stackButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         stackButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-
-
+        stackButton.topAnchor.constraint(equalTo: stackData.bottomAnchor, constant: 16).isActive = true
+        
+        profileButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
     func updateView(with configuration: OwnerViewConfiguration) {
@@ -148,3 +156,4 @@ final class OwnerView: UIView {
         repositoryImage.image = configuration.image
     }
 }
+
