@@ -9,7 +9,7 @@ In this challenge, we are going to integrate with the GitHub API to show a user'
 <img src="screenshots/screenshot-4.png" alt="drawing" width="200"/>
 </p>
 
-# Iniciando os trabalhos
+# Contributing
 
 1. Clone this repository.
 2. Start a new feature branch. 
