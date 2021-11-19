@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 struct LicenseViewModel {
-    var licenseName: String;
-    var description: String;
+    var licenseName: String
+    var description: String
 }
 
 final class LicenseView: UIView {
