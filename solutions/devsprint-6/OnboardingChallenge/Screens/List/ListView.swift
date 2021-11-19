@@ -22,7 +22,9 @@ final class ListView: UIView {
         tableView.delegate = self
         return tableView
     }()
-
+    
+    var didSelectedRow: ((String) -> Void)?
+    
     init() {
         super.init(frame: .zero)
         setupViews()
@@ -69,7 +71,6 @@ extension ListView: ViewCode {
 extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return self.listItems.count
     }
     
@@ -88,6 +89,11 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
                                                               repositoryOwnerName: self.listItems[indexPath.row].owner.login))
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = listItems[indexPath.row]
+        didSelectedRow?(selectedItem)
     }
 }
 

@@ -19,7 +19,6 @@ final class ListViewController: UIViewController {
 }
     
     private lazy var listView: ListView = {
-        
         var listView = ListView()
         listView.listViewController = self
         return listView
@@ -30,7 +29,6 @@ final class ListViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-
     }
 
     required init?(coder: NSCoder) {
@@ -38,13 +36,11 @@ final class ListViewController: UIViewController {
     }
 
     override func loadView() {
-
         self.view = self.listView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchList()
         setupNavigation()
     }
     
@@ -52,9 +48,11 @@ final class ListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Repositories"
     
+        search.searchBar.delegate = self
         search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Type a GitHub user name"
+        search.searchBar.autocapitalizationType = .none
         navigationItem.searchController = search
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(settingBtn(sender:)))
@@ -64,18 +62,11 @@ final class ListViewController: UIViewController {
         let settingsScreen = SettingsViewController()
         present(settingsScreen, animated: true)
     }
-
     
-    private func fetchList() {
-
-        self.service.fetchList { items in
-
-            let names = items?.map { $0.name } ?? []
-            
-            let configuration = ListViewConfiguration(listItems: names)
-
+    private func fetchList(username: String) {
+        self.service.fetchList(username: username) { repositories in
+            let configuration = ListViewConfiguration(listItems: repositories ?? [])
             DispatchQueue.main.async {
-
                 self.listView.updateView(with: configuration)
             }
         }
@@ -88,12 +79,11 @@ final class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-        print(text)
-        //TO DO: implementar os resultado do seach
+extension ListViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {}
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        self.fetchList(username: text)
     }
 }
-
-
