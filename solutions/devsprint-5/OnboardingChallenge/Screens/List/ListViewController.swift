@@ -8,15 +8,6 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-
-
-    private var emptyView: UIView {
-        
-        let view = EmptyView()
-        
-        return view
-        
-}
     
     private lazy var listView: ListView = {
         var listView = ListView()
@@ -64,9 +55,11 @@ final class ListViewController: UIViewController {
     }
     
     private func fetchList(username: String) {
+        self.listView.showLoading()
         self.service.fetchList(username: username) { repositories in
             let configuration = ListViewConfiguration(listItems: repositories ?? [])
             DispatchQueue.main.async {
+                self.listView.hideLoading()
                 self.listView.updateView(with: configuration)
             }
         }
