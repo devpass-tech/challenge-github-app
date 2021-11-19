@@ -65,13 +65,13 @@ final class RepositoryInfoView: UIView {
     }
     
     func configureConstraints() {
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 20)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        stackView.setCustomSpacing(5, after: repositoryName)
-        stackView.setCustomSpacing(10, after: repositoryDescription)
+        stackView.setCustomSpacing(10, after: repositoryName)
+        stackView.setCustomSpacing(15, after: repositoryDescription)
     }
     
     func updateView(with configuration: RepositoryInfoViewConfiguration) {

@@ -42,7 +42,7 @@ final class OwnerView: UIView {
        let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 5
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
         return stackView
@@ -52,9 +52,8 @@ final class OwnerView: UIView {
     private var repositoryTitle: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.font = .boldSystemFont(ofSize: 18)
+        title.font = .boldSystemFont(ofSize: 24)
         title.textColor = .black
-        title.text = "Owner"
         title.numberOfLines = 0
         title.lineBreakMode = .byWordWrapping
         return title
@@ -65,7 +64,6 @@ final class OwnerView: UIView {
         account.translatesAutoresizingMaskIntoConstraints = false
         account.textColor = .black
         account.font = .systemFont(ofSize: 16)
-        account.text = "Rodrigo Borges"
         account.numberOfLines = 0
         account.lineBreakMode = .byWordWrapping
         return account
@@ -76,7 +74,6 @@ final class OwnerView: UIView {
         bio.translatesAutoresizingMaskIntoConstraints = false
         bio.font = .systemFont(ofSize: 14)
         bio.textColor = .lightGray
-        bio.text = "Mobile Tech Lead"
         bio.numberOfLines = 0
         bio.lineBreakMode = .byWordWrapping
         return bio
@@ -85,7 +82,6 @@ final class OwnerView: UIView {
     private var repositoryImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "100x100.gif")
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.layer.cornerRadius = 25
@@ -98,7 +94,7 @@ final class OwnerView: UIView {
         button.tintColor = .white
         button.backgroundColor = .systemBlue
         button.setTitle("See profile", for: .normal)
-        button.layer.cornerRadius = 7
+        button.layer.cornerRadius = 9
         return button
     }()
 
@@ -126,27 +122,31 @@ final class OwnerView: UIView {
 
     func configureConstraints() {
         stackData.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        stackData.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive = true
-        stackData.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+        stackData.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        stackData.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 20)
         stackData.isLayoutMarginsRelativeArrangement = true
+        stackData.setCustomSpacing(10, after: repositoryTitle)
+        stackData.setCustomSpacing(10, after: accountName)
+        stackData.setCustomSpacing(10, after: bioDescription)
         
         
         stackImage.topAnchor.constraint(equalTo: repositoryTitle.bottomAnchor).isActive = true
-        stackImage.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -25).isActive = true
+        stackImage.trailingAnchor.constraint(equalTo: profileButton.trailingAnchor).isActive = true
         stackImage.bottomAnchor.constraint(equalTo: stackData.bottomAnchor).isActive = true
         stackImage.leadingAnchor.constraint(equalTo: stackData.trailingAnchor).isActive = true
-        
+
         repositoryImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
         repositoryImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
   
         
-        stackButton.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        stackButton.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 20)
         stackButton.isLayoutMarginsRelativeArrangement = true
-        stackButton.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        stackButton.widthAnchor.constraint(equalToConstant: 400).isActive = true
+        stackButton.leadingAnchor.constraint(equalTo: stackData.leadingAnchor).isActive = true
         stackButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        stackButton.topAnchor.constraint(equalTo: stackData.bottomAnchor, constant: 16).isActive = true
+        stackButton.topAnchor.constraint(equalTo: stackData.bottomAnchor, constant: 18).isActive = true
         
-        profileButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        profileButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 
     func updateView(with configuration: OwnerViewConfiguration) {
