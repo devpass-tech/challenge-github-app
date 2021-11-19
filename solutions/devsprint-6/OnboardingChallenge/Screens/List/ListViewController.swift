@@ -16,6 +16,7 @@ final class ListViewController: UIViewController {
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.delegate = self
+        searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Type a GitHub user name"
         searchController.hidesNavigationBarDuringPresentation = false
@@ -36,27 +37,15 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindEvents()
-        fetchList()
     }
     
     override func loadView() {
         view = listView
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
+
     // MARK: Actions
     @objc
     func pressedSettings() {
-        debugPrint("Open Settings")
         let settingsViewController = SettingsViewController()
         let navBarController = UINavigationController(rootViewController: settingsViewController)
         navBarController.navigationBar.backgroundColor = .systemGray5
@@ -76,34 +65,38 @@ final class ListViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+
         let settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(pressedSettings))
         navigationItem.rightBarButtonItem = settingsButton
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
-    
-    private func fetchList() {
+        
+    private func fetchList(for user: String) {
 
-        self.service.fetchList(for: "devpass-tech") { items in
+        self.service.fetchList(for: user) { items in
+
+            let configuration = ListViewConfiguration(repositories: items)
             
-            let names = items.map { $0.name }
-
-            let configuration = ListViewConfiguration(listItems: names)
-
             DispatchQueue.main.async {
                 self.listView.updateView(with: configuration)
             }
         }
     }
     
-    private func instanceDetailsOf(_ item: String) {
+    private func instanceDetailsOf(_ item: RepositoriesModel) {
         let viewController = DetailViewController()
-        viewController.title = item
-        navigationController?.pushViewController(viewController, animated: false)
+        viewController.title = item.name
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
 // MARK: Extensions
-extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) { }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        fetchList(for: searchController.searchBar.text ?? "")
+    }
 }
