@@ -92,7 +92,7 @@ extension LicenseView: ViewCode {
                                             left: 20,
                                             bottom: 0,
                                             right: 20),
-                      size: CGSize(width: 0, height: 50))
+                      size: CGSize(width: 0, height: 60))
     }
     
     func additionalConfiguration() {}
