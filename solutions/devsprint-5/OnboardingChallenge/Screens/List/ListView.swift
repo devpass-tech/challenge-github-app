@@ -13,6 +13,12 @@ final class ListView: UIView{
     weak var listViewController: ListViewController?
 
     private var listItems: [Repository] = []
+    
+    let loading: LoadingView = {
+       let loading = LoadingView()
+        loading.translatesAutoresizingMaskIntoConstraints = false
+       return loading
+   }()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -37,7 +43,6 @@ private extension ListView {
     func customizeInterface() {
         self.backgroundColor = .white
         self.configureSubviews()
-        self.configureSubviewsConstraints()
     }
 
     func configureSubviews() {
@@ -45,13 +50,33 @@ private extension ListView {
     }
 
     func configureSubviewsConstraints() {
+        self.addSubview(self.loading)
         NSLayoutConstraint.activate([
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.loading.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.loading.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.loading.topAnchor.constraint(equalTo: self.topAnchor),
+            self.loading.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
+    
+    public func showLoading() {
+        self.configureSubviewsConstraints()
+        tableView.isHidden = true
+        loading.isHidden = false
+    }
+    
+    public func hideLoading() {
+        self.configureSubviewsConstraints()
+        loading.isHidden = true
+        tableView.isHidden = false
+        
+    }
+    
 }
 
 extension ListView {
