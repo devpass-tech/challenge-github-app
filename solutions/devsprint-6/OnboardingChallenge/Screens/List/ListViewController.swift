@@ -71,12 +71,9 @@ final class ListViewController: UIViewController {
     private func fetchList(for user: String) {
 
         self.service.fetchList(for: user) { items in
+
+            let configuration = ListViewConfiguration(repositories: items)
             
-            let names = items.map { $0.name }
-            let owner = items.map { $0.owner.login }
-
-            let configuration = ListViewConfiguration(owner: owner.first ?? "", listItems: names)
-
             DispatchQueue.main.async {
                 self.listView.updateView(with: configuration)
             }
