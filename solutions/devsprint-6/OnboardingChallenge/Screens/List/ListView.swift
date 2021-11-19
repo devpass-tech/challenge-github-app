@@ -12,8 +12,6 @@ final class ListView: UIView {
     private let listViewCellIdentifier = RepositoryCellView.classIdentifier()
     
     private var listItems: [String] = []
-    
-    var action: (() -> Void)?
 
     private lazy var tableView: UITableView = {
 
@@ -24,7 +22,9 @@ final class ListView: UIView {
         tableView.delegate = self
         return tableView
     }()
-
+    
+    var didSelectedRow: ((String) -> Void)?
+    
     init() {
         super.init(frame: .zero)
         setupViews()
@@ -92,7 +92,8 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        action?()
+        let selectedItem = listItems[indexPath.row]
+        didSelectedRow?(selectedItem)
     }
 }
 

@@ -28,8 +28,9 @@
 		98E2EA69273E9B0700203568 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E2EA65273E9B0700203568 /* Assets.xcassets */; };
 		98E2EA6A273E9B0700203568 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E2EA66273E9B0700203568 /* LaunchScreen.storyboard */; };
 		98E2EA6F273E9B5600203568 /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E2EA6E273E9B5600203568 /* RepositoriesModel.swift */; };
-		9B4C7344186E78682393B2F3 /* Pods_OnboardingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7B3D233DF1C1DD8BC64E28 /* Pods_OnboardingChallenge.framework */; };
 		A247D11A2745A9B30094E908 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A247D1192745A9B30094E908 /* SettingsView.swift */; };
+		A247D11C2745BA3A0094E908 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A247D11B2745BA3A0094E908 /* DetailsView.swift */; };
+		A2D93DC527470B3B00CC2A28 /* Pods_OnboardingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D93DC127470B2000CC2A28 /* Pods_OnboardingChallenge.framework */; };
 		A796B75976149E6EAC5BDD8B /* Pods_OnboardingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AC08E5FB584CA08584E5F1 /* Pods_OnboardingChallengeTests.framework */; };
 		BBB08FE3273AE9B800D16BB0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB08FE2273AE9B800D16BB0 /* LoadingView.swift */; };
 		EB9E4B2B273B39C200ECB7C3 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E4B2A273B39C200ECB7C3 /* UINavigationController+Extensions.swift */; };
@@ -77,6 +78,8 @@
 		98E2EA68273E9B0700203568 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98E2EA6E273E9B5600203568 /* RepositoriesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = "<group>"; };
 		A247D1192745A9B30094E908 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A247D11B2745BA3A0094E908 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		A2D93DC127470B2000CC2A28 /* Pods_OnboardingChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_OnboardingChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB08FE2273AE9B800D16BB0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E5AC08E5FB584CA08584E5F1 /* Pods_OnboardingChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnboardingChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9E4B2A273B39C200ECB7C3 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
@@ -90,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B4C7344186E78682393B2F3 /* Pods_OnboardingChallenge.framework in Frameworks */,
+				A2D93DC527470B3B00CC2A28 /* Pods_OnboardingChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +127,7 @@
 		7F26A0823894B7771F2DAF25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2D93DC127470B2000CC2A28 /* Pods_OnboardingChallenge.framework */,
 				FD7B3D233DF1C1DD8BC64E28 /* Pods_OnboardingChallenge.framework */,
 				E5AC08E5FB584CA08584E5F1 /* Pods_OnboardingChallengeTests.framework */,
 			);
@@ -209,6 +213,7 @@
 		980C0C4427061EE600F8100A /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				A247D11B2745BA3A0094E908 /* DetailsView.swift */,
 				9824AD63273322AD001044D2 /* DetailViewController.swift */,
 			);
 			path = Detail;
@@ -458,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB9E4B2B273B39C200ECB7C3 /* UINavigationController+Extensions.swift in Sources */,
+				A247D11C2745BA3A0094E908 /* DetailsView.swift in Sources */,
 				9824AD64273322AD001044D2 /* DetailViewController.swift in Sources */,
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,

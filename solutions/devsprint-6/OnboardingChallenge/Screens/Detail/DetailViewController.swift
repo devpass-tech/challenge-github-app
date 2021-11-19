@@ -8,32 +8,32 @@
 import UIKit
 
 class DetailViewController: UIViewController {
- 
-    // MARK: Components
-    
-    private lazy var ownerView: OwnerView = {
-        OwnerView()
+    // MARK: Properties
+    private lazy var detailsView: DetailsView = {
+        return DetailsView()
     }()
+    
+    // MARK: Outlets
     
     // MARK: Initializers
     init() {
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
-    // MARK: Lifecyle
+    // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        ownerView.updateView(with: OwnerViewConfiguration(ownerName: "Finn",
-                                                          ownerJobTitle: "iOS Software Engineer",
-                                                          onwerImage: UIImage(named: "finn")))
     }
     
     override func loadView() {
-        view = ownerView
+        view = detailsView
     }
     
+    // MARK: Actions
+    
+    // MARK: Methods
 }
