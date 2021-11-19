@@ -36,8 +36,10 @@ final class RepositoryInfoView: UIView {
         return stars
     }()
     
-    private var stackView: UIStackView = {
-        let stack = UIStackView()
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [repositoryName,
+                                                   repositoryDescription,
+                                                   starsAndBifurcation])
         stack.spacing = 2
         stack.alignment = .fill
         stack.axis = .vertical
@@ -57,21 +59,18 @@ final class RepositoryInfoView: UIView {
     }
     
     func configureSubviews() {
-        self.backgroundColor = .white
         self.addSubview(stackView)
-        stackView.addArrangedSubview(repositoryName)
-        stackView.addArrangedSubview(repositoryDescription)
-        stackView.addArrangedSubview(starsAndBifurcation)
     }
     
     func configureConstraints() {
-        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 20)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        stackView.setCustomSpacing(10, after: repositoryName)
-        stackView.setCustomSpacing(15, after: repositoryDescription)
+        stackView.anchor(top: topAnchor,
+                                  leading: leadingAnchor,
+                                  bottom: bottomAnchor,
+                                  trailing: trailingAnchor,
+                                  padding: UIEdgeInsets(top: 0,
+                                                        left: 20,
+                                                        bottom: 20,
+                                                        right: 20))
     }
     
     func updateView(with configuration: RepositoryInfoViewConfiguration) {

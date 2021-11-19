@@ -123,7 +123,7 @@ final class OwnerView: UIView {
     func configureConstraints() {
         stackData.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         stackData.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        stackData.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 20)
+        stackData.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
         stackData.isLayoutMarginsRelativeArrangement = true
         stackData.setCustomSpacing(10, after: repositoryTitle)
         stackData.setCustomSpacing(10, after: accountName)
@@ -139,7 +139,7 @@ final class OwnerView: UIView {
         repositoryImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
   
         
-        stackButton.layoutMargins = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 20)
+        stackButton.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         stackButton.isLayoutMarginsRelativeArrangement = true
         stackButton.widthAnchor.constraint(equalToConstant: 400).isActive = true
         stackButton.leadingAnchor.constraint(equalTo: stackData.leadingAnchor).isActive = true

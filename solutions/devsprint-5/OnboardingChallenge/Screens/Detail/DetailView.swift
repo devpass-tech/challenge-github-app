@@ -9,68 +9,68 @@ import Foundation
 import UIKit
 
 class DetailView: UIView {
-    
+
     private var repositoryStack: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 5
-        stackView.alignment = .fill
+        stackView.axis = .vertical
         stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.backgroundColor = .lightGray
         return stackView
-    }()
-    
-    private var ownerStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 5
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.backgroundColor = .lightGray
-        return stackView
-    }()
-    
-    private var ownerView: OwnerView = {
-        let ownerView = OwnerView()
-        ownerView.translatesAutoresizingMaskIntoConstraints = false
-        return ownerView
     }()
     
     private var repositoryInfoView: RepositoryInfoView = {
         let repositoryInfoView = RepositoryInfoView()
         repositoryInfoView.translatesAutoresizingMaskIntoConstraints = false
+        repositoryInfoView.updateView(with: RepositoryInfoViewConfiguration(repositoryName: "hereminders-ios", description: "O Hereminders é um app de lembretes geolocalizados, implementado em Swift com a arquitetura MVVM-C.", starNumber: 5, bifurcations: 17))
         return repositoryInfoView
+    }()
+    
+    private var ownerView: OwnerView = {
+        let ownerView = OwnerView()
+        ownerView.translatesAutoresizingMaskIntoConstraints = false
+        ownerView.updateView(with: OwnerViewConfiguration(title: "Owner", account: "Rodrigo Borges", bio: "Mobile Tech Lead", image: UIImage(named: "user-profile")!))
+        return ownerView
+    }()
+
+    private var licenseView: UIView = {
+        let licenseView = LicenseView()
+        licenseView.translatesAutoresizingMaskIntoConstraints = false
+        licenseView.updateView(with: LicenseViewModel(licenseName: "MIT", description: "GPL-2.0"))
+        return licenseView
     }()
     
     init() {
         super.init(frame: .zero)
-        configureSubview()
-        configureConstraint()
+        setup()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configureSubview() {
-        backgroundColor = .white
+}
+
+extension DetailView: ViewCode {
+
+    func buildViewHierarchy() {
         addSubview(repositoryStack)
-        addSubview(ownerStack)
         repositoryStack.addArrangedSubview(repositoryInfoView)
-        ownerStack.addArrangedSubview(ownerView)
+        repositoryStack.addArrangedSubview(ownerView)
+        repositoryStack.addArrangedSubview(licenseView)
     }
     
-    func configureConstraint() {
-        repositoryStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        repositoryStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
-        repositoryStack.widthAnchor.constraint(equalToConstant: 400).isActive = true
-        repositoryStack.heightAnchor.constraint(equalToConstant: 180).isActive = true
-        
-        ownerStack.leadingAnchor.constraint(equalTo: repositoryStack.leadingAnchor).isActive = true
-        ownerStack.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        ownerStack.topAnchor.constraint(equalTo: repositoryStack.bottomAnchor).isActive = true
-        ownerStack.trailingAnchor.constraint(equalTo: repositoryStack.trailingAnchor).isActive = true
+    func addConstraints() {
+        repositoryStack.anchor(top: safeAreaLayoutGuide.topAnchor,
+                               leading: leadingAnchor,
+                               bottom: nil,
+                               trailing: trailingAnchor)
+
+        repositoryInfoView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        ownerView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        licenseView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+
+    }
+    
+    func additionalConfiguration() {
+        backgroundColor = .white
     }
 }
+
