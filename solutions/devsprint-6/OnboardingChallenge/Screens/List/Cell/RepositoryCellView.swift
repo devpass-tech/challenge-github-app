@@ -72,6 +72,7 @@ extension RepositoryCellView: ViewCode {
     }
     
     func configureAdditionalBehaviors() {
+        selectionStyle = .none
         accessoryType = .disclosureIndicator
     }
     
