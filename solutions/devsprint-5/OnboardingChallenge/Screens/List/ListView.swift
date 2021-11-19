@@ -15,8 +15,10 @@ final class ListView: UIView{
     private var listItems: [Repository] = []
     
     let loading: LoadingView = {
-       let loading = LoadingView()
+        let loading = LoadingView()
+        loading.isHidden = true
         loading.translatesAutoresizingMaskIntoConstraints = false
+        loading.updateView(configuration: LoadingViewConfiguration(title: "Searching repositories..."))
        return loading
    }()
 
@@ -43,14 +45,15 @@ private extension ListView {
     func customizeInterface() {
         self.backgroundColor = .white
         self.configureSubviews()
+        self.configureSubviewsConstraints()
     }
 
     func configureSubviews() {
         self.addSubview(self.tableView)
+        self.addSubview(self.loading)
     }
 
     func configureSubviewsConstraints() {
-        self.addSubview(self.loading)
         NSLayoutConstraint.activate([
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -63,26 +66,22 @@ private extension ListView {
             self.loading.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-    
-    public func showLoading() {
-        self.configureSubviewsConstraints()
-        tableView.isHidden = true
-        loading.isHidden = false
-    }
-    
-    public func hideLoading() {
-        self.configureSubviewsConstraints()
-        loading.isHidden = true
-        tableView.isHidden = false
-        
-    }
-    
 }
 
 extension ListView {
     func updateView(with configuration: ListViewConfiguration) {
         self.listItems = configuration.listItems
         self.tableView.reloadData()
+    }
+
+    public func showLoading() {
+        tableView.isHidden = true
+        loading.isHidden = false
+    }
+
+    public func hideLoading() {
+        loading.isHidden = true
+        tableView.isHidden = false
     }
 }
 
