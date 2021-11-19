@@ -37,27 +37,15 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindEvents()
-        fetchList()
     }
     
     override func loadView() {
         view = listView
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
+
     // MARK: Actions
     @objc
     func pressedSettings() {
-        debugPrint("Open Settings")
         let settingsViewController = SettingsViewController()
         let navBarController = UINavigationController(rootViewController: settingsViewController)
         navBarController.navigationBar.backgroundColor = .systemGray5
@@ -77,6 +65,8 @@ final class ListViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+
         let settingsButton = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(pressedSettings))
         navigationItem.rightBarButtonItem = settingsButton
         navigationItem.searchController = searchController
@@ -95,10 +85,10 @@ final class ListViewController: UIViewController {
         }
     }
     
-    private func instanceDetailsOf(_ item: String) {
+    private func instanceDetailsOf(_ item: RepositoriesModel) {
         let viewController = DetailViewController()
-        viewController.title = item
-        navigationController?.pushViewController(viewController, animated: false)
+        viewController.title = item.name
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

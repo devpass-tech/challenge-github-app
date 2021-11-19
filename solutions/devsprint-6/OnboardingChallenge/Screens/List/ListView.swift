@@ -23,7 +23,7 @@ final class ListView: UIView {
         return tableView
     }()
     
-    var didSelectedRow: ((String) -> Void)?
+    var didSelectedRow: ((RepositoriesModel) -> Void)?
     
     init() {
         super.init(frame: .zero)
