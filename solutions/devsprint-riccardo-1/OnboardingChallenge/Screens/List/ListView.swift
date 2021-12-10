@@ -85,3 +85,18 @@ extension ListView: UITableViewDataSource {
     }
 }
 
+#if DEBUG
+import SwiftUI
+
+struct ListView_Preview: PreviewProvider {
+    static var previews: some View {
+        return SwiftUIPreView { context in
+            let lv = ListView()
+            lv.updateView(with: .init(listItems: [
+                "first", "second", "third", "fourth"
+            ]))
+            return lv
+        }
+    }
+}
+#endif
