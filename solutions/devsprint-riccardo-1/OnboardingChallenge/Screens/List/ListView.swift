@@ -99,5 +99,4 @@ struct ListView_Preview: PreviewProvider {
         }
     }
 }
-
 #endif

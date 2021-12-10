@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+#if DEBUG
 import SwiftUI
 
 struct SwiftUIPreView<V>: UIViewRepresentable where V: UIView {
@@ -19,6 +21,5 @@ struct SwiftUIPreView<V>: UIViewRepresentable where V: UIView {
     func updateUIView(_ uiView: V, context: Context) {
         
     }
-    
-    
 }
+#endif
