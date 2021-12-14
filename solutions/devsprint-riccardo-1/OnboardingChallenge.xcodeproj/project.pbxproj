@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4645BF89276347CD0079B5A2 /* SwiftUIPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645BF88276347CD0079B5A2 /* SwiftUIPreView.swift */; };
+		7A1643AD2769205E00F33A5E /* BundleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1643AC2769205E00F33A5E /* BundleService.swift */; };
+		7A1643B627692E7700F33A5E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1643B527692E7700F33A5E /* SettingsView.swift */; };
+		7A271A132768BF36004206EB /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A122768BF36004206EB /* SettingsInteractor.swift */; };
+		7A271A152768BF42004206EB /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A142768BF42004206EB /* SettingsPresenter.swift */; };
+		7A271A172768C32E004206EB /* ShowSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A162768C32E004206EB /* ShowSettings.swift */; };
+		7A271A1D2768EA0A004206EB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A1C2768EA0A004206EB /* SettingsCell.swift */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
 		980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2F2705077B00F8100A /* SceneDelegate.swift */; };
 		980C0C322705077B00F8100A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C312705077B00F8100A /* ListViewController.swift */; };
@@ -37,6 +43,12 @@
 
 /* Begin PBXFileReference section */
 		4645BF88276347CD0079B5A2 /* SwiftUIPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreView.swift; sourceTree = "<group>"; };
+		7A1643AC2769205E00F33A5E /* BundleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleService.swift; sourceTree = "<group>"; };
+		7A1643B527692E7700F33A5E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7A271A122768BF36004206EB /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		7A271A142768BF42004206EB /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		7A271A162768C32E004206EB /* ShowSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowSettings.swift; path = OnboardingChallenge/Screens/Settings/ShowSettings.swift; sourceTree = SOURCE_ROOT; };
+		7A271A1C2768EA0A004206EB /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		980C0C2D2705077B00F8100A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		980C0C2F2705077B00F8100A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +93,23 @@
 				4645BF88276347CD0079B5A2 /* SwiftUIPreView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7A1643B427692E6300F33A5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9824AD65273322C6001044D2 /* SettingsViewController.swift */,
+				7A1643B527692E7700F33A5E /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A271A1B2768E9F5004206EB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A271A1C2768EA0A004206EB /* SettingsCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		980C0C212705077B00F8100A = {
@@ -166,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				980C0C4727061F8900F8100A /* Service.swift */,
+				7A1643AC2769205E00F33A5E /* BundleService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -180,7 +210,11 @@
 		9824AD6227332295001044D2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				9824AD65273322C6001044D2 /* SettingsViewController.swift */,
+				7A1643B427692E6300F33A5E /* Views */,
+				7A271A1B2768E9F5004206EB /* Cell */,
+				7A271A162768C32E004206EB /* ShowSettings.swift */,
+				7A271A122768BF36004206EB /* SettingsInteractor.swift */,
+				7A271A142768BF42004206EB /* SettingsPresenter.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -304,9 +338,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A271A172768C32E004206EB /* ShowSettings.swift in Sources */,
+				7A271A1D2768EA0A004206EB /* SettingsCell.swift in Sources */,
 				9824AD64273322AD001044D2 /* DetailViewController.swift in Sources */,
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,
+				7A1643AD2769205E00F33A5E /* BundleService.swift in Sources */,
+				7A271A132768BF36004206EB /* SettingsInteractor.swift in Sources */,
 				980C0C4827061F8900F8100A /* Service.swift in Sources */,
 				980C0C4A27061FBA00F8100A /* ListView.swift in Sources */,
 				98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */,
@@ -317,6 +355,8 @@
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
 				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
+				7A271A152768BF42004206EB /* SettingsPresenter.swift in Sources */,
+				7A1643B627692E7700F33A5E /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
