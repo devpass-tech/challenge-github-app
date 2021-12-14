@@ -24,6 +24,7 @@ class SettingsViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("view did load")
         let request = ShowSettings.Get.Request(key: "CFBundleVersion")
         interactor?.getAppVersion(request: request)
     }

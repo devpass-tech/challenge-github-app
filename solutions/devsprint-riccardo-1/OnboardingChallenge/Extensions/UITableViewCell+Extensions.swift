@@ -1,19 +1,13 @@
-//
-//  UITableViewCell+Extensions.swift
-//  OnboardingChallenge
-//
-//  Created by Rodrigo Borges on 06/10/21.
-//
+// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
 
 import UIKit
 
 extension UITableViewCell {
-
-    class func classIdentifier() -> String {
-        guard let className = String(describing: self).components(separatedBy: ".").last else {
-            return ""
-        }
-
-        return className
+  class func classIdentifier() -> String {
+    guard let className = String(describing: self).components(separatedBy: ".").last else {
+      return ""
     }
+
+    return className
+  }
 }

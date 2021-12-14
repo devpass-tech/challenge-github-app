@@ -1,102 +1,85 @@
-//
-//  ListView.swift
-//  OnboardingChallenge
-//
-//  Created by Rodrigo Borges on 30/09/21.
-//
+// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
 
 import UIKit
 
 final class ListView: UIView {
+  private let listViewCellIdentifier = "ListViewCellIdentifier"
 
-    private let listViewCellIdentifier = "ListViewCellIdentifier"
+  private var listItems: [String] = []
 
-    private var listItems: [String] = []
+  private lazy var tableView: UITableView = {
+    let tableView = UITableView(frame: .zero)
+    tableView.translatesAutoresizingMaskIntoConstraints = false
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+    tableView.dataSource = self
+    return tableView
+  }()
 
-    private lazy var tableView: UITableView = {
+  init() {
+    super.init(frame: .zero)
 
-        let tableView = UITableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
-        tableView.dataSource = self
-        return tableView
-    }()
+    self.customizeInterface()
+  }
 
-    init() {
-
-        super.init(frame: .zero)
-
-        self.customizeInterface()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-private extension ListView {
-
-    func customizeInterface() {
-
-        self.backgroundColor = .white
-
-        self.configureSubviews()
-        self.configureSubviewsConstraints()
-    }
-
-    func configureSubviews() {
-
-        self.addSubview(self.tableView)
-    }
-
-    func configureSubviewsConstraints() {
-
-        NSLayoutConstraint.activate([
-
-            self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
-    }
+  required init?(coder _: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 }
 
 extension ListView {
+  private func customizeInterface() {
+    self.backgroundColor = .white
 
-    func updateView(with configuration: ListViewConfiguration) {
+    self.configureSubviews()
+    self.configureSubviewsConstraints()
+  }
 
-        self.listItems = configuration.listItems
-        self.tableView.reloadData()
-    }
+  private func configureSubviews() {
+    self.addSubview(self.tableView)
+  }
+
+  private func configureSubviewsConstraints() {
+    NSLayoutConstraint.activate([
+      self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+      self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+      self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
+      self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+    ])
+  }
+}
+
+extension ListView {
+  func updateView(with configuration: ListViewConfiguration) {
+    self.listItems = configuration.listItems
+    self.tableView.reloadData()
+  }
 }
 
 extension ListView: UITableViewDataSource {
+  public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+    return self.listItems.count
+  }
 
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return self.listItems.count
-    }
-
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
-        return cell
-    }
+  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
+    cell.textLabel?.text = self.listItems[indexPath.row]
+    return cell
+  }
 }
 
 #if DEBUG
-import SwiftUI
-
-struct ListView_Preview: PreviewProvider {
+  import SwiftUI
+  // swiftlint:disable type_name
+  struct ListView_Preview: PreviewProvider {
     static var previews: some View {
-        return SwiftUIPreView { context in
-            let lv = ListView()
-            lv.updateView(with: .init(listItems: [
-                "first", "second", "third", "fourth"
-            ]))
-            return lv
-        }
+      return SwiftUIPreView { _ in
+        let lv = ListView()
+        lv.updateView(with: .init(listItems: [
+          "first", "second", "third", "fourth",
+        ]))
+        return lv
+      }
     }
-}
+  }
+  // swiftlint:enable type_name
 #endif

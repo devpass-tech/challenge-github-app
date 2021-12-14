@@ -2,4 +2,4 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {}
+class SettingsViewController {}

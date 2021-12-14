@@ -9,12 +9,12 @@ import UIKit
 
 final class SettingsView: UIView {
     private let settingsViewCellIdentifier = "SettingsViewCellIdentifier"
-    private let NUMBEROFROWS = 1
-    
+    private let titleForHeader = "APP VERSION"
+    private let numberOfRows = 1
+
     private var displayed: ShowSettings.DisplayedSettings?
     
     private lazy var tableView: UITableView = {
-        
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.settingsViewCellIdentifier)
@@ -23,8 +23,8 @@ final class SettingsView: UIView {
     }()
     
     init() {
-        
         super.init(frame: .zero)
+        self.customizeInterface()
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +34,6 @@ final class SettingsView: UIView {
 
 private extension SettingsView {
     func customizeInterface() {
-
         self.backgroundColor = .white
 
         self.configureSubviews()
@@ -42,14 +41,11 @@ private extension SettingsView {
     }
 
     func configureSubviews() {
-
         self.addSubview(self.tableView)
     }
 
     func configureSubviewsConstraints() {
-
         NSLayoutConstraint.activate([
-
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -59,7 +55,6 @@ private extension SettingsView {
 }
 
 extension SettingsView {
-    
     func updateView(with configuration: ShowSettings.Get.ViewModel) {
         self.displayed = configuration.displayed
         self.tableView.reloadData()
@@ -67,9 +62,8 @@ extension SettingsView {
 }
 
 extension SettingsView: UITableViewDataSource {
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NUMBEROFROWS
+        return numberOfRows
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,6 +71,10 @@ extension SettingsView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.settingsViewCellIdentifier)!
         cell.textLabel?.text = self.displayed?.item
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return titleForHeader
     }
 }
 

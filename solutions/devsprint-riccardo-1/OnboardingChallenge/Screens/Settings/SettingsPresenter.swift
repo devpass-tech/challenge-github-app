@@ -15,7 +15,7 @@ class SettingsPresenter: SettingsPresentationLogic {
     weak var viewController: SettingsViewController?
     
     func presenter(response: ShowSettings.Get.Response) {
-        let displayed = ShowSettings.DisplayedSettings(item: response.item)
+        let displayed = ShowSettings.DisplayedSettings(item: "Version \(response.item)")
         let viewModel = ShowSettings.Get.ViewModel(displayed: displayed)
         self.viewController?.display(viewModel: viewModel)
     }
