@@ -1,12 +1,5 @@
-//
-//  DetailViewController.swift
-//  OnboardingChallenge
-//
-//  Created by Rodrigo Borges on 03/11/21.
-//
+// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    
-}
+class DetailViewController: UIViewController {}

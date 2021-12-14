@@ -1,25 +1,20 @@
-//
-//  AppDelegate.swift
-//  OnboardingChallenge
-//
-//  Created by Rodrigo Borges on 29/09/21.
-//
+// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    return true
+  }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  // MARK: UISceneSession Lifecycle
 
-        return true
-    }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
+  func application(
+    _: UIApplication,
+    configurationForConnecting connectingSceneSession: UISceneSession,
+    options _: UIScene.ConnectionOptions
+  ) -> UISceneConfiguration {
+    return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+  }
 }
-
