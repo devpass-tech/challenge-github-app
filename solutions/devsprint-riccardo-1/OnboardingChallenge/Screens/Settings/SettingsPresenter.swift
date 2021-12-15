@@ -8,15 +8,15 @@
 import Foundation
 
 protocol SettingsPresentationLogic {
-    func presenter(response: ShowSettings.Get.Response)
+    func presenter(response: SettingsViewConfiguration.Get.Response)
 }
 
 class SettingsPresenter: SettingsPresentationLogic {
     weak var viewController: SettingsViewController?
     
-    func presenter(response: ShowSettings.Get.Response) {
-        let displayed = ShowSettings.DisplayedSettings(item: "Version \(response.item)")
-        let viewModel = ShowSettings.Get.ViewModel(displayed: displayed)
+    func presenter(response: SettingsViewConfiguration.Get.Response) {
+        let displayed = SettingsViewConfiguration.DisplayedSettings(item: "Version \(response.item)")
+        let viewModel = SettingsViewConfiguration.Get.ViewModel(displayed: displayed)
         self.viewController?.display(viewModel: viewModel)
     }
 }

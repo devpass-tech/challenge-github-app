@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShowSettings {
+struct SettingsViewConfiguration {
     struct DisplayedSettings {
         var item: String
     }

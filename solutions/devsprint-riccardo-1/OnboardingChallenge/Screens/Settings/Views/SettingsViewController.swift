@@ -10,7 +10,7 @@ import UIKit
 let NUMBEROFROWSINSECTION = 1
 
 protocol SettingsViewDisplayLogic {
-    func display(viewModel: ShowSettings.Get.ViewModel)
+    func display(viewModel: SettingsViewConfiguration.Get.ViewModel)
 }
 
 class SettingsViewController: UIViewController {
@@ -24,8 +24,7 @@ class SettingsViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view did load")
-        let request = ShowSettings.Get.Request(key: "CFBundleVersion")
+        let request = SettingsViewConfiguration.Get.Request(key: "CFBundleVersion")
         interactor?.getAppVersion(request: request)
     }
     
@@ -56,7 +55,7 @@ class SettingsViewController: UIViewController {
 }
 
 extension SettingsViewController: SettingsViewDisplayLogic {
-    func display(viewModel: ShowSettings.Get.ViewModel) {
+    func display(viewModel: SettingsViewConfiguration.Get.ViewModel) {
         self.settingsView.updateView(with: viewModel)
     }
 }

@@ -12,7 +12,7 @@ final class SettingsView: UIView {
     private let titleForHeader = "APP VERSION"
     private let numberOfRows = 1
 
-    private var displayed: ShowSettings.DisplayedSettings?
+    private var displayed: SettingsViewConfiguration.DisplayedSettings?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -55,7 +55,7 @@ private extension SettingsView {
 }
 
 extension SettingsView {
-    func updateView(with configuration: ShowSettings.Get.ViewModel) {
+    func updateView(with configuration: SettingsViewConfiguration.Get.ViewModel) {
         self.displayed = configuration.displayed
         self.tableView.reloadData()
     }
@@ -86,8 +86,8 @@ struct SettingsView_Preview: PreviewProvider {
     static var previews: some View {
         return SwiftUIPreView { context in
             let sv = SettingsView()
-            let displayed = ShowSettings.DisplayedSettings(item: "Version 1.0")
-            let viewModel = ShowSettings.Get.ViewModel(displayed: displayed)
+            let displayed = SettingsViewConfiguration.DisplayedSettings(item: "Version 1.0")
+            let viewModel = SettingsViewConfiguration.Get.ViewModel(displayed: displayed)
             sv.updateView(with: viewModel)
             return sv
         }

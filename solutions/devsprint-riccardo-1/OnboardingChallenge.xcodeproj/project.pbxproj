@@ -12,8 +12,7 @@
 		7A1643B627692E7700F33A5E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1643B527692E7700F33A5E /* SettingsView.swift */; };
 		7A271A132768BF36004206EB /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A122768BF36004206EB /* SettingsInteractor.swift */; };
 		7A271A152768BF42004206EB /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A142768BF42004206EB /* SettingsPresenter.swift */; };
-		7A271A172768C32E004206EB /* ShowSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A162768C32E004206EB /* ShowSettings.swift */; };
-		7A271A1D2768EA0A004206EB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A1C2768EA0A004206EB /* SettingsCell.swift */; };
+		7A271A172768C32E004206EB /* SettingsViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A162768C32E004206EB /* SettingsViewConfiguration.swift */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
 		980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2F2705077B00F8100A /* SceneDelegate.swift */; };
 		980C0C322705077B00F8100A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C312705077B00F8100A /* ListViewController.swift */; };
@@ -47,8 +46,7 @@
 		7A1643B527692E7700F33A5E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7A271A122768BF36004206EB /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		7A271A142768BF42004206EB /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		7A271A162768C32E004206EB /* ShowSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowSettings.swift; path = OnboardingChallenge/Screens/Settings/ShowSettings.swift; sourceTree = SOURCE_ROOT; };
-		7A271A1C2768EA0A004206EB /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		7A271A162768C32E004206EB /* SettingsViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewConfiguration.swift; path = OnboardingChallenge/Screens/Settings/SettingsViewConfiguration.swift; sourceTree = SOURCE_ROOT; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		980C0C2D2705077B00F8100A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		980C0C2F2705077B00F8100A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,14 +100,6 @@
 				7A1643B527692E7700F33A5E /* SettingsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		7A271A1B2768E9F5004206EB /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				7A271A1C2768EA0A004206EB /* SettingsCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		980C0C212705077B00F8100A = {
@@ -211,8 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				7A1643B427692E6300F33A5E /* Views */,
-				7A271A1B2768E9F5004206EB /* Cell */,
-				7A271A162768C32E004206EB /* ShowSettings.swift */,
+				7A271A162768C32E004206EB /* SettingsViewConfiguration.swift */,
 				7A271A122768BF36004206EB /* SettingsInteractor.swift */,
 				7A271A142768BF42004206EB /* SettingsPresenter.swift */,
 			);
@@ -379,8 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A271A172768C32E004206EB /* ShowSettings.swift in Sources */,
-				7A271A1D2768EA0A004206EB /* SettingsCell.swift in Sources */,
+				7A271A172768C32E004206EB /* SettingsViewConfiguration.swift in Sources */,
 				9824AD64273322AD001044D2 /* DetailViewController.swift in Sources */,
 				98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */,
 				980C0C322705077B00F8100A /* ListViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SettingsBusinessLogic {
-    func getAppVersion(request: ShowSettings.Get.Request)
+    func getAppVersion(request: SettingsViewConfiguration.Get.Request)
 }
 
 class SettingsInteractor: SettingsBusinessLogic {
@@ -19,9 +19,9 @@ class SettingsInteractor: SettingsBusinessLogic {
         self.bundle = bundle
     }
     
-    func getAppVersion(request: ShowSettings.Get.Request) {
+    func getAppVersion(request: SettingsViewConfiguration.Get.Request) {
         guard let value = self.bundle?.object(forInfoDictionaryKey: request.key) as? String else { return }
-        let response = ShowSettings.Get.Response(item: value)
+        let response = SettingsViewConfiguration.Get.Response(item: value)
         
         self.presenter?.presenter(response: response)
     }
