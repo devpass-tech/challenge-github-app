@@ -3,11 +3,14 @@
 import Foundation
 
 protocol ServiceProtocol {
-  func fetchList(_ completion: ([String]) -> Void)
+  func fetchList(_ completion: ([RepositoryCellViewConfiguration]) -> Void)
 }
 
 struct Service: ServiceProtocol {
-  func fetchList(_ completion: ([String]) -> Void) {
-    completion(["Item 1", "Item 2", "Item 3"])
+  func fetchList(_ completion: ([RepositoryCellViewConfiguration]) -> Void) {
+    completion([
+        RepositoryCellViewConfiguration(repositoryName: "hereminders-ios", repositoryOwnerName: "rdgborges"),
+        RepositoryCellViewConfiguration(repositoryName: "hereminders-ios", repositoryOwnerName: "mateusnazarioc")
+      ])
   }
 }
