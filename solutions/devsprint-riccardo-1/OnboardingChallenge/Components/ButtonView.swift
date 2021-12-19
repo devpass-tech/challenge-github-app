@@ -76,21 +76,21 @@ extension ButtonView {
 }
 
 // MARK: Preview
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
+#if DEBUG
+ import SwiftUI
 
-struct ButtonViewPreview: PreviewProvider {
-    static var previews: some View {
-        UIViewPreview {
-            let configuration = ButtonViewConfiguration(title: "See profile") {
-                print("do Something!")
-            }
-            let buttonView = ButtonView()
-            buttonView.configure(with: configuration)
-            return buttonView
-        }
-        .padding(.horizontal, 15)
-        .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 80))
-    }
-}
-#endif
+ struct ButtonView_Preview: PreviewProvider {
+     static var previews: some View {
+         return SwiftUIPreView { context in
+             let config = ButtonViewConfiguration(title: "Some button") {
+                 print("do something")
+             }
+             let view = ButtonView()
+             view.configure(with: config)
+             return view
+         }
+             .padding()
+             .frame(width: .infinity, height: 60)
+     }
+ }
+ #endif
