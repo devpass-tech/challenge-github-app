@@ -24,7 +24,6 @@
 		98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */; };
 		98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0E270E41DF0088A775 /* String+Extensions.swift */; };
 		A20751B72769F21500264DF6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20751B62769F21500264DF6 /* ButtonView.swift */; };
-		A20751BA2769F7C700264DF6 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20751B92769F7C700264DF6 /* ViewCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +57,6 @@
 		98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0E270E41DF0088A775 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A20751B62769F21500264DF6 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		A20751B92769F7C700264DF6 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 		980C0C2C2705077B00F8100A /* OnboardingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				A20751B82769F7B700264DF6 /* Protocols */,
 				4645BF87276347B60079B5A2 /* Helpers */,
 				980C0C4527061F3B00F8100A /* Resources */,
 				980C0C4127061EC000F8100A /* AppDelegate */,
@@ -208,14 +205,6 @@
 				A20751B62769F21500264DF6 /* ButtonView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		A20751B82769F7B700264DF6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				A20751B92769F7C700264DF6 /* ViewCode.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,7 +359,6 @@
 				98586A06270E3EC40088A775 /* ListViewConfiguration.swift in Sources */,
 				98586A09270E40430088A775 /* UITableViewCell+Extensions.swift in Sources */,
 				4645BF89276347CD0079B5A2 /* SwiftUIPreView.swift in Sources */,
-				A20751BA2769F7C700264DF6 /* ViewCode.swift in Sources */,
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
 				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,

@@ -12,7 +12,7 @@ struct ButtonViewConfiguration {
     var pressedButton: (() -> Void)?
 }
 
-class ButtonView: UIView, ViewCode {
+class ButtonView: UIView {
     // MARK: Properties
     private var pressedButton: (() -> Void)?
     
@@ -32,7 +32,9 @@ class ButtonView: UIView, ViewCode {
     // MARK: Initializers
     init() {
         super.init(frame: .zero)
-        setupViews()
+        configureSubviews()
+        configureSubviewsConstraints()
+        configureAdditionalBehaviors()
     }
     
     required init?(coder: NSCoder) {
