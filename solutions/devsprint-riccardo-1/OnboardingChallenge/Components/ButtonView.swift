@@ -18,13 +18,14 @@ class ButtonView: UIView {
     
     private lazy var button: UIButton = {
         var button = UIButton(type: .system)
-        
+
         button.layer.cornerRadius = 15
         button.backgroundColor = .systemBlue
         button.titleLabel?.tintColor = .white
         button.titleLabel?.font = .systemFont(ofSize: 21, weight: .semibold)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+        button.heightAnchor.constraint(equalToConstant: 80).isActive = true
+
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
@@ -43,7 +44,7 @@ class ButtonView: UIView {
     
     // MARK: Overrides
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: 65)
+        return button.intrinsicContentSize
     }
     
     // MARK: Actions
@@ -92,7 +93,7 @@ extension ButtonView {
              return view
          }
              .padding()
-             .frame(width: .infinity, height: 60)
+             .frame(width: .infinity, height: 80)
      }
  }
  #endif
