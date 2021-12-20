@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4645BF89276347CD0079B5A2 /* SwiftUIPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645BF88276347CD0079B5A2 /* SwiftUIPreView.swift */; };
+		5866748827710FFE006FE0E7 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5866748727710FFE006FE0E7 /* LicenseView.swift */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
 		980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2F2705077B00F8100A /* SceneDelegate.swift */; };
 		980C0C322705077B00F8100A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C312705077B00F8100A /* ListViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		4645BF88276347CD0079B5A2 /* SwiftUIPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreView.swift; sourceTree = "<group>"; };
+		5866748727710FFE006FE0E7 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		980C0C2D2705077B00F8100A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		980C0C2F2705077B00F8100A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				A20751B62769F21500264DF6 /* ButtonView.swift */,
+				5866748727710FFE006FE0E7 /* LicenseView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				4645BF89276347CD0079B5A2 /* SwiftUIPreView.swift in Sources */,
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
+				5866748827710FFE006FE0E7 /* LicenseView.swift in Sources */,
 				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
