@@ -46,7 +46,7 @@ class LicenseView: UIView {
     var labelTypeAbbreviated: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13)
-        label.textColor = .gray
+        label.textColor = .systemGray
         return label
     }()
 
