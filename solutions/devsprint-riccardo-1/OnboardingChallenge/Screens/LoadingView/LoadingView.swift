@@ -1,4 +1,4 @@
-// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
+// Copyright © 2021 DevPass. All rights reserved.
 
 import Foundation
 import UIKit
@@ -68,7 +68,7 @@ class LoadingView: UIView {
 #if DEBUG
   import SwiftUI
   // swiftlint:disable type_name
-  struct EmptyView_Preview: PreviewProvider {
+  struct LoadingView_Preview: PreviewProvider {
     static var previews: some View {
       return SwiftUIPreView { _ in
         let loadingView = LoadingView()
