@@ -9,10 +9,18 @@ struct EmptyViewConfiguration {
 }
 
 class EmptyView: UIView {
-  private var titleLabel: UILabel = {
+  private let stackView: UIStackView = {
+    var stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.alignment = .center
+    stackView.spacing = 16
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    return stackView
+  }()
+
+  private let titleLabel: UILabel = {
     var title = UILabel()
     title.font = UIFont.boldSystemFont(ofSize: 18)
-    title.text = "No repositories found"
     title.textColor = .black
     title.textAlignment = .center
     title.numberOfLines = 0
@@ -20,11 +28,10 @@ class EmptyView: UIView {
     return title
   }()
 
-  private var subtitleLabel: UILabel = {
+  private let subtitleLabel: UILabel = {
     var subtitleLabel = UILabel()
     subtitleLabel.font = UIFont.systemFont(ofSize: 16)
-    subtitleLabel.text = "Search for users to see their public repositories here"
-    subtitleLabel.textColor = .gray
+    subtitleLabel.textColor = UIColor.systemGray
     subtitleLabel.textAlignment = .center
     subtitleLabel.numberOfLines = 0
     subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -47,25 +54,18 @@ class EmptyView: UIView {
 
   private func setupView() {
     backgroundColor = .white
-    addSubview(self.titleLabel)
-    addSubview(self.subtitleLabel)
+    addSubview(self.stackView)
+    self.stackView.addArrangedSubview(self.titleLabel)
+    self.stackView.addArrangedSubview(self.subtitleLabel)
     self.setupConstraints()
   }
 
   private func setupConstraints() {
-    
     NSLayoutConstraint.activate([
-      titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-      titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-      titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-      titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-    ])
-    
-    NSLayoutConstraint.activate([
-      subtitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-      subtitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-      subtitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-      subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
+      self.stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+      self.stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+      self.stackView.leadingAnchor.constraint(equalTo: self.readableContentGuide.leadingAnchor),
+      self.stackView.trailingAnchor.constraint(equalTo: self.readableContentGuide.trailingAnchor),
     ])
   }
 }
