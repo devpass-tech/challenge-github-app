@@ -2,14 +2,14 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
+public final class ListViewController: UIViewController {
   private lazy var listView: ListView = {
     return ListView()
   }()
 
   private let service = Service()
 
-  init() {
+  public init() {
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -17,11 +17,11 @@ final class ListViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func loadView() {
+  override public func loadView() {
     self.view = self.listView
   }
 
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     self.fetchList()
   }
