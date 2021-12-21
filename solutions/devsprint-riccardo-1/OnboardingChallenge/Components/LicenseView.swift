@@ -34,14 +34,12 @@ class LicenseView: UIView {
         let label = UILabel()
         label.text = "License"
         label.font = .systemFont(ofSize: 28, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     var labelType: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -49,7 +47,6 @@ class LicenseView: UIView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13)
         label.textColor = .gray
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
