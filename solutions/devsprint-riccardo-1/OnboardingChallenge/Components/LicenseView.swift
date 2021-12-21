@@ -93,11 +93,11 @@ extension LicenseView {
 
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            stackView.leadingAnchor.constraint(equalTo: readableContentGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: readableContentGuide.trailingAnchor),
             buttonLicense.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 15),
-            buttonLicense.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            buttonLicense.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            buttonLicense.leadingAnchor.constraint(equalTo: readableContentGuide.leadingAnchor),
+            buttonLicense.trailingAnchor.constraint(equalTo:  readableContentGuide.trailingAnchor),
             buttonLicense.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)])
     }
 }
