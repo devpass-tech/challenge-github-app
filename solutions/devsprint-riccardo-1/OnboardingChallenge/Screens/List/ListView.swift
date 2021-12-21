@@ -1,4 +1,4 @@
-// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
+// Copyright © 2021 DevPass. All rights reserved.
 
 import UIKit
 
@@ -64,8 +64,10 @@ extension ListView: UITableViewDataSource {
   }
 
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier) as! RepositoryCellView
-      cell.updateView(with: listItems[indexPath.row])
+    // swiftlint:disable force_unwrapping
+   let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier) as! RepositoryCellView
+    // swiftlint:enable force_unwrapping
+    cell.updateView(with: listItems[indexPath.row])
     return cell
   }
 }
