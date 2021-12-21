@@ -8,10 +8,18 @@ struct LoadingViewConfiguration {
 }
 
 class LoadingView: UIView {
-  private var titleLabel: UILabel = {
+  private let stackView: UIStackView = {
+    var stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.alignment = .center
+    stackView.spacing = 16
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    return stackView
+  }()
+
+  private let titleLabel: UILabel = {
     let title = UILabel()
     title.font = UIFont.boldSystemFont(ofSize: 18)
-    title.text = "Searching repositories..."
     title.textColor = .black
     title.textAlignment = .center
     title.numberOfLines = 0
@@ -41,24 +49,18 @@ class LoadingView: UIView {
 
   private func setupView() {
     backgroundColor = .white
-    addSubview(self.titleLabel)
-    addSubview(self.activityIndicator)
+    addSubview(self.stackView)
+    self.stackView.addArrangedSubview(self.titleLabel)
+    self.stackView.addArrangedSubview(self.activityIndicator)
     self.setupConstraints()
   }
 
   private func setupConstraints() {
     NSLayoutConstraint.activate([
-      self.titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-      self.titleLabel.leadingAnchor.constraint(equalTo: self.readableContentGuide.leadingAnchor),
-      self.titleLabel.trailingAnchor.constraint(equalTo: self.readableContentGuide.trailingAnchor),
-      self.titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-    ])
-
-    NSLayoutConstraint.activate([
-      self.activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
-      self.activityIndicator.leadingAnchor.constraint(equalTo: self.readableContentGuide.leadingAnchor),
-      self.activityIndicator.trailingAnchor.constraint(equalTo: self.readableContentGuide.trailingAnchor),
-      self.activityIndicator.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
+      self.stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+      self.stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+      self.stackView.leadingAnchor.constraint(equalTo: self.readableContentGuide.leadingAnchor),
+      self.stackView.trailingAnchor.constraint(equalTo: self.readableContentGuide.trailingAnchor),
     ])
   }
 }
