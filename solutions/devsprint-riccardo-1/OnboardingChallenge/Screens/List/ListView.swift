@@ -1,4 +1,4 @@
-// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
+// Copyright © 2021 DevPass. All rights reserved.
 
 import UIKit
 
@@ -63,6 +63,7 @@ extension ListView: UITableViewDataSource {
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
     cell.textLabel?.text = self.listItems[indexPath.row]
+
     return cell
   }
 }
@@ -73,11 +74,9 @@ extension ListView: UITableViewDataSource {
   struct ListView_Preview: PreviewProvider {
     static var previews: some View {
       return SwiftUIPreView { _ in
-        let lv = ListView()
-        lv.updateView(with: .init(listItems: [
-          "first", "second", "third", "fourth",
-        ]))
-        return lv
+        let listView = ListView()
+        listView.updateView(with: .init(listItems: ["A", "B"]))
+        return listView
       }
     }
   }
