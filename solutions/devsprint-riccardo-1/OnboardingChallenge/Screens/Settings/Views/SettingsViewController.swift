@@ -1,61 +1,38 @@
-//
-//  SettingsViewController.swift
-//  OnboardingChallenge
-//
-//  Created by Rodrigo Borges on 03/11/21.
-//
+// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
 
 import UIKit
 
-let NUMBEROFROWSINSECTION = 1
-
-protocol SettingsViewDisplayLogic {
-    func display(viewModel: SettingsViewConfiguration.Get.ViewModel)
-}
-
 class SettingsViewController: UIViewController {
-    
-    private lazy var settingsView: SettingsView = {
-        return SettingsView()
-    }()
-    
-    var interactor: SettingsBusinessLogic?
-    var presenter: SettingsPresentationLogic?
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let request = SettingsViewConfiguration.Get.Request(key: "CFBundleVersion")
-        interactor?.getAppVersion(request: request)
-    }
-    
-    override func loadView() {
-        self.view = self.settingsView
-    }
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setup() {
-        let viewController = self
-        let interactor = SettingsInteractor(bundle: Bundle.main)
-        let presenter = SettingsPresenter()
-        
-        viewController.interactor = interactor
-        viewController.presenter = presenter
-        
-        interactor.presenter = presenter
-        presenter.viewController = viewController
-    }
-}
+  var interactor: SettingsInteractor?
+  var viewModel: [SettingsViewModel] = []
 
-extension SettingsViewController: SettingsViewDisplayLogic {
-    func display(viewModel: SettingsViewConfiguration.Get.ViewModel) {
-        self.settingsView.updateView(with: viewModel)
+  private lazy var settingsView: SettingsView = {
+    return SettingsView()
+  }()
+
+  init(interactor: SettingsInteractor) {
+    self.interactor = interactor
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.fetchAppInfo()
+  }
+
+  override func loadView() {
+    self.view = self.settingsView
+  }
+
+  required init?(coder _: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  private func fetchAppInfo() {
+    self.interactor?.getAppVersion { viewModel in
+      self.viewModel.append(viewModel)
     }
+
+    self.settingsView.updateView(with: self.viewModel)
+  }
 }

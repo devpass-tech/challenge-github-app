@@ -1,96 +1,97 @@
-//
-//  SettingsViewConfiguration.swift
-//  OnboardingChallenge
-//
-//  Created by Strawberry Pie on 12/14/21.
-//
+// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
 
 import UIKit
 
 final class SettingsView: UIView {
-    private let settingsViewCellIdentifier = "SettingsViewCellIdentifier"
-    private let titleForHeader = "APP VERSION"
-    private let numberOfRows = 1
+  private var viewModel: [SettingsViewModel] = []
 
-    private var displayed: SettingsViewConfiguration.DisplayedSettings?
-    
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.settingsViewCellIdentifier)
-        tableView.dataSource = self
-        return tableView
-    }()
-    
-    init() {
-        super.init(frame: .zero)
-        self.customizeInterface()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+  private lazy var tableView: UITableView = {
+    let tableView = UITableView(frame: .zero)
+    tableView.translatesAutoresizingMaskIntoConstraints = false
+    tableView.register(SettingsCell.self, forCellReuseIdentifier: SettingsCell.Identifier)
+    return tableView
+  }()
 
-private extension SettingsView {
-    func customizeInterface() {
-        self.backgroundColor = .white
+  init() {
+    super.init(frame: .zero)
+    self.customizeInterface()
+  }
 
-        self.configureSubviews()
-        self.configureSubviewsConstraints()
-    }
-
-    func configureSubviews() {
-        self.addSubview(self.tableView)
-    }
-
-    func configureSubviewsConstraints() {
-        NSLayoutConstraint.activate([
-            self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
-    }
+  required init?(coder _: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 }
 
 extension SettingsView {
-    func updateView(with configuration: SettingsViewConfiguration.Get.ViewModel) {
-        self.displayed = configuration.displayed
-        self.tableView.reloadData()
-    }
+  private func customizeInterface() {
+    self.backgroundColor = .white
+
+    self.configureSubviews()
+    self.configureTableView()
+    self.configureSubviewsConstraints()
+  }
+
+  private func configureSubviews() {
+    self.addSubview(self.tableView)
+  }
+
+  private func configureTableView() {
+    self.tableView.dataSource = self
+    self.tableView.delegate = self
+  }
+
+  private func configureSubviewsConstraints() {
+    NSLayoutConstraint.activate([
+      self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+      self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+      self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
+      self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+    ])
+  }
+}
+
+extension SettingsView {
+  func updateView(with viewModel: [SettingsViewModel]) {
+    self.viewModel = viewModel
+    self.tableView.reloadData()
+  }
 }
 
 extension SettingsView: UITableViewDataSource {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfRows
-    }
+  func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.viewModel[section].items.count
+  }
 
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let lists = self.viewModel[indexPath.section]
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.Identifier) as? SettingsCell
+    else {
+      fatalError("Dequeue reuseable cell failed while casting")
+    }
+    let item = lists.items[indexPath.row]
+    cell.updateView(with: item)
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.settingsViewCellIdentifier)!
-        cell.textLabel?.text = self.displayed?.item
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titleForHeader
-    }
+    return cell
+  }
+
+  func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return self.viewModel[section].title.value
+  }
 }
 
+extension SettingsView: UITableViewDelegate {}
 
 #if DEBUG
-import SwiftUI
+  import SwiftUI
 
-struct SettingsView_Preview: PreviewProvider {
+  struct SettingsViewPreview: PreviewProvider {
     static var previews: some View {
-        return SwiftUIPreView { context in
-            let sv = SettingsView()
-            let displayed = SettingsViewConfiguration.DisplayedSettings(item: "Version 1.0")
-            let viewModel = SettingsViewConfiguration.Get.ViewModel(displayed: displayed)
-            sv.updateView(with: viewModel)
-            return sv
-        }
+      return SwiftUIPreView { _ in
+        let sv = SettingsView()
+        let viewModel = SettingsViewModel(title: .appVersion, items: ["Version 1.0"])
+        sv.updateView(with: [viewModel])
+        return sv
+      }
     }
-}
+  }
 #endif
