@@ -61,7 +61,9 @@ extension ListView: UITableViewDataSource {
   }
 
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    // swiftlint:disable force_unwrapping
     let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
+    // swiftlint:enable force_unwrapping
     cell.textLabel?.text = self.listItems[indexPath.row]
 
     return cell
