@@ -1,12 +1,15 @@
-// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
+// Copyright © 2021 DevPass. All rights reserved.
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  // swiftlint:disable discouraged_optional_collection
   func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     return true
   }
+
+  // swiftlint:enable discouraged_optional_collection
 
   // MARK: UISceneSession Lifecycle
 
