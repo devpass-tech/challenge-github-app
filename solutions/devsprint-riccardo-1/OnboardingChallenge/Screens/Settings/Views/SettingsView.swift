@@ -14,7 +14,6 @@ final class SettingsView: UIView {
 
   init() {
     super.init(frame: .zero)
-    self.customizeInterface()
   }
 
   required init?(coder _: NSCoder) {
@@ -53,13 +52,14 @@ extension SettingsView {
 extension SettingsView {
   func updateView(with viewModel: [SettingsViewModel]) {
     self.viewModel = viewModel
+    self.customizeInterface()
     self.tableView.reloadData()
   }
 }
 
 extension SettingsView: UITableViewDataSource {
   func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.viewModel[section].items.count
+    return self.viewModel[section].count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,7 +76,7 @@ extension SettingsView: UITableViewDataSource {
   }
 
   func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-    self.viewModel[section].titleForSection
+    return self.viewModel[section].titleForSection
   }
 }
 

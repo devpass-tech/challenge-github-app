@@ -11,6 +11,10 @@ struct SettingsViewModel {
     self.items = items
   }
 
+  var count: Int {
+    return self.items.count
+  }
+
   var titleForSection: String {
     return self.title.value
   }

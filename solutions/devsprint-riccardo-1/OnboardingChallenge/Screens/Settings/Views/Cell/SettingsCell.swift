@@ -21,10 +21,6 @@ class SettingsCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-
   func updateView(with viewModel: String) {
     self.name.text = viewModel
   }

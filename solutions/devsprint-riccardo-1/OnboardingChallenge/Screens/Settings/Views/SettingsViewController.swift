@@ -3,11 +3,13 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-  var interactor: SettingsInteractor?
+  var interactor: SettingsInteractor
 
-  var viewModel: SettingsViewModel {
+  var viewModel: SettingsViewModel? {
     didSet {
-      self.settingsView.updateView(with: [self.viewModel])
+      if let viewModel = viewModel {
+        self.settingsView.updateView(with: [viewModel])
+      }
     }
   }
 
@@ -15,9 +17,8 @@ class SettingsViewController: UIViewController {
     return (self.view as? SettingsView)!
   }
 
-  init(interactor: SettingsInteractor, viewModel: SettingsViewModel) {
+  init(interactor: SettingsInteractor) {
     self.interactor = interactor
-    self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -35,10 +36,6 @@ class SettingsViewController: UIViewController {
   }
 
   private func fetchAppInfo() {
-    guard let interactor = interactor else {
-      return
-    }
-
-    self.viewModel = interactor.getAppVersion()
+    self.viewModel = self.interactor.getAppVersion()
   }
 }
