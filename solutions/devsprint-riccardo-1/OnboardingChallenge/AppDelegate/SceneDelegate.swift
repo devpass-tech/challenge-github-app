@@ -1,5 +1,6 @@
 // Copyright © 2021 DevPass. All rights reserved.
 
+import OnboardingChallengeKit
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
