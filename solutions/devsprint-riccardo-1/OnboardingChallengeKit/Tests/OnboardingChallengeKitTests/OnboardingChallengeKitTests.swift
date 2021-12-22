@@ -8,6 +8,6 @@ final class OnboardingChallengeKitTests: XCTestCase {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct
     // results.
-    XCTAssertEqual(OnboardingChallengeKit().text, "Hello, World!")
+//    XCTAssertEqual(OnboardingChallengeKit().text, "Hello, World!")
   }
 }
