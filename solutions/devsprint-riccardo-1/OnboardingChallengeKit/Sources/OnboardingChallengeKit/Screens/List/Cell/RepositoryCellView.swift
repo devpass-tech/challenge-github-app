@@ -8,6 +8,9 @@
 import UIKit
 
 class RepositoryCellView: UITableViewCell {
+    // MARK: Properties
+    static let reuseIdentifier = "RepositoryCellView"
+    
     // MARK: Outlets
     private lazy var labelRepositoryName: UILabel = {
         let label = UILabel()
@@ -20,7 +23,7 @@ class RepositoryCellView: UITableViewCell {
     private lazy var labelRepositoryOwnerName: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.textColor = .systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,14 +36,6 @@ class RepositoryCellView: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     // MARK: Methods
@@ -63,9 +58,9 @@ class RepositoryCellView: UITableViewCell {
     func configureConstraints() {
         NSLayoutConstraint.activate([
             labelRepositoryName.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            labelRepositoryName.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
+            labelRepositoryName.leadingAnchor.constraint(equalTo: self.readableContentGuide.leadingAnchor, constant: 15),
             labelRepositoryOwnerName.topAnchor.constraint(equalTo: labelRepositoryName.topAnchor, constant: 25),
-            labelRepositoryOwnerName.leftAnchor.constraint(equalTo: labelRepositoryName.leftAnchor)
+            labelRepositoryOwnerName.leadingAnchor.constraint(equalTo: labelRepositoryName.leadingAnchor)
         ])
     }
     
