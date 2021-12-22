@@ -64,10 +64,11 @@ extension SettingsView: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let lists = self.viewModel[indexPath.section]
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.Identifier) as? SettingsCell
-    else {
-      fatalError("Dequeue reuseable cell failed while casting")
-    }
+    // swiftlint:disable force_cast
+    let cell = tableView
+      .dequeueReusableCell(withIdentifier: SettingsCell.Identifier) as! SettingsCell
+    // swiftlint:enable force_cast
+
     let item = lists.items[indexPath.row]
     cell.updateView(with: item)
 
@@ -75,7 +76,7 @@ extension SettingsView: UITableViewDataSource {
   }
 
   func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return self.viewModel[section].title.value
+    self.viewModel[section].titleForSection
   }
 }
 

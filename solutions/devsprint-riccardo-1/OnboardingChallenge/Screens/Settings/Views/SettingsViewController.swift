@@ -4,14 +4,20 @@ import UIKit
 
 class SettingsViewController: UIViewController {
   var interactor: SettingsInteractor?
-  var viewModel: [SettingsViewModel] = []
 
-  private lazy var settingsView: SettingsView = {
-    return SettingsView()
-  }()
+  var viewModel: SettingsViewModel {
+    didSet {
+      self.settingsView.updateView(with: [self.viewModel])
+    }
+  }
 
-  init(interactor: SettingsInteractor) {
+  private var settingsView: SettingsView {
+    return (self.view as? SettingsView)!
+  }
+
+  init(interactor: SettingsInteractor, viewModel: SettingsViewModel) {
     self.interactor = interactor
+    self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -21,7 +27,7 @@ class SettingsViewController: UIViewController {
   }
 
   override func loadView() {
-    self.view = self.settingsView
+    self.view = SettingsView()
   }
 
   required init?(coder _: NSCoder) {
@@ -29,10 +35,10 @@ class SettingsViewController: UIViewController {
   }
 
   private func fetchAppInfo() {
-    self.interactor?.getAppVersion { viewModel in
-      self.viewModel.append(viewModel)
+    guard let interactor = interactor else {
+      return
     }
 
-    self.settingsView.updateView(with: self.viewModel)
+    self.viewModel = interactor.getAppVersion()
   }
 }

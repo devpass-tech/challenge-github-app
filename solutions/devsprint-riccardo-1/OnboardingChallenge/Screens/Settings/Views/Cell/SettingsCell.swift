@@ -21,6 +21,10 @@ class SettingsCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
+  override func awakeFromNib() {
+    super.awakeFromNib()
+  }
+
   func updateView(with viewModel: String) {
     self.name.text = viewModel
   }
@@ -38,10 +42,9 @@ extension SettingsCell {
 
   private func configureSubviewsConstraints() {
     NSLayoutConstraint.activate([
-      self.name.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
-      self.name.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 15),
-      self.name.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-      self.name.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 5),
+      self.name.leadingAnchor.constraint(equalTo: self.readableContentGuide.leadingAnchor),
+      self.name.trailingAnchor.constraint(equalTo: self.readableContentGuide.trailingAnchor),
+      self.name.centerYAnchor.constraint(equalTo: self.centerYAnchor),
     ])
   }
 }

@@ -3,19 +3,19 @@
 import Foundation
 
 protocol LoadingPropertyInfo {
-  func getAppVersion(completion: @escaping (SettingsViewModel) -> Void)
+  func getAppVersion() -> SettingsViewModel
 }
 
 class SettingsInteractor: LoadingPropertyInfo {
-  var bundleService: BundleService?
+  var bundleService: BundleService
 
   init(bundleService: BundleService) {
     self.bundleService = bundleService
   }
 
-  func getAppVersion(completion: @escaping (SettingsViewModel) -> Void) {
-    guard let version = bundleService?.appVersion else { return }
-    let viewModel = SettingsViewModel(title: .appVersion, items: ["Version" + version])
-    completion(viewModel)
+  func getAppVersion() -> SettingsViewModel {
+    let version = self.bundleService.appVersion
+    let viewModel = SettingsViewModel(title: .appVersion, items: ["Version " + version])
+    return viewModel
   }
 }

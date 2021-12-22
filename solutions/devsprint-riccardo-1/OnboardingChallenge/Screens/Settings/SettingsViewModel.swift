@@ -2,12 +2,16 @@
 
 import Foundation
 
-class SettingsViewModel {
+struct SettingsViewModel {
   let title: SettingsTitle
   let items: [String]
 
   init(title: SettingsTitle, items: [String]) {
     self.title = title
     self.items = items
+  }
+
+  var titleForSection: String {
+    return self.title.value
   }
 }
