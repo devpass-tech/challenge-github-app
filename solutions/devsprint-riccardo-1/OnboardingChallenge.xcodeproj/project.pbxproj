@@ -119,26 +119,6 @@
 			path = OnboardingChallengeTests;
 			sourceTree = "<group>";
 		};
-		98586A07270E3FEF0088A775 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				98586A08270E40430088A775 /* UITableViewCell+Extensions.swift */,
-				98586A0A270E407D0088A775 /* UIColor+Extensions.swift */,
-				98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */,
-				98586A0E270E41DF0088A775 /* String+Extensions.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A20751B52769F1F800264DF6 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				A20751B62769F21500264DF6 /* ButtonView.swift */,
-				5866748727710FFE006FE0E7 /* LicenseView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,7 +236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --fix\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  $(which swiftlint) --fix\n  $(which swiftlint)\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		46B812DB2768EFC600A4867B /* Formatting */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -274,7 +254,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "if which swiftformat >/dev/null; then\n  $(which swiftformat) .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -285,8 +265,6 @@
 			files = (
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
-				5866748827710FFE006FE0E7 /* LicenseView.swift in Sources */,
-				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
