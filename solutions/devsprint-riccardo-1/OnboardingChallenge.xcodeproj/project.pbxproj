@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4645BF89276347CD0079B5A2 /* SwiftUIPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645BF88276347CD0079B5A2 /* SwiftUIPreView.swift */; };
+		7A1643AD2769205E00F33A5E /* BundleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1643AC2769205E00F33A5E /* BundleService.swift */; };
+		7A1643B627692E7700F33A5E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1643B527692E7700F33A5E /* SettingsView.swift */; };
+		7A271A132768BF36004206EB /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A122768BF36004206EB /* SettingsInteractor.swift */; };
+		7A271A172768C32E004206EB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A271A162768C32E004206EB /* SettingsViewModel.swift */; };
+		7AC75DD9276BD95400335F88 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC75DD8276BD95400335F88 /* SettingsCell.swift */; };
+		7AC75DDC276BDCE400335F88 /* SettingsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC75DDB276BDCE400335F88 /* SettingsTitle.swift */; };
 		4638298C277249590017BBD7 /* OnboardingChallengeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4638298B277249590017BBD7 /* OnboardingChallengeKit */; };
 		980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2D2705077B00F8100A /* AppDelegate.swift */; };
 		980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980C0C2F2705077B00F8100A /* SceneDelegate.swift */; };
@@ -26,6 +33,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4645BF88276347CD0079B5A2 /* SwiftUIPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPreView.swift; sourceTree = "<group>"; };
+		7A1643AC2769205E00F33A5E /* BundleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BundleService\U0010\U0010.swift"; sourceTree = "<group>"; };
+		7A1643B527692E7700F33A5E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7A271A122768BF36004206EB /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		7A271A162768C32E004206EB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = OnboardingChallenge/Screens/Settings/SettingsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		7AC75DD8276BD95400335F88 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		7AC75DDB276BDCE400335F88 /* SettingsTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTitle.swift; sourceTree = "<group>"; };
 		46382989277247F80017BBD7 /* OnboardingChallengeKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OnboardingChallengeKit; sourceTree = "<group>"; };
 		980C0C2A2705077B00F8100A /* OnboardingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		980C0C2D2705077B00F8100A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +75,32 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A1643B427692E6300F33A5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AC75DDF276BDFC200335F88 /* Cell */,
+				9824AD65273322C6001044D2 /* SettingsViewController.swift */,
+				7A1643B527692E7700F33A5E /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AC75DDA276BDCCE00335F88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7AC75DDB276BDCE400335F88 /* SettingsTitle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7AC75DDF276BDFC200335F88 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7AC75DD8276BD95400335F88 /* SettingsCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		980C0C212705077B00F8100A = {
@@ -109,6 +149,33 @@
 				980C0C3B2705078100F8100A /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		980C0C4627061F6400F8100A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				980C0C4727061F8900F8100A /* Service.swift */,
+				7A1643AC2769205E00F33A5E /* BundleService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9822D796270E45E3005FAAA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9824AD6227332295001044D2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7AC75DDA276BDCCE00335F88 /* Models */,
+				7A1643B427692E6300F33A5E /* Views */,
+				7A271A162768C32E004206EB /* SettingsViewModel.swift */,
+				7A271A122768BF36004206EB /* SettingsInteractor.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		985869FD270E3E4E0088A775 /* OnboardingChallengeTests */ = {
@@ -263,8 +330,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A271A172768C32E004206EB /* SettingsViewModel.swift in Sources */,
+				7AC75DD9276BD95400335F88 /* SettingsCell.swift in Sources */,
+				7A1643AD2769205E00F33A5E /* BundleService.swift in Sources */,
+				7AC75DDC276BDCE400335F88 /* SettingsTitle.swift in Sources */,
+				7A271A132768BF36004206EB /* SettingsInteractor.swift in Sources */,
+				980C0C4827061F8900F8100A /* Service.swift in Sources */,
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
+				9824AD66273322C6001044D2 /* SettingsViewController.swift in Sources */,
+				7A1643B627692E7700F33A5E /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
