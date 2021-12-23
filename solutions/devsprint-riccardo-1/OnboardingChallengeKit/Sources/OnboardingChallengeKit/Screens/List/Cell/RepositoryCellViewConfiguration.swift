@@ -1,13 +1,8 @@
-//
-//  RepositoryCellViewConfiguration.swift
-//  OnboardingChallenge
-//
-//  Created by Mateus Nazário Coelho on 16/12/21.
-//
+// Copyright © 2021 DevPass. All rights reserved.
 
 import Foundation
 
 struct RepositoryCellViewConfiguration {
-    var repositoryName: String
-    var repositoryOwnerName: String
+  var repositoryName: String
+  var repositoryOwnerName: String
 }
