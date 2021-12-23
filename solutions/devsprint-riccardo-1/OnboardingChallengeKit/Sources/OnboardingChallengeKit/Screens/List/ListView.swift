@@ -1,17 +1,19 @@
-// Copyright © 2021 Bending Spoons S.p.A. All rights reserved.
+// Copyright © 2021 DevPass. All rights reserved.
 
 import UIKit
 
 final class ListView: UIView {
-  private let listViewCellIdentifier = "ListViewCellIdentifier"
-
-  private var listItems: [String] = []
+  private var listItems: [RepositoryCellViewConfiguration] = []
 
   private lazy var tableView: UITableView = {
     let tableView = UITableView(frame: .zero)
     tableView.translatesAutoresizingMaskIntoConstraints = false
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+      tableView.register(RepositoryCellView.self,
+                         forCellReuseIdentifier: RepositoryCellView.reuseIdentifier)
     tableView.dataSource = self
+    tableView.delegate = self
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.estimatedRowHeight = 70
     return tableView
   }()
 
@@ -29,7 +31,6 @@ final class ListView: UIView {
 extension ListView {
   private func customizeInterface() {
     self.backgroundColor = .white
-
     self.configureSubviews()
     self.configureSubviewsConstraints()
   }
@@ -61,10 +62,18 @@ extension ListView: UITableViewDataSource {
   }
 
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-    cell.textLabel?.text = self.listItems[indexPath.row]
+    // swiftlint:disable force_unwrapping
+      let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.reuseIdentifier) as! RepositoryCellView
+    // swiftlint:enable force_unwrapping
+    cell.updateView(with: listItems[indexPath.row])
     return cell
   }
+}
+
+extension ListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
 }
 
 #if DEBUG
@@ -74,9 +83,10 @@ extension ListView: UITableViewDataSource {
     static var previews: some View {
       return SwiftUIPreView { _ in
         let lv = ListView()
-        lv.updateView(with: .init(listItems: [
-          "first", "second", "third", "fourth",
-        ]))
+        lv.updateView(with: .init(listItems:[
+            RepositoryCellViewConfiguration(repositoryName: "hereminders-ios", repositoryOwnerName: "rdgborges"),
+            RepositoryCellViewConfiguration(repositoryName: "hereminders-ios", repositoryOwnerName: "mateusnazarioc")
+          ]))
         return lv
       }
     }

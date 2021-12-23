@@ -50,7 +50,7 @@
 
 # Use specified source file header template for all files.
 --rules fileHeader
---header "// Copyright © {year} Bending Spoons S.p.A. All rights reserved."
+--header "// Copyright © {year} DevPass. All rights reserved."
 
 # Reposition let or var bindings within pattern.
 --rules hoistPatternLet
