@@ -10,7 +10,7 @@ struct Service: ServiceProtocol {
   func fetchList(_ completion: ([RepositoryCellViewConfiguration]) -> Void) {
     completion([
       RepositoryCellViewConfiguration(repositoryName: "hereminders-ios", repositoryOwnerName: "rdgborges"),
-      RepositoryCellViewConfiguration(repositoryName: "hereminders-ios", repositoryOwnerName: "mateusnazarioc"),
+      RepositoryCellViewConfiguration(repositoryName: "challenge-onboarding", repositoryOwnerName: "mateusnazarioc"),
     ])
   }
 }

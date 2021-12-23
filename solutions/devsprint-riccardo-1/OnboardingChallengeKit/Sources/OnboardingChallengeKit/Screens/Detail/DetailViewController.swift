@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     override func loadView() {

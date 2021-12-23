@@ -3,7 +3,6 @@
 import UIKit
 
 public final class ListViewController: UIViewController {
-    
     // MARK: Outlets
     private lazy var listView: ListView = {
         return ListView()
@@ -56,7 +55,9 @@ public final class ListViewController: UIViewController {
     }
         
     private func bindEvents() {
-        //insert the callback for the tapped cell in ListView
+        listView.didSelectRow = { [weak self] repository in
+            self?.instanceDetails(of: repository)
+        }
     }
     
     private func fetchList() {
@@ -64,6 +65,12 @@ public final class ListViewController: UIViewController {
             let configuration = ListViewConfiguration(listItems: items)
             self.listView.updateView(with: configuration)
         }
+    }
+    
+    private func instanceDetails(of item: RepositoryCellViewConfiguration) {
+        let viewController = DetailViewController()
+        viewController.title = item.repositoryName
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
