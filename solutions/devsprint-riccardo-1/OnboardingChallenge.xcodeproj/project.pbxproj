@@ -111,13 +111,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9822D796270E45E3005FAAA2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		985869FD270E3E4E0088A775 /* OnboardingChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,7 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = WA9JUKEPEP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OnboardingChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -457,7 +450,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = WA9JUKEPEP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OnboardingChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
