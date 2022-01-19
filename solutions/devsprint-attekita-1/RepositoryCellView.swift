@@ -12,12 +12,11 @@ struct RepositoryCellViewConfiguration {
     var subtitle: String
 }
 
-
-class RepositoryCellView: UITableViewCell {
+final class RepositoryCellView: UITableViewCell {
 
     // MARK: Components
     
-    lazy var repositoryTitle: UILabel = {
+    private lazy var repositoryTitle: UILabel = {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +26,7 @@ class RepositoryCellView: UITableViewCell {
         return label
     }()
 
-    lazy var repositoryOwner: UILabel = {
+    private lazy var repositoryOwner: UILabel = {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +54,6 @@ class RepositoryCellView: UITableViewCell {
         
         repositoryTitle.text = configuration.title
         repositoryOwner.text = configuration.subtitle
-        
     }
 
 }
@@ -84,5 +82,4 @@ extension RepositoryCellView: ViewCodable {
             repositoryOwner.topAnchor.constraint(equalTo: repositoryTitle.bottomAnchor, constant: 8)
         ])
     }
-    
 }
