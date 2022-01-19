@@ -35,22 +35,15 @@ final class ListViewController: UIViewController {
     }
     
     private func fetchRepos(){
-        self.service.fetchRepositories{ user in
-            print(user)
+        self.service.fetchRepositories("devpass-tech"){ repositories in
+            let configuration = ListViewConfiguration(listRepositories: repositories!)
+            
+            DispatchQueue.main.async {
+                self.listView.updateView(with: configuration)
+            }
             
         }
     }
-    
-    private func fetchList() {
-        
-        self.service.fetchList { items in
-            
-            let configuration = ListViewConfiguration(listItems: items)
-            
-            self.listView.updateView(with: configuration)
-        }
-    }
-    
 }
 
 
