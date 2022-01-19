@@ -12,6 +12,7 @@ final class ListView: UIView {
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var listItems: [String] = []
+    var listViewController = ListViewController()
 
     private lazy var tableView: UITableView = {
 
@@ -19,6 +20,7 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -70,7 +72,7 @@ extension ListView {
     }
 }
 
-extension ListView: UITableViewDataSource {
+extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -82,6 +84,13 @@ extension ListView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
         cell.textLabel?.text = self.listItems[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let title = tableView.cellForRow(at: indexPath)?.textLabel?.text {
+            listViewController.detailNavigate(title: title)
+        }
     }
 }
 
