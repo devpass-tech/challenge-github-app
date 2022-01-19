@@ -27,7 +27,7 @@ struct Service: ServiceProtocol {
         self.performRequest(url, completion: completion)
     }
     
-    //MARK: T is a Genereic method, so we can have less code.
+    //MARK: T is an know genereic method, so we can have less code.
     func performRequest<T: Decodable>(_ url: URL, completion: @escaping (T?) -> Void) {
         
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
