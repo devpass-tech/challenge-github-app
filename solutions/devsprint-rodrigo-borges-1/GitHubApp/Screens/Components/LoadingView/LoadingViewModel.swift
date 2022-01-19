@@ -8,5 +8,5 @@
 import Foundation
 
 struct LoadingViewModel {
-    let textLabel: String?
+    let textLabel: String
 }

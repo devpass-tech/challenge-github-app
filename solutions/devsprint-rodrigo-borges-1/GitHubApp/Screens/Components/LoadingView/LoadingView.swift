@@ -12,14 +12,13 @@ final class LoadingView: UIView {
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Searching repositories..."
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .black
         label.textAlignment = .center
         return label
     }()
     
-    lazy var indicatorView: UIActivityIndicatorView = {
+    private lazy var indicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .large)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.color = .darkGray
@@ -37,7 +36,7 @@ final class LoadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with viewModel: LoadingViewModel) {
+    func updateView(with viewModel: LoadingViewModel) {
         textLabel.text = viewModel.textLabel
     }
     
