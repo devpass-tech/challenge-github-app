@@ -60,15 +60,25 @@ class OwnerView: UIView {
   
   private lazy var button: UIButton = {
     let button = UIButton(type: .system)
-    return button
+    button.setTitle("See Profile", for: .normal)
   }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-        
+    
+    configureSubviews()
+    
   }
   
-  
+  private func configureSubviews() {
+    //addSubview(<#T##UIView#>)
+    
+    [ownerTitleLabel, ownerNameLabel, ownerRoleLabel].forEach { (view: UILabel) in
+      ownerTextStackView.addArrangedSubview(view)
+    }
+    
+    //addSubview(<#T##view: UIView##UIView#>)
+  }
   
   
   
