@@ -21,11 +21,10 @@ class OwnerView: UIView {
   
   private lazy var ownerTextStackView: UIStackView = {
     // This stack view contains the owner's informations
-    
     let stackView = UIStackView()
     stackView.axis = .vertical
     stackView.spacing = 8
-    stackView.distribution = .fillEqually
+    stackView.distribution = .fillProportionally
     stackView.translatesAutoresizingMaskIntoConstraints = false
     return stackView
   }()
@@ -61,23 +60,51 @@ class OwnerView: UIView {
   private lazy var button: UIButton = {
     let button = UIButton(type: .system)
     button.setTitle("See Profile", for: .normal)
+    return button
+  }()
+  
+  private lazy var mainStackView: UIStackView = {
+    // This stack view contains ownerProfileStackView + Button
+    let stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.spacing = 8
+    stackView.distribution = .fillEqually
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    return stackView
   }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    
+    backgroundColor = .systemIndigo
     configureSubviews()
-    
+    configureConstraints()
   }
   
   private func configureSubviews() {
-    //addSubview(<#T##UIView#>)
+    
+    [ownerTextStackView, ownerImageView].forEach { (view: UIView) in
+      ownerProfileStackView.addArrangedSubview(view)
+    }
     
     [ownerTitleLabel, ownerNameLabel, ownerRoleLabel].forEach { (view: UILabel) in
       ownerTextStackView.addArrangedSubview(view)
     }
     
-    //addSubview(<#T##view: UIView##UIView#>)
+    [ownerProfileStackView, button].forEach { (view: UIView) in
+      mainStackView.addArrangedSubview(view)
+    }
+    
+    mainStackView.backgroundColor = .white
+    addSubview(mainStackView)
+  }
+  
+  private func configureConstraints() {
+    NSLayoutConstraint.activate([
+      mainStackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+      mainStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+      mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+      mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+    ])
   }
   
   
