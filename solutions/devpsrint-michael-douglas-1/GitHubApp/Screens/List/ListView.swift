@@ -12,12 +12,16 @@ final class ListView: UIView {
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var listItems: [String] = []
+    
+    private var repositoryUser: [String] = []
 
     private lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.reuseIdentifier)
+        tableView.rowHeight = 70
+        tableView.estimatedRowHeight = 70
         tableView.dataSource = self
         return tableView
     }()
@@ -63,11 +67,22 @@ private extension ListView {
 
 extension ListView {
 
-    func updateView(with configuration: ListViewConfiguration) {
+    func updateView(with configuration: RepositoryCellViewConfiguration) {
 
-        self.listItems = configuration.listItems
+        self.listItems = configuration.repositoryItens
+        
         self.tableView.reloadData()
     }
+    
+    func updateUser(with configuration: RepositoryCellViewUser) {
+        
+        self.repositoryUser = configuration.repositoryUserList
+        
+        self.tableView.reloadData()
+        
+    }
+    
+    
 }
 
 extension ListView: UITableViewDataSource {
@@ -76,12 +91,29 @@ extension ListView: UITableViewDataSource {
 
         return self.listItems.count
     }
-
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.reuseIdentifier, for: indexPath) as? RepositoryCellView else {
+            return .init()
+        }
+        
+        cell.repositoryLabel.text = self.listItems[indexPath.row]
+
+        cell.nameLabel.text = self.repositoryUser[indexPath.row]
+           
+        cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
 }
 
+extension UITableViewCell {
+    
+    static var reuseIdentifier: String {
+        
+        String(describing: self)
+        
+    }
+    
+}

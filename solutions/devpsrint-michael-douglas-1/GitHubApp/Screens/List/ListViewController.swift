@@ -31,17 +31,32 @@ final class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.fetchList()
+        
+        self.UserList()
     }
 
     private func fetchList() {
 
-        self.service.fetchList { items in
+        self.service.repositoryList { items in
 
-            let configuration = ListViewConfiguration(listItems: items)
+            let configuration = RepositoryCellViewConfiguration(repositoryItens: items)
 
             self.listView.updateView(with: configuration)
         }
+    }
+    
+    private func UserList(){
+        
+        self.service.repositoryUser { users in
+            
+            let userConfiguration = RepositoryCellViewUser(repositoryUserList: users)
+            
+            self.listView.updateUser(with: userConfiguration)
+            
+        }
+        
     }
 }
 
