@@ -36,13 +36,20 @@ final class ListViewController: UIViewController {
         self.fetchList()
     }
 
+    private func fetchUser() {
+        
+        self.service.fetchUser("devpass-tech") {user in
+            print(user)
+            
+        }
+    }
+    
     private func fetchList() {
 
-        self.service.fetchList { items in
+        self.service.fetchList("devpass-tech") { repositories in
 
-            let configuration = ListViewConfiguration(listItems: items)
-
-            self.listView.updateView(with: configuration)
+            print(repositories?.first?.name)
+            print(repositories?.first?.owner.avatarUrl)
         }
     }
 }

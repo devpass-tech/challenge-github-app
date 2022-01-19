@@ -20,6 +20,8 @@
 		98586A0B270E407D0088A775 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0A270E407D0088A775 /* UIColor+Extensions.swift */; };
 		98586A0D270E40DF0088A775 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */; };
 		98586A0F270E41DF0088A775 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98586A0E270E41DF0088A775 /* String+Extensions.swift */; };
+		E5E9BD432798630000153EC2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9BD422798630000153EC2 /* User.swift */; };
+		E5E9BD4527986D6800153EC2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E9BD4427986D6800153EC2 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		98586A0A270E407D0088A775 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0C270E40DF0088A775 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		98586A0E270E41DF0088A775 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E5E9BD422798630000153EC2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E5E9BD4427986D6800153EC2 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 		9822D796270E45E3005FAAA2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E5E9BD422798630000153EC2 /* User.swift */,
+				E5E9BD4427986D6800153EC2 /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 				98586A09270E40430088A775 /* UITableViewCell+Extensions.swift in Sources */,
 				980C0C2E2705077B00F8100A /* AppDelegate.swift in Sources */,
 				980C0C302705077B00F8100A /* SceneDelegate.swift in Sources */,
+				E5E9BD432798630000153EC2 /* User.swift in Sources */,
+				E5E9BD4527986D6800153EC2 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
