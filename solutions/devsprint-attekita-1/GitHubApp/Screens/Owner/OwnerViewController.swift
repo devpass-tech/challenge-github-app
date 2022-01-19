@@ -13,6 +13,7 @@ class OwnerViewController: UIViewController {
     super.viewDidLoad()
     
     view = OwnerView()
+    
   }
   
   
