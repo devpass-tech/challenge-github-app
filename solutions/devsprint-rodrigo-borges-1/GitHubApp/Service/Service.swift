@@ -8,13 +8,13 @@
 import Foundation
 
 protocol ServiceProtocol {
-    func fetchRepositories (_ completion: @escaping (Repository?) -> Void)
+    func fetchRepositories (_ name: String, _ completion: @escaping ([Repository]?) -> Void)
 }
 
 struct Service: ServiceProtocol {
     
-    func fetchRepositories(_ completion: @escaping (Repository?) -> Void) {
-        let url = URL(string:"https://api.github.com/users/devpass-tech/repos")!
+    func fetchRepositories(_ name: String, _ completion: @escaping ([Repository]?) -> Void) {
+        let url = URL(string:"https://api.github.com/users/\(name)/repos")!
         
         let dataTask = URLSession.shared.dataTask(with: url){ data, response, error
             in
@@ -26,7 +26,7 @@ struct Service: ServiceProtocol {
             
             if let data = data {
                 let jsonDecodable = JSONDecoder()
-                let repo = try? jsonDecodable.decode(Repository.self, from: data)
+                let repo = try? jsonDecodable.decode([Repository].self, from: data)
                 completion(repo)
             }
         }
