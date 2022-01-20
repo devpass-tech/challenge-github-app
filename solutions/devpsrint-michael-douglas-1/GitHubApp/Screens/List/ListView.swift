@@ -70,9 +70,8 @@ extension ListView {
 
 extension ListView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView.backgroundView = emptyView
-//        return self.listItems.count
-        return 0
+        tableView.backgroundView = self.listItems.count > 0 ? UIView() : emptyView
+        return self.listItems.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
