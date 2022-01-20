@@ -23,12 +23,8 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
-<<<<<<< HEAD
 
-=======
- 
     // MARK: Initialization
->>>>>>> c12f42655d4e79e90505150b1fef62c4d7e0fe02
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,22 +41,19 @@ final class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-
         self.fetchRepositories()
+        self.setupUI()
     }
     
     private func fetchRepositories() {
 
-        self.service.fetchRepositoryList("devpass-tech") { repositories in
-            let configuration = ListViewConfiguration(listRepositories: repositories!)
+        self.service.fetchRepositories(fromUserName: "devpass-tech") { repositories in
+            let configuration = ListViewConfiguration(repositories: repositories ?? [])
             
             DispatchQueue.main.sync { [weak self] in
                 self?.listView.updateView(with: configuration)
             }
-=======
-        self.fetchList()
-        setupUI()
+        }
     }
     
     // MARK: Methods
@@ -74,14 +67,6 @@ final class ListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
-    }
-
-    private func fetchList() {
-        self.service.fetchList { items in
-            let configuration = ListViewConfiguration(listItems: items)
-            self.listView.updateView(with: configuration)
->>>>>>> c12f42655d4e79e90505150b1fef62c4d7e0fe02
-        }
     }
 }
 

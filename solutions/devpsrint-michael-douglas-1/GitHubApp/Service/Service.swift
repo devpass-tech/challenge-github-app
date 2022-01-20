@@ -22,7 +22,7 @@ struct Service: ServiceProtocol {
     
     func performRequest<T: Decodable>(_ url: URL, completion: @escaping (T?) -> Void) {
         
-        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             
             guard let data = data else {
                 completion(nil)
