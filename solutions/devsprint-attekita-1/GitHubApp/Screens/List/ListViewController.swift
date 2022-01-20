@@ -11,7 +11,7 @@ final class ListViewController: UIViewController {
 
     private lazy var listView: ListView = {
         var listView = ListView()
-        listView.listViewController = self
+        listView.delegate = self
         return listView
     }()
 
@@ -44,11 +44,13 @@ final class ListViewController: UIViewController {
             self.listView.updateView(with: configuration)
         }
     }
-    
-    func detailNavigate(title: String) {
-        let vc = DetailViewController()
-        vc.title = title
-        self.navigationController?.pushViewController(vc, animated: true)
+}
+
+extension ListViewController: ListViewDelegate {
+    func navigateToDetail(title: String) {
+        let viewController = DetailViewController()
+        viewController.title = title
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

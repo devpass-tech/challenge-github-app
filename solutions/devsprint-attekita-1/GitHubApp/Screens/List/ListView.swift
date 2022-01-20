@@ -7,12 +7,15 @@
 
 import UIKit
 
+protocol ListViewDelegate: AnyObject {
+    func navigateToDetail(title: String)
+}
+
 final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var listItems: [String] = []
-    var listViewController = ListViewController()
 
     private lazy var tableView: UITableView = {
 
@@ -24,6 +27,8 @@ final class ListView: UIView {
         return tableView
     }()
 
+    weak var delegate: ListViewDelegate?
+    
     init() {
 
         super.init(frame: .zero)
@@ -89,7 +94,7 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let title = tableView.cellForRow(at: indexPath)?.textLabel?.text {
-            listViewController.detailNavigate(title: title)
+            delegate?.navigateToDetail(title: title)
         }
     }
 }
