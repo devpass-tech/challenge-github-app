@@ -10,8 +10,9 @@ import UIKit
 final class ListViewController: UIViewController {
 
     private lazy var listView: ListView = {
-
-        return ListView()
+        var listView = ListView()
+        listView.delegate = self
+        return listView
     }()
 
     private let service = Service()
@@ -48,7 +49,7 @@ final class ListViewController: UIViewController {
         }
     }
     
-    func navigationControllerSetup() {
+   private func navigationControllerSetup() {
         self.navigationItem.searchController = searchController
         self.navigationItem.title = "Repositories"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -76,4 +77,12 @@ extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
 extension ListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) { }
 }
+extension ListViewController: ListViewDelegate {
+    func navigateToDetail(title: String) {
+        let viewController = DetailViewController()
+        viewController.title = title
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
 
