@@ -55,6 +55,7 @@ class RepositoryCellView: UITableViewCell {
 extension RepositoryCellView {
     func configureSubviews() {
             addSubview(stackView)
+            stackView.translatesAutoresizingMaskIntoConstraints = false
             stackView.axis = .vertical
             stackView.spacing = 5
         }
