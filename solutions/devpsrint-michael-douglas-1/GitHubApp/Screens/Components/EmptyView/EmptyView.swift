@@ -49,12 +49,18 @@ final class EmptyView: UIView {
     // MARK: Methods
     private func setupUI() {
         backgroundColor = .green
+        setupLabelTitle()
+        setupLabelSubtitle()
+        setupStackSubviews()
+        setupConstraints()
+    }
+    
+    private func setupStackSubviews() {
         addSubview(stackLabels)
         stackLabels.addArrangedSubview(viewTitle)
         stackLabels.addArrangedSubview(viewSubtitle)
         viewTitle.addSubview(labelTitle)
         viewSubtitle.addSubview(labelSubtitle)
-        setupConstraints()
     }
     
     private func setupConstraints() {
@@ -73,11 +79,6 @@ final class EmptyView: UIView {
         labelSubtitle.bottomAnchor.constraint(equalTo: viewSubtitle.bottomAnchor).isActive = true
     }
     
-    func updateView(with configuration: EmptyViewConfiguration) {
-        labelTitle.text = configuration.title
-        labelSubtitle.text = configuration.subTitle
-    }
-    
     private func builderView() -> UIView {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -91,5 +92,20 @@ final class EmptyView: UIView {
         label.numberOfLines = 0
         label.lineBreakMode = .byTruncatingTail
         return label
+    }
+    
+    private func setupLabelTitle() {
+        labelTitle.textColor = .black
+        labelTitle.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+    }
+    
+    private func setupLabelSubtitle() {
+        labelSubtitle.textColor = .gray
+        labelSubtitle.font = UIFont.systemFont(ofSize: 14)
+    }
+    
+    func updateView(with configuration: EmptyViewConfiguration) {
+        labelTitle.text = configuration.title
+        labelSubtitle.text = configuration.subTitle
     }
 }
