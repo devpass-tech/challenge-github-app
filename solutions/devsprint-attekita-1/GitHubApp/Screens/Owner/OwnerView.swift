@@ -36,10 +36,10 @@ class OwnerView: UIView {
   }()
   
   private lazy var ownerImageView: UIImageView = {
-    let imageView = UIImageView(image: UIImage(named: "random-user")!)
-    //imageView.translatesAutoresizingMaskIntoConstraints = false
-    //imageView.makeItRounded()
-    imageView.contentMode = .scaleAspectFit
+    let imageView = UIImageView()
+    imageView.image = UIImage(named: "random-user")!
+    imageView.layer.masksToBounds = true
+    imageView.layer.cornerRadius = 30
     return imageView
   }()
   
@@ -126,10 +126,14 @@ class OwnerView: UIView {
       mainStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
       
       button.heightAnchor.constraint(equalToConstant: 64.0),
-      ownerImageView.heightAnchor.constraint(equalToConstant: 64.0),
-      ownerImageView.widthAnchor.constraint(equalToConstant: 64.0),
       
-      ownerTitleLabel.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 16.0)
+      ownerTitleLabel.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 16.0),
+      
+      ownerNameLabel.bottomAnchor.constraint(equalTo: ownerRoleLabel.topAnchor, constant: -4),
+      
+      
+      ownerImageView.widthAnchor.constraint(equalToConstant: 60),
+      ownerImageView.heightAnchor.constraint(equalTo: ownerImageView.widthAnchor),
       
     ])
     
@@ -140,8 +144,6 @@ class OwnerView: UIView {
     ownerRoleLabel.text = configuration.ownerRole
     ownerImageView.image = configuration.ownerImage
   }
-  
-  
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
