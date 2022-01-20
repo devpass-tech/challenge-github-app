@@ -20,8 +20,6 @@ class RepositoryCellView: UITableViewCell {
       let label = UILabel()
       label.translatesAutoresizingMaskIntoConstraints = false
       label.font = UIFont.boldSystemFont(ofSize: 20)
-      label.text = "repository"
-        
       return label
    }()
    
@@ -33,8 +31,12 @@ class RepositoryCellView: UITableViewCell {
      return label
   }()
     
+   
+    private lazy var stackView = UIStackView(arrangedSubviews: [repositoryLabel, repositoryOwnerLabel])
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         self.configureSubviews()
         self.configureSubviewsConstraints()
         self.configureAdditionalBehaviors()
@@ -52,18 +54,16 @@ class RepositoryCellView: UITableViewCell {
 
 extension RepositoryCellView {
     func configureSubviews() {
-            addSubview(repositoryLabel)
-            addSubview(repositoryOwnerLabel)
+            addSubview(stackView)
+            stackView.axis = .vertical
+            stackView.spacing = 5
         }
 
         func configureSubviewsConstraints() {
             NSLayoutConstraint.activate([
                 heightAnchor.constraint(equalToConstant: cellHeight),
-                repositoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-                repositoryLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-                repositoryOwnerLabel.topAnchor.constraint(equalTo: repositoryLabel.bottomAnchor, constant: 5),
-                repositoryOwnerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
-
+                stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+                stackView.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             ])
         }
 
