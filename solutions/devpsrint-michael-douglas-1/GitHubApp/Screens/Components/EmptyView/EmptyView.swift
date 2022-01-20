@@ -15,7 +15,7 @@ final class EmptyView: UIView {
         stack.axis = .vertical
         stack.backgroundColor = .white
         stack.spacing = 15
-        stack.distribution = .fillProportionally
+        stack.distribution = .equalCentering
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -48,7 +48,7 @@ final class EmptyView: UIView {
     
     // MARK: Methods
     private func setupUI() {
-        backgroundColor = .green
+        backgroundColor = .white
         setupLabelTitle()
         setupLabelSubtitle()
         setupStackSubviews()
@@ -65,8 +65,8 @@ final class EmptyView: UIView {
     
     private func setupConstraints() {
         stackLabels.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        stackLabels.leftAnchor.constraint(equalTo: readableContentGuide.leftAnchor, constant: 10).isActive = true
-        stackLabels.rightAnchor.constraint(equalTo: readableContentGuide.rightAnchor, constant: -10).isActive = true
+        stackLabels.leftAnchor.constraint(equalTo: readableContentGuide.leftAnchor, constant: 60).isActive = true
+        stackLabels.rightAnchor.constraint(equalTo: readableContentGuide.rightAnchor, constant: -60).isActive = true
         
         labelTitle.topAnchor.constraint(equalTo: viewTitle.topAnchor).isActive = true
         labelTitle.leftAnchor.constraint(equalTo: viewTitle.readableContentGuide.leftAnchor).isActive = true
