@@ -163,7 +163,7 @@
 		9826D8F02788B43F00E05400 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E55BEF772798ADA5004A8EDB /* Repository.swift */,
+				E552E4A02799DBED006FCE29 /* Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +229,14 @@
 				9826D9122788BAC200E05400 /* DebugViewController.swift */,
 			);
 			path = DebugYourViews;
+			sourceTree = "<group>";
+		};
+		E552E4A02799DBED006FCE29 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E55BEF772798ADA5004A8EDB /* Repository.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
