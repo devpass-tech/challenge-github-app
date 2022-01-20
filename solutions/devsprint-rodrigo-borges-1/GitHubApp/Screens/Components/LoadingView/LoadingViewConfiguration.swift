@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct LoadingViewModel {
+struct LoadingViewConfiguration {
     let textLabel: String
 }

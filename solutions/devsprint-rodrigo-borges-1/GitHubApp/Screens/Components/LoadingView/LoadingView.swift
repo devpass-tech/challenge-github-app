@@ -36,7 +36,7 @@ final class LoadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateView(with viewModel: LoadingViewModel) {
+    func updateView(with viewModel: LoadingViewConfiguration) {
         textLabel.text = viewModel.textLabel
     }
     
