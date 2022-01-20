@@ -7,14 +7,19 @@
 
 import UIKit
 
+struct OwnerViewConfiguration {
+  let ownerName: String
+  let ownerRole: String
+  let ownerImage: UIImage?
+}
+
 class OwnerView: UIView {
   
   private lazy var ownerProfileStackView: UIStackView = {
     // This stack view contains text + image view
     let stackView = UIStackView()
     stackView.axis = .horizontal
-    stackView.spacing = 24
-    stackView.distribution = .fillEqually
+    stackView.distribution = .fillProportionally
     stackView.alignment = .bottom
     stackView.translatesAutoresizingMaskIntoConstraints = false
     return stackView
@@ -33,7 +38,7 @@ class OwnerView: UIView {
   private lazy var ownerImageView: UIImageView = {
     let imageView = UIImageView(image: UIImage(named: "random-user")!)
     //imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.makeItRounded()
+    //imageView.makeItRounded()
     imageView.contentMode = .scaleAspectFit
     return imageView
   }()
@@ -106,6 +111,10 @@ class OwnerView: UIView {
       mainStackView.addArrangedSubview(view)
     }
     
+    //ownerTextStackView.backgroundColor = .systemPink
+    //ownerProfileStackView.backgroundColor = .blue
+    //mainStackView.backgroundColor = .yellow
+    
   }
   
   private func configureConstraints() {
@@ -117,13 +126,19 @@ class OwnerView: UIView {
       mainStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
       
       button.heightAnchor.constraint(equalToConstant: 64.0),
-      ownerImageView.heightAnchor.constraint(equalToConstant: 92.0),
-      ownerImageView.widthAnchor.constraint(equalToConstant: 92.0),
+      ownerImageView.heightAnchor.constraint(equalToConstant: 64.0),
+      ownerImageView.widthAnchor.constraint(equalToConstant: 64.0),
       
       ownerTitleLabel.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 16.0)
       
     ])
     
+  }
+  
+  func updateView(with configuration: OwnerViewConfiguration) {
+    ownerNameLabel.text = configuration.ownerName
+    ownerRoleLabel.text = configuration.ownerRole
+    ownerImageView.image = configuration.ownerImage
   }
   
   
