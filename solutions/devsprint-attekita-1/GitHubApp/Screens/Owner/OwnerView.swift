@@ -14,7 +14,8 @@ class OwnerView: UIView {
     let stackView = UIStackView()
     stackView.axis = .horizontal
     stackView.spacing = 24
-    stackView.distribution = .fillProportionally
+    stackView.distribution = .fillEqually
+    stackView.alignment = .bottom
     stackView.translatesAutoresizingMaskIntoConstraints = false
     return stackView
   }()
@@ -23,7 +24,7 @@ class OwnerView: UIView {
     // This stack view contains the owner's informations
     let stackView = UIStackView()
     stackView.axis = .vertical
-    stackView.spacing = 8
+    stackView.spacing = 0
     stackView.distribution = .fillProportionally
     stackView.translatesAutoresizingMaskIntoConstraints = false
     return stackView
@@ -31,14 +32,16 @@ class OwnerView: UIView {
   
   private lazy var ownerImageView: UIImageView = {
     let imageView = UIImageView(image: UIImage(named: "random-user")!)
+    //imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.makeItRounded()
     imageView.contentMode = .scaleAspectFit
-    imageView.translatesAutoresizingMaskIntoConstraints = false
     return imageView
   }()
   
   private lazy var ownerTitleLabel: UILabel = {
     let label = UILabel()
     label.text = "Owner"
+    label.font = .systemFont(ofSize: 26.0, weight: .bold)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -53,13 +56,20 @@ class OwnerView: UIView {
   private lazy var ownerRoleLabel: UILabel = {
     let label = UILabel()
     label.text = "Mobile Tech Lead"
+    label.alpha = 0.5
+    label.font = .systemFont(ofSize: 14.0)
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
   
   private lazy var button: UIButton = {
     let button = UIButton(type: .system)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.backgroundColor = .systemBlue
     button.setTitle("See Profile", for: .normal)
+    button.titleLabel?.font = .systemFont(ofSize: 18.0, weight: .semibold)
+    button.layer.cornerRadius = 16
+    button.tintColor = .white
     return button
   }()
   
@@ -67,44 +77,53 @@ class OwnerView: UIView {
     // This stack view contains ownerProfileStackView + Button
     let stackView = UIStackView()
     stackView.axis = .vertical
-    stackView.spacing = 8
-    stackView.distribution = .fillEqually
+    stackView.spacing = 32
+    stackView.distribution = .fillProportionally
     stackView.translatesAutoresizingMaskIntoConstraints = false
     return stackView
   }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = .systemIndigo
+    backgroundColor = .white
     configureSubviews()
     configureConstraints()
   }
   
   private func configureSubviews() {
     
-    [ownerTextStackView, ownerImageView].forEach { (view: UIView) in
-      ownerProfileStackView.addArrangedSubview(view)
-    }
+    addSubview(mainStackView)
     
     [ownerTitleLabel, ownerNameLabel, ownerRoleLabel].forEach { (view: UILabel) in
       ownerTextStackView.addArrangedSubview(view)
+    }
+    
+    [ownerTextStackView, ownerImageView].forEach { (view: UIView) in
+      ownerProfileStackView.addArrangedSubview(view)
     }
     
     [ownerProfileStackView, button].forEach { (view: UIView) in
       mainStackView.addArrangedSubview(view)
     }
     
-    mainStackView.backgroundColor = .white
-    addSubview(mainStackView)
   }
   
   private func configureConstraints() {
     NSLayoutConstraint.activate([
-      mainStackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-      mainStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
-      mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-      mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+      mainStackView.centerXAnchor.constraint(
+        equalTo: safeAreaLayoutGuide.centerXAnchor),
+      mainStackView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
+      mainStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0),
+      mainStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
+      
+      button.heightAnchor.constraint(equalToConstant: 64.0),
+      ownerImageView.heightAnchor.constraint(equalToConstant: 92.0),
+      ownerImageView.widthAnchor.constraint(equalToConstant: 92.0),
+      
+      ownerTitleLabel.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 16.0)
+      
     ])
+    
   }
   
   
