@@ -7,13 +7,22 @@
 
 import UIKit
 
-class EmptyView: UIView {
+final class EmptyView: UIView {
 
     // MARK: Properties
+    private lazy var stackLabels: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.backgroundColor = .white
+        stack.spacing = 15
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
     
     // MARK: Initialization
     init() {
         super.init(frame: .zero)
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -21,6 +30,7 @@ class EmptyView: UIView {
     }
     
     // MARK: Methods
-    
-    
+    private func setupUI() {
+        backgroundColor = .green
+    }
 }
