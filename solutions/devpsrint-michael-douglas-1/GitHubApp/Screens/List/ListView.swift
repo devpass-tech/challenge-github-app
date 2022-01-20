@@ -22,7 +22,11 @@ final class ListView: UIView {
     }()
     
     private lazy var emptyView: EmptyView = {
-        EmptyView()
+        let emptyView = EmptyView()
+        let emptyViewConfiguration = EmptyViewConfiguration(title: "No repositories found",
+                                                            subTitle: "Search for users to see their public repositories here!")
+        emptyView.updateView(with: emptyViewConfiguration)
+        return emptyView
     }()
 
     init() {
@@ -67,7 +71,8 @@ extension ListView {
 extension ListView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundView = emptyView
-        return self.listItems.count
+//        return self.listItems.count
+        return 0
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
