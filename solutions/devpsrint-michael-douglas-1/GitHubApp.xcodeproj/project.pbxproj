@@ -12,10 +12,6 @@
 		9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8CB2788B40800E05400 /* GitHubAppTests.swift */; };
 		9826D8D62788B40800E05400 /* GitHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8D52788B40800E05400 /* GitHubAppUITests.swift */; };
 		9826D8D82788B40800E05400 /* GitHubAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8D72788B40800E05400 /* GitHubAppUITestsLaunchTests.swift */; };
-		9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E52788B43E00E05400 /* UIViewController+Extensions.swift */; };
-		9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E62788B43E00E05400 /* String+Extensions.swift */; };
-		9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */; };
-		9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E82788B43E00E05400 /* UITableViewCell+Extensions.swift */; };
 		9826D8FE2788B43F00E05400 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8EA2788B43E00E05400 /* Service.swift */; };
 		9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F32788B43F00E05400 /* SettingsViewController.swift */; };
 		9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F52788B43F00E05400 /* DetailViewController.swift */; };
@@ -27,6 +23,7 @@
 		9826D90E2788B8A900E05400 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90D2788B8A900E05400 /* DetailView.swift */; };
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
+		E55BEF782798ADA5004A8EDB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BEF772798ADA5004A8EDB /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +53,6 @@
 		9826D8D12788B40800E05400 /* GitHubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8D52788B40800E05400 /* GitHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITests.swift; sourceTree = "<group>"; };
 		9826D8D72788B40800E05400 /* GitHubAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9826D8E52788B43E00E05400 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		9826D8E62788B43E00E05400 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		9826D8E82788B43E00E05400 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		9826D8EA2788B43E00E05400 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9826D8F32788B43F00E05400 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9826D8F52788B43F00E05400 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +64,7 @@
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		E55BEF772798ADA5004A8EDB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +121,6 @@
 				9826D9112788BAA200E05400 /* DebugYourViews */,
 				9826D8E92788B43E00E05400 /* Service */,
 				9826D8F02788B43F00E05400 /* Models */,
-				9826D8E42788B43E00E05400 /* Extensions */,
 			);
 			path = GitHubApp;
 			sourceTree = "<group>";
@@ -147,17 +140,6 @@
 				9826D8D72788B40800E05400 /* GitHubAppUITestsLaunchTests.swift */,
 			);
 			path = GitHubAppUITests;
-			sourceTree = "<group>";
-		};
-		9826D8E42788B43E00E05400 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9826D8E52788B43E00E05400 /* UIViewController+Extensions.swift */,
-				9826D8E62788B43E00E05400 /* String+Extensions.swift */,
-				9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */,
-				9826D8E82788B43E00E05400 /* UITableViewCell+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9826D8E92788B43E00E05400 /* Service */ = {
@@ -181,6 +163,7 @@
 		9826D8F02788B43F00E05400 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E55BEF772798ADA5004A8EDB /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,17 +361,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
-				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
-				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
+				E55BEF782798ADA5004A8EDB /* Repository.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
-				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
 				9826D9062788B43F00E05400 /* ListViewConfiguration.swift in Sources */,
@@ -570,6 +550,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,6 +578,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

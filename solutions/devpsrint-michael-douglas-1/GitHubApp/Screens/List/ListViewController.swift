@@ -15,10 +15,9 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
- 
+
     init() {
         super.init(nibName: nil, bundle: nil)
-
     }
 
     required init?(coder: NSCoder) {
@@ -26,23 +25,27 @@ final class ListViewController: UIViewController {
     }
 
     override func loadView() {
+
         self.view = self.listView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchList()
+
+        self.fetchRepos()
     }
+    
+    private func fetchRepos() {
 
-    private func fetchList() {
-
-        self.service.fetchList { items in
-
-            let configuration = ListViewConfiguration(listItems: items)
-
-            self.listView.updateView(with: configuration)
+        self.service.fetchRepositoryList("devpass-tech") { repositories in
+            let configuration = ListViewConfiguration(listRepositories: repositories!)
+            
+            DispatchQueue.main.sync {
+                self.listView.updateView(with: configuration)
+            }
         }
     }
 }
+
 
 

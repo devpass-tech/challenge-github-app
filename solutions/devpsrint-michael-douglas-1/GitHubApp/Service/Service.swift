@@ -7,10 +7,42 @@
 
 import Foundation
 
-struct Service {
+protocol ServiceProtocol {
+    
+    func fetchRepositoryList(_ userName: String, _ completion: @escaping ([Repository]?) -> Void)
+}
 
-    func fetchList(_ completion: ([String]) -> Void) {
-
-        completion(["Repository 1", "Repository 2", "Repository 3"])
+struct Service: ServiceProtocol {
+    
+    func fetchRepositoryList(_ userName: String, _ completion: @escaping ([Repository]?) -> Void) {
+        
+        let url = URL(string: "https://api.github.com/users/\(userName)/repos")!
+        self.performRequest(url, completion: completion)
+    }
+    
+    func performRequest<T: Decodable>(_ url: URL, completion: @escaping (T?) -> Void) {
+        
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            if let _ = error {
+                completion(nil)
+                return
+            }
+            
+            if let data = data {
+                
+                let jsonDecodable = JSONDecoder()
+                jsonDecodable.keyDecodingStrategy = .convertFromSnakeCase
+                do {
+                    let repositories = try jsonDecodable.decode(T.self, from: data)
+                    completion(repositories)
+                } catch {
+                    print(error)
+                    completion(nil)
+                }
+            }
+        }
+        dataTask.resume()
     }
 }
+
