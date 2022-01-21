@@ -72,11 +72,11 @@ extension RepositoryCellView: ViewCodable {
         NSLayoutConstraint.activate([
             repositoryTitle.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             
-            repositoryTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            repositoryTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
             repositoryOwner.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             
-            repositoryOwner.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            repositoryOwner.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
             repositoryOwner.topAnchor.constraint(equalTo: repositoryTitle.bottomAnchor, constant: 8)
         ])
