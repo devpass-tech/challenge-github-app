@@ -13,12 +13,9 @@ final class EmptyView: UIView{
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "No repositories found"
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = UIColor.black
-     
-        
         return label
     }()
     
@@ -26,17 +23,18 @@ final class EmptyView: UIView{
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Search for users to see their public repositories here!"
         label.numberOfLines = 0
         label.textColor = UIColor.darkGray
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 13)
-        
         return label
     }()
     
-    init() {
+    init(emptyModel: EmptyModel) {
         super.init(frame: .zero)
+        
+        self.titleLabel.text = emptyModel.title
+        self.subtitleLabel.text = emptyModel.subtitle
         
         self.configureSubviews()
         self.configureConstraints()
