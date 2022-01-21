@@ -23,7 +23,7 @@ final class ListView: UIView {
 
     // MARK: - Private Properties
 
-    private var listItems: [String] = []
+    private var repositories: [Repository] = []
 
     // MARK: - Init
 
@@ -62,7 +62,7 @@ extension ListView {
 
     func updateView(with configuration: ListViewController.Configuration) {
 
-        self.listItems = configuration.listItems
+        self.repositories = configuration.repositories
         self.tableView.reloadData()
     }
 }
@@ -70,14 +70,15 @@ extension ListView {
 extension ListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.listItems.count
+        self.repositories.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.classIdentifier(), for: indexPath) as? RepositoryCellView else {
             return .init()
         }
-        cell.updateView(with: .init(title: self.listItems[indexPath.row], authorName: "rdgborges"))
+        let repository = self.repositories[indexPath.row]
+        cell.updateView(with: .init(title: repository.name, authorName: repository.owner.login))
         return cell
     }
 }

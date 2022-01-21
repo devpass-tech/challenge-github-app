@@ -83,6 +83,6 @@ extension RepositoryCellView {
 
     struct Configuration {
         let title: String
-        let authorName: String
+        let authorName: String?
     }
 }
