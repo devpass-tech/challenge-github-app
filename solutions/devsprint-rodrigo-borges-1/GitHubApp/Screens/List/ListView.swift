@@ -79,7 +79,11 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.classIdentifier(), for: indexPath) as? RepositoryCellView
-        cell?.updateRepositories(with: listItems[indexPath.row])
+        
+        cell?.updateView(with: .init(
+            repositoryLabel: listItems[indexPath.row].name,
+            repositoryOwnerLabel: listItems[indexPath.row].owner.login ?? "")
+        )
         
         return cell ?? UITableViewCell()
     }

@@ -53,11 +53,6 @@ class RepositoryCellView: UITableViewCell {
         repositoryOwnerLabel.text = configuration.repositoryOwnerLabel
     }
     
-    func updateRepositories(with data: Repository) {
-        repositoryLabel.text = data.name
-        repositoryOwnerLabel.text = data.owner.login
-    }
-    
 }
 
 extension RepositoryCellView {
