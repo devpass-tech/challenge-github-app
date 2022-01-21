@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ListViewDelegate: AnyObject {
+    func navigateToDetail(title: String)
+}
+
 final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
@@ -19,9 +23,12 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
+    weak var delegate: ListViewDelegate?
+    
     init() {
 
         super.init(frame: .zero)
@@ -70,7 +77,7 @@ extension ListView {
     }
 }
 
-extension ListView: UITableViewDataSource {
+extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -82,6 +89,13 @@ extension ListView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
         cell.textLabel?.text = self.listItems[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let title = tableView.cellForRow(at: indexPath)?.textLabel?.text {
+            delegate?.navigateToDetail(title: title)
+        }
     }
 }
 
