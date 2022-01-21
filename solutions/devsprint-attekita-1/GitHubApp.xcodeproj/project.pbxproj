@@ -3,13 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		48BC2055279857080053EDC9 /* OwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC2054279857080053EDC9 /* OwnerViewController.swift */; };
 		48BC2057279857120053EDC9 /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC2056279857120053EDC9 /* OwnerView.swift */; };
 		48BC20592799000E0053EDC9 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC20582799000E0053EDC9 /* UIImageView+Extensions.swift */; };
+=======
+		8702B91D27988C0B0087312E /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702B91C27988C0B0087312E /* RepositoryCellView.swift */; };
+		8702B91F27988EC80087312E /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702B91E27988EC80087312E /* ViewCodable.swift */; };
+>>>>>>> main
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
 		9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8CB2788B40800E05400 /* GitHubAppTests.swift */; };
@@ -50,9 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		48BC2054279857080053EDC9 /* OwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerViewController.swift; sourceTree = "<group>"; };
 		48BC2056279857120053EDC9 /* OwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		48BC20582799000E0053EDC9 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+=======
+		8702B91C27988C0B0087312E /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryCellView.swift; path = GitHubApp/Screens/Components/RepositoryCellView.swift; sourceTree = SOURCE_ROOT; };
+		8702B91E27988EC80087312E /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewCodable.swift; path = GitHubApp/Screens/Components/ViewCodable.swift; sourceTree = SOURCE_ROOT; };
+>>>>>>> main
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9826D8C02788B40800E05400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -253,6 +263,8 @@
 		9826D90C2788B89400E05400 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8702B91C27988C0B0087312E /* RepositoryCellView.swift */,
+				8702B91E27988EC80087312E /* ViewCodable.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -345,7 +357,7 @@
 				};
 			};
 			buildConfigurationList = 9826D8AC2788B40600E05400 /* Build configuration list for PBXProject "GitHubApp" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -411,7 +423,12 @@
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
 				9826D9062788B43F00E05400 /* ListViewConfiguration.swift in Sources */,
+<<<<<<< HEAD
 				48BC2055279857080053EDC9 /* OwnerViewController.swift in Sources */,
+=======
+				8702B91F27988EC80087312E /* ViewCodable.swift in Sources */,
+				8702B91D27988C0B0087312E /* RepositoryCellView.swift in Sources */,
+>>>>>>> main
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +528,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -566,7 +583,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -581,9 +598,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitHubApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -597,6 +614,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.GitHubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -608,9 +626,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitHubApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -624,6 +642,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.GitHubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -639,7 +658,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8F644M47X;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.GitHubAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -659,7 +678,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8F644M47X;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.GitHubAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
