@@ -26,7 +26,7 @@ class DebugViewController: UIViewController {
         return view
     }()
 
-    private let myViewHeight: CGFloat = 100
+    private let myViewHeight: CGFloat = 200
 
     init() {
         super.init(nibName: nil, bundle: nil)

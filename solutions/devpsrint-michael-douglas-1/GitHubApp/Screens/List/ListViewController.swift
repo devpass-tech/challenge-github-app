@@ -23,7 +23,7 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
- 
+
     // MARK: Initialization
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -35,13 +35,25 @@ final class ListViewController: UIViewController {
 
     // MARK: Overrides
     override func loadView() {
+
         self.view = self.listView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchList()
-        setupUI()
+        self.fetchRepositories()
+        self.setupUI()
+    }
+    
+    private func fetchRepositories() {
+
+        self.service.fetchRepositories(fromUserName: "devpass-tech") { repositories in
+            let configuration = ListViewConfiguration(repositories: repositories ?? [])
+            
+            DispatchQueue.main.sync { [weak self] in
+                self?.listView.updateView(with: configuration)
+            }
+        }
     }
     
     // MARK: Methods
@@ -56,16 +68,10 @@ final class ListViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
     }
-
-    private func fetchList() {
-        self.service.fetchList { items in
-            let configuration = ListViewConfiguration(listItems: items)
-            self.listView.updateView(with: configuration)
-        }
-    }
 }
 
 extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {}
 }
+
 
