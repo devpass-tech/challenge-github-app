@@ -68,14 +68,13 @@ extension RepositoryCellView: ViewCodable {
     }
     
     func setupConstraints() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             repositoryTitle.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             
             repositoryTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             
-            repositoryOwner.bottomAnchor.constraint(equalTo: bottomAnchor),
+            repositoryOwner.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             
             repositoryOwner.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             
