@@ -20,6 +20,14 @@ final class ListView: UIView {
         tableView.dataSource = self
         return tableView
     }()
+    
+    private lazy var emptyView: EmptyView = {
+        let emptyView = EmptyView()
+        let emptyViewConfiguration = EmptyViewConfiguration(title: "No repositories found",
+                                                            subTitle: "Search for users to see their public repositories here!")
+        emptyView.updateView(with: emptyViewConfiguration)
+        return emptyView
+    }()
 
     // MARK: - Private Properties
 
@@ -60,17 +68,16 @@ private extension ListView {
 
 extension ListView {
 
-    func updateView(with configuration: ListViewController.Configuration) {
-
+    func updateView(with configuration: ListViewConfiguration) {
         self.repositories = configuration.repositories
         self.tableView.reloadData()
     }
 }
 
 extension ListView: UITableViewDataSource {
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.repositories.count
+        tableView.backgroundView = self.repositories.count > 0 ? UIView() : emptyView
+        return self.repositories.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,7 +86,8 @@ extension ListView: UITableViewDataSource {
         }
         let repository = self.repositories[indexPath.row]
         cell.updateView(with: .init(title: repository.name, authorName: repository.owner.login))
-        return cell
+        
+        return self.repositories.count
+
     }
 }
-

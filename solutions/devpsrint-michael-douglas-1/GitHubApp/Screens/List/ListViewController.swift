@@ -36,7 +36,7 @@ final class ListViewController: UIViewController {
     }
 
     // MARK: Overrides
-    
+
     override func loadView() {
 
         self.view = self.listView
@@ -86,5 +86,3 @@ extension ListViewController {
         let repositories: [Repository]
     }
 }
-
-

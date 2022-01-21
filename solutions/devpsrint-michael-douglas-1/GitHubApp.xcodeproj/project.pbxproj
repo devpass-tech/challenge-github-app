@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		484892B62797643C006A910F /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484892B52797643C006A910F /* RepositoryCellView.swift */; };
 		61B43D36279A288E00183249 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B43D35279A288E00183249 /* Repository.swift */; };
+		36A66F6F2799E7100075EAFD /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A66F6E2799E7100075EAFD /* EmptyView.swift */; };
+		36A66F712799F81A0075EAFD /* EmptyViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A66F702799F81A0075EAFD /* EmptyViewConfiguration.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
 		9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8CB2788B40800E05400 /* GitHubAppTests.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		484892B52797643C006A910F /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
 		61B43D35279A288E00183249 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		36A66F6E2799E7100075EAFD /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		36A66F702799F81A0075EAFD /* EmptyViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewConfiguration.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9826D8C02788B40800E05400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,6 +109,21 @@
 				484892B52797643C006A910F /* RepositoryCellView.swift */,
 			);
 			path = Cells;
+		36A66F6C2799E6F40075EAFD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				36A66F6D2799E6FC0075EAFD /* EmptyView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		36A66F6D2799E6FC0075EAFD /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				36A66F6E2799E7100075EAFD /* EmptyView.swift */,
+				36A66F702799F81A0075EAFD /* EmptyViewConfiguration.swift */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 		9826D8A82788B40600E05400 = {
@@ -187,7 +206,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				9826D90C2788B89400E05400 /* Components */,
+				36A66F6C2799E6F40075EAFD /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
 				9826D8F62788B43F00E05400 /* List */,
@@ -230,13 +249,6 @@
 				9826D9092788B48000E05400 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		9826D90C2788B89400E05400 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		9826D9112788BAA200E05400 /* DebugYourViews */ = {
@@ -391,6 +403,10 @@
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				484892B62797643C006A910F /* RepositoryCellView.swift in Sources */,
 				61B43D36279A288E00183249 /* Repository.swift in Sources */,
+				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
+				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
+				36A66F6F2799E7100075EAFD /* EmptyView.swift in Sources */,
+				36A66F712799F81A0075EAFD /* EmptyViewConfiguration.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				E552E4A62799F249006FCE29 /* UIViewController+Extensions.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
