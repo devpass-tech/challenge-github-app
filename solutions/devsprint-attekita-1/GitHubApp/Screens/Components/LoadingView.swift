@@ -18,7 +18,6 @@ final class LoadingView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.autoresizesSubviews = true
         label.backgroundColor = .white
-        label.text = "Searching repositories..."
         label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.textColor = .black
@@ -33,7 +32,7 @@ final class LoadingView: UIView {
         return indicator
     }()
     
-    func setUpConstraints() {
+    private func setUpConstraints() {
         
         addSubview(loadingLabel)
         
@@ -47,8 +46,17 @@ final class LoadingView: UIView {
         
     }
     
-    func loadingViewElements() {
+    private func loadingViewElements() {
         setUpConstraints()
+    }
+    
+    override init(frame: CGRect = .zero) {
+        super.init(frame: frame)
+        loadingViewElements()
+    }
+        
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func updateView(with configuration: LoadingViewConfiguration) {
