@@ -10,8 +10,8 @@ struct RepositoryInfoViewConfiguration {
 
 final class RepositoryInfoView: UIView, ViewCodable {
     
-    private lazy var verticalStack:UIStackView = {
-        let view  = UIStackView(frame: .zero)
+    private lazy var verticalStack: UIStackView = {
+        let view  = UIStackView(arrangedSubviews: [repositoryName, repositoryDescription, repositoryNumberStarsForks])
         view.alignment = .fill
         view.spacing = 8
         view.axis = .vertical
@@ -19,7 +19,7 @@ final class RepositoryInfoView: UIView, ViewCodable {
         return view
     }()
     
-    private lazy var repositoryName:UILabel = {
+    private lazy var repositoryName: UILabel = {
         let view  = UILabel(frame: .zero)
         view.textColor = .black
         view.textAlignment = .left
@@ -27,7 +27,7 @@ final class RepositoryInfoView: UIView, ViewCodable {
         return view
     }()
     
-    private lazy var repositoryDescription:UILabel = {
+    private lazy var repositoryDescription: UILabel = {
         let view  = UILabel(frame: .zero)
         view.textColor = .black
         view.textAlignment = .left
@@ -36,7 +36,7 @@ final class RepositoryInfoView: UIView, ViewCodable {
         return view
     }()
     
-    private lazy var repositoryNumberStarsForks:UILabel = {
+    private lazy var repositoryNumberStarsForks: UILabel = {
         let view  = UILabel(frame: .zero)
         view.textColor = .lightGray
         view.textAlignment = .left
@@ -57,9 +57,6 @@ final class RepositoryInfoView: UIView, ViewCodable {
     
     func buildHierarchy() {
         addSubview(verticalStack)
-        verticalStack.addArrangedSubview(repositoryName)
-        verticalStack.addArrangedSubview(repositoryDescription)
-        verticalStack.addArrangedSubview(repositoryNumberStarsForks)
     }
     
     func setupConstraints() {
@@ -89,5 +86,3 @@ final class RepositoryInfoView: UIView, ViewCodable {
         repositoryNumberStarsForks.text = "\(configuration.repositoryStars)" + " estrelas " + "\(configuration.repositoryForks)" + " bifurcações"
     }
 }
-
-
