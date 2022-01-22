@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00FA09D727978BAB00BF7F45 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA09D627978BAB00BF7F45 /* RepositoryInfoView.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
 		9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8CB2788B40800E05400 /* GitHubAppTests.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00FA09D627978BAB00BF7F45 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9826D8C02788B40800E05400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				00FA09D627978BAB00BF7F45 /* RepositoryInfoView.swift */,
 				9826D90C2788B89400E05400 /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
@@ -388,6 +391,7 @@
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				00FA09D727978BAB00BF7F45 /* RepositoryInfoView.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
