@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00FA09E2279CC20500BF7F45 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */; };
 		8702B91D27988C0B0087312E /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702B91C27988C0B0087312E /* RepositoryCellView.swift */; };
 		8702B91F27988EC80087312E /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702B91E27988EC80087312E /* ViewCodable.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		8702B91C27988C0B0087312E /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryCellView.swift; path = GitHubApp/Screens/Components/RepositoryCellView.swift; sourceTree = SOURCE_ROOT; };
 		8702B91E27988EC80087312E /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewCodable.swift; path = GitHubApp/Screens/Components/ViewCodable.swift; sourceTree = SOURCE_ROOT; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +242,7 @@
 		9826D90C2788B89400E05400 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */,
 				8702B91C27988C0B0087312E /* RepositoryCellView.swift */,
 				8702B91E27988EC80087312E /* ViewCodable.swift */,
 			);
@@ -400,6 +403,7 @@
 				9826D9062788B43F00E05400 /* ListViewConfiguration.swift in Sources */,
 				8702B91F27988EC80087312E /* ViewCodable.swift in Sources */,
 				8702B91D27988C0B0087312E /* RepositoryCellView.swift in Sources */,
+				00FA09E2279CC20500BF7F45 /* RepositoryInfoView.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
