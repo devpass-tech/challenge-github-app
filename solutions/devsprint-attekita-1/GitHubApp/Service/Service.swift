@@ -8,9 +8,20 @@
 import Foundation
 
 struct Service {
-
-    func fetchList(_ completion: ([String]) -> Void) {
-
-        completion(["Repository 1", "Repository 2", "Repository 3"])
+    
+    var repos: [GithubApp] = []
+    
+    func fetchList(userName: String, completion: @escaping ([GithubApp]) -> Void) {
+        
+        GitHubAPI.loadRepos { (repos) in
+            
+            DispatchQueue.main.async {
+                
+                completion(repos)
+                
+            }
+            
+        }
     }
 }
+

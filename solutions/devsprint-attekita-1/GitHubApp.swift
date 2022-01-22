@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+class GithubApp: Codable {
+    var name: String
+    var description: String
+    var stargazersCount: Int
+    var watchersCount: Int
+    var owner: Owner
+}
+
+class Owner: Codable {
+    var nameOwner: String
+    var login: String
+    var avatarProfile: String
+    var avatarUrl: String
+    //colocar profissao
+}
+
