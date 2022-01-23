@@ -9,5 +9,6 @@ import Foundation
 
 struct ListViewConfiguration {
 
-    let listItems: [String]
+    let listRepositories: [Repository]
+    
 }
