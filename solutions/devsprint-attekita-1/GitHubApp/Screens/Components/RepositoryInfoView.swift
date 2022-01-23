@@ -31,7 +31,7 @@ final class RepositoryInfoView: UIView, ViewCodable {
         let view  = UILabel(frame: .zero)
         view.textColor = .black
         view.textAlignment = .left
-        view.numberOfLines = -1
+        view.numberOfLines = 0
         view.font = UIFont(name: "Verdana", size: 14)
         return view
     }()
