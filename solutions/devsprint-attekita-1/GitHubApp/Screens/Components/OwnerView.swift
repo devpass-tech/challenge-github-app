@@ -17,7 +17,7 @@ class OwnerView: UIView {
   
   private lazy var ownerProfileStackView: UIStackView = {
     // This stack view contains text + image view
-    let stackView = UIStackView()
+    let stackView = UIStackView(arrangedSubviews: [ownerTextStackView, ownerImageView])
     stackView.axis = .horizontal
     stackView.distribution = .fillProportionally
     stackView.alignment = .bottom
@@ -27,7 +27,7 @@ class OwnerView: UIView {
   
   private lazy var ownerTextStackView: UIStackView = {
     // This stack view contains the owner's informations
-    let stackView = UIStackView()
+    let stackView = UIStackView(arrangedSubviews: [ownerTitleLabel, ownerNameLabel, ownerRoleLabel])
     stackView.axis = .vertical
     stackView.spacing = 0
     stackView.distribution = .fillProportionally
@@ -80,7 +80,7 @@ class OwnerView: UIView {
   
   private lazy var mainStackView: UIStackView = {
     // This stack view contains ownerProfileStackView + Button
-    let stackView = UIStackView()
+    let stackView = UIStackView(arrangedSubviews: [ownerProfileStackView, button])
     stackView.axis = .vertical
     stackView.spacing = 32
     stackView.distribution = .fillProportionally
@@ -90,50 +90,32 @@ class OwnerView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = .white
     configureSubviews()
     configureConstraints()
   }
   
   private func configureSubviews() {
-    
     addSubview(mainStackView)
-    
-    [ownerTitleLabel, ownerNameLabel, ownerRoleLabel].forEach { (view: UILabel) in
-      ownerTextStackView.addArrangedSubview(view)
-    }
-    
-    [ownerTextStackView, ownerImageView].forEach { (view: UIView) in
-      ownerProfileStackView.addArrangedSubview(view)
-    }
-    
-    [ownerProfileStackView, button].forEach { (view: UIView) in
-      mainStackView.addArrangedSubview(view)
-    }
-    
-    //ownerTextStackView.backgroundColor = .systemPink
-    //ownerProfileStackView.backgroundColor = .blue
-    //mainStackView.backgroundColor = .yellow
-    
   }
   
   private func configureConstraints() {
     NSLayoutConstraint.activate([
-      mainStackView.centerXAnchor.constraint(
-        equalTo: safeAreaLayoutGuide.centerXAnchor),
-      mainStackView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-      mainStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0),
-      mainStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
       
-      button.heightAnchor.constraint(equalToConstant: 64.0),
+      mainStackView.topAnchor.constraint(equalTo: mainStackView.superview!.topAnchor),
+      mainStackView.bottomAnchor.constraint(equalTo: mainStackView.superview!.bottomAnchor),
+      mainStackView.leadingAnchor.constraint(equalTo: mainStackView.superview!.leadingAnchor, constant: 16.0),
+      mainStackView.trailingAnchor.constraint(equalTo: mainStackView.superview!.trailingAnchor, constant: -16.0),
       
       ownerTitleLabel.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 16.0),
       
       ownerNameLabel.bottomAnchor.constraint(equalTo: ownerRoleLabel.topAnchor, constant: -4),
       
-      
       ownerImageView.widthAnchor.constraint(equalToConstant: 60),
       ownerImageView.heightAnchor.constraint(equalTo: ownerImageView.widthAnchor),
+      
+      button.heightAnchor.constraint(equalToConstant: 64.0),
+      
+      
       
     ])
     
