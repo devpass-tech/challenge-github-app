@@ -7,19 +7,18 @@
 
 import Foundation
 
-class GithubApp: Codable {
+struct GithubApp: Codable {
     var name: String
     var description: String
-    var stargazersCount: Int
-    var watchersCount: Int
+    var stargazers_count: Int
+    var watchers_count: Int
     var owner: Owner
 }
 
-class Owner: Codable {
-    var nameOwner: String
+struct Owner: Codable {
     var login: String
-    var avatarProfile: String
-    var avatarUrl: String
-    //colocar profissao
+    var avatar_profile: String
+    var avatar_url: String
+    var type: String
 }
 

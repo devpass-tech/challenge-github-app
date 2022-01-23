@@ -7,10 +7,11 @@
 
 import Foundation
 
+var name: String = ""
 
-class GitHubAPI {
+final class GitHubAPI {
     
-    private static let baseURL: String = "https://api.github.com/users/devpass-tech/repos"
+    private static let baseURL: String = "https://api.github.com/users/" + name + "/repos"
     
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
@@ -23,11 +24,10 @@ class GitHubAPI {
     
     private static let session = URLSession(configuration: configuration)
     
-    class func loadRepos(onComplete: @escaping([GithubApp])->Void) {
+     class func loadRepos(onComplete: @escaping([GithubApp])->Void) {
         guard let url = URL(string: baseURL) else {return}
         
-        let dataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?)
-            in
+        let dataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
             
             if error == nil {
                 guard let response = response as? HTTPURLResponse else {return}

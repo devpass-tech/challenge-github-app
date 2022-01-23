@@ -8,8 +8,7 @@
 import Foundation
 
 struct Service {
-    
-    var repos: [GithubApp] = []
+
     
     func fetchList(userName: String, completion: @escaping ([GithubApp]) -> Void) {
         
