@@ -10,7 +10,3 @@ import Foundation
 struct LoadingViewConfiguration {
     let textLabel : String
 }
-
-
-
-

@@ -52,12 +52,10 @@ final class LoadingView: UIView {
     // MARK: Constraints
     private func configureConstraints() {
         NSLayoutConstraint.activate([
-            
             textLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             textLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             indicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
             indicatorView.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 15),
-
         ])
     }
 }
