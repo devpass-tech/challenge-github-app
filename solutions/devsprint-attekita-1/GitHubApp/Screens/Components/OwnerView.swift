@@ -63,19 +63,8 @@ final class OwnerView: UIView {
     return label
   }()
   
-  private lazy var button: UIButton = {
-    let button = UIButton(type: .system)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.backgroundColor = .systemBlue
-    button.setTitle("See Profile", for: .normal)
-    button.titleLabel?.font = .systemFont(ofSize: 18.0, weight: .semibold)
-    button.layer.cornerRadius = 16
-    button.tintColor = .white
-    return button
-  }()
-  
   private lazy var mainStackView: UIStackView = {
-    let stackView = UIStackView(arrangedSubviews: [ownerProfileStackView, button])
+    let stackView = UIStackView(arrangedSubviews: [ownerProfileStackView])
     stackView.axis = .vertical
     stackView.spacing = 32
     stackView.distribution = .fillProportionally
@@ -103,7 +92,6 @@ final class OwnerView: UIView {
       ownerNameLabel.bottomAnchor.constraint(equalTo: ownerRoleLabel.topAnchor, constant: -4),
       ownerImageView.widthAnchor.constraint(equalToConstant: 60),
       ownerImageView.heightAnchor.constraint(equalTo: ownerImageView.widthAnchor),
-      button.heightAnchor.constraint(equalToConstant: 64.0),
     ])
   }
   
