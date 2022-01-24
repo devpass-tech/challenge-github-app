@@ -30,14 +30,17 @@ final class EmptyView: UIView{
         return label
     }()
     
-    init(emptyModel: EmptyModel) {
+    init() {
         super.init(frame: .zero)
-        
-        self.titleLabel.text = emptyModel.title
-        self.subtitleLabel.text = emptyModel.subtitle
         
         self.configureSubviews()
         self.configureConstraints()
+    }
+    
+    public func updateView(with configuration: EmptyViewConfiguration) {
+        
+        self.titleLabel.text = configuration.title
+        self.subtitleLabel.text = configuration.subtitle
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +62,7 @@ final class EmptyView: UIView{
             self.titleLabel.centerYAnchor.constraint(equalTo:
             self.centerYAnchor),
             
-            self.subtitleLabel.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor, constant: 40),
+            self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
             self.subtitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
             self.subtitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
         ])

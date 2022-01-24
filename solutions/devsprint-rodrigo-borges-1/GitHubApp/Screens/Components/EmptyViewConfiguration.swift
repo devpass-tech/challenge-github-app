@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EmptyModel {
+struct EmptyViewConfiguration {
     let title: String
     let subtitle: String
     
