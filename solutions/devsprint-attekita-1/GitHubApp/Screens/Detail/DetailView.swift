@@ -37,8 +37,7 @@ final class DetailView: UIView {
   
   private func setUpViews() {
     addSubview(mainStackView)
-    
-    ownerView.updateView(with: .init(ownerName: "Giovanna", ownerRole: "Mobile Developer", ownerImage: UIImage(named: "random-user")))
+    ownerView.updateView(with: .init(ownerName: "Giovanna", ownerRole: "Mobile Developer", ownerImage: "https://miro.medium.com/max/3150/1*OIkgx1tYeE0FZ6zj_81Vcw.png"))
   }
   
   private func setUpConstraints() {

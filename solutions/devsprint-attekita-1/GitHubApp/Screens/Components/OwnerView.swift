@@ -6,17 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 struct OwnerViewConfiguration {
   let ownerName: String
   let ownerRole: String
-  let ownerImage: UIImage?
+  let ownerImage: String
 }
 
-class OwnerView: UIView {
-  
+final class OwnerView: UIView {
+    
   private lazy var ownerProfileStackView: UIStackView = {
-    // This stack view contains text + image view
     let stackView = UIStackView(arrangedSubviews: [ownerTextStackView, ownerImageView])
     stackView.axis = .horizontal
     stackView.distribution = .fillProportionally
@@ -26,7 +26,6 @@ class OwnerView: UIView {
   }()
   
   private lazy var ownerTextStackView: UIStackView = {
-    // This stack view contains the owner's informations
     let stackView = UIStackView(arrangedSubviews: [ownerTitleLabel, ownerNameLabel, ownerRoleLabel])
     stackView.axis = .vertical
     stackView.spacing = 0
@@ -37,7 +36,6 @@ class OwnerView: UIView {
   
   private lazy var ownerImageView: UIImageView = {
     let imageView = UIImageView()
-    imageView.image = UIImage(named: "random-user")!
     imageView.layer.masksToBounds = true
     imageView.layer.cornerRadius = 30
     return imageView
@@ -53,14 +51,12 @@ class OwnerView: UIView {
   
   private lazy var ownerNameLabel: UILabel = {
     let label = UILabel()
-    label.text = "John Doe"
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
   
   private lazy var ownerRoleLabel: UILabel = {
     let label = UILabel()
-    label.text = "Mobile Tech Lead"
     label.alpha = 0.5
     label.font = .systemFont(ofSize: 14.0)
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +75,6 @@ class OwnerView: UIView {
   }()
   
   private lazy var mainStackView: UIStackView = {
-    // This stack view contains ownerProfileStackView + Button
     let stackView = UIStackView(arrangedSubviews: [ownerProfileStackView, button])
     stackView.axis = .vertical
     stackView.spacing = 32
@@ -100,31 +95,27 @@ class OwnerView: UIView {
   
   private func configureConstraints() {
     NSLayoutConstraint.activate([
-      
       mainStackView.topAnchor.constraint(equalTo: mainStackView.superview!.topAnchor),
       mainStackView.bottomAnchor.constraint(equalTo: mainStackView.superview!.bottomAnchor),
       mainStackView.leadingAnchor.constraint(equalTo: mainStackView.superview!.leadingAnchor, constant: 16.0),
       mainStackView.trailingAnchor.constraint(equalTo: mainStackView.superview!.trailingAnchor, constant: -16.0),
-      
       ownerTitleLabel.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 16.0),
-      
       ownerNameLabel.bottomAnchor.constraint(equalTo: ownerRoleLabel.topAnchor, constant: -4),
-      
       ownerImageView.widthAnchor.constraint(equalToConstant: 60),
       ownerImageView.heightAnchor.constraint(equalTo: ownerImageView.widthAnchor),
-      
       button.heightAnchor.constraint(equalToConstant: 64.0),
-      
-      
-      
     ])
-    
   }
   
   func updateView(with configuration: OwnerViewConfiguration) {
     ownerNameLabel.text = configuration.ownerName
     ownerRoleLabel.text = configuration.ownerRole
-    ownerImageView.image = configuration.ownerImage
+    configureImageView(configuration.ownerImage)
+  }
+  
+  private func configureImageView(_ str: String) {
+    let imageURL = URL(string: str)
+    ownerImageView.kf.setImage(with: imageURL)
   }
   
   required init?(coder: NSCoder) {
