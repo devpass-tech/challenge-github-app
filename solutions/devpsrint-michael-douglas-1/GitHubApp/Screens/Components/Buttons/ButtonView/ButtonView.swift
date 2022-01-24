@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class ButtonView: UIView {
     
     // MARK: Properties
@@ -16,8 +17,28 @@ class ButtonView: UIView {
         return button
     }()
     
+    @IBInspectable
+    var titleColor: UIColor = .orange {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    @IBInspectable
+    var primaryColor: UIColor = .orange {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    @IBInspectable
+    var cornerRadius: Double = 0.0 {
+        didSet {
+            updateUI()
+        }
+    }
+    
     // MARK: Initialization
-
     init() {
         super.init(frame: .zero)
         setupUI()
@@ -30,5 +51,28 @@ class ButtonView: UIView {
     // MARK: Methods
     private func setupUI() {
         backgroundColor = .white
+        addSubviews()
+        addConstraints()
+    }
+    
+    private func addSubviews() {
+        addSubview(button)
+    }
+    
+    private func addConstraints() {
+        button.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        button.leftAnchor.constraint(equalTo: readableContentGuide.leftAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: readableContentGuide.rightAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    }
+    
+    private func updateUI() {
+        button.setTitleColor(titleColor, for: .normal)
+        button.backgroundColor = primaryColor
+        button.layer.cornerRadius = cornerRadius
+    }
+    
+    func updateButtonView(with configuration: ButtonViewConfiguration) {
+        button.setTitle(configuration.title, for: .normal)
     }
 }
