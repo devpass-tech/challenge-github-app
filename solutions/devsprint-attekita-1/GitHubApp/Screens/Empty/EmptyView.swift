@@ -7,21 +7,6 @@
 
 import UIKit
 
-protocol CodeView {
-    func buildViewHierarchy()
-    func setupConstraints()
-    func setupAdditionalConfiguration()
-    func setupView()
-}
-
-extension CodeView {
-    func setupView() {
-        buildViewHierarchy()
-        setupConstraints()
-        setupAdditionalConfiguration()
-    }
-}
-
 struct EmptyViewConfiguration {
     var labelText: String
     var labelText2: String
@@ -30,13 +15,13 @@ struct EmptyViewConfiguration {
 final class EmptyView: UIView {
 
     private var titleLabel: UILabel = {
-        let label1 = UILabel()
-        label1.text = "No repositories found"
-        label1.font = UIFont.boldSystemFont(ofSize: 20)
-        label1.tintColor = .darkGray
-        label1.autoresizesSubviews = true
-        label1.translatesAutoresizingMaskIntoConstraints = false
-        return label1
+        let label = UILabel()
+        label.text = "No repositories found"
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.tintColor = .darkGray
+        label.autoresizesSubviews = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private var subtitleLabel: UILabel = {
@@ -51,9 +36,9 @@ final class EmptyView: UIView {
     
     override init(frame: CGRect = .zero){
         super.init(frame: frame)
-        buildViewHierarchy()
+        buildHierarchy()
         setupConstraints()
-        setupAdditionalConfiguration()
+        applyAdditionalChanges()
     }
     
     required init?(coder: NSCoder) {
@@ -61,8 +46,8 @@ final class EmptyView: UIView {
     }
 }
 
-extension EmptyView: CodeView {
-    func buildViewHierarchy() {
+extension EmptyView: ViewCodable {
+    func buildHierarchy() {
         addSubview(titleLabel)
         addSubview(subtitleLabel)
     }
@@ -75,7 +60,7 @@ extension EmptyView: CodeView {
         subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15).isActive = true
     }
     
-    func setupAdditionalConfiguration() {
+    func applyAdditionalChanges() {
         self.backgroundColor = .white
     }
     
