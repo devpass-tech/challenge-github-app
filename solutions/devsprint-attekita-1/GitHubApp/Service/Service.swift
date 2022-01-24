@@ -13,12 +13,8 @@ struct Service {
     func fetchList(userName: String, completion: @escaping ([GithubApp]) -> Void) {
         
         GitHubAPI.loadRepos { (repos) in
-            
-            DispatchQueue.main.async {
                 
                 completion(repos)
-                
-            }
             
         }
     }
