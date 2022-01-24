@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		88A8186F2796F1C70045F24F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A8186E2796F1C70045F24F /* LoadingView.swift */; };
 		15B506E68C139B127CD1BF73 /* Pods_GitHubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC521C74A26C2A9D9FF0031 /* Pods_GitHubApp.framework */; };
 		8702B91D27988C0B0087312E /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702B91C27988C0B0087312E /* RepositoryCellView.swift */; };
 		8702B91F27988EC80087312E /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702B91E27988EC80087312E /* ViewCodable.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
+		88A8186E2796F1C70045F24F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3BC521C74A26C2A9D9FF0031 /* Pods_GitHubApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E81FE1B1AF88A644D46CDA6 /* Pods-GitHubAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		50D0E75159754C10F0C3F735 /* Pods-GitHubApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.debug.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +121,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
+		88A8186D2796F18C0045F24F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 		7AF2533DE52FE8AB02F6E72D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 		9826D8E92788B43E00E05400 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				88A8186D2796F18C0045F24F /* Models */,
 				9826D8EA2788B43E00E05400 /* Service.swift */,
 			);
 			path = Service;
@@ -271,6 +282,7 @@
 		9826D90C2788B89400E05400 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				88A8186E2796F1C70045F24F /* LoadingView.swift */,
 				8702B91C27988C0B0087312E /* RepositoryCellView.swift */,
 				8702B91E27988EC80087312E /* ViewCodable.swift */,
 			);
@@ -520,6 +532,7 @@
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
+				88A8186F2796F1C70045F24F /* LoadingView.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
