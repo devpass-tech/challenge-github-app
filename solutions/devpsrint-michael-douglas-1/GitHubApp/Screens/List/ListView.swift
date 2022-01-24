@@ -68,7 +68,7 @@ private extension ListView {
 
 extension ListView {
 
-    func updateView(with configuration: ListViewConfiguration) {
+    func updateView(with configuration: ListViewController.Configuration) {
         self.repositories = configuration.repositories
         self.tableView.reloadData()
     }
@@ -86,8 +86,6 @@ extension ListView: UITableViewDataSource {
         }
         let repository = self.repositories[indexPath.row]
         cell.updateView(with: .init(title: repository.name, authorName: repository.owner.login))
-        
-        return self.repositories.count
-
+        return cell
     }
 }
