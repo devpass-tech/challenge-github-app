@@ -10,7 +10,7 @@ import UIKit
 final class ListView: UIView {
 
     // MARK: - View Properties
-    var goToDetailsViewController: (() -> Void)?
+    var goToDetailsViewController: ((Repository) -> Void)?
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -94,6 +94,7 @@ extension ListView: UITableViewDataSource {
 
 extension ListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        goToDetailsViewController?()
+        let repository = repositories[indexPath.row]
+        goToDetailsViewController?(repository)
     }
 }

@@ -62,8 +62,8 @@ final class ListViewController: UIViewController {
     
     // MARK: Methods
     private func bindEvents() {
-        listView.goToDetailsViewController = { [weak self] in
-            self?.showDetailsViewController()
+        listView.goToDetailsViewController = { [weak self] (repository) in
+            self?.showDetailsViewController(repository)
         }
     }
 
@@ -79,8 +79,9 @@ final class ListViewController: UIViewController {
         navigationItem.searchController = searchController
     }
     
-    private func showDetailsViewController() {
+    private func showDetailsViewController(_ repository: Repository) {
         let viewController = DetailViewController()
+        viewController.title = repository.name
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
