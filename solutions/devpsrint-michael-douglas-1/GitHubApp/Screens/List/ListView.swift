@@ -10,6 +10,7 @@ import UIKit
 final class ListView: UIView {
 
     // MARK: - View Properties
+    var goToDetailsViewController: (() -> Void)?
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -18,6 +19,7 @@ final class ListView: UIView {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
     
@@ -87,5 +89,11 @@ extension ListView: UITableViewDataSource {
         let repository = self.repositories[indexPath.row]
         cell.updateView(with: .init(title: repository.name, authorName: repository.owner.login))
         return cell
+    }
+}
+
+extension ListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToDetailsViewController?()
     }
 }

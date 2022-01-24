@@ -44,6 +44,7 @@ final class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.bindEvents()
         self.fetchRepositories()
         self.setupUI()
     }
@@ -60,6 +61,11 @@ final class ListViewController: UIViewController {
     }
     
     // MARK: Methods
+    private func bindEvents() {
+        listView.goToDetailsViewController = { [weak self] in
+            self?.showDetailsViewController()
+        }
+    }
 
     private func setupUI() {
         title = "Repositories"
@@ -71,6 +77,11 @@ final class ListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
+    }
+    
+    private func showDetailsViewController() {
+        let viewController = DetailViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
