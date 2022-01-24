@@ -10,6 +10,7 @@ import UIKit
 final class ListViewController: UIViewController {
 
     // MARK: Properties
+
     private lazy var listView: ListView = {
         return ListView()
     }()
@@ -25,6 +26,7 @@ final class ListViewController: UIViewController {
     private let service = Service()
 
     // MARK: Initialization
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,6 +36,7 @@ final class ListViewController: UIViewController {
     }
 
     // MARK: Overrides
+
     override func loadView() {
 
         self.view = self.listView
@@ -48,8 +51,8 @@ final class ListViewController: UIViewController {
     private func fetchRepositories() {
 
         self.service.fetchRepositories(fromUserName: "devpass-tech") { repositories in
-            let configuration = ListViewConfiguration(repositories: repositories ?? [])
-            
+            let configuration = Configuration(repositories: repositories ?? [])
+
             DispatchQueue.main.sync { [weak self] in
                 self?.listView.updateView(with: configuration)
             }
@@ -57,6 +60,7 @@ final class ListViewController: UIViewController {
     }
     
     // MARK: Methods
+
     private func setupUI() {
         title = "Repositories"
         setupNavigationBar()
@@ -74,4 +78,11 @@ extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {}
 }
 
+// MARK: - Configuration
 
+extension ListViewController {
+
+    struct Configuration {
+        let repositories: [Repository]
+    }
+}
