@@ -14,6 +14,7 @@ class ButtonView: UIView {
     private lazy var button: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font =  UIFont.systemFont(ofSize: 16, weight: .semibold)
         return button
     }()
     
