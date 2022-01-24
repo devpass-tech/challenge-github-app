@@ -30,6 +30,7 @@
 		99D65BEC279B261100F77C54 /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D65BEA279B261100F77C54 /* EmptyViewController.swift */; };
 		99D65BED279B261100F77C54 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D65BEB279B261100F77C54 /* EmptyView.swift */; };
 		99D65BEF279B262600F77C54 /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D65BEE279B262600F77C54 /* EmptyModel.swift */; };
+		99D65BF1279F1A8600F77C54 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D65BF0279F1A8600F77C54 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		99D65BEA279B261100F77C54 /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		99D65BEB279B261100F77C54 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		99D65BEE279B262600F77C54 /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyModel.swift; path = GitHubApp/Screens/Components/EmptyModel.swift; sourceTree = SOURCE_ROOT; };
+		99D65BF0279F1A8600F77C54 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			children = (
 				99D65BEB279B261100F77C54 /* EmptyView.swift */,
 				99D65BEA279B261100F77C54 /* EmptyViewController.swift */,
+				99D65BF0279F1A8600F77C54 /* ButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
+				99D65BF1279F1A8600F77C54 /* ButtonView.swift in Sources */,
 				9826D9062788B43F00E05400 /* ListViewConfiguration.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
 			);
