@@ -45,7 +45,6 @@ private extension ListView {
     }
 
     func configureSubviews() {
-
         self.addSubview(self.tableView)
     }
 
