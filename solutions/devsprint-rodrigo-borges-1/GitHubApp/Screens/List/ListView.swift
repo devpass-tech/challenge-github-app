@@ -93,11 +93,3 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension ListView: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let repository = listItems[indexPath.row]
-        delegate?.didSelectRepository(repository)
-    }
-}

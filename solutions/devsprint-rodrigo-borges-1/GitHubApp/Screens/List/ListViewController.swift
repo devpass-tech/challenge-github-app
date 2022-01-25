@@ -11,7 +11,6 @@ final class ListViewController: UIViewController {
     
     private lazy var listView: ListView = {
         let listView = ListView()
-        listView.delegate = self
         return listView
     }()
     
@@ -57,9 +56,4 @@ final class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: ListViewDelegate {
-    
-    func didSelectRepository(_ repository: Repository) {
-        self.navigateToDetails()
-    }
-}
+
