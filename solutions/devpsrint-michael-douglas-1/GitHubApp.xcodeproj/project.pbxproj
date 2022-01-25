@@ -30,8 +30,8 @@
 		9826D90E2788B8A900E05400 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90D2788B8A900E05400 /* DetailView.swift */; };
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
-		E507E129279A5BEA00DAB6EF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507E128279A5BEA00DAB6EF /* LoadingView.swift */; };
-		E507E12B279A5F6400DAB6EF /* LoadingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507E12A279A5F6400DAB6EF /* LoadingViewConfiguration.swift */; };
+		E5880AE627A0AA42000E29E8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5880AE427A0AA41000E29E8 /* LoadingView.swift */; };
+		E5880AE727A0AA42000E29E8 /* LoadingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5880AE527A0AA41000E29E8 /* LoadingViewConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,10 +79,8 @@
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
-		E507E128279A5BEA00DAB6EF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = GitHubApp/Screens/Components/LoadingView/LoadingView.swift; sourceTree = SOURCE_ROOT; };
-		E507E12A279A5F6400DAB6EF /* LoadingViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingViewConfiguration.swift; path = GitHubApp/Screens/Components/LoadingViewConfiguration/LoadingViewConfiguration.swift; sourceTree = SOURCE_ROOT; };
-		E552E4A22799F249006FCE29 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		E552E4A52799F249006FCE29 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		E5880AE427A0AA41000E29E8 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E5880AE527A0AA41000E29E8 /* LoadingViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +111,7 @@
 		36A66F6C2799E6F40075EAFD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E5880AE827A0AA4C000E29E8 /* LoadingView */,
 				36A66F6D2799E6FC0075EAFD /* EmptyView */,
 			);
 			path = Components;
@@ -142,7 +141,6 @@
 				9826D8CA2788B40800E05400 /* GitHubAppTests */,
 				9826D8D42788B40800E05400 /* GitHubAppUITests */,
 				9826D8B22788B40600E05400 /* Products */,
-				E5880AE327A0A275000E29E8 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,15 +278,13 @@
 			path = DebugYourViews;
 			sourceTree = "<group>";
 		};
-		E5880AE327A0A275000E29E8 /* Recovered References */ = {
+		E5880AE827A0AA4C000E29E8 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
-				E552E4A22799F249006FCE29 /* UIViewController+Extensions.swift */,
-				E507E128279A5BEA00DAB6EF /* LoadingView.swift */,
-				E507E12A279A5F6400DAB6EF /* LoadingViewConfiguration.swift */,
-				E552E4A52799F249006FCE29 /* UITableViewCell+Extensions.swift */,
+				E5880AE427A0AA41000E29E8 /* LoadingView.swift */,
+				E5880AE527A0AA41000E29E8 /* LoadingViewConfiguration.swift */,
 			);
-			name = "Recovered References";
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,12 +419,12 @@
 			files = (
 				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
+				E5880AE727A0AA42000E29E8 /* LoadingViewConfiguration.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				36A66F6F2799E7100075EAFD /* EmptyView.swift in Sources */,
 				36A66F712799F81A0075EAFD /* EmptyViewConfiguration.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
-				E507E129279A5BEA00DAB6EF /* LoadingView.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
@@ -438,8 +434,8 @@
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
-				E507E12B279A5F6400DAB6EF /* LoadingViewConfiguration.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
+				E5880AE627A0AA42000E29E8 /* LoadingView.swift in Sources */,
 				61DBE153279F278B004AA27C /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
