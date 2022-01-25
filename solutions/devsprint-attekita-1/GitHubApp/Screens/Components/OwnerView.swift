@@ -28,7 +28,7 @@ final class OwnerView: UIView {
   private lazy var ownerTextStackView: UIStackView = {
     let stackView = UIStackView(arrangedSubviews: [ownerTitleLabel, ownerNameLabel, ownerRoleLabel])
     stackView.axis = .vertical
-    stackView.spacing = 0
+    stackView.spacing = 8
     stackView.distribution = .fillProportionally
     stackView.translatesAutoresizingMaskIntoConstraints = false
     return stackView
@@ -84,12 +84,10 @@ final class OwnerView: UIView {
   
   private func configureConstraints() {
     NSLayoutConstraint.activate([
-      mainStackView.topAnchor.constraint(equalTo: mainStackView.superview!.topAnchor),
+      mainStackView.topAnchor.constraint(equalTo: topAnchor),
       mainStackView.bottomAnchor.constraint(equalTo: mainStackView.superview!.bottomAnchor),
       mainStackView.leadingAnchor.constraint(equalTo: mainStackView.superview!.leadingAnchor, constant: 16.0),
       mainStackView.trailingAnchor.constraint(equalTo: mainStackView.superview!.trailingAnchor, constant: -16.0),
-      ownerTitleLabel.topAnchor.constraint(equalTo: mainStackView.topAnchor, constant: 16.0),
-      ownerNameLabel.bottomAnchor.constraint(equalTo: ownerRoleLabel.topAnchor, constant: -4),
       ownerImageView.widthAnchor.constraint(equalToConstant: 60),
       ownerImageView.heightAnchor.constraint(equalTo: ownerImageView.widthAnchor),
     ])
