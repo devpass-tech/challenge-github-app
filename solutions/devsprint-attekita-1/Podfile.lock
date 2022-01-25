@@ -1,16 +1,20 @@
 PODS:
+  - Kingfisher (7.1.2)
   - SnapshotTesting (1.9.0)
 
 DEPENDENCIES:
+  - Kingfisher
   - SnapshotTesting (~> 1.9.0)
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - SnapshotTesting
 
 SPEC CHECKSUMS:
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
 
-PODFILE CHECKSUM: 4e2f44b50d68f5dd25407cf666d78439761e5199
+PODFILE CHECKSUM: dd05d6616ea586b20129a3467ded6f11fcb32974
 
 COCOAPODS: 1.11.2
