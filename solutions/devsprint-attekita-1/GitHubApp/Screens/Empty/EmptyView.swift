@@ -16,7 +16,6 @@ final class EmptyView: UIView {
 
     private var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "No repositories found"
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.tintColor = .darkGray
         label.autoresizesSubviews = true
@@ -26,7 +25,6 @@ final class EmptyView: UIView {
     
     private var subtitleLabel: UILabel = {
         let label2 = UILabel()
-        label2.text = "Search for users to see their public repositories here!"
         label2.font = UIFont.systemFont(ofSize: 14)
         label2.tintColor = .gray
         label2.autoresizesSubviews = true
