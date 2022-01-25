@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 struct LicenseViewConfiguration {
-    let licenseTitle: String?
-    let licenseName: String?
-    let licenseCode: String?
+    let licenseTitle: String
+    let licenseName: String
+    let licenseCode: String
 }
 
 final class LicenseView: UIView {
@@ -36,19 +36,8 @@ final class LicenseView: UIView {
         return label
     }()
     
-    private lazy var liceseButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("See License", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.titleLabel?.font = .systemFont(ofSize: 18.0, weight: .semibold)
-        button.layer.cornerRadius = 16
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [licenseTitle, licenseName, licenseCode, liceseButton])
+        let stackView = UIStackView(arrangedSubviews: [licenseTitle, licenseName, licenseCode])
         stackView.axis = .vertical
         stackView.spacing = 15
         stackView.distribution = .fillProportionally
@@ -68,33 +57,21 @@ final class LicenseView: UIView {
         fatalError()
     }
     
-    func setupViews() {
+    private func setupViews() {
         addSubview(stackView)
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: UIEdgeInsets.zero.top),
             stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16.0),
-            stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
-            liceseButton.heightAnchor.constraint(equalToConstant: 64.0)
+            stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16.0)
         ])
-
     }
     
-    
-    
     func updateView(with configuration: LicenseViewConfiguration) {
-        if let title = configuration.licenseTitle {
-            licenseTitle.text = title
-        }
-        
-        if let name = configuration.licenseName {
-            licenseName.text = name
-        }
-        
-        if let code = configuration.licenseCode {
-            licenseCode.text = code
-        }
+        licenseTitle.text = configuration.licenseTitle
+        licenseName.text = configuration.licenseName
+        licenseCode.text = configuration.licenseCode
     }
 }
