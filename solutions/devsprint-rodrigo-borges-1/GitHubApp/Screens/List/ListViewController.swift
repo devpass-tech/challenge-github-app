@@ -33,6 +33,7 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchRepos()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(onNavigateToSettings))
     }
     
     private func fetchRepos(){
@@ -50,6 +51,14 @@ final class ListViewController: UIViewController {
         }
     }
     
+
+    @objc func onNavigateToSettings() {
+        let settingsVC = SettingsViewController()
+        settingsVC.modalPresentationStyle = .formSheet
+        let navVC = UINavigationController(rootViewController: settingsVC)
+        self.present(navVC, animated: true, completion: nil)
+    }
+  
     func navigateToDetails() {
         
         let viewController = DetailViewController()
