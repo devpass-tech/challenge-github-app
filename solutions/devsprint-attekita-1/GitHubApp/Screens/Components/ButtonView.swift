@@ -9,10 +9,10 @@ import UIKit
 
 struct ButtonViewConfiguration {
     var title: String
-    var action: UIAction
+    var link: String
 }
 
-class ButtonView: UIView {
+final class ButtonView: UIView {
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -21,8 +21,11 @@ class ButtonView: UIView {
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         button.backgroundColor = .systemBlue
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(callAction), for: .touchUpInside)
         return button
     }()
+    
+    private lazy var url = String()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +38,12 @@ class ButtonView: UIView {
     
     func updateView(with configuration: ButtonViewConfiguration) {
         button.setTitle(configuration.title, for: .normal)
-        button.addAction(configuration.action, for: .touchUpInside)
+        url = configuration.link
+    }
+    
+    @objc private func callAction() {
+        if let url = URL(string: url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
