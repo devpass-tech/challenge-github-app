@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36A66F6F2799E7100075EAFD /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A66F6E2799E7100075EAFD /* EmptyView.swift */; };
+		36A66F712799F81A0075EAFD /* EmptyViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A66F702799F81A0075EAFD /* EmptyViewConfiguration.swift */; };
+		61DBE151279F271E004AA27C /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DBE150279F271E004AA27C /* RepositoryCellView.swift */; };
+		61DBE153279F278B004AA27C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DBE152279F278B004AA27C /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
 		9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8CB2788B40800E05400 /* GitHubAppTests.swift */; };
 		9826D8D62788B40800E05400 /* GitHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8D52788B40800E05400 /* GitHubAppUITests.swift */; };
 		9826D8D82788B40800E05400 /* GitHubAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8D72788B40800E05400 /* GitHubAppUITestsLaunchTests.swift */; };
+		9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E52788B43E00E05400 /* UIViewController+Extensions.swift */; };
+		9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E62788B43E00E05400 /* String+Extensions.swift */; };
+		9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */; };
+		9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E82788B43E00E05400 /* UITableViewCell+Extensions.swift */; };
 		9826D8FE2788B43F00E05400 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8EA2788B43E00E05400 /* Service.swift */; };
 		9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F32788B43F00E05400 /* SettingsViewController.swift */; };
 		9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F52788B43F00E05400 /* DetailViewController.swift */; };
 		9826D9042788B43F00E05400 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F72788B43F00E05400 /* ListViewController.swift */; };
 		9826D9052788B43F00E05400 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F82788B43F00E05400 /* ListView.swift */; };
-		9826D9062788B43F00E05400 /* ListViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F92788B43F00E05400 /* ListViewConfiguration.swift */; };
 		9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9082788B48000E05400 /* AppDelegate.swift */; };
 		9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9092788B48000E05400 /* SceneDelegate.swift */; };
 		9826D90E2788B8A900E05400 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90D2788B8A900E05400 /* DetailView.swift */; };
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
-		E552E4A62799F249006FCE29 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552E4A22799F249006FCE29 /* UIViewController+Extensions.swift */; };
-		E552E4A72799F249006FCE29 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552E4A32799F249006FCE29 /* String+Extensions.swift */; };
-		E552E4A82799F249006FCE29 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552E4A42799F249006FCE29 /* UIColor+Extensions.swift */; };
-		E552E4A92799F249006FCE29 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E552E4A52799F249006FCE29 /* UITableViewCell+Extensions.swift */; };
-		E55BEF782798ADA5004A8EDB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55BEF772798ADA5004A8EDB /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36A66F6E2799E7100075EAFD /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		36A66F702799F81A0075EAFD /* EmptyViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewConfiguration.swift; sourceTree = "<group>"; };
+		61DBE150279F271E004AA27C /* RepositoryCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		61DBE152279F278B004AA27C /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9826D8C02788B40800E05400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,22 +63,20 @@
 		9826D8D12788B40800E05400 /* GitHubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8D52788B40800E05400 /* GitHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITests.swift; sourceTree = "<group>"; };
 		9826D8D72788B40800E05400 /* GitHubAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9826D8E52788B43E00E05400 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		9826D8E62788B43E00E05400 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		9826D8E82788B43E00E05400 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		9826D8EA2788B43E00E05400 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		9826D8F32788B43F00E05400 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9826D8F52788B43F00E05400 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9826D8F72788B43F00E05400 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9826D8F82788B43F00E05400 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		9826D8F92788B43F00E05400 /* ListViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewConfiguration.swift; sourceTree = "<group>"; };
 		9826D9082788B48000E05400 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9826D9092788B48000E05400 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
-		E552E4A22799F249006FCE29 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		E552E4A32799F249006FCE29 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		E552E4A42799F249006FCE29 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		E552E4A52799F249006FCE29 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		E55BEF772798ADA5004A8EDB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36A66F6C2799E6F40075EAFD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				36A66F6D2799E6FC0075EAFD /* EmptyView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		36A66F6D2799E6FC0075EAFD /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				36A66F6E2799E7100075EAFD /* EmptyView.swift */,
+				36A66F702799F81A0075EAFD /* EmptyViewConfiguration.swift */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
+		61DBE14F279F271E004AA27C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				61DBE150279F271E004AA27C /* RepositoryCellView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		9826D8A82788B40600E05400 = {
 			isa = PBXGroup;
 			children = (
@@ -123,13 +152,13 @@
 		9826D8B32788B40600E05400 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
-				E552E4A12799F249006FCE29 /* Extensions */,
 				9826D9072788B48000E05400 /* AppDelegate */,
 				9826D8EB2788B43F00E05400 /* Resources */,
 				9826D8F12788B43F00E05400 /* Screens */,
 				9826D9112788BAA200E05400 /* DebugYourViews */,
 				9826D8E92788B43E00E05400 /* Service */,
 				9826D8F02788B43F00E05400 /* Models */,
+				9826D8E42788B43E00E05400 /* Extensions */,
 			);
 			path = GitHubApp;
 			sourceTree = "<group>";
@@ -149,6 +178,17 @@
 				9826D8D72788B40800E05400 /* GitHubAppUITestsLaunchTests.swift */,
 			);
 			path = GitHubAppUITests;
+			sourceTree = "<group>";
+		};
+		9826D8E42788B43E00E05400 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9826D8E52788B43E00E05400 /* UIViewController+Extensions.swift */,
+				9826D8E62788B43E00E05400 /* String+Extensions.swift */,
+				9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */,
+				9826D8E82788B43E00E05400 /* UITableViewCell+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9826D8E92788B43E00E05400 /* Service */ = {
@@ -172,7 +212,7 @@
 		9826D8F02788B43F00E05400 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E552E4A02799DBED006FCE29 /* Models */,
+				61DBE152279F278B004AA27C /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,7 +220,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				9826D90C2788B89400E05400 /* Components */,
+				36A66F6C2799E6F40075EAFD /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
 				9826D8F62788B43F00E05400 /* List */,
@@ -209,9 +249,9 @@
 		9826D8F62788B43F00E05400 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				61DBE14F279F271E004AA27C /* Cells */,
 				9826D8F72788B43F00E05400 /* ListViewController.swift */,
 				9826D8F82788B43F00E05400 /* ListView.swift */,
-				9826D8F92788B43F00E05400 /* ListViewConfiguration.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -225,38 +265,12 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		9826D90C2788B89400E05400 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		9826D9112788BAA200E05400 /* DebugYourViews */ = {
 			isa = PBXGroup;
 			children = (
 				9826D9122788BAC200E05400 /* DebugViewController.swift */,
 			);
 			path = DebugYourViews;
-			sourceTree = "<group>";
-		};
-		E552E4A02799DBED006FCE29 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E55BEF772798ADA5004A8EDB /* Repository.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		E552E4A12799F249006FCE29 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E552E4A22799F249006FCE29 /* UIViewController+Extensions.swift */,
-				E552E4A32799F249006FCE29 /* String+Extensions.swift */,
-				E552E4A42799F249006FCE29 /* UIColor+Extensions.swift */,
-				E552E4A52799F249006FCE29 /* UITableViewCell+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,22 +403,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
-				E552E4A82799F249006FCE29 /* UIColor+Extensions.swift in Sources */,
+				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
+				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
+				36A66F6F2799E7100075EAFD /* EmptyView.swift in Sources */,
+				36A66F712799F81A0075EAFD /* EmptyViewConfiguration.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
-				E552E4A62799F249006FCE29 /* UIViewController+Extensions.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
-				E55BEF782798ADA5004A8EDB /* Repository.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
-				E552E4A72799F249006FCE29 /* String+Extensions.swift in Sources */,
+				61DBE151279F271E004AA27C /* RepositoryCellView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
-				9826D9062788B43F00E05400 /* ListViewConfiguration.swift in Sources */,
-				E552E4A92799F249006FCE29 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
+				61DBE153279F278B004AA27C /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +686,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.GitHubAppUITests;
@@ -688,7 +704,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.GitHubAppUITests;
