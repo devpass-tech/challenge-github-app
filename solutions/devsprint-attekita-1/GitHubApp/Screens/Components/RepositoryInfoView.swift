@@ -23,7 +23,7 @@ final class RepositoryInfoView: UIView, ViewCodable {
         let view  = UILabel(frame: .zero)
         view.textColor = .black
         view.textAlignment = .left
-        view.font = UIFont(name: "Verdana-Bold", size: 22)
+        view.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return view
     }()
     
@@ -32,7 +32,7 @@ final class RepositoryInfoView: UIView, ViewCodable {
         view.textColor = .black
         view.textAlignment = .left
         view.numberOfLines = 0
-        view.font = UIFont(name: "Verdana", size: 14)
+        view.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return view
     }()
     
@@ -41,7 +41,7 @@ final class RepositoryInfoView: UIView, ViewCodable {
         view.textColor = .lightGray
         view.textAlignment = .left
         view.numberOfLines = 1
-        view.font = UIFont(name: "Verdana", size: 10)
+        view.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         return view
     }()
     
@@ -60,24 +60,11 @@ final class RepositoryInfoView: UIView, ViewCodable {
     }
     
     func setupConstraints() {
-        verticalStack.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        verticalStack.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        verticalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        verticalStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 4).isActive = true
+        verticalStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
+        verticalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
         verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         verticalStack.translatesAutoresizingMaskIntoConstraints = false
-        
-        repositoryName.topAnchor.constraint(equalTo: verticalStack.topAnchor, constant: 4).isActive = true
-        repositoryName.leadingAnchor.constraint(equalTo: verticalStack.leadingAnchor, constant: 8).isActive = true
-        repositoryName.trailingAnchor.constraint(equalTo: verticalStack.trailingAnchor, constant: -8).isActive = true
-        repositoryName.translatesAutoresizingMaskIntoConstraints = false
-        
-        repositoryDescription.leadingAnchor.constraint(equalTo: verticalStack.leadingAnchor, constant: 8).isActive = true
-        repositoryDescription.trailingAnchor.constraint(equalTo: verticalStack.trailingAnchor, constant: -8).isActive = true
-        repositoryDescription.translatesAutoresizingMaskIntoConstraints = false
-        
-        repositoryNumberStarsForks.leadingAnchor.constraint(equalTo: verticalStack.leadingAnchor, constant: 8).isActive = true
-        repositoryNumberStarsForks.trailingAnchor.constraint(equalTo: verticalStack.trailingAnchor, constant: -8).isActive = true
-        repositoryNumberStarsForks.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func updateView(with configuration: RepositoryInfoViewConfiguration) {

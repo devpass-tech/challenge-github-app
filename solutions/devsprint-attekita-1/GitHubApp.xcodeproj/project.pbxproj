@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00B798D8279DCC5500EEB6E0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B798D7279DCC5500EEB6E0 /* Storyboard.storyboard */; };
 		00FA09E2279CC20500BF7F45 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */; };
 		8702B91D27988C0B0087312E /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702B91C27988C0B0087312E /* RepositoryCellView.swift */; };
 		8702B91F27988EC80087312E /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702B91E27988EC80087312E /* ViewCodable.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00B798D7279DCC5500EEB6E0 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		8702B91C27988C0B0087312E /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepositoryCellView.swift; path = GitHubApp/Screens/Components/RepositoryCellView.swift; sourceTree = SOURCE_ROOT; };
 		8702B91E27988EC80087312E /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewCodable.swift; path = GitHubApp/Screens/Components/ViewCodable.swift; sourceTree = SOURCE_ROOT; };
@@ -216,6 +218,7 @@
 			children = (
 				9826D8F52788B43F00E05400 /* DetailViewController.swift */,
 				9826D90D2788B8A900E05400 /* DetailView.swift */,
+				00B798D7279DCC5500EEB6E0 /* Storyboard.storyboard */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			files = (
 				9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */,
 				9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */,
+				00B798D8279DCC5500EEB6E0 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

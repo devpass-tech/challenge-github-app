@@ -39,10 +39,10 @@ final class DetailView: UIView, ViewCodable {
     }
     
     func setupConstraints() {
-        verticalStack.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        verticalStack.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        verticalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        verticalStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        verticalStack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        verticalStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        //verticalStack.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         verticalStack.translatesAutoresizingMaskIntoConstraints = false
         
         repositoryInfoView.leadingAnchor.constraint(equalTo:verticalStack.leadingAnchor).isActive = true
