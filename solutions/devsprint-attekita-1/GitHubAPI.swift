@@ -24,7 +24,7 @@ final class GitHubAPI {
     
     private static let session = URLSession(configuration: configuration)
     
-     class func loadRepos(onComplete: @escaping([GithubApp])->Void) {
+    class func loadRepos(name: String, onComplete: @escaping([GithubApp])->Void) {
         guard let url = URL(string: baseURL) else {return}
         
         let dataTask = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
