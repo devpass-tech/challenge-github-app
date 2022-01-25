@@ -10,8 +10,9 @@ import UIKit
 final class ListViewController: UIViewController {
     
     private lazy var listView: ListView = {
-        
-        return ListView()
+        let listView = ListView()
+        listView.delegate = self
+        return listView
     }()
     
     private let service = Service()
@@ -50,14 +51,24 @@ final class ListViewController: UIViewController {
         }
     }
     
+
     @objc func onNavigateToSettings() {
         let settingsVC = SettingsViewController()
         settingsVC.modalPresentationStyle = .formSheet
         let navVC = UINavigationController(rootViewController: settingsVC)
         self.present(navVC, animated: true, completion: nil)
     }
+  
+    func navigateToDetails() {
+        
+        let viewController = DetailViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
-
-
-
+extension ListViewController: ListViewDelegate {
+    
+    func didSelectRepository(_ repository: Repository) {
+        self.navigateToDetails()
+    }
+}
