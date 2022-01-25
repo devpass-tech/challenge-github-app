@@ -66,5 +66,4 @@ extension EmptyView: ViewCodable {
         titleLabel.text = configuration.labelText
         subtitleLabel.text = configuration.labelText2
     }
-    
 }
