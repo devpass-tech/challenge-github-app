@@ -11,12 +11,6 @@ class SettingsViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .systemGray5
-        let proxy = UINavigationBar.appearance()
-        proxy.standardAppearance = appearance
-        proxy.scrollEdgeAppearance = appearance
     }
     
     required init?(coder: NSCoder) {
