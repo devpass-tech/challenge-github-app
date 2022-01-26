@@ -7,10 +7,14 @@
 
 import UIKit
 
+protocol ListViewDelegate: AnyObject {
+    func didSelect(_ repository: Repository)
+}
+
 final class ListView: UIView {
 
     // MARK: - View Properties
-    var goToDetailsViewController: ((Repository) -> Void)?
+    weak var delegate: ListViewDelegate?
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -95,6 +99,6 @@ extension ListView: UITableViewDataSource {
 extension ListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let repository = repositories[indexPath.row]
-        goToDetailsViewController?(repository)
+        delegate?.didSelect(repository)
     }
 }
