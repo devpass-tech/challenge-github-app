@@ -8,9 +8,9 @@
 import UIKit
 
 final class ListView: UIView {
-
+    
     // MARK: - View Properties
-
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,40 +23,43 @@ final class ListView: UIView {
     
     private lazy var emptyView: EmptyView = {
         let emptyView = EmptyView()
-        let emptyViewConfiguration = EmptyViewConfiguration(title: "No repositories found",
-                                                            subTitle: "Search for users to see their public repositories here!")
+        let emptyViewConfiguration = EmptyViewConfiguration(
+            title: "No repositories found",
+            subTitle: "Search for users to see their public repositories here!"
+        )
         emptyView.updateView(with: emptyViewConfiguration)
         return emptyView
     }()
-
+    
     // MARK: - Private Properties
-
+    
     private var repositories: [Repository] = []
-
+    
     // MARK: - Init
-
+    
     init() {
         super.init(frame: .zero)
         self.customizeInterface()
     }
-
+    
     @available(*, unavailable)
     required init?(coder: NSCoder) { nil }
 }
 
 private extension ListView {
-
+    
     func customizeInterface() {
         self.backgroundColor = .white
         self.configureSubviews()
         self.configureSubviewsConstraints()
     }
-
+    
     func configureSubviews() {
         self.addSubview(self.tableView)
     }
-
+    
     func configureSubviewsConstraints() {
+        
         NSLayoutConstraint.activate([
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -67,7 +70,7 @@ private extension ListView {
 }
 
 extension ListView {
-
+    
     func updateView(with configuration: ListViewController.Configuration) {
         self.repositories = configuration.repositories
         self.tableView.reloadData()
@@ -75,12 +78,14 @@ extension ListView {
 }
 
 extension ListView: UITableViewDataSource {
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundView = self.repositories.count > 0 ? UIView() : emptyView
         return self.repositories.count
     }
-
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.classIdentifier(), for: indexPath) as? RepositoryCellView else {
             return .init()
         }
