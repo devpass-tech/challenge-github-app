@@ -10,9 +10,12 @@ import UIKit
 final class ListViewController: UIViewController {
     
     private lazy var listView: ListView = {
-        
-        return ListView()
+        let listView = ListView()
+        listView.delegate = self
+        return listView
     }()
+    
+    lazy var searchController = UISearchController(searchResultsController: nil)
     
     private let service = Service()
     
@@ -32,6 +35,7 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchRepos()
+        self.configureNavigationBar()
     }
     
     private func fetchRepos(){
@@ -48,6 +52,37 @@ final class ListViewController: UIViewController {
             
         }
     }
+    
+
+    @objc func onNavigateToSettings() {
+        let settingsVC = SettingsViewController()
+        settingsVC.modalPresentationStyle = .formSheet
+        let navVC = UINavigationController(rootViewController: settingsVC)
+        self.present(navVC, animated: true, completion: nil)
+    }
+  
+    func navigateToDetails() {
+        
+        let viewController = DetailViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
+extension ListViewController: ListViewDelegate {
+    
+    func didSelectRepository(_ repository: Repository) {
+        self.navigateToDetails()
+    }
+}
 
+extension ListViewController {
+    func configureNavigationBar() {
+        searchController.searchBar.placeholder = "Type a GitHub user name"
+        title = "Repositories"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(onNavigateToSettings))
+        navigationItem.searchController = searchController
+        
+    }
+}
