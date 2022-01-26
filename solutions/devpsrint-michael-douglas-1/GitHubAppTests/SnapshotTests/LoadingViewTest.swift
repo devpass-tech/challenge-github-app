@@ -12,17 +12,15 @@ import SnapshotTesting
 class LoadingViewTest: XCTestCase {
     
     lazy var sut: LoadingView = .init()
-
+    
     let snapshotSize = CGSize(width: 500, height: 200)
-
+    
     func test_loadingView_whenSnapshot_shouldSucceed() {
         let configuration = LoadingViewConfiguration(textLabel: "Carregando...")
         
-        let loadingView = LoadingView()
+        sut.updateView(with: configuration)
         
-        loadingView.updateView(with: configuration)
-        
-        assertSnapshot(matching: loadingView, as: .image(size:snapshotSize))
+        assertSnapshot(matching: sut, as: .image(size: snapshotSize))
     }
-
+    
 }
