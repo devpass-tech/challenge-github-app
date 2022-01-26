@@ -15,7 +15,7 @@ final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
-    private var listItems: [String] = []
+    private var listItems: [GithubApp] = []
 
     private lazy var tableView: UITableView = {
 
@@ -84,10 +84,10 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.classIdentifier()) as? RepositoryCellView
-        cell?.updateView(with: RepositoryCellViewConfiguration(title: self.listItems[indexPath.row], subtitle: self.listItems[indexPath.row]))
+        cell?.updateView(with: RepositoryCellViewConfiguration(title: self.listItems[indexPath.row].name, subtitle: self.listItems[indexPath.row].owner.login))
         return cell ?? UITableViewCell()
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

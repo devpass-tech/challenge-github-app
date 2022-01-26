@@ -12,6 +12,10 @@ struct ButtonViewConfiguration {
     var link: String
 }
 
+protocol ButtonViewDelegate: AnyObject {
+    func openURL()
+}
+
 final class ButtonView: UIView {
     
     private lazy var button: UIButton = {
@@ -26,6 +30,8 @@ final class ButtonView: UIView {
     }()
     
     private lazy var url = String()
+    
+    weak var delegate: ButtonViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
