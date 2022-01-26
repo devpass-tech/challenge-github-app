@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		36A66F6F2799E7100075EAFD /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A66F6E2799E7100075EAFD /* EmptyView.swift */; };
 		36A66F712799F81A0075EAFD /* EmptyViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A66F702799F81A0075EAFD /* EmptyViewConfiguration.swift */; };
+		36E45A48279F3C160059ACE6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E45A47279F3C160059ACE6 /* ButtonView.swift */; };
+		36E45A4A279F3DEC0059ACE6 /* ButtonViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E45A49279F3DEC0059ACE6 /* ButtonViewConfiguration.swift */; };
 		55CA9DC97BC6437F8B6BC2A1 /* Pods_GitHubApp_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D52010FB3A34F8C0746B9A /* Pods_GitHubApp_GitHubAppUITests.framework */; };
 		61DBE151279F271E004AA27C /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DBE150279F271E004AA27C /* RepositoryCellView.swift */; };
 		61DBE153279F278B004AA27C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DBE152279F278B004AA27C /* Repository.swift */; };
@@ -58,6 +60,8 @@
 		289500E8ADF00FC795475FA0 /* Pods-GitHubApp-GitHubAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp-GitHubAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubApp-GitHubAppUITests/Pods-GitHubApp-GitHubAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		36A66F6E2799E7100075EAFD /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		36A66F702799F81A0075EAFD /* EmptyViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewConfiguration.swift; sourceTree = "<group>"; };
+		36E45A47279F3C160059ACE6 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		36E45A49279F3DEC0059ACE6 /* ButtonViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewConfiguration.swift; sourceTree = "<group>"; };
 		372945970B2FE670079D7FFE /* Pods_GitHubApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505AD66B954E86175ABE7CDA /* Pods-GitHubAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppTests.release.xcconfig"; path = "Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		61DBE150279F271E004AA27C /* RepositoryCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		36A66F6C2799E6F40075EAFD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				36E45A46279F3BF60059ACE6 /* Views */,
+				36E45A45279F3BEC0059ACE6 /* Buttons */,
 				E5880AE827A0AA4C000E29E8 /* LoadingView */,
 				36A66F6D2799E6FC0075EAFD /* EmptyView */,
 			);
@@ -140,6 +146,31 @@
 			);
 			path = EmptyView;
 			sourceTree = "<group>";
+		};
+		36E45A44279F3BE10059ACE6 /* ButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				36E45A47279F3C160059ACE6 /* ButtonView.swift */,
+				36E45A49279F3DEC0059ACE6 /* ButtonViewConfiguration.swift */,
+			);
+			path = ButtonView;
+			sourceTree = "<group>";
+		};
+		36E45A45279F3BEC0059ACE6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				36E45A44279F3BE10059ACE6 /* ButtonView */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		36E45A46279F3BF60059ACE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36A66F6D2799E6FC0075EAFD /* EmptyView */,
+			);
+			path = Views;
+      sourceTree = "<group>";
 		};
 		586BE28C6EA2AC38D0023D21 /* Pods */ = {
 			isa = PBXGroup;
@@ -564,9 +595,11 @@
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
+				36E45A48279F3C160059ACE6 /* ButtonView.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
 				E5880AE627A0AA42000E29E8 /* LoadingView.swift in Sources */,
 				61DBE153279F278B004AA27C /* Repository.swift in Sources */,
+				36E45A4A279F3DEC0059ACE6 /* ButtonViewConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
