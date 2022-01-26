@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 class ButtonView: UIView {
     
     // MARK: Properties
@@ -18,21 +17,18 @@ class ButtonView: UIView {
         return button
     }()
     
-    @IBInspectable
     var titleColor: UIColor = .orange {
         didSet {
             updateUI()
         }
     }
     
-    @IBInspectable
     var primaryColor: UIColor = .orange {
         didSet {
             updateUI()
         }
     }
     
-    @IBInspectable
     var cornerRadius: Double = 0.0 {
         didSet {
             updateUI()
