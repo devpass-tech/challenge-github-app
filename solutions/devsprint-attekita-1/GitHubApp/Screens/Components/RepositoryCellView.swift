@@ -22,7 +22,7 @@ final class RepositoryCellView: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        
+
         return label
     }()
 
