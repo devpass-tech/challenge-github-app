@@ -41,9 +41,9 @@ final class ListViewController: UIViewController {
 
     private func fetchList() {
 
-        self.service.fetchList { items in
+        self.service.fetchList(for: "") { items in
 
-            let configuration = ListViewConfiguration(listItems: items)
+            let configuration = ListViewConfiguration(listItems: [])
 
             self.listView.updateView(with: configuration)
         }
