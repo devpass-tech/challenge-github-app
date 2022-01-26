@@ -15,7 +15,7 @@ final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
-    private var listItems: [String] = []
+    private var listItems: [GithubApp] = []
 
     private lazy var tableView: UITableView = {
 
@@ -86,7 +86,7 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
+        cell.textLabel?.text = self.listItems[indexPath.row].name
         return cell
     }
     

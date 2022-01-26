@@ -41,11 +41,13 @@ final class ListViewController: UIViewController {
 
     private func fetchList() {
 
-        self.service.fetchList(for: "") { items in
+        self.service.fetchList(for: "devpass-tech") { items in
+            
+            DispatchQueue.main.async {
+                let configuration = ListViewConfiguration(listItems: items)
 
-            let configuration = ListViewConfiguration(listItems: [])
-
-            self.listView.updateView(with: configuration)
+                self.listView.updateView(with: configuration)
+            }
         }
     }
     
