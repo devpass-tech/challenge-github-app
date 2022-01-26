@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0785D70927A0A58400307140 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785D70827A0A58400307140 /* EmptyView.swift */; };
 		00FA09E2279CC20500BF7F45 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */; };
 		3B8DF69268BA90AF90E45D05 /* Pods_GitHubAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6003C0C9788E21F960D1DD /* Pods_GitHubAppTests.framework */; };
 		3D0D897A6EFAA6D1D9D7C088 /* Pods_GitHubApp_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82B34BA9F357CDD2A41C34B /* Pods_GitHubApp_GitHubAppUITests.framework */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0785D70827A0A58400307140 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
 		48B33A88279F66AD00863BD7 /* OwnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		48EF13CD8C71A0CECF8493E9 /* Pods-GitHubApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.release.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0785D70727A0A58400307140 /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				0785D70827A0A58400307140 /* EmptyView.swift */,
+			);
+			path = Empty;
+			sourceTree = "<group>";
+		};
 		45F08F823DC723A6375737D4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0785D70727A0A58400307140 /* Empty */,
 				9826D90C2788B89400E05400 /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
@@ -548,6 +559,7 @@
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
+				0785D70927A0A58400307140 /* EmptyView.swift in Sources */,
 				58A73645279F62F30069D818 /* LoadingView.swift in Sources */,
 				58A73647279F62F30069D818 /* RepositoryCellView.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
