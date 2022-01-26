@@ -10,6 +10,8 @@ import SnapshotTesting
 @testable import GitHubApp
 
 class LoadingViewTest: XCTestCase {
+    
+    lazy var sut: LoadingView = .init()
 
     let snapshotSize = CGSize(width: 500, height: 200)
 
