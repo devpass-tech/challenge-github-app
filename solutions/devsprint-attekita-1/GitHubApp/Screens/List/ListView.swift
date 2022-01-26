@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ListViewDelegate: AnyObject {
+    func navigateToDetail(title: String)
+}
+
 final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
@@ -19,9 +23,12 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.classIdentifier())
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
+    weak var delegate: ListViewDelegate?
+    
     init() {
 
         super.init(frame: .zero)
@@ -45,7 +52,6 @@ private extension ListView {
     }
 
     func configureSubviews() {
-
         self.addSubview(self.tableView)
     }
 
@@ -70,7 +76,7 @@ extension ListView {
     }
 }
 
-extension ListView: UITableViewDataSource {
+extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -82,6 +88,13 @@ extension ListView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.classIdentifier()) as? RepositoryCellView
         cell?.updateView(with: RepositoryCellViewConfiguration(title: self.listItems[indexPath.row], subtitle: self.listItems[indexPath.row]))
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let title = tableView.cellForRow(at: indexPath)?.textLabel?.text {
+            delegate?.navigateToDetail(title: title)
+        }
     }
 }
 

@@ -10,11 +10,14 @@ import UIKit
 final class ListViewController: UIViewController {
 
     private lazy var listView: ListView = {
-
-        return ListView()
+        var listView = ListView()
+        listView.delegate = self
+        return listView
     }()
 
     private let service = Service()
+    
+    private let searchController = UISearchController(searchResultsController: nil)
  
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -32,16 +35,53 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchList()
+        self.navigationControllerSetup()
+       
     }
 
     private func fetchList() {
 
-        self.service.fetchList { items in
+        self.service.fetchList(for: "") { items in
 
-            let configuration = ListViewConfiguration(listItems: items)
+            let configuration = ListViewConfiguration(listItems: [])
 
             self.listView.updateView(with: configuration)
         }
+    }
+    
+   private func navigationControllerSetup() {
+        self.navigationItem.searchController = searchController
+        self.navigationItem.title = "Repositories"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.definesPresentationContext = true
+        self.searchBarControllerSetup()
+    }
+    
+    private func searchBarControllerSetup() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Type a GitHub user name"
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
+    }
+}
+
+extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        let userName = searchBar.text ?? ""
+//        self.fetchList(with: userName)
+    }
+
+}
+
+extension ListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) { }
+}
+extension ListViewController: ListViewDelegate {
+    func navigateToDetail(title: String) {
+        let viewController = DetailViewController()
+        viewController.title = title
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
