@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B8DF69268BA90AF90E45D05 /* Pods_GitHubAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6003C0C9788E21F960D1DD /* Pods_GitHubAppTests.framework */; };
 		3D0D897A6EFAA6D1D9D7C088 /* Pods_GitHubApp_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82B34BA9F357CDD2A41C34B /* Pods_GitHubApp_GitHubAppUITests.framework */; };
+		48B33A89279F66AD00863BD7 /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B33A88279F66AD00863BD7 /* OwnerView.swift */; };
 		58A73645279F62F30069D818 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A73642279F62F30069D818 /* LoadingView.swift */; };
 		58A73646279F62F30069D818 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A73643279F62F30069D818 /* ViewCodable.swift */; };
 		58A73647279F62F30069D818 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A73644279F62F30069D818 /* RepositoryCellView.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48B33A88279F66AD00863BD7 /* OwnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		48EF13CD8C71A0CECF8493E9 /* Pods-GitHubApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.release.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.release.xcconfig"; sourceTree = "<group>"; };
 		58A73642279F62F30069D818 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		58A73643279F62F30069D818 /* ViewCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
@@ -129,7 +131,6 @@
 				EECE807174519FC9EF981401 /* Pods-GitHubAppTests.debug.xcconfig */,
 				B1A40B030F6A21DC170EBBA9 /* Pods-GitHubAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -274,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				58A73642279F62F30069D818 /* LoadingView.swift */,
+				48B33A88279F66AD00863BD7 /* OwnerView.swift */,
 				58A73644279F62F30069D818 /* RepositoryCellView.swift */,
 				58A73643279F62F30069D818 /* ViewCodable.swift */,
 			);
@@ -548,6 +550,7 @@
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				48B33A89279F66AD00863BD7 /* OwnerView.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
