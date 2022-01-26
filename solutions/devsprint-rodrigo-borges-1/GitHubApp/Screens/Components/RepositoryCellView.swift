@@ -52,6 +52,7 @@ class RepositoryCellView: UITableViewCell {
         repositoryLabel.text = configuration.repositoryLabel
         repositoryOwnerLabel.text = configuration.repositoryOwnerLabel
     }
+    
 }
 
 extension RepositoryCellView {
