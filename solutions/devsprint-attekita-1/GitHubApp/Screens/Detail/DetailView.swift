@@ -7,46 +7,46 @@
 
 import UIKit
 
-final class DetailView: UIView {
-  
-  private lazy var mainStackView: UIStackView = {
-    let stackView = UIStackView(arrangedSubviews: [ownerView, UIView()])
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    stackView.axis = .vertical
-    stackView.distribution = .equalCentering
-    stackView.spacing = 0
-    return stackView
-  }()
-  
-  private lazy var ownerView: OwnerView = {
-    let ownerView = OwnerView()
-    ownerView.translatesAutoresizingMaskIntoConstraints = false
-    return ownerView
-  }()
-  
-  init() {
-    super.init(frame: .zero)
-    backgroundColor = .white
-    setUpViews()
-    setUpConstraints()
-  }
-  
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-  
-  private func setUpViews() {
-    addSubview(mainStackView)
-    ownerView.updateView(with: .init(ownerName: "Giovanna", ownerRole: "Mobile Developer", ownerImage: "https://miro.medium.com/max/3150/1*OIkgx1tYeE0FZ6zj_81Vcw.png"))
-  }
-  
-  private func setUpConstraints() {
-    NSLayoutConstraint.activate([
-      mainStackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-      mainStackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
-      mainStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-      mainStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor)
-    ])
-  }
-  
+final class DetailView: UIView, ViewCodable {
+    
+    private lazy var verticalStack:UIStackView = {
+        let view  = UIStackView(frame: .zero)
+        view.alignment = .fill
+        view.spacing = 8
+        view.axis = .vertical
+        view.distribution = .fillProportionally
+        return view
+    }()
+    
+    private lazy var repositoryInfoView: RepositoryInfoView = RepositoryInfoView()
+    
+    init() {
+        super.init(frame: .zero)
+        backgroundColor = .white
+        
+        setupView()
+        
+        repositoryInfoView.updateView(with: RepositoryInfoViewConfiguration(repositoryName: "Dev Sprint Attekita", repositoryDescription: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum" , repositoryStars: 5, repositoryForks: 20))
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func buildHierarchy() {
+        addSubview(verticalStack)
+        verticalStack.addArrangedSubview(repositoryInfoView)
+    }
+    
+    func setupConstraints() {
+        verticalStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        verticalStack.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        verticalStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        //verticalStack.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        verticalStack.translatesAutoresizingMaskIntoConstraints = false
+        
+        repositoryInfoView.leadingAnchor.constraint(equalTo:verticalStack.leadingAnchor).isActive = true
+        repositoryInfoView.trailingAnchor.constraint(equalTo:verticalStack.trailingAnchor).isActive = true
+        repositoryInfoView.translatesAutoresizingMaskIntoConstraints = false
+    }
 }
