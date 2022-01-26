@@ -41,7 +41,7 @@ final class ListViewController: UIViewController {
 
     private func fetchList() {
 
-        self.service.fetchList(userName: "") { items in
+        self.service.fetchList(for: "") { items in
 
             let configuration = ListViewConfiguration(listItems: [])
 
