@@ -12,7 +12,9 @@ final class ListViewController: UIViewController {
     // MARK: Properties
 
     private lazy var listView: ListView = {
-        return ListView()
+        let listView = ListView()
+        listView.delegate = self
+        return listView
     }()
     
     private lazy var searchController: UISearchController = {
@@ -60,7 +62,7 @@ final class ListViewController: UIViewController {
     }
     
     // MARK: Methods
-
+    
     private func setupUI() {
         title = "Repositories"
         setupNavigationBar()
@@ -71,6 +73,18 @@ final class ListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
+    }
+    
+    private func showDetailsViewController(_ repository: Repository) {
+        let viewController = DetailViewController()
+        viewController.title = repository.name
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+extension ListViewController: ListViewDelegate {
+    func didSelect(_ repository: Repository) {
+        showDetailsViewController(repository)
     }
 }
 
