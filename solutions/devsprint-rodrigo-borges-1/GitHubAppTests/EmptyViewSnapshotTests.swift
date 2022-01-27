@@ -19,7 +19,7 @@ class EmptyViewSnapshotTests: XCTestCase {
         emptyView.backgroundColor = .white
         emptyView.updateView(with: configuration)
         
-        assertSnapshot(matching: emptyView, as: .image(size: size), record: true)
+        assertSnapshot(matching: emptyView, as: .image(size: size))
     
     }
 
