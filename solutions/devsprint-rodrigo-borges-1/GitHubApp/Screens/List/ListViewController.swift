@@ -44,10 +44,11 @@ final class ListViewController: UIViewController {
                 return
             }
             
-            let configuration = ListViewConfiguration(listRepositories: repositories)
+            let configuration = ListViewConfiguration.list(repositories)
             
             DispatchQueue.main.async {
                 self.listView.updateView(with: configuration)
+                
             }
             
         }
@@ -91,7 +92,10 @@ extension ListViewController {
 extension ListViewController: UISearchBarDelegate {
    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         guard let text = searchBar.text else { return print("You sould type a name") }
+        let configuration = ListViewConfiguration.loading
+        self.listView.updateView(with: configuration)
         self.fetchRepos(username: text)
         searchBar.text = ""
     }

@@ -41,6 +41,7 @@ final class LoadingView: UIView {
     }
     
     private func configSubview() {
+        backgroundColor = .white
         addSubview(textLabel)
         addSubview(indicatorView)
     }
