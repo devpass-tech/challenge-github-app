@@ -16,6 +16,7 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
+    private let emptyView = EmptyView()
     
     private let searchController = UISearchController(searchResultsController: nil)
  
@@ -40,12 +41,9 @@ final class ListViewController: UIViewController {
     }
 
     private func fetchList() {
-
         self.service.fetchList(for: "devpass-tech") { items in
-            
             DispatchQueue.main.async {
                 let configuration = ListViewConfiguration(listItems: items)
-
                 self.listView.updateView(with: configuration)
             }
         }
