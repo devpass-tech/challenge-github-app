@@ -97,7 +97,7 @@ extension ListViewController: UISearchBarDelegate {
         
         guard let text = searchBar.text else { return print("You sould type a name") }
         self.view = self.loadingView
-        let loadingViewConfiguration = LoadingViewConfiguration(textLabel: "Search repositories...")
+        let loadingViewConfiguration = LoadingViewConfiguration(textLabel: "Searching repositories...")
         loadingView.updateView(with: loadingViewConfiguration)
         self.fetchRepos(username: text)
         searchBar.text = ""
