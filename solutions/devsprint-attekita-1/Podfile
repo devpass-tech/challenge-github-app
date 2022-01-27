@@ -11,11 +11,11 @@ target 'GitHubApp' do
   target 'GitHubAppTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'SnapshotTesting', '~> 1.9.0'
   end
 
   target 'GitHubAppUITests' do
     # Pods for testing
-    pod 'SnapshotTesting', '~> 1.9.0'
   end
 
 end
