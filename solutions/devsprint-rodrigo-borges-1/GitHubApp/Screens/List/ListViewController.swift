@@ -9,8 +9,6 @@ import UIKit
 
 final class ListViewController: UIViewController {
     
-    private let loadingView: LoadingView = LoadingView()
-    
     private lazy var listView: ListView = {
         let listView = ListView()
         listView.delegate = self
@@ -46,11 +44,11 @@ final class ListViewController: UIViewController {
                 return
             }
             
-            let configuration = ListViewConfiguration(listRepositories: repositories)
+            let configuration = ListViewConfiguration.list(repositories)
             
             DispatchQueue.main.async {
                 self.listView.updateView(with: configuration)
-                self.loadView()
+                
             }
             
         }
@@ -96,9 +94,8 @@ extension ListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         guard let text = searchBar.text else { return print("You sould type a name") }
-        self.view = self.loadingView
-        let loadingViewConfiguration = LoadingViewConfiguration(textLabel: "Searching repositories...")
-        loadingView.updateView(with: loadingViewConfiguration)
+        let configuration = ListViewConfiguration.loading
+        self.listView.updateView(with: configuration)
         self.fetchRepos(username: text)
         searchBar.text = ""
     }
