@@ -81,8 +81,6 @@ final class ListViewController: UIViewController {
         let navigationSettingsVC = UINavigationController(rootViewController: SettingsViewController())
         self.present(navigationSettingsVC, animated: true, completion: nil)
     }
-    
-    
 }
 
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {

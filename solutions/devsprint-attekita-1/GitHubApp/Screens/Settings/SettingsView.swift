@@ -21,6 +21,13 @@ final class SettingsView: UIView {
         return tableView
     }()
     
+    var appearance: UINavigationBarAppearance = {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(named: "SettingsTitleBGColor")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "SettingsTitleColor") ?? .black]
+        return appearance
+    }()
+        
     //MARK: -Initialization
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -61,6 +68,5 @@ extension SettingsView: ViewCodable, UITableViewDelegate, UITableViewDataSource 
         settingsTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         settingsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-    
 }
 

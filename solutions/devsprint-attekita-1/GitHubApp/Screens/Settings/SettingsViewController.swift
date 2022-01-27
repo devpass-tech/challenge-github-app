@@ -8,9 +8,12 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+    let settingsView = SettingsView()
 
     override func loadView() {
         self.view = SettingsView()
-        navigationItem.title = "Settings"
+        navigationController?.navigationBar.scrollEdgeAppearance = settingsView.appearance
+        title = "Settings"
     }
 }
