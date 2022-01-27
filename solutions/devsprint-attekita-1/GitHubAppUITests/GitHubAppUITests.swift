@@ -6,7 +6,6 @@
 //
 
 import XCTest
-import SnapshotTesting
 
 class GitHubAppUITests: XCTestCase {
 
