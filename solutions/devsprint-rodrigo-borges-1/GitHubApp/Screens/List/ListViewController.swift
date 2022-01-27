@@ -34,12 +34,12 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchRepos()
+        self.fetchRepos(username: "devpass-tech")
         self.configureNavigationBar()
     }
     
-    private func fetchRepos(){
-        self.service.fetchRepositories("devpass-tech"){ repositories in
+    private func fetchRepos(username: String){
+        self.service.fetchRepositories(username){ repositories in
             guard let repositories = repositories else {
                 return
             }
@@ -78,11 +78,21 @@ extension ListViewController: ListViewDelegate {
 extension ListViewController {
     func configureNavigationBar() {
         searchController.searchBar.placeholder = "Type a GitHub user name"
+        searchController.searchBar.delegate = self
         title = "Repositories"
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(onNavigateToSettings))
         navigationItem.searchController = searchController
         
+    }
+}
+
+extension ListViewController: UISearchBarDelegate {
+   
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return print("You sould type a name") }
+        self.fetchRepos(username: text)
+        searchBar.text = ""
     }
 }
