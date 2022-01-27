@@ -7,13 +7,14 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     
-    let settingsView = SettingsView()
-
     override func loadView() {
         self.view = SettingsView()
-        navigationController?.navigationBar.scrollEdgeAppearance = settingsView.appearance
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(named: "SettingsTitleBGColor")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "SettingsTitleColor") ?? .black]
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         title = "Settings"
     }
 }

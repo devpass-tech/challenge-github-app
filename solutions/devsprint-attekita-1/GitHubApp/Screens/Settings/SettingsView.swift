@@ -21,13 +21,6 @@ final class SettingsView: UIView {
         return tableView
     }()
     
-    var appearance: UINavigationBarAppearance = {
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor(named: "SettingsTitleBGColor")
-        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "SettingsTitleColor") ?? .black]
-        return appearance
-    }()
-        
     //MARK: -Initialization
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -49,7 +42,8 @@ extension SettingsView: ViewCodable, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = "Version 1.0"
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        cell.textLabel?.text = "Version \(appVersion)"
         cell.selectionStyle = .none
         return cell
     }
