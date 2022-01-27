@@ -22,7 +22,7 @@ final class RepositoryCellView: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        
+
         return label
     }()
 
@@ -68,16 +68,15 @@ extension RepositoryCellView: ViewCodable {
     }
     
     func setupConstraints() {
-        self.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             repositoryTitle.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             
-            repositoryTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            repositoryTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
-            repositoryOwner.bottomAnchor.constraint(equalTo: bottomAnchor),
+            repositoryOwner.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             
-            repositoryOwner.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            repositoryOwner.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
             repositoryOwner.topAnchor.constraint(equalTo: repositoryTitle.bottomAnchor, constant: 8)
         ])

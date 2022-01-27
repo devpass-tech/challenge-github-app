@@ -6,16 +6,16 @@ target 'GitHubApp' do
   use_frameworks!
 
   # Pods for GitHubApp
-  pod 'Kingfisher', '~> 7.0'
 
   target 'GitHubAppTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'SnapshotTesting', '~> 1.9.0'
   end
 
   target 'GitHubAppUITests' do
     # Pods for testing
-    pod 'SnapshotTesting', '~> 1.9.0'
   end
+
+	
 
 end
