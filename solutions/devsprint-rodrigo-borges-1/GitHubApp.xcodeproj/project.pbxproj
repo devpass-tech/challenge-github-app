@@ -32,6 +32,7 @@
 		988ABC3C279A0686009506DC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ABC3B279A0686009506DC /* Repository.swift */; };
 		988ABC40279A0707009506DC /* LoadingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ABC3E279A0707009506DC /* LoadingViewConfiguration.swift */; };
 		988ABC41279A0707009506DC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988ABC3F279A0707009506DC /* LoadingView.swift */; };
+		9930543C27A1D2390077A9D6 /* ButtonProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9930543B27A1D2390077A9D6 /* ButtonProfile.swift */; };
 		99D65BEF279B262600F77C54 /* EmptyViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D65BEE279B262600F77C54 /* EmptyViewConfiguration.swift */; };
 		9FC3F5A3C37FDA757DB10FD3 /* Pods_GitHubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A9CC601EC4CBB2A96901E6 /* Pods_GitHubApp.framework */; };
 		D1EE5759279742A500B7388E /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE5758279742A500B7388E /* RepositoryCellView.swift */; };
@@ -89,6 +90,7 @@
 		988ABC3B279A0686009506DC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		988ABC3E279A0707009506DC /* LoadingViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewConfiguration.swift; sourceTree = "<group>"; };
 		988ABC3F279A0707009506DC /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9930543B27A1D2390077A9D6 /* ButtonProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProfile.swift; sourceTree = "<group>"; };
 		99D65BEE279B262600F77C54 /* EmptyViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyViewConfiguration.swift; path = GitHubApp/Screens/Components/EmptyView/EmptyViewConfiguration.swift; sourceTree = SOURCE_ROOT; };
 		CCB696D4588B418466A40B0E /* Pods_GitHubApp_GitHubAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubApp_GitHubAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EE5758279742A500B7388E /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				98797432279F3345006BF7D4 /* EmptyView */,
 				988ABC3D279A0707009506DC /* LoadingView */,
 				D1EE5758279742A500B7388E /* RepositoryCellView.swift */,
+				9930543B27A1D2390077A9D6 /* ButtonProfile.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
+				9930543C27A1D2390077A9D6 /* ButtonProfile.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				988ABC40279A0707009506DC /* LoadingViewConfiguration.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,

@@ -20,3 +20,4 @@ class UIViewControllerUnitTests: XCTestCase {
         XCTAssert(navigationController.modalPresentationStyle == .formSheet)
     }
 }
+
