@@ -44,7 +44,8 @@ final class ListViewController: UIViewController {
         self.service.fetchList(for: username) { items in
             
             DispatchQueue.main.async {
-                let configuration = ListViewConfiguration(listItems: items)
+                
+                let configuration = ListViewConfiguration.list(items)
 
                 self.listView.updateView(with: configuration)
             }
@@ -88,6 +89,8 @@ final class ListViewController: UIViewController {
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        let loading = ListViewConfiguration.loading
+        self.listView.updateView(with: loading)
         let userName = searchBar.text ?? ""
         self.fetchList(with: userName)
     }

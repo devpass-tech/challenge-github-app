@@ -26,6 +26,12 @@ final class ListView: UIView {
         tableView.delegate = self
         return tableView
     }()
+    
+    private var loadingView: LoadingView = {
+        let view = LoadingView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     weak var delegate: ListViewDelegate?
     
@@ -34,6 +40,8 @@ final class ListView: UIView {
         super.init(frame: .zero)
 
         self.customizeInterface()
+        
+        self.loadingView.updateView(with: LoadingViewConfiguration.init(labelText: "Searching repositories..."))
     }
 
     required init?(coder: NSCoder) {
@@ -53,6 +61,7 @@ private extension ListView {
 
     func configureSubviews() {
         self.addSubview(self.tableView)
+        self.addSubview(self.loadingView)
     }
 
     func configureSubviewsConstraints() {
@@ -62,7 +71,12 @@ private extension ListView {
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.loadingView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.loadingView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.loadingView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.loadingView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
@@ -70,9 +84,31 @@ private extension ListView {
 extension ListView {
 
     func updateView(with configuration: ListViewConfiguration) {
-
-        self.listItems = configuration.listItems
-        self.tableView.reloadData()
+        
+        switch configuration {
+        case .empty:
+            showEmptyView()
+        case .loading:
+            showLoadingView()
+        case .list(let list):
+            showRepositoryList(list: list)
+        }
+        
+        func showRepositoryList(list: [GitHubApp]) {
+            self.listItems = list
+            self.tableView.reloadData()
+            self.tableView.isHidden = false
+            self.loadingView.isHidden = true
+        }
+        
+        func showLoadingView() {
+            self.loadingView.isHidden = false
+            self.tableView.isHidden = true
+        }
+        
+        func showEmptyView(){
+            
+        }
     }
 }
 
