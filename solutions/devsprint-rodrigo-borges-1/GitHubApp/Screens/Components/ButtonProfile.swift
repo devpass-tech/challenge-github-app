@@ -4,8 +4,6 @@
 //
 //  Created by Tania Mara Alves Ferreira on 26/01/22.
 //
-
-
 import UIKit
 
 struct DefaultButton {
