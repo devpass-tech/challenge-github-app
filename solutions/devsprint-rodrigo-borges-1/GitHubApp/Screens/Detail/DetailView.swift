@@ -8,17 +8,17 @@
 import UIKit
 
 final class DetailView: UIView {
-
+    
     private lazy var repositoryInfoView: RepositoryInfoView = {
         let repositoryInfoView = RepositoryInfoView()
         repositoryInfoView.translatesAutoresizingMaskIntoConstraints = false
+        repositoryInfoView.updateView(with: RepositoryInfoViewConfiguration(title: "hereminders-ios", description: "O Hereminders é um app de lembretes geolocalizados, implementado em Swift com arquitetura MVVM-C", stars: 5, bifurcations: 17))
         return repositoryInfoView
     }()
-        
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+    init() {
+        super.init(frame: .zero)
         setupViews()
-        repositoryInfoView.updateView(with: RepositoryInfoViewConfiguration(title: "hereminders-ios", description: "O Hereminders é um app de lembretes geolocalizados, implementado em Swift com arquitetura MVVM-C", stars: 5, bifurcations: 17))
     }
     
     required init?(coder: NSCoder) {
