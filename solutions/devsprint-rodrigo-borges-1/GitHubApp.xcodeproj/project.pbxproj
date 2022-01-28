@@ -37,8 +37,11 @@
 		9FC3F5A3C37FDA757DB10FD3 /* Pods_GitHubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A9CC601EC4CBB2A96901E6 /* Pods_GitHubApp.framework */; };
 		D1EE5759279742A500B7388E /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE5758279742A500B7388E /* RepositoryCellView.swift */; };
 		F796C340279E2DCD00AD7725 /* UIViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796C33F279E2DCD00AD7725 /* UIViewControllerUnitTests.swift */; };
-		F7EC11B527A2ECD50073076A /* EmptyViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC11B427A2ECD50073076A /* EmptyViewSnapshotTests.swift */; };
 		F7B6B15F27A0B26700ADA6EF /* RepositoryInfoUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B15E27A0B26700ADA6EF /* RepositoryInfoUnitTests.swift */; };
+		F7D5D57327A36F7F0066C9F4 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D57227A36F7F0066C9F4 /* RepositoryInfoView.swift */; };
+		F7D5D57527A36FA70066C9F4 /* RepositoryInfoViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D57427A36FA70066C9F4 /* RepositoryInfoViewConfiguration.swift */; };
+		F7D5D57827A3737F0066C9F4 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D57727A3737F0066C9F4 /* ViewCode.swift */; };
+		F7EC11B527A2ECD50073076A /* EmptyViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC11B427A2ECD50073076A /* EmptyViewSnapshotTests.swift */; };
 		F7F3E15F279F501E0039FDA4 /* RepositoryCellViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F3E15E279F501E0039FDA4 /* RepositoryCellViewSnapshotTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,8 +102,11 @@
 		D1EE5758279742A500B7388E /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
 		D6B28FE9B1A2456595BDC689 /* Pods-GitHubApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.release.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.release.xcconfig"; sourceTree = "<group>"; };
 		F796C33F279E2DCD00AD7725 /* UIViewControllerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerUnitTests.swift; sourceTree = "<group>"; };
-		F7EC11B427A2ECD50073076A /* EmptyViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewSnapshotTests.swift; sourceTree = "<group>"; };
 		F7B6B15E27A0B26700ADA6EF /* RepositoryInfoUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoUnitTests.swift; sourceTree = "<group>"; };
+		F7D5D57227A36F7F0066C9F4 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
+		F7D5D57427A36FA70066C9F4 /* RepositoryInfoViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInfoViewConfiguration.swift; sourceTree = "<group>"; };
+		F7D5D57727A3737F0066C9F4 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		F7EC11B427A2ECD50073076A /* EmptyViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewSnapshotTests.swift; sourceTree = "<group>"; };
 		F7F3E15E279F501E0039FDA4 /* RepositoryCellViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewSnapshotTests.swift; sourceTree = "<group>"; };
 		FD5B263B47893CBF41D266E7 /* Pods-GitHubApp-GitHubAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp-GitHubAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GitHubApp-GitHubAppUITests/Pods-GitHubApp-GitHubAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,6 +323,8 @@
 		D1EE57572797428A00B7388E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F7D5D57627A3733D0066C9F4 /* ViewCode */,
+				F7D5D57127A36F5D0066C9F4 /* RepositoryInfoView */,
 				98797432279F3345006BF7D4 /* EmptyView */,
 				988ABC3D279A0707009506DC /* LoadingView */,
 				D1EE5758279742A500B7388E /* RepositoryCellView.swift */,
@@ -332,6 +340,23 @@
 				952162E1BC59A63475D0DF82 /* Pods_GitHubAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7D5D57127A36F5D0066C9F4 /* RepositoryInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				F7D5D57227A36F7F0066C9F4 /* RepositoryInfoView.swift */,
+				F7D5D57427A36FA70066C9F4 /* RepositoryInfoViewConfiguration.swift */,
+			);
+			path = RepositoryInfoView;
+			sourceTree = "<group>";
+		};
+		F7D5D57627A3733D0066C9F4 /* ViewCode */ = {
+			isa = PBXGroup;
+			children = (
+				F7D5D57727A3737F0066C9F4 /* ViewCode.swift */,
+			);
+			path = ViewCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,6 +593,7 @@
 				99D65BEF279B262600F77C54 /* EmptyViewConfiguration.swift in Sources */,
 				988ABC3C279A0686009506DC /* Repository.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				F7D5D57327A36F7F0066C9F4 /* RepositoryInfoView.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
@@ -575,6 +601,8 @@
 				D1EE5759279742A500B7388E /* RepositoryCellView.swift in Sources */,
 				98797431279F333B006BF7D4 /* EmptyView.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
+				F7D5D57527A36FA70066C9F4 /* RepositoryInfoViewConfiguration.swift in Sources */,
+				F7D5D57827A3737F0066C9F4 /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
