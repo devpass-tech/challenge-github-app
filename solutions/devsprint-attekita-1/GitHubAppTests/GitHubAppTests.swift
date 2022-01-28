@@ -36,6 +36,7 @@ class GitHubAppTests: XCTestCase {
   
   func testRepositoryCellView() throws {
     let cell = RepositoryCellView()
+    cell.updateView(with: .init(title: "Challenge GitHub App", subtitle: "DevPass Sprint"))
     assertSnapshot(matching: cell, as: .image, record: false)
   }
 }
