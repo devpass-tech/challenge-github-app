@@ -45,8 +45,7 @@ class RepositoryInfoView: UIView {
     
     init() {
         super.init(frame: .zero)
-        configureSubViews()
-        configureSubviewsConstraints()
+        setupViews()
     }
     
     public func updateView(with configuration: RepositoryInfoViewConfiguration) {
