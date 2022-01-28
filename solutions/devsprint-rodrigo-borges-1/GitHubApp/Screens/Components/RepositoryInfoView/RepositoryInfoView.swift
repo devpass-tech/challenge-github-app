@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class RepositoryInfoView: UIView {
+class RepositoryInfoView: UIView {
     
     private lazy var labelTitle: UILabel = {
         let label = UILabel()
@@ -45,8 +45,8 @@ final class RepositoryInfoView: UIView {
     
     init() {
         super.init(frame: .zero)
-        configureSubviews()
-        configureConstraints()
+        configureSubViews()
+        configureSubviewsConstraints()
     }
     
     public func updateView(with configuration: RepositoryInfoViewConfiguration) {
@@ -62,10 +62,10 @@ final class RepositoryInfoView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
-    private func configureSubviews(){
+}
+
+extension RepositoryInfoView: ViewCode{
+    func configureSubViews() {
         self.backgroundColor = .white
         self.addSubview(stackView)
         stackView.addArrangedSubview(labelTitle)
@@ -73,7 +73,7 @@ final class RepositoryInfoView: UIView {
         stackView.addArrangedSubview(labelStarsForks)
     }
     
-    private func configureConstraints() {
+    func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
@@ -81,5 +81,8 @@ final class RepositoryInfoView: UIView {
             stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
     }
+    
+    func configureAdditionalBehaviors() {}
 }
+
 

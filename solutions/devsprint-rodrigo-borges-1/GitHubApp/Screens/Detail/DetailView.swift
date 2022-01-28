@@ -14,9 +14,9 @@ final class DetailView: UIView {
         repositoryInfoView.translatesAutoresizingMaskIntoConstraints = false
         return repositoryInfoView
     }()
-    
-    init() {
-        super.init(frame: .zero)
+        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupViews()
         repositoryInfoView.updateView(with: RepositoryInfoViewConfiguration(title: "hereminders-ios", description: "O Hereminders é um app de lembretes geolocalizados, implementado em Swift com arquitetura MVVM-C", stars: 5, bifurcations: 17))
     }
