@@ -9,6 +9,8 @@ import UIKit
 
 final class DetailView: UIView, ViewCodable {
     
+    var informations: GitHubApp?
+    
     private lazy var verticalStack:UIStackView = {
         let view  = UIStackView(frame: .zero)
         view.alignment = .fill

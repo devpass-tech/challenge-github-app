@@ -16,6 +16,7 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
+
     
     private let searchController = UISearchController(searchResultsController: nil)
  
@@ -34,14 +35,13 @@ final class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fetchList()
         self.navigationControllerSetup()
         navigationItem.rightBarButtonItem = settingsButton
     }
 
-    private func fetchList() {
+    private func fetchList(with username: String) {
 
-        self.service.fetchList(for: "devpass-tech") { items in
+        self.service.fetchList(for: username) { items in
             
             DispatchQueue.main.async {
                 let configuration = ListViewConfiguration(listItems: items)
@@ -88,8 +88,8 @@ final class ListViewController: UIViewController {
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        let userName = searchBar.text ?? ""
-//        self.fetchList(with: userName)
+        let userName = searchBar.text ?? ""
+        self.fetchList(with: userName)
     }
 
 }
@@ -97,6 +97,7 @@ extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
 extension ListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) { }
 }
+
 extension ListViewController: ListViewDelegate {
     func navigateToDetail(title: String) {
         let viewController = DetailViewController()
