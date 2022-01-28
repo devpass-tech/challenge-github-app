@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SnapshotTesting
 @testable import GitHubApp
 
 class GitHubAppTests: XCTestCase {
@@ -32,5 +33,4 @@ class GitHubAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

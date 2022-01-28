@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0785D70927A0A58400307140 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785D70827A0A58400307140 /* EmptyView.swift */; };
 		00FA09E2279CC20500BF7F45 /* RepositoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */; };
+		0785D70927A0A58400307140 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785D70827A0A58400307140 /* EmptyView.swift */; };
 		3B8DF69268BA90AF90E45D05 /* Pods_GitHubAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6003C0C9788E21F960D1DD /* Pods_GitHubAppTests.framework */; };
 		3D0D897A6EFAA6D1D9D7C088 /* Pods_GitHubApp_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82B34BA9F357CDD2A41C34B /* Pods_GitHubApp_GitHubAppUITests.framework */; };
 		48B33A89279F66AD00863BD7 /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B33A88279F66AD00863BD7 /* OwnerView.swift */; };
@@ -58,8 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0785D70827A0A58400307140 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		00FA09E1279CC20500BF7F45 /* RepositoryInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryInfoView.swift; sourceTree = "<group>"; };
+		0785D70827A0A58400307140 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		48B33A88279F66AD00863BD7 /* OwnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		48EF13CD8C71A0CECF8493E9 /* Pods-GitHubApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.release.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.release.xcconfig"; sourceTree = "<group>"; };
 		58A73642279F62F30069D818 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -266,7 +266,6 @@
 			children = (
 				9826D8F52788B43F00E05400 /* DetailViewController.swift */,
 				9826D90D2788B8A900E05400 /* DetailView.swift */,
-				00B798D7279DCC5500EEB6E0 /* Storyboard.storyboard */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -351,6 +350,7 @@
 				9826D8C32788B40800E05400 /* Sources */,
 				9826D8C42788B40800E05400 /* Frameworks */,
 				9826D8C52788B40800E05400 /* Resources */,
+				5D724F584140329957451428 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -432,7 +432,6 @@
 			files = (
 				9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */,
 				9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */,
-				00B798D8279DCC5500EEB6E0 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +452,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5D724F584140329957451428 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		600901266F8EA737E333DF4A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -755,6 +771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8F644M47X;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitHubApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -783,6 +800,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8F644M47X;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitHubApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

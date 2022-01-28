@@ -30,6 +30,12 @@ final class ListView: UIView {
         return tableView
     }()
     
+    private var loadingView: LoadingView = {
+        let view = LoadingView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     init() {
         
         super.init(frame: .zero)
@@ -50,11 +56,15 @@ private extension ListView {
         
         self.configureSubviews()
         self.configureSubviewsConstraints()
+        
+        let loadingViewConfiguration = LoadingViewConfiguration(textLabel: "Searching repositories...")
+        self.loadingView.updateView(with: loadingViewConfiguration)
     }
     
     func configureSubviews() {
         
         self.addSubview(self.tableView)
+        self.addSubview(self.loadingView)
     }
     
     func configureSubviewsConstraints() {
@@ -64,7 +74,12 @@ private extension ListView {
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.loadingView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.loadingView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.loadingView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.loadingView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
@@ -73,8 +88,31 @@ extension ListView {
     
     func updateView(with configuration: ListViewConfiguration) {
         
-        self.listItems = configuration.listRepositories
+        switch configuration {
+        case .empty:
+            showEmpty()
+        case .loading:
+            showLoading()
+        case .list(let repositories):
+            showList(repositories: repositories)
+        }
+    }
+    
+    func showList(repositories: [Repository]) {
+        self.listItems = repositories
         self.tableView.reloadData()
+        self.tableView.isHidden = false
+        self.loadingView.isHidden = true
+    }
+    
+    func showLoading() {
+        self.loadingView.isHidden = false
+        self.tableView.isHidden = true
+        
+    }
+    
+    func showEmpty() {
+        
     }
 }
 
@@ -98,7 +136,7 @@ extension ListView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 80
     }
 }
 
