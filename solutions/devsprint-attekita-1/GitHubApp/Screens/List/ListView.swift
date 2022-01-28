@@ -15,7 +15,7 @@ final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
-    private var listItems: [GithubApp] = []
+    private var listItems: [GitHubApp] = []
 
     private lazy var tableView: UITableView = {
 
@@ -92,9 +92,7 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let title = tableView.cellForRow(at: indexPath)?.textLabel?.text {
-            delegate?.navigateToDetail(title: title)
-        }
+        delegate?.navigateToDetail(title: self.listItems[indexPath.row].name)
     }
 }
 

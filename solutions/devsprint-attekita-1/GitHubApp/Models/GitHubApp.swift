@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct GithubApp: Codable {
+struct GitHubApp: Codable {
     var name: String
-    var description: String
+    var description: String?
     var stargazersCount: Int
     var watchersCount: Int
     var owner: Owner
