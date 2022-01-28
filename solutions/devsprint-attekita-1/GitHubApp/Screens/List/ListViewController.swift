@@ -36,7 +36,7 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         self.fetchList()
         self.navigationControllerSetup()
-       
+        navigationItem.rightBarButtonItem = settingsButton
     }
 
     private func fetchList() {
@@ -64,6 +64,24 @@ final class ListViewController: UIViewController {
         searchController.searchBar.placeholder = "Type a GitHub user name"
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
+    }
+    
+    //MARK: -Settings Button
+    
+    private lazy var settingsButton: UIBarButtonItem = {
+        let settings = UIBarButtonItem()
+        settings.title = "Settings"
+        settings.style = .plain
+        settings.target = self
+        settings.action = #selector(navigateSettingsViewController)
+        return settings
+    }()
+    
+    @objc func navigateSettingsViewController() {
+        let settingsViewController = SettingsViewController()
+        settingsViewController.modalPresentationStyle = .formSheet
+        let navigationSettingsVC = UINavigationController(rootViewController: SettingsViewController())
+        self.present(navigationSettingsVC, animated: true, completion: nil)
     }
 }
 
