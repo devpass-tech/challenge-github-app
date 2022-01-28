@@ -33,4 +33,11 @@ class GitHubAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testLicenseView() throws {
+        let licenseView = LicenseView(frame: .init(x: 0, y: 0, width: 400, height: 200))
+        
+        licenseView.updateView(with: LicenseViewConfiguration(licenseTitle: "License", licenseName: "GNU General Public License v2.0", licenseCode: "GPL-2.0"))
+        assertSnapshot(matching: licenseView, as: .image, record: false, testName: "LicenseView")
+    }
 }
