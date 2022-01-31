@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct ListViewConfiguration {
-
-    let listItems: [GitHubApp]
+enum ListViewConfiguration {
+    case empty
+    case loading
+    case list(_: [GitHubApp])
 }
