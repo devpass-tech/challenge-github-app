@@ -38,10 +38,17 @@ class RepositoryCell: UITableViewCell {
         accessoryType = configuration.accessoryType
     }
     
-    private func setupCellLayout() {
+    func setupCellLayout() {
+        configureSubviews()
+        configureSubviewsConstraints()
+    }
+    
+    private func configureSubviews() {
         addSubview(mainTitle)
         addSubview(subTitle)
-        
+    }
+    
+    private func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
             mainTitle.topAnchor.constraint(equalTo: topAnchor, constant: 17),
             mainTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
