@@ -2,8 +2,15 @@ import UIKit
 
 class RepositoryCell: UITableViewCell {
     
+    struct RepositoryCellViewConfiguration {
+        var title: String
+        var subtitle: String
+        var accessoryType: UITableViewCell.AccessoryType = .disclosureIndicator
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupCellLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -25,10 +32,12 @@ class RepositoryCell: UITableViewCell {
         return label
     }()
     
-    private func setupCell() {
-        
+    func setupCell(with configuration: RepositoryCellViewConfiguration) {
+        mainTitle.text = configuration.title
+        subTitle.text = configuration.subtitle
+        accessoryType = configuration.accessoryType
     }
-
+    
     private func setupCellLayout() {
         addSubview(mainTitle)
         addSubview(subTitle)
