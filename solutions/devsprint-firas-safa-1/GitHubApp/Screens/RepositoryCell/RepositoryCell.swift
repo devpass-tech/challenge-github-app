@@ -1,12 +1,12 @@
 import UIKit
 
+struct RepositoryCellViewConfiguration {
+    var title: String
+    var subtitle: String
+    var accessoryType: UITableViewCell.AccessoryType = .disclosureIndicator
+}
+
 class RepositoryCell: UITableViewCell {
-    
-    struct RepositoryCellViewConfiguration {
-        var title: String
-        var subtitle: String
-        var accessoryType: UITableViewCell.AccessoryType = .disclosureIndicator
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

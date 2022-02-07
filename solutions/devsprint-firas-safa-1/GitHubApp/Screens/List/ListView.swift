@@ -75,7 +75,7 @@ extension ListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: listViewCellIdentifier, for: indexPath) as? RepositoryCell
-        let configuration = RepositoryCell.RepositoryCellViewConfiguration(
+        let configuration = RepositoryCellViewConfiguration(
             title: listItems[indexPath.row],
             subtitle: listItems[indexPath.row]
         )
