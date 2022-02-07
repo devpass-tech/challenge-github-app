@@ -38,7 +38,7 @@ class RepositoryCell: UITableViewCell {
         accessoryType = configuration.accessoryType
     }
     
-    func setupCellLayout() {
+    private func setupCellLayout() {
         configureSubviews()
         configureSubviewsConstraints()
     }
