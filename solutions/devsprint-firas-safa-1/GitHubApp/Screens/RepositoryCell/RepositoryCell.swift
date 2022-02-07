@@ -46,6 +46,7 @@ class RepositoryCell: UITableViewCell {
             mainTitle.topAnchor.constraint(equalTo: topAnchor, constant: 17),
             mainTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             mainTitle.trailingAnchor.constraint(equalTo: trailingAnchor),
+            mainTitle.heightAnchor.constraint(equalToConstant: 20),
             
             subTitle.topAnchor.constraint(equalTo: mainTitle.bottomAnchor),
             subTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
