@@ -12,16 +12,12 @@ struct ListViewConfiguration {
 }
 
 final class ListView: UIView {
-
-    private let listViewCellIdentifier = "ListViewCellIdentifier"
-    private let repositoryCellHeight: CGFloat = 70
-
     private var listItems: [String] = []
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(RepositoryCell.self, forCellReuseIdentifier: listViewCellIdentifier)
+        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.classIdentifier())
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -73,19 +69,21 @@ extension ListView: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: listViewCellIdentifier, for: indexPath) as? RepositoryCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCell.classIdentifier(), for: indexPath) as? RepositoryCell else {
+            fatalError("Couldn't dequeue reusable cell with identifier \(RepositoryCell.classIdentifier())")
+        }
         let configuration = RepositoryCellViewConfiguration(
             title: listItems[indexPath.row],
             subtitle: listItems[indexPath.row]
         )
         
-        cell?.setupCell(with: configuration)
-        return cell ?? UITableViewCell()
+        cell.setupCell(with: configuration)
+        return cell
     }
 }
 
 extension ListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        repositoryCellHeight
+        RepositoryCell.repositoryCellHeight
     }
 }
