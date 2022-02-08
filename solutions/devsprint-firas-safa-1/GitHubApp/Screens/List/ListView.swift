@@ -68,7 +68,6 @@ extension ListView {
 }
 
 extension ListView: UITableViewDataSource {
-    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         listItems.count
     }
