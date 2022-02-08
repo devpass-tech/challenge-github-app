@@ -27,6 +27,8 @@
 		9826D90E2788B8A900E05400 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90D2788B8A900E05400 /* DetailView.swift */; };
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
+		D1611ACE27B2801A0067AF3B /* ButtonViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1611ACD27B2801A0067AF3B /* ButtonViewConfiguration.swift */; };
+		D1611AD027B280240067AF3B /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1611ACF27B280240067AF3B /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		D1611ACD27B2801A0067AF3B /* ButtonViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewConfiguration.swift; sourceTree = "<group>"; };
+		D1611ACF27B280240067AF3B /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +240,7 @@
 		9826D90C2788B89400E05400 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D1611ACC27B27FF90067AF3B /* ButtonView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -246,6 +251,15 @@
 				9826D9122788BAC200E05400 /* DebugViewController.swift */,
 			);
 			path = DebugYourViews;
+			sourceTree = "<group>";
+		};
+		D1611ACC27B27FF90067AF3B /* ButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				D1611ACD27B2801A0067AF3B /* ButtonViewConfiguration.swift */,
+				D1611ACF27B280240067AF3B /* ButtonView.swift */,
+			);
+			path = ButtonView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,9 +396,11 @@
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
+				D1611AD027B280240067AF3B /* ButtonView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
+				D1611ACE27B2801A0067AF3B /* ButtonViewConfiguration.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
@@ -491,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -546,7 +562,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
