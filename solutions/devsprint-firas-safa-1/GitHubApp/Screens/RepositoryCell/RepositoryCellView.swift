@@ -12,7 +12,8 @@ struct RepositoryCellViewConfiguration {
     let accessoryType: UITableViewCell.AccessoryType
 }
 
-class RepositoryCell: UITableViewCell {
+class RepositoryCellView: UITableViewCell {
+    static let cellIdentifier = RepositoryCellView.classIdentifier()
     static let repositoryCellHeight: CGFloat = 70
     
     func setupCell(with configuration: RepositoryCellViewConfiguration) {
@@ -25,8 +26,8 @@ class RepositoryCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupSubviews()
-        setupSubviewsStyle()
         setupSubviewsConstraints()
+        setupSubviewsStyle()
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +40,15 @@ class RepositoryCell: UITableViewCell {
     private func setupSubviews() {
         addSubview(mainTitle)
         addSubview(subTitle)
+    }
+    
+    private func setupSubviewsStyle() {
+        mainTitle.font = .boldSystemFont(ofSize: 15)
+        mainTitle.sizeToFit()
+        
+        subTitle.font = .systemFont(ofSize: 13)
+        subTitle.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
+        subTitle.sizeToFit()
     }
     
     private func setupSubviewsConstraints() {
@@ -56,14 +66,5 @@ class RepositoryCell: UITableViewCell {
             subTitle.trailingAnchor.constraint(equalTo: trailingAnchor),
             subTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -paddingConstant),
         ])
-    }
-    
-    func setupSubviewsStyle() {
-        mainTitle.font = .boldSystemFont(ofSize: 15)
-        mainTitle.sizeToFit()
-        
-        subTitle.font = .systemFont(ofSize: 13)
-        subTitle.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
-        subTitle.sizeToFit()
     }
 }
