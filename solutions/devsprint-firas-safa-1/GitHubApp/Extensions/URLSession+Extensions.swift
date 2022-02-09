@@ -10,7 +10,7 @@ import Foundation
 // MARK: - URLSession Extension
 
 extension URLSession {
-    func dataTask(with url: URLRequest, method: HTTPMethod, completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask {
+    func dataTask(with url: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) -> URLSessionDataTask {
         dataTask(with: url) { data, _, error in
             if let error = error {
                 completion(.failure(error))

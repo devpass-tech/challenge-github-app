@@ -18,14 +18,16 @@ struct GithubResponse<T: Decodable> {
 
 enum MyError: Error, Decodable {
     init(from decoder: Decoder) throws {
-        self = .networkError()
+        self = .runtimeError()
     }
     
+    case runtimeError(String = "Something went wrong")
     case networkError(String = "Failed to perform request")
     
     var message: String {
         switch self {
-        case .networkError(let message):
+        case .networkError(let message),
+             .runtimeError(let message):
             return message
         }
     }
