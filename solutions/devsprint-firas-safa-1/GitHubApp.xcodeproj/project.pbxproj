@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AD8B44427B40F03004A782E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD8B44327B40F03004A782E /* Endpoint.swift */; };
+		7AD8B44627B41636004A782E /* HTTPPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD8B44527B41636004A782E /* HTTPPath.swift */; };
 		98252C21279200C900199ECC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98252C20279200C900199ECC /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7AD8B44327B40F03004A782E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		7AD8B44527B41636004A782E /* HTTPPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPath.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +102,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AD8B44127B40EF0004A782E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7AD8B44227B40EF6004A782E /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7AD8B44227B40EF6004A782E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7AD8B44727B41648004A782E /* Models */,
+				7AD8B44327B40F03004A782E /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7AD8B44727B41648004A782E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7AD8B44527B41636004A782E /* HTTPPath.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9826D8A82788B40600E05400 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +150,7 @@
 		9826D8B32788B40600E05400 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
+				7AD8B44127B40EF0004A782E /* Data */,
 				9826D9072788B48000E05400 /* AppDelegate */,
 				9826D8EB2788B43F00E05400 /* Resources */,
 				9826D8F12788B43F00E05400 /* Screens */,
@@ -386,8 +416,10 @@
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
+				7AD8B44627B41636004A782E /* HTTPPath.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				7AD8B44427B40F03004A782E /* Endpoint.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
