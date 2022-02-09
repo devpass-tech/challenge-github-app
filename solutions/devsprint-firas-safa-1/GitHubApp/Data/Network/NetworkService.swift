@@ -9,10 +9,10 @@ import Foundation
 
 
 protocol NetworkRequestProtocol {
-    func makeGetRequest<ResponseType: Decodable>(with request: URLRequest, using session: URLSession = .shared, completion: @escaping (GithubResult<ResponseType>) -> Void)
+    func makeGetRequest<ResponseType: Decodable>(with request: URLRequest, using session: URLSession, completion: @escaping (GithubResult<ResponseType>) -> Void)
 }
 
-class NetworkService: NetworkRequestProtocol {
+class NetworkEngine: NetworkRequestProtocol {
     func makeGetRequest<ResponseType: Decodable>(with request: URLRequest, using session: URLSession = .shared, completion: @escaping (GithubResult<ResponseType>) -> Void) {
         let task = session.dataTask(with: request) { result in
             self.handleResponse(result, completion: completion)

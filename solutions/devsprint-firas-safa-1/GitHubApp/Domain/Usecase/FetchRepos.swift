@@ -8,13 +8,13 @@
 import Foundation
 
 class FetchRepos {
-    var network: NetworkService
+    var network: NetworkEngine
     
-    init(network: NetworkService) {
+    init(network: NetworkEngine) {
         self.network = network
     }
     
-    func execute(with value: String, completion: @escaping (GithubResult<Repository>) -> Void) {
-       
+    func execute(with request: RepositoriesRequest, completion: @escaping (GithubResult<Repository>) -> Void) {
+        self.network.fetch(with: Endpoint.repositories(username: request.username).request, completion: completion)
     }
 }
