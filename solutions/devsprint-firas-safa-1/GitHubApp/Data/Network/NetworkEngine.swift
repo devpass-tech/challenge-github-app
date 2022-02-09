@@ -6,13 +6,3 @@
 //
 
 import Foundation
-
-protocol NetworkRequestProtocol {
-    
-}
-
-class NetworkEngine: NetworkRequestProtocol {
-    func makeGetRequest<ResponseType: Decodable>(with request:completion: @escaping Result<ResponseType, Error>) -> Void {
-        
-    }
-}
