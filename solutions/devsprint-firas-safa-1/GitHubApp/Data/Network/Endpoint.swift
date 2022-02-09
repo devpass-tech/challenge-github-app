@@ -10,7 +10,7 @@ import Foundation
 struct Endpoint {
     var host: String
     var path: String
-    var queryItems: [URLQueryItem]?
+    var method: HTTPMethod
 }
 
 extension Endpoint {
@@ -19,7 +19,6 @@ extension Endpoint {
         components.scheme = "https"
         components.host = host
         components.path = path
-        components.queryItems = queryItems
         
         guard let url = components.url else { preconditionFailure("Invalid URL components: \(components)")}
         
@@ -29,7 +28,7 @@ extension Endpoint {
 
 extension Endpoint {
     static func repositories(username: String) -> Self {
-        Endpoint(host: URLHost.github.rawValue, path: HTTPPath.user.rawValue + String("\\" + username) + HTTPPath.repositories.rawValue)
+        Endpoint(host: URLHost.github.rawValue, path: HTTPPath.user.rawValue + String("\\" + username) + HTTPPath.repositories.rawValue, method: .get)
     }
 }
 
