@@ -15,6 +15,6 @@ class FetchRepos {
     }
     
     func execute(with request: RepositoriesRequest, completion: @escaping (GithubResult<Repository>) -> Void) {
-        self.network.fetch(with: Endpoint.repositories(username: request.username).request, completion: completion)
+        self.network.makeGetRequest(with: Endpoint.repositories(username: request.username).request, completion: completion)
     }
 }
