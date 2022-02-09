@@ -1,6 +1,6 @@
 import Foundation
 
-class ListViewModel {
+struct ListViewModel {
     private var listItems: [String]
     
     init(listItems: [String] = []) {
