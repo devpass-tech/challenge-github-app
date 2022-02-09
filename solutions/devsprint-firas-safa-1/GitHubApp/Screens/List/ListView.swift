@@ -12,18 +12,22 @@ struct ListViewConfiguration {
 }
 
 final class ListView: UIView {
-    private var listItems: [String] = []
+    var viewModel: ListViewModel {
+        didSet { tableView.reloadData() }
+    }
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.classIdentifier())
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.cellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
     }()
 
-    init() {
+    init(viewModel: ListViewModel = ListViewModel()) {
+        self.viewModel = viewModel
+        
         super.init(frame: .zero)
         self.setupViews()
     }
@@ -55,35 +59,23 @@ private extension ListView {
     }
 }
 
-extension ListView {
-
-    func updateView(with repositories: [String]) {
-        self.listItems = repositories
-        self.tableView.reloadData()
-    }
-}
-
 extension ListView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        listItems.count
+        viewModel.rowCount
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCell.classIdentifier(), for: indexPath) as? RepositoryCell else {
-            fatalError("Couldn't dequeue reusable cell with identifier \(RepositoryCell.classIdentifier())")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.cellIdentifier, for: indexPath) as? RepositoryCellView else {
+            fatalError("Couldn't dequeue reusable cell with identifier \(RepositoryCellView.cellIdentifier)")
         }
-        let configuration = RepositoryCellViewConfiguration(
-            title: listItems[indexPath.row],
-            subtitle: listItems[indexPath.row]
-        )
         
-        cell.setupCell(with: configuration)
+        cell.setupCell(with: viewModel.getCellFor(indexPath.row))
         return cell
     }
 }
 
 extension ListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        RepositoryCell.repositoryCellHeight
+        RepositoryCellView.repositoryCellHeight
     }
 }
