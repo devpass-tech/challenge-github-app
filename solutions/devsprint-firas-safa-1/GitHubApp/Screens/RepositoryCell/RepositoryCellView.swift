@@ -13,7 +13,7 @@ struct RepositoryCellViewConfiguration {
 }
 
 class RepositoryCellView: UITableViewCell {
-    static let cellIdentifier = RepositoryCellView.classIdentifier()
+    static let cellIdentifier = "RepositoryCellView"
     static let repositoryCellHeight: CGFloat = 70
     
     func setupCell(with configuration: RepositoryCellViewConfiguration) {
