@@ -24,6 +24,13 @@ extension Endpoint {
         
         return url
     }
+    
+    var request: URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        
+        return request
+    }
 }
 
 extension Endpoint {

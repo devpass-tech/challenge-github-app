@@ -7,11 +7,9 @@
 
 import Foundation
 
-import Foundation
-
 // MARK: - Repository
 
-struct Repository {
+struct Repository: Decodable {
     let id: Int
     let nodeID, name, fullName: String
     let welcome4Private: Bool
@@ -63,7 +61,7 @@ struct Repository {
 
 // MARK: - Owner
 
-struct Owner {
+struct Owner: Decodable {
     let login: String
     let id: Int
     let nodeID: String
@@ -82,7 +80,7 @@ struct Owner {
 
 // MARK: - Permissions
 
-struct Permissions {
+struct Permissions: Decodable {
     let admin, maintain, push, triage: Bool
     let pull: Bool
 }
