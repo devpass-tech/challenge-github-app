@@ -27,7 +27,6 @@
 		9826D90E2788B8A900E05400 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90D2788B8A900E05400 /* DetailView.swift */; };
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
-		D1611ACE27B2801A0067AF3B /* ButtonViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1611ACD27B2801A0067AF3B /* ButtonViewConfiguration.swift */; };
 		D1611AD027B280240067AF3B /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1611ACF27B280240067AF3B /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +72,6 @@
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
-		D1611ACD27B2801A0067AF3B /* ButtonViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewConfiguration.swift; sourceTree = "<group>"; };
 		D1611ACF27B280240067AF3B /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,7 +254,6 @@
 		D1611ACC27B27FF90067AF3B /* ButtonView */ = {
 			isa = PBXGroup;
 			children = (
-				D1611ACD27B2801A0067AF3B /* ButtonViewConfiguration.swift */,
 				D1611ACF27B280240067AF3B /* ButtonView.swift */,
 			);
 			path = ButtonView;
@@ -400,7 +397,6 @@
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
-				D1611ACE27B2801A0067AF3B /* ButtonViewConfiguration.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
