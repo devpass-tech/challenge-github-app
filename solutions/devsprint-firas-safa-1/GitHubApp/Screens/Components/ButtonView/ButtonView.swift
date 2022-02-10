@@ -7,21 +7,10 @@
 
 import UIKit
 
-class ButtonView: UIView {
+class ButtonView: UIButton {
     
-    private let buttonHeight: CGFloat = 56
-    
-    private lazy var primaryButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 14
-        button.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 18)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    
+    static let buttonHeight: CGFloat = 56
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         customizeInterface()
@@ -30,33 +19,18 @@ class ButtonView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func updateView(with configuration: ButtonViewConfiguration) {
-        primaryButton.setTitle(configuration.title, for: .normal)
-        primaryButton.addAction(configuration.action, for: .touchUpInside)
-    }
 }
 
 extension ButtonView {
     func customizeInterface() {
-        backgroundColor = .white
-        configureSubviews()
-        configureSubviewsConstraints()
+        configureStyles()
     }
-    
-    func configureSubviews() {
-        addSubview(primaryButton)
-    }
-    
-    func configureSubviewsConstraints() {
-        NSLayoutConstraint.activate([
-            primaryButton.heightAnchor.constraint(equalToConstant: buttonHeight),
-            primaryButton.topAnchor.constraint(equalTo: topAnchor),
-            primaryButton.leftAnchor.constraint(equalTo: leftAnchor),
-            primaryButton.rightAnchor.constraint(equalTo: rightAnchor),
-            primaryButton.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
 
-
+    func configureStyles() {
+        setTitleColor(.white, for: .normal)
+        backgroundColor = .systemBlue
+        layer.cornerRadius = 14
+        titleLabel?.font =  UIFont.boldSystemFont(ofSize: 18)
+        heightAnchor.constraint(equalToConstant: ButtonView.buttonHeight).isActive = true
     }
 }
