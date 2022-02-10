@@ -14,6 +14,16 @@ final class ListViewController: UIViewController {
         let listView = ListView()
         return listView
     }()
+    
+    private lazy var settingsButton: UIBarButtonItem = {
+        let settingsButton = UIBarButtonItem()
+        settingsButton.target = self
+        settingsButton.title = "Settings"
+        settingsButton.style = .plain
+        return settingsButton
+    }()
+    
+    private let searchBar = UISearchController()
 
     private let service = Service()
 
@@ -24,6 +34,11 @@ final class ListViewController: UIViewController {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationSearch()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -41,4 +56,22 @@ final class ListViewController: UIViewController {
     override func loadView() {
         self.view = listView
     }
+    
+    func configureSearchBar() {
+        searchBar.searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.searchBar.placeholder = "Type a GitHub user name"
+        searchBar.delegate = self
+    }
+    
+    func configureNavigationSearch() {
+        navigationItem.searchController = searchBar
+        configureSearchBar()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Repositories"
+        navigationItem.rightBarButtonItem = settingsButton
+    }
+}
+
+extension ListViewController: UISearchControllerDelegate {
+    
 }
