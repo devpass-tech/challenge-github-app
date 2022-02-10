@@ -7,11 +7,23 @@
 
 import Foundation
 
-enum HTTPPath: String {
-    case user = "/user"
-    case repositories = "/repos"
+struct HTTPPath: RawRepresentable {
+    let rawValue: String
+
+    static let USER = HTTPPath(rawValue: "/user")
+    static let REPOS = HTTPPath(rawValue: "/repos")
+    
+    init?(rawValue: String) {
+        self.rawValue = rawValue
+    }
 }
 
-enum URLHost: String {
-    case github = "api.github.com"
+struct URLHost: RawRepresentable {
+    let rawValue: String
+
+    static let GITHUB = "api.github.com"
+    
+    init?(rawValue: String) {
+        self.rawValue = rawValue
+    }
 }
