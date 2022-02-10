@@ -1,26 +1,23 @@
 import UIKit
 
 struct RepositoryCellViewConfiguration {
-     init(title: String, subtitle: String, accessoryType: UITableViewCell.AccessoryType = .disclosureIndicator) {
+    let title: String
+    let subtitle: String
+    let accessoryType: UITableViewCell.AccessoryType
+    
+    init(title: String, subtitle: String, accessoryType: UITableViewCell.AccessoryType = .disclosureIndicator) {
         self.title = title
         self.subtitle = subtitle
         self.accessoryType = accessoryType
     }
-    
-    let title: String
-    let subtitle: String
-    let accessoryType: UITableViewCell.AccessoryType
 }
 
 class RepositoryCellView: UITableViewCell {
     static let cellIdentifier = "RepositoryCellView"
     static let repositoryCellHeight: CGFloat = 70
     
-    func setupCell(with configuration: RepositoryCellViewConfiguration) {
-        mainTitle.text = configuration.title
-        subTitle.text = configuration.subtitle
-        accessoryType = configuration.accessoryType
-    }
+    private let mainTitle = UILabel()
+    private let subTitle = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,8 +31,11 @@ class RepositoryCellView: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let mainTitle = UILabel()
-    private let subTitle = UILabel()
+    func setupCell(with configuration: RepositoryCellViewConfiguration) {
+        mainTitle.text = configuration.title
+        subTitle.text = configuration.subtitle
+        accessoryType = configuration.accessoryType
+    }
 
     private func setupSubviews() {
         addSubview(mainTitle)

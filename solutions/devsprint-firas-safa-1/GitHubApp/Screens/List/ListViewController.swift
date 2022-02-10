@@ -24,9 +24,9 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        service.fetchList { repositories in
+        service.fetchList { [weak self] repositories in
             DispatchQueue.main.async {
-                self.listView.viewModel = ListViewModel(listItems: repositories)
+                self?.listView.viewModel = ListViewModel(listItems: repositories)
             }
         }
     }

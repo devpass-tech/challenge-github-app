@@ -13,7 +13,11 @@ struct ListViewConfiguration {
 
 final class ListView: UIView {
     var viewModel: ListViewModel {
-        didSet { tableView.reloadData() }
+        didSet { update() }
+    }
+    
+    private func update() {
+        tableView.reloadData()
     }
 
     private lazy var tableView: UITableView = {

@@ -3,12 +3,12 @@ import Foundation
 struct ListViewModel {
     private var listItems: [String]
     
-    init(listItems: [String] = []) {
-        self.listItems = listItems
-    }
-    
     var rowCount: Int {
         listItems.count
+    }
+    
+    init(listItems: [String] = []) {
+        self.listItems = listItems
     }
     
     func getItemFor(_ index: Int) -> String {
