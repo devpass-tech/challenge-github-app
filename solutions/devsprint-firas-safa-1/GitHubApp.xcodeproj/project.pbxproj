@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6678531027B5418C005771AB /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6678530F27B5418C005771AB /* SettingsViewCell.swift */; };
 		66A8BA3B27B48D73003EE1D6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A8BA3A27B48D73003EE1D6 /* SettingsViewModel.swift */; };
 		98252C21279200C900199ECC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98252C20279200C900199ECC /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6678530F27B5418C005771AB /* SettingsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
 		66A8BA3A27B48D73003EE1D6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +207,7 @@
 				9826D8F32788B43F00E05400 /* SettingsViewController.swift */,
 				9826D90F2788B8EA00E05400 /* SettingsView.swift */,
 				66A8BA3A27B48D73003EE1D6 /* SettingsViewModel.swift */,
+				6678530F27B5418C005771AB /* SettingsViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				6678531027B5418C005771AB /* SettingsViewCell.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,

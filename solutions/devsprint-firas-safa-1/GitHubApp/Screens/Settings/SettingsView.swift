@@ -7,11 +7,10 @@
 
 import UIKit
 
-private let cellIdentifier = "SettingsCell"
-
 class SettingsView: UIView {
-    private let viewModel: SettingsViewModel
     private let tableView = UITableView()
+    
+    private let viewModel: SettingsViewModel
     
     init(viewModel: SettingsViewModel = SettingsViewModel()) {
         self.viewModel = viewModel
@@ -34,7 +33,7 @@ extension SettingsView {
     }
     
     func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(SettingsViewCell.self, forCellReuseIdentifier: SettingsViewCell.cellIdentifier)
         tableView.dataSource = self
     }
     
@@ -55,7 +54,7 @@ extension SettingsView: UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingsViewCell.cellIdentifier, for: indexPath)
         
         cell.textLabel?.text = viewModel.getCellFor(indexPath.row)
         cell.selectionStyle = .none
