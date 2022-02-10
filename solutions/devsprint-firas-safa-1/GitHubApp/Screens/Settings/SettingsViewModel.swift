@@ -1,7 +1,7 @@
 import Foundation
 
 struct SettingsViewModel {
-    private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    private let appVersion = Utils.appVersion
     private let header = "APP VERSTION"
     
     var rowCount: Int {
@@ -9,7 +9,7 @@ struct SettingsViewModel {
     }
     
     func getCellFor(_ index: Int) -> String {
-        "Version " + (appVersion ?? "?")
+        "Version " + appVersion
     }
     
     func getHeaderFor(_ index: Int) -> String {
