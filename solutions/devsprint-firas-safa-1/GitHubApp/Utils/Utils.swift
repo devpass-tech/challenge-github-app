@@ -1,5 +1,5 @@
 import Foundation
 
 enum Utils {
-    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?"
+    static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Missing app version"
 }
