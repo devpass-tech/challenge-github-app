@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Repository
 
-class Repository: Codable {
+class Repository: Decodable {
     let id: Int
 
     enum CodingKeys: String, CodingKey {

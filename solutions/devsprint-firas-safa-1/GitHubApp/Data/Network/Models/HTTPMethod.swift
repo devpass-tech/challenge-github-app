@@ -7,13 +7,7 @@
 
 import Foundation
 
-struct HTTPMethod: RawRepresentable {
-    let rawValue: String
-    
-    static let GET = HTTPMethod(rawValue: "GET")
-    static let POST = HTTPMethod(rawValue: "POST")
-
-    init?(rawValue: String) {
-        self.rawValue = rawValue
-    }
+struct HTTPMethod {
+    static let GET = "GET"
+    static let POST = "POST"
 }

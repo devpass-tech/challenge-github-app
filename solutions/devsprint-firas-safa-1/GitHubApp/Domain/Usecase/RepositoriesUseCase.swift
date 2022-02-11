@@ -6,23 +6,26 @@
 //
 
 import Foundation
+import UIKit
 
 protocol UseCaseProvider {
-    func execute<ResponseType: Decodable>() async throws -> [ResponseType]
+    func execute<ResponseType: Decodable>(with body: String) async throws -> [ResponseType]
 }
 
 struct RepositoriesUseCase {
     var network: NetworkManager
-    let fetchRepos: FetchRepositoriesRequest
+    var repos: PostRepositoriesRequest
     
-    func execute<ResponseType: Decodable>() async throws -> [ResponseType] {
-        return try await self.network.request(with: fetchRepos)
+    mutating func execute<ResponseType: Decodable>(with body: String) async throws -> [ResponseType] {
+        self.repos.path = HTTPPath.USER + "/\(body)" + HTTPPath.REPOS
+        let response = try await self.network.request(with: repos) as [ResponseType]
+        return response
     }
 }
 
-struct FetchRepositoriesRequest: HTTPRequest {
+struct PostRepositoriesRequest: HTTPRequest {
     var host: String = URLHost.GITHUB
-    var path: [String] = []
-    var method: String = ""
+    var path: String = ""
+    var method: String = HTTPMethod.POST
     var body: String = ""
 }

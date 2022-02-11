@@ -12,7 +12,6 @@
 		7AD8B44927B41DD4004A782E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD8B44827B41DD4004A782E /* HTTPMethod.swift */; };
 		7AD8B44B27B41F30004A782E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD8B44A27B41F30004A782E /* NetworkManager.swift */; };
 		7AD8B45527B42913004A782E /* RepositoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD8B45427B42913004A782E /* RepositoriesUseCase.swift */; };
-		7AF93FC527B59E9C00EFDB01 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF93FC427B59E9C00EFDB01 /* URLSession+Extensions.swift */; };
 		98252C21279200C900199ECC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98252C20279200C900199ECC /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
@@ -58,7 +57,6 @@
 		7AD8B44827B41DD4004A782E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		7AD8B44A27B41F30004A782E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7AD8B45427B42913004A782E /* RepositoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesUseCase.swift; sourceTree = "<group>"; };
-		7AF93FC427B59E9C00EFDB01 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URLSession+Extensions.swift"; path = "../../../../../../../../../../.Trash/URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 		9826D8E42788B43E00E05400 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7AF93FC427B59E9C00EFDB01 /* URLSession+Extensions.swift */,
 				9826D8E52788B43E00E05400 /* UIViewController+Extensions.swift */,
 				9826D8E62788B43E00E05400 /* String+Extensions.swift */,
 				9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */,
@@ -448,7 +445,6 @@
 				7AD8B44627B41636004A782E /* HTTPPath.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
-				7AF93FC527B59E9C00EFDB01 /* URLSession+Extensions.swift in Sources */,
 				7AD8B44427B40F03004A782E /* HTTPRequest.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,

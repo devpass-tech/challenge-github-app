@@ -7,23 +7,11 @@
 
 import Foundation
 
-struct HTTPPath: RawRepresentable {
-    let rawValue: String
-
-    static let USER = HTTPPath(rawValue: "/user")
-    static let REPOS = HTTPPath(rawValue: "/repos")
-    
-    init?(rawValue: String) {
-        self.rawValue = rawValue
-    }
+struct HTTPPath {
+    static let USER = "/user"
+    static let REPOS = "/repos"
 }
 
-struct URLHost: RawRepresentable {
-    let rawValue: String
-
+struct URLHost {
     static let GITHUB = "api.github.com"
-    
-    init?(rawValue: String) {
-        self.rawValue = rawValue
-    }
 }

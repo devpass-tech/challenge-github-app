@@ -9,7 +9,7 @@ import Foundation
 
 protocol HTTPRequest {
     var host: String { get set }
-    var path: [String] { get set }
+    var path: String { get set }
     var method: String { get set }
     var body: String { get set }
 }
@@ -27,7 +27,7 @@ extension HTTPRequest {
         var components = URLComponents()
         components.scheme = "https"
         components.host = host
-        components.path = ""
+        components.path = path
         
         return components.url!
     }
