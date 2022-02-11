@@ -15,16 +15,8 @@ final class ListViewController: UIViewController {
         return listView
     }()
     
-    private lazy var settingsButton: UIBarButtonItem = {
-        let settingsButton = UIBarButtonItem()
-        settingsButton.target = self
-        settingsButton.title = "Settings"
-        settingsButton.style = .plain
-        return settingsButton
-    }()
-    
+    private let settingsButton = UIBarButtonItem()
     private let searchBar = UISearchController()
-
     private let service = Service()
 
     init() {
@@ -38,7 +30,9 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureNavigationSearch()
+        configureSettingsButton()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -57,21 +51,22 @@ final class ListViewController: UIViewController {
         self.view = listView
     }
     
+    func configureSettingsButton() {
+        settingsButton.style = .plain
+        settingsButton.title = "Settings"
+        settingsButton.target = self
+    }
+    
     func configureSearchBar() {
         searchBar.searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.searchBar.placeholder = "Type a GitHub user name"
-        searchBar.delegate = self
     }
     
     func configureNavigationSearch() {
-        navigationItem.searchController = searchBar
-        configureSearchBar()
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Repositories"
+        navigationItem.searchController = searchBar
         navigationItem.rightBarButtonItem = settingsButton
+        navigationItem.title = "Repositories"
+        configureSearchBar()
     }
-}
-
-extension ListViewController: UISearchControllerDelegate {
-    
 }
