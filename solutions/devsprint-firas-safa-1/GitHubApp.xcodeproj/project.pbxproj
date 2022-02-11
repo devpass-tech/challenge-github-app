@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		669A1CA227B190A40032372A /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669A1CA127B190A40032372A /* RepositoryCellView.swift */; };
+		66E083DB27B32C5300F62E89 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E083DA27B32C5300F62E89 /* ListViewModel.swift */; };
 		98252C21279200C900199ECC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98252C20279200C900199ECC /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		669A1CA127B190A40032372A /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		66E083DA27B32C5300F62E89 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		669A1CA327B190B80032372A /* RepositoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				669A1CA127B190A40032372A /* RepositoryCellView.swift */,
+			);
+			path = RepositoryCell;
+			sourceTree = "<group>";
+		};
 		9826D8A82788B40600E05400 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +201,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				669A1CA327B190B80032372A /* RepositoryCell */,
 				9826D90C2788B89400E05400 /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
@@ -220,6 +233,7 @@
 			children = (
 				9826D8F72788B43F00E05400 /* ListViewController.swift */,
 				9826D8F82788B43F00E05400 /* ListView.swift */,
+				66E083DA27B32C5300F62E89 /* ListViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -393,6 +407,8 @@
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
+				669A1CA227B190A40032372A /* RepositoryCellView.swift in Sources */,
+				66E083DB27B32C5300F62E89 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
