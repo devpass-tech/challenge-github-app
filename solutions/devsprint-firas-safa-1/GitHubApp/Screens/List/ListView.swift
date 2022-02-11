@@ -16,18 +16,7 @@ final class ListView: UIView {
         didSet { update() }
     }
     
-    private func update() {
-        tableView.reloadData()
-    }
-
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.cellIdentifier)
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }()
+    private  var tableView = UITableView()
 
     init(viewModel: ListViewModel = ListViewModel()) {
         self.viewModel = viewModel
@@ -42,18 +31,31 @@ final class ListView: UIView {
 }
 
 private extension ListView {
-    func setupViews() {
-        self.backgroundColor = .white
+    private func update() {
+        tableView.reloadData()
+    }
+    
+    private func setupViews() {
+        backgroundColor = .white
 
-        self.configureSubviews()
-        self.configureSubviewsConstraints()
+        configureTableView()
+        configureSubviews()
+        configureSubviewsConstraints()
+    }
+    
+    private func configureTableView() {
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.cellIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
-    func configureSubviews() {
+    private func configureSubviews() {
         self.addSubview(self.tableView)
     }
 
-    func configureSubviewsConstraints() {
+    private func configureSubviewsConstraints() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
