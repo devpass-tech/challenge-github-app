@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct HTTPMethod {
-    static let GET = "GET"
-    static let POST = "POST"
+// Type representing `HTTPMethods`
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
+struct BaseURL {
+    // API endpoint to github api
+    static let githubAPI = "api.github.com"
 }

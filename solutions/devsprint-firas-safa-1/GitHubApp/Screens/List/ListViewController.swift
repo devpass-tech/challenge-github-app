@@ -8,7 +8,6 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-
     private let listView: ListView = {
 
         let listView = ListView()
@@ -16,10 +15,9 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
-    
+
     init() {
         super.init(nibName: nil, bundle: nil)
-
     }
 
     required init?(coder: NSCoder) {
@@ -27,17 +25,13 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
         service.fetchList { repositories in
-
             DispatchQueue.main.async {
-
                 self.listView.updateView(with: repositories)
             }
         }
-
     }
-
+    
     override func loadView() {
         self.view = listView
     }
