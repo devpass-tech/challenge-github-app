@@ -14,7 +14,6 @@ struct Repository: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case id
-        
     }
 }
 
