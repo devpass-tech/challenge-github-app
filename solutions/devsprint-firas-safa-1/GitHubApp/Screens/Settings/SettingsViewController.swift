@@ -10,6 +10,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     override func loadView() {
-        self.view = SettingsView()
+        self.view = SettingsView()   
+        title = "Settings"
     }
 }
