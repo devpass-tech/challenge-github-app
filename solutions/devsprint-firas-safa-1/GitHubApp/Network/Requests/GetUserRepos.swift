@@ -8,7 +8,8 @@
 import Foundation
 
 struct GetUserRepos: HTTPRequest {
-    var host: String = BaseURL.githubAPI
+    typealias ResponseModel = Repository
+    var host: URLs = .githubAPI
     var path: Path
     var method: HTTPMethod = .get
 }

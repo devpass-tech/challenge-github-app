@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkRequestProtocol {
-    func request<ResponseType: Decodable>(with requestType: HTTPRequest) async throws -> [ResponseType]
+    func request<R: HTTPRequest>(with requestType: R) async throws -> R.ResponseModel
 }
 
 struct NetworkManager: NetworkRequestProtocol {
@@ -22,10 +22,10 @@ struct NetworkManager: NetworkRequestProtocol {
     // Executes a network request, decodes the response and returns it
     // - Parameter request: `HTTPRequest` instance
     // - Returns: An instance of the same type as decodable `ResponseType`
-    func request<ResponseType: Decodable>(with requestType: HTTPRequest) async throws -> [ResponseType] {
+    func request<R: HTTPRequest>(with requestType: R) async throws -> R.ResponseModel {
         do {
             let (data, _) = try await session.data(for: requestType.asURLRequest())
-            let decoded = try requestType.decoder.decode([ResponseType].self, from: data)
+            let decoded = try requestType.decoder.decode(R.ResponseModel.self, from: data)
             return decoded
         } catch let error {
             throw error

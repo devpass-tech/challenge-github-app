@@ -108,21 +108,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7AD8B44127B40EF0004A782E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				7AD8B44227B40EF6004A782E /* Network */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		7AD8B44227B40EF6004A782E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7AE368CC27BACDD10053BB08 /* Manager */,
+				7AE368CB27BACDC60053BB08 /* Requests */,
 				7AD8B44727B41648004A782E /* Models */,
-				7AD8B44327B40F03004A782E /* HTTPRequest.swift */,
-				7AD8B44A27B41F30004A782E /* NetworkManager.swift */,
-				7AECCFC827B828E70046D32E /* GetUserRepos.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -130,17 +121,28 @@
 		7AD8B44727B41648004A782E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7AD8B44827B41DD4004A782E /* HTTPMethod.swift */,
-				7AECCFC627B81E650046D32E /* Typealiases.swift */,
+				98252C20279200C900199ECC /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		7AD8B45227B428F8004A782E /* Domain */ = {
+		7AE368CB27BACDC60053BB08 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				7AECCFC827B828E70046D32E /* GetUserRepos.swift */,
+				7AD8B44327B40F03004A782E /* HTTPRequest.swift */,
 			);
-			path = Domain;
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		7AE368CC27BACDD10053BB08 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7AD8B44A27B41F30004A782E /* NetworkManager.swift */,
+				7AD8B44827B41DD4004A782E /* HTTPMethod.swift */,
+				7AECCFC627B81E650046D32E /* Typealiases.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		9826D8A82788B40600E05400 = {
@@ -166,8 +168,7 @@
 		9826D8B32788B40600E05400 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
-				7AD8B45227B428F8004A782E /* Domain */,
-				7AD8B44127B40EF0004A782E /* Data */,
+				7AD8B44227B40EF6004A782E /* Network */,
 				9826D9072788B48000E05400 /* AppDelegate */,
 				9826D8EB2788B43F00E05400 /* Resources */,
 				9826D8F12788B43F00E05400 /* Screens */,
@@ -228,7 +229,6 @@
 		9826D8F02788B43F00E05400 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				98252C20279200C900199ECC /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

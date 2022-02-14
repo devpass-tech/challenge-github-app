@@ -10,10 +10,10 @@ import Foundation
 // Type representing `HTTPMethods`
 enum HTTPMethod: String {
     case get = "GET"
-    case post = "POST"
 }
 
-struct BaseURL {
+// Type representing `URLs`
+enum URLs: String {
     // API endpoint to github api
-    static let githubAPI = "api.github.com"
+    case githubAPI = "api.github.com"
 }

@@ -9,11 +9,11 @@ import Foundation
 
 // A representation of a `HTTPRequest`
 protocol HTTPRequest {
-    var host: String { get }
+    associatedtype ResponseModel: Decodable
+    var host: URLs { get }
     var path: Path { get }
     var method: HTTPMethod { get }
     var decoder: JSONDecoder { get }
-    var encoder: JSONEncoder { get }
 }
 
 extension HTTPRequest {
@@ -21,15 +21,10 @@ extension HTTPRequest {
         JSONDecoder()
     }
     
-    // There is no use case currently for encoder, therefore encoding hasn't been implemented
-    var encoder: JSONEncoder {
-        JSONEncoder()
-    }
-    
     var url: URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = host
+        components.host = host.rawValue
         components.path = "/" + path.joined(separator: "/")
         return components.url!
     }
