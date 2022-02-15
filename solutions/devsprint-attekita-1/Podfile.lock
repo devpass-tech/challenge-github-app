@@ -1,5 +1,5 @@
 PODS:
-  - Kingfisher (7.1.1)
+  - Kingfisher (7.1.2)
   - SnapshotTesting (1.9.0)
 
 DEPENDENCIES:
@@ -12,7 +12,7 @@ SPEC REPOS:
     - SnapshotTesting
 
 SPEC CHECKSUMS:
-  Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
 
 PODFILE CHECKSUM: 8f6e167bb1f6c12e9c1d634b11c8abf0c7d6c86a

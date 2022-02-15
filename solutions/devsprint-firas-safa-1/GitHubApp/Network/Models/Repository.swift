@@ -10,19 +10,15 @@ import Foundation
 // MARK: - Repository
 
 struct Repository: Decodable {
-    let id: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-    }
+    var name: String
+    var description: String?
+    var owner: Owner
 }
 
 // MARK: - Owner
 
 struct Owner: Decodable {
-    let id: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-    }
+    var login: String
+    var avatarUrl: String
+    var type: String
 }

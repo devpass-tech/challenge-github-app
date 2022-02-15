@@ -16,6 +16,7 @@ final class ListViewController: UIViewController {
     private let settingsButton = UIBarButtonItem()
     private let searchBar = UISearchController()
     private let service = Service()
+    private let network = NetworkManager()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -53,6 +54,8 @@ final class ListViewController: UIViewController {
     func configureSearchBar() {
         searchBar.searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.searchBar.placeholder = "Type a GitHub user name"
+        searchBar.searchResultsUpdater = self
+        searchBar.searchBar.delegate = self
     }
     
     func configureNavigationSearch() {
@@ -61,5 +64,29 @@ final class ListViewController: UIViewController {
         navigationItem.rightBarButtonItem = settingsButton
         navigationItem.title = "Repositories"
         configureSearchBar()
+    }
+}
+
+// Handling `UISearchBarDelegate` behavior
+extension ListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let search = searchBar.text ?? ""
+        let getUserRepos = GetUserRepos(path: ["users", search, "repos"])
+        
+        Task {
+            do {
+                let result = try await network.request(with: getUserRepos)
+                print(result)
+            } catch let error {
+                print(error)
+            }
+        }
+    }
+}
+
+// Handling `UISearchResultsUpdating` behavior
+extension ListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }

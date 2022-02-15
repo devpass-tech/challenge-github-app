@@ -18,7 +18,9 @@ protocol HTTPRequest {
 
 extension HTTPRequest {
     var decoder: JSONDecoder {
-        JSONDecoder()
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
     }
     
     var url: URL {
