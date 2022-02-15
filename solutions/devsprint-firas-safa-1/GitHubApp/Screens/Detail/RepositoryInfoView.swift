@@ -28,12 +28,9 @@ class RepositoryInfoView: UITableViewCell {
     }
     
     func updateView(with configuration: RepositoryInfoViewConfiguration) {
-        let starCount = configuration.starCount
-        let forkCount = configuration.forkCount
-        
-        self.repoName.text = configuration.name
-        self.repoDescription.text = configuration.description
-        self.subtitle.text = "\(starCount) stars    \(forkCount) forks"
+        repoName.text = configuration.name
+        repoDescription.text = configuration.description
+        subtitle.text = "\(configuration.starCount) stars    \(configuration.forkCount) forks"
     }
     
     private func setupSubviews() {
