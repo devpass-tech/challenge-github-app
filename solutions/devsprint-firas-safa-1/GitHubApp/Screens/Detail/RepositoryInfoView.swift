@@ -20,7 +20,7 @@ class RepositoryInfoView: UITableViewCell {
         
         setupSubviews()
         setupCellLayout()
-        setupCellConstraints()
+        setupCellStyle()
     }
     
     required init?(coder: NSCoder) {
@@ -43,16 +43,21 @@ class RepositoryInfoView: UITableViewCell {
     }
     
     private func setupCellLayout() {
-        repoName.font = .boldSystemFont(ofSize: 15)
         repoName.sizeToFit()
+        repoDescription.sizeToFit()
+        subtitle.sizeToFit()
+        
+        setupCellConstraints()
+    }
+    
+    private func setupCellStyle() {
+        repoName.font = .boldSystemFont(ofSize: 15)
         
         repoDescription.font = .systemFont(ofSize: 15)
-        repoDescription.sizeToFit()
         repoDescription.numberOfLines = 0
         
         subtitle.font = .systemFont(ofSize: 13)
         subtitle.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
-        subtitle.sizeToFit()
     }
     
     private func setupCellConstraints() {
