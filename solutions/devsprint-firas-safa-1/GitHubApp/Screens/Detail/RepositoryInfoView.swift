@@ -1,10 +1,10 @@
 import UIKit
 
 struct RepositoryInfoViewConfiguration {
-    let name: String,
-        description: String,
-        starCount: Int,
-        forkCount: Int
+    let name: String
+    let description: String
+    let starCount: Int
+    let forkCount: Int
 }
 
 class RepositoryInfoView: UITableViewCell {
