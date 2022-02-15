@@ -11,9 +11,9 @@ class RepositoryInfoView: UITableViewCell {
     static let cellIdentifier = "RepositoryInfoView"
     static let cellHeight: CGFloat = 140
     
-    private var repoName = UILabel()
-    private var repoDescription = UILabel()
-    private var subtitle = UILabel()
+    private let repoName = UILabel()
+    private let repoDescription = UILabel()
+    private let subtitle = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
