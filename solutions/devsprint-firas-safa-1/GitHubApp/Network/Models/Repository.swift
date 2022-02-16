@@ -13,12 +13,30 @@ struct Repository: Decodable {
     var name: String
     var description: String?
     var owner: Owner
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case description
+        case owner
+    }
+    
+    func normalize() -> RepositoryModel {
+        return RepositoryModel(
+            name: name,
+            username: owner.name,
+            avatarUrl: owner.avatarUrl
+        )
+    }
 }
 
 // MARK: - Owner
 
 struct Owner: Decodable {
-    var login: String
+    var name: String
     var avatarUrl: String
-    var type: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "login"
+        case avatarUrl
+    }
 }

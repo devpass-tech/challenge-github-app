@@ -59,11 +59,11 @@ class RepositoryCellView: UITableViewCell {
         NSLayoutConstraint.activate([
             mainTitle.topAnchor.constraint(equalTo: topAnchor, constant: paddingConstant),
             mainTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paddingConstant),
-            mainTitle.trailingAnchor.constraint(equalTo: trailingAnchor),   
+            mainTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -paddingConstant),
             
             subTitle.topAnchor.constraint(equalTo: mainTitle.bottomAnchor),
             subTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: paddingConstant),
-            subTitle.trailingAnchor.constraint(equalTo: trailingAnchor),
+            subTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -paddingConstant),
             subTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -paddingConstant),
         ])
     }

@@ -8,9 +8,22 @@
 import Foundation
 
 struct Service {
-
-    func fetchList(_ completion: ([String]) -> Void) {
-
-        completion(["Repository 1", "Repository 2", "Repository 3"])
+    private let network: NetworkManager
+    
+    init() {
+        self.network = NetworkManager()
+    }
+    
+    func fetchList(username: String) async throws -> [RepositoryModel] {
+        let getUserRepos = GetUserRepos(path: ["users", username, "repos"])
+        
+        do {
+            let normalized = try await network.request(with: getUserRepos).map({ repo in
+                repo.normalize()
+            })
+            return normalized
+        } catch {
+            throw error
+        }
     }
 }

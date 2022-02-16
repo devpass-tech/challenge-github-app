@@ -28,6 +28,7 @@ struct NetworkManager: NetworkRequestProtocol {
             let decoded = try requestType.decoder.decode(R.ResponseModel.self, from: data)
             return decoded
         } catch let error {
+            print(error)
             throw error
         }
     }

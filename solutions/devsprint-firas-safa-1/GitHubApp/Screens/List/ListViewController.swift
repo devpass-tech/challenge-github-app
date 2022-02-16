@@ -16,7 +16,6 @@ final class ListViewController: UIViewController {
     private let settingsButton = UIBarButtonItem()
     private let searchBar = UISearchController()
     private let service = Service()
-    private let network = NetworkManager()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -33,14 +32,6 @@ final class ListViewController: UIViewController {
         configureSettingsButton()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        service.fetchList { [weak self] repositories in
-            DispatchQueue.main.async {
-                self?.listView.viewModel = ListViewModel(listItems: repositories)
-            }
-        }
-    }
-    
     override func loadView() {
         self.view = listView
     }
@@ -69,17 +60,12 @@ final class ListViewController: UIViewController {
 
 // Handling `UISearchBarDelegate` behavior
 extension ListViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         let search = searchBar.text ?? ""
-        let getUserRepos = GetUserRepos(path: ["users", search, "repos"])
-        
+            
         Task {
-            do {
-                let result = try await network.request(with: getUserRepos)
-                print(result)
-            } catch let error {
-                print(error)
-            }
+            let response = try await service.fetchList(username: search)
+            self.listView.viewModel = ListViewModel(listItems: response)
         }
     }
 }
