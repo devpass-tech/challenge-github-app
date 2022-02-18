@@ -15,7 +15,7 @@ final class ListViewController: UIViewController {
     
     private let settingsButton = UIBarButtonItem()
     private let searchBar = UISearchController()
-    private let service = Service()
+    private let service = Service(network: NetworkManager())
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -45,7 +45,6 @@ final class ListViewController: UIViewController {
     func configureSearchBar() {
         searchBar.searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.searchBar.placeholder = "Type a GitHub user name"
-        searchBar.searchResultsUpdater = self
         searchBar.searchBar.delegate = self
     }
     
@@ -67,12 +66,5 @@ extension ListViewController: UISearchBarDelegate {
             let response = try await service.fetchList(username: search)
             self.listView.viewModel = ListViewModel(listItems: response)
         }
-    }
-}
-
-// Handling `UISearchResultsUpdating` behavior
-extension ListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        
     }
 }

@@ -10,8 +10,8 @@ import Foundation
 struct Service {
     private let network: NetworkManager
     
-    init() {
-        self.network = NetworkManager()
+    init(network: NetworkManager) {
+        self.network = network
     }
     
     func fetchList(username: String) async throws -> [RepositoryModel] {
