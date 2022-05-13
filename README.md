@@ -1,4 +1,4 @@
-# Onboarding Challenge 
+# GitHub App Challenge 🐙
 
 In this challenge, we are going to integrate with the GitHub API to show a user's repository list, with navigation to a repository's details. During the Dev Sprint, we also follow good practices of both Git flow and Agile development.
 
