@@ -76,14 +76,11 @@
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		F66AEFF6283DAA1A001B2857 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewCell.swift; path = ../../../../../../../../../../../ListViewCell.swift; sourceTree = "<group>"; };
+		F66AEFF6283DAA1A001B2857 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewCell.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 		F66AEFF9283DCF46001B2857 /* RepositoryCellViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewConfiguration.swift; sourceTree = "<group>"; };
 		F66AEFFB283EBDED001B2857 /* Viewcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewcode.swift; sourceTree = "<group>"; };
-=======
 		B9EF909C283C4C7500802B52 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B9EF90A0283C501000802B52 /* StringsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsHelper.swift; sourceTree = "<group>"; };
->>>>>>> 8ac70dade77b043885c8cefd58983c8cbd0cd4a5
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
