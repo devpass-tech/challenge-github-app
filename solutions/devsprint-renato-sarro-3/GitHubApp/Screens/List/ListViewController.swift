@@ -8,6 +8,8 @@
 import UIKit
 
 final class ListViewController: UIViewController {
+    
+    private let searchController = UISearchController()
 
     private let listView: ListView = {
 
@@ -29,7 +31,9 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "GitHub App 🐙"
+        self.navigationItem.title = "Repositories"
+        self.navigationItem.searchController = searchController
+        self.navigationItem.searchController?.searchBar.placeholder = "Type a GitHub user name"
     }
 
     override func viewDidAppear(_ animated: Bool) {
