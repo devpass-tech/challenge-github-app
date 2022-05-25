@@ -9,9 +9,9 @@ import UIKit
 
 final class ListViewController: UIViewController {
 
-    private let listView: ListView = {
-
+    private lazy var listView: ListView = {
         let listView = ListView()
+        listView.delegate = self
         return listView
     }()
 
@@ -47,4 +47,13 @@ final class ListViewController: UIViewController {
     override func loadView() {
         self.view = listView
     }
+}
+
+extension ListViewController: ListViewProtocol {
+    func navigationDetail(listItens: String) {
+        let vc  = DetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }

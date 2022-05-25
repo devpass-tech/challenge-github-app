@@ -12,11 +12,16 @@ struct ListViewConfiguration {
     let listItems: [String]
 }
 
+protocol ListViewProtocol: AnyObject {
+    func navigationDetail(listItens: String)
+}
+
 final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var listItems: [String] = []
+    var delegate: ListViewProtocol?
 
     private lazy var tableView: UITableView = {
 
@@ -24,13 +29,13 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
     init() {
 
         super.init(frame: .zero)
-
         self.setupViews()
     }
 
@@ -90,3 +95,8 @@ extension ListView: UITableViewDataSource {
     }
 }
 
+extension ListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.navigationDetail(listItens: listItems[indexPath.row])
+    }
+}
