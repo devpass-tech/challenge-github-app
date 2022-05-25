@@ -45,7 +45,7 @@ extension ListView {
     }
 }
 
-extension ListView: ViewCode {
+extension ListView: Viewcode {
     func buildHierarchy() {
         self.addSubview(self.tableView)
     }
