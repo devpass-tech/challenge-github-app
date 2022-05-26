@@ -82,7 +82,7 @@ final class ListViewController: UIViewController {
 }
 
 extension ListViewController: ListViewProtocol {
-    func navigationDetail(listItens: String) {
+    func navigationDetail(listItens: RepositoryCellViewConfiguration) {
         let vc  = DetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

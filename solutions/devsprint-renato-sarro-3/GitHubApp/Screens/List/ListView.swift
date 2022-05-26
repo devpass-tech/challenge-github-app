@@ -12,7 +12,7 @@ struct ListViewConfiguration {
 }
 
 protocol ListViewProtocol: AnyObject {
-    func navigationDetail(listItens: String)
+    func navigationDetail(listItens: RepositoryCellViewConfiguration)
 }
 
 final class ListView: UIView {
@@ -22,13 +22,13 @@ final class ListView: UIView {
     
     // MARK: - UI Components
     var delegate: ListViewProtocol?
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ListViewCell.self, forCellReuseIdentifier: ListViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.delegate = self
         return tableView
     }()
     
@@ -68,10 +68,6 @@ extension ListView: Viewcode {
     func setupExtraConfiguration() {
         self.backgroundColor = .white
     }
-}
-
-extension ListView: UITableViewDelegate {
-    
 }
 
 extension ListView: UITableViewDataSource {
