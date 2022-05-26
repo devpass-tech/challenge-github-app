@@ -8,9 +8,6 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-    
-    private let searchController = UISearchController()
-
     // MARK: - Properties
     private let listView: ListView = {
         let listView = ListView()
@@ -18,6 +15,14 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
+    
+    // MARK: - UI Components
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Type a GitHub user name"
+        searchController.hidesNavigationBarDuringPresentation = false
+        return searchController
+    }()
 
     // MARK: Initializations
     init() {
@@ -32,11 +37,6 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         setupUI()
         fetchList()
-      
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "Repositories"
-        self.navigationItem.searchController = searchController
-        self.navigationItem.searchController?.searchBar.placeholder = "Type a GitHub user name"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +50,12 @@ final class ListViewController: UIViewController {
     // MARK: - Methods
     private func setupUI() {
         title = "Repositories 🐙"
+        searchControllerUI()
+    }
+    
+    private func searchControllerUI() {
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     private func setupNavigationBar() {
@@ -63,6 +69,7 @@ final class ListViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearence
         navigationController?.navigationBar.compactAppearance = appearence
         navigationController?.navigationBar.scrollEdgeAppearance = appearence
+        
     }
     
     private func fetchList() {
