@@ -8,9 +8,10 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-    // MARK: - Properties
-    private let listView: ListView = {
+
+    private lazy var listView: ListView = {
         let listView = ListView()
+        listView.delegate = self
         return listView
     }()
 
@@ -78,4 +79,13 @@ final class ListViewController: UIViewController {
             self.listView.updateView(with: configuration)
         }
     }
+}
+
+extension ListViewController: ListViewProtocol {
+    func navigationDetail(listItens: RepositoryCellViewConfiguration) {
+        let vc  = DetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }

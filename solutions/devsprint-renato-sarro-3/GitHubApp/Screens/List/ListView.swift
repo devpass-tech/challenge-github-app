@@ -11,12 +11,18 @@ struct ListViewConfiguration {
     let listItems: [RepositoryCellViewConfiguration]
 }
 
+protocol ListViewProtocol: AnyObject {
+    func navigationDetail(listItens: RepositoryCellViewConfiguration)
+}
+
 final class ListView: UIView {
     
     // MARK: - Properties
     private var listItems: [RepositoryCellViewConfiguration] = []
     
     // MARK: - UI Components
+    var delegate: ListViewProtocol?
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,10 +70,6 @@ extension ListView: Viewcode {
     }
 }
 
-extension ListView: UITableViewDelegate {
-    
-}
-
 extension ListView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.listItems.count
@@ -81,5 +83,11 @@ extension ListView: UITableViewDataSource {
         cell.updateView(with: self.listItems[indexPath.row])
     
         return cell
+    }
+}
+
+extension ListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.navigationDetail(listItens: listItems[indexPath.row])
     }
 }
