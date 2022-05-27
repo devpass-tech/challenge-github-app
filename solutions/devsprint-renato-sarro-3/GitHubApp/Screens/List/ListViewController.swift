@@ -24,6 +24,16 @@ final class ListViewController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         return searchController
     }()
+    
+    private lazy var settingsButton: UIBarButtonItem = {
+        let settingsButton = UIBarButtonItem()
+        settingsButton.title = "Settings"
+        settingsButton.style = .plain
+        settingsButton.tintColor = .systemBlue
+        settingsButton.target = self
+        settingsButton.action = #selector(navigationSettingsViewController)
+        return settingsButton
+    }()
 
     // MARK: Initializations
     init() {
@@ -48,10 +58,20 @@ final class ListViewController: UIViewController {
         self.view = listView
     }
     
+    // MARK: - Objcs
+    @objc
+    func navigationSettingsViewController() {
+        let settingsViewController = SettingsViewController()
+        settingsViewController.modalPresentationStyle = .formSheet
+        let navigationSettingsVC = UINavigationController(rootViewController: SettingsViewController())
+        self.present(navigationSettingsVC, animated: true, completion: nil)
+    }
+    
     // MARK: - Methods
     private func setupUI() {
         title = "Repositories 🐙"
         searchControllerUI()
+        navigationItem.rightBarButtonItem = settingsButton
     }
     
     private func searchControllerUI() {
@@ -70,7 +90,6 @@ final class ListViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearence
         navigationController?.navigationBar.compactAppearance = appearence
         navigationController?.navigationBar.scrollEdgeAppearance = appearence
-        
     }
     
     private func fetchList() {
@@ -86,6 +105,4 @@ extension ListViewController: ListViewProtocol {
         let vc  = DetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
 }
