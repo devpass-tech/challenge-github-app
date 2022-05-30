@@ -190,12 +190,12 @@
 			isa = PBXGroup;
 			children = (
 				9826D9072788B48000E05400 /* AppDelegate */,
+				9826D9112788BAA200E05400 /* DebugYourViews */,
+				9826D8E42788B43E00E05400 /* Extensions */,
+				9826D8F02788B43F00E05400 /* Models */,
 				9826D8EB2788B43F00E05400 /* Resources */,
 				9826D8F12788B43F00E05400 /* Screens */,
-				9826D9112788BAA200E05400 /* DebugYourViews */,
 				9826D8E92788B43E00E05400 /* Service */,
-				9826D8F02788B43F00E05400 /* Models */,
-				9826D8E42788B43E00E05400 /* Extensions */,
 			);
 			path = GitHubApp;
 			sourceTree = "<group>";
@@ -259,10 +259,9 @@
 			isa = PBXGroup;
 			children = (
 				9826D90C2788B89400E05400 /* Components */,
-				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
 				9826D8F62788B43F00E05400 /* List */,
-				B9EF909C283C4C7500802B52 /* EmptyView.swift */,
+				9826D8F22788B43F00E05400 /* Settings */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -308,6 +307,7 @@
 		9826D90C2788B89400E05400 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F6F034B62840F2670065DC35 /* EmptyView */,
 				F66AEFF8283DCF18001B2857 /* RepositoryCell */,
 				F66AEFF2283D9BC9001B2857 /* Viewcode */,
 			);
@@ -344,6 +344,14 @@
 				F66AEFF9283DCF46001B2857 /* RepositoryCellViewConfiguration.swift */,
 			);
 			path = RepositoryCell;
+			sourceTree = "<group>";
+		};
+		F6F034B62840F2670065DC35 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				B9EF909C283C4C7500802B52 /* EmptyView.swift */,
+			);
+			path = EmptyView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
