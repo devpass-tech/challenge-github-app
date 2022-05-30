@@ -46,7 +46,7 @@ final class ListViewCell: UITableViewCell {
     }
    
     // MARK: - Methods
-    func updateView(with configuration: RepositoryCellViewConfiguration) {
+    func updateView(with configuration: Repository) {
         self.nameLabel.text = configuration.name
         self.descriptionLabel.text = configuration.description
     }

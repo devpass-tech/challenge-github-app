@@ -8,17 +8,17 @@
 import UIKit
 
 struct ListViewConfiguration {
-    let listItems: [RepositoryCellViewConfiguration]
+    let listItems: [Repository]
 }
 
 protocol ListViewProtocol: AnyObject {
-    func navigationDetail(listItens: RepositoryCellViewConfiguration)
+    func navigationDetail(listItens: Repository)
 }
 
 final class ListView: UIView {
     
     // MARK: - Properties
-    private var listItems: [RepositoryCellViewConfiguration] = []
+    private var listItems: [Repository] = []
     
     // MARK: - UI Components
     var delegate: ListViewProtocol?
@@ -47,7 +47,9 @@ final class ListView: UIView {
 extension ListView {
     func updateView(with configuration: ListViewConfiguration) {
         self.listItems = configuration.listItems
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -81,7 +83,7 @@ extension ListView: UITableViewDataSource {
         }
         
         cell.updateView(with: self.listItems[indexPath.row])
-    
+        
         return cell
     }
 }

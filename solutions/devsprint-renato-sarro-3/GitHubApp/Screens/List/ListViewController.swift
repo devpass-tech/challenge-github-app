@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
+final class ListViewController: UIViewController, UISearchResultsUpdating {
 
     private lazy var listView: ListView = {
         let listView = ListView()
@@ -57,6 +57,15 @@ final class ListViewController: UIViewController {
     private func searchControllerUI() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchResultsUpdater = self
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        fetchList()
+        print(text)
     }
     
     private func setupNavigationBar() {
@@ -82,10 +91,11 @@ final class ListViewController: UIViewController {
 }
 
 extension ListViewController: ListViewProtocol {
-    func navigationDetail(listItens: RepositoryCellViewConfiguration) {
+    func navigationDetail(listItens: Repository) {
         let vc  = DetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
 }
+
+
