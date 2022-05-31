@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C9AD5CD1456BBADD488F92E /* Pods_GitHubAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70F6F005EB13F19C1046A67 /* Pods_GitHubAppTests.framework */; };
+		87B370FE2846BB4900A7AE2B /* ServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B370FD2846BB4900A7AE2B /* ServiceTest.swift */; };
+		87B371002846BC0300A7AE2B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B370FF2846BC0300A7AE2B /* Request.swift */; };
+		87B371032846BFE100A7AE2B /* RepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B371022846BFE100A7AE2B /* RepositoryRequest.swift */; };
 		87F3195A284026790088AFFC /* ListViewControllerSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F31959284026790088AFFC /* ListViewControllerSnapshotTest.swift */; };
 		87F3195C28456D820088AFFC /* ListViewControllerUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3195B28456D820088AFFC /* ListViewControllerUnitTest.swift */; };
 		8EE979A226FA6E038F4953A6 /* Pods_GitHubApp_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30938CFF1EB055C8EC3A0D17 /* Pods_GitHubApp_GitHubAppUITests.framework */; };
@@ -61,6 +64,9 @@
 		35DDD7510DA144B3A77F3258 /* Pods_GitHubApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A0B2DB45A846E051DBA514 /* Pods-GitHubApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.debug.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5C869C0E42D65190FA3C0FDD /* Pods-GitHubApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.release.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.release.xcconfig"; sourceTree = "<group>"; };
+		87B370FD2846BB4900A7AE2B /* ServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTest.swift; sourceTree = "<group>"; };
+		87B370FF2846BC0300A7AE2B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		87B371022846BFE100A7AE2B /* RepositoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRequest.swift; sourceTree = "<group>"; };
 		87F31959284026790088AFFC /* ListViewControllerSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSnapshotTest.swift; sourceTree = "<group>"; };
 		87F3195B28456D820088AFFC /* ListViewControllerUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerUnitTest.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -137,6 +143,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		87B370FC2846BB2A00A7AE2B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				87B370FD2846BB4900A7AE2B /* ServiceTest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		87B371012846BFC900A7AE2B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				87B371022846BFE100A7AE2B /* RepositoryRequest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		87F31957284026450088AFFC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +228,7 @@
 		9826D8CA2788B40800E05400 /* GitHubAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				87B370FC2846BB2A00A7AE2B /* Service */,
 				87F31957284026450088AFFC /* Screens */,
 				9826D8CB2788B40800E05400 /* GitHubAppTests.swift */,
 			);
@@ -236,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				9826D8EA2788B43E00E05400 /* Service.swift */,
+				87B370FF2846BC0300A7AE2B /* Request.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -292,6 +316,7 @@
 		9826D8F62788B43F00E05400 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				87B371012846BFC900A7AE2B /* Service */,
 				F66AEFF5283DAA08001B2857 /* Cell */,
 				9826D8F82788B43F00E05400 /* ListView.swift */,
 				9826D8F72788B43F00E05400 /* ListViewController.swift */,
@@ -573,6 +598,8 @@
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
+				87B371002846BC0300A7AE2B /* Request.swift in Sources */,
+				87B371032846BFE100A7AE2B /* RepositoryRequest.swift in Sources */,
 				B9EF909D283C4C7500802B52 /* EmptyView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
@@ -597,6 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87F3195A284026790088AFFC /* ListViewControllerSnapshotTest.swift in Sources */,
+				87B370FE2846BB4900A7AE2B /* ServiceTest.swift in Sources */,
 				9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */,
 				87F3195C28456D820088AFFC /* ListViewControllerUnitTest.swift in Sources */,
 			);

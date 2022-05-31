@@ -11,13 +11,13 @@ import XCTest
 @testable import GitHubApp
 
 struct ServiceStub: ServiceProtocol {
-    func fetchList(_ completion: @escaping ([Repository]) -> Void) {
-        completion([
-            Repository(name: "Vinicius", description: "Vinicius Description"),
-            Repository(name: "Tatiana", description: "Tatiana Description"),
-            Repository(name: "Thyago", description: "Thyago Description"),
-            Repository(name: "Renato", description: "Renato Description")
-        ])
+    func fetchData<T>(request: RequestProtocol, _ completion: @escaping (Result<T, ApiError>) -> Void) where T : Decodable {
+//        completion([
+//            Repository(name: "Vinicius", description: "Vinicius Description"),
+//            Repository(name: "Tatiana", description: "Tatiana Description"),
+//            Repository(name: "Thyago", description: "Thyago Description"),
+//            Repository(name: "Renato", description: "Renato Description")
+//        ])
     }
 }
 

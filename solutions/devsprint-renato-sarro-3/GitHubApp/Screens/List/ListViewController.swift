@@ -69,8 +69,8 @@ final class ListViewController: UIViewController, UISearchResultsUpdating {
         guard let text = searchController.searchBar.text else {
             return
         }
-        fetchList()
-        print(text)
+        
+        fetchList(user: text.lowercased())
     }
     
     private func setupNavigationBar() {
@@ -87,11 +87,16 @@ final class ListViewController: UIViewController, UISearchResultsUpdating {
         
     }
     
-    private func fetchList() {
-        self.service.fetchList { items in
-            let configuration = ListViewConfiguration(listItems: items.map { RepositoryCellViewConfiguration(name: $0.name,
-                                                                                                             description: $0.description ?? "") })
-            self.listView.updateView(with: configuration)
+    private func fetchList(user: String = "rsarromatos") {
+        service.fetchData(request: RepositoryRequest(user: user)) { (result: Result<[Repository], ApiError>) in
+            switch result {
+            case .success(let items):
+                let configuration = ListViewConfiguration(listItems: items.map { RepositoryCellViewConfiguration(name: $0.name,
+                                                                                                                 description: $0.description ?? "") })
+                self.listView.updateView(with: configuration)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }
@@ -102,5 +107,3 @@ extension ListViewController: ListViewControllerProtocol {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-

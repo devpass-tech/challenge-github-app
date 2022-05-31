@@ -7,59 +7,71 @@
 
 import Foundation
 
-enum RepositoryError {
+enum ApiError: String, Error {
     case url
-    case taskError(error: Error)
+    case taskError
     case noResponse
     case noData
-    case responseStatusCode(code: Int)
+    case responseStatusCode
     case invalidJSON
     
 }
 
+protocol URLSessionProtocol {
+    func fetchData(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+}
+
+extension URLSession: URLSessionProtocol {
+    func fetchData(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let dataTask = dataTask(with: request, completionHandler: completionHandler)
+        dataTask.resume()
+    }
+}
+
 protocol ServiceProtocol {
-    func fetchList(_ completion: @escaping ([Repository]) -> Void)
+    func fetchData<T: Decodable>(request: RequestProtocol, _ completion: @escaping (Result<T, ApiError>) -> Void)
 }
 
 struct Service: ServiceProtocol {
     
-    private static let basePath = "https://api.github.com/users/thyagoraphael/repos"
+    private let session: URLSessionProtocol
     
-    private static let session = URLSession.shared
-    
-    func batata() {
-        print("oi")
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
     }
     
-    func fetchList(_ completion: @escaping ([Repository]) -> Void) {
-        guard let url = URL(string: Service.basePath) else {
-           
+    func fetchData<T: Decodable>(request: RequestProtocol, _ completion: @escaping (Result<T, ApiError>) -> Void) {
+        guard let url = URL(string: request.url) else {
+            completion(.failure(.url))
             return
-            
         }
-        let dataTask = Service.session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = request.method.rawValue
+        
+        session.fetchData(with: urlRequest) { (data: Data?, response: URLResponse?, error: Error?) in
             
-            if error == nil {
-                guard let response = response as? HTTPURLResponse else {
-                    
+            guard error == nil else {
+                completion(.failure(.taskError))
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse, (200...210).contains(response.statusCode) {
+                guard let data = data else {
+                    completion(.failure(.noData))
                     return
                 }
-                if response.statusCode == 200 {
-                    guard let data = data else {return}
-                    do {
-                        let repository = try JSONDecoder().decode([Repository].self, from: data)
-                        completion(repository)
-                    } catch {
-                        
-                    }
-                    
-                } else {
-                    
+
+                
+                do {
+                    let repository = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(repository))
+                } catch {
+                    completion(.failure(.invalidJSON))
                 }
             } else {
-                
+                completion(.failure(.noResponse))
             }
         }
-        dataTask.resume()
     }
 }
