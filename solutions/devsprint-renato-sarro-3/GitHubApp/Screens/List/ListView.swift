@@ -8,20 +8,22 @@
 import UIKit
 
 struct ListViewConfiguration {
-    let listItems: [Repository]
+    let listItems: [RepositoryCellViewConfiguration]
 }
 
-protocol ListViewProtocol: AnyObject {
-    func navigationDetail(listItens: Repository)
+protocol ListViewProtocol {
+    var delegate: ListViewControllerProtocol? { get set }
+    
+    func updateView(with configuration: ListViewConfiguration)
 }
 
 final class ListView: UIView {
     
     // MARK: - Properties
-    private var listItems: [Repository] = []
+    private var listItems: [RepositoryCellViewConfiguration] = []
     
     // MARK: - UI Components
-    var delegate: ListViewProtocol?
+    weak var delegate: ListViewControllerProtocol?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -44,7 +46,7 @@ final class ListView: UIView {
 }
 
 // MARK: - Extensions
-extension ListView {
+extension ListView: ListViewProtocol {
     func updateView(with configuration: ListViewConfiguration) {
         self.listItems = configuration.listItems
         DispatchQueue.main.async {
@@ -90,6 +92,6 @@ extension ListView: UITableViewDataSource {
 
 extension ListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.delegate?.navigationDetail(listItens: listItems[indexPath.row])
+//        self.delegate?.navigationDetail(listItens: listItems[indexPath.row])
     }
 }
