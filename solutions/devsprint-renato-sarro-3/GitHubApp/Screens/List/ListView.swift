@@ -92,6 +92,6 @@ extension ListView: UITableViewDataSource {
 
 extension ListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.delegate?.navigationDetail(listItens: listItems[indexPath.row])
+        self.delegate?.navigationDetail(listItens: listItems[indexPath.row])
     }
 }
