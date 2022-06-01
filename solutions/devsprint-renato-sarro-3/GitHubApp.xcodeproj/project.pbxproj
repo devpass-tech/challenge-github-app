@@ -11,6 +11,9 @@
 		87B370FE2846BB4900A7AE2B /* ServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B370FD2846BB4900A7AE2B /* ServiceTest.swift */; };
 		87B371002846BC0300A7AE2B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B370FF2846BC0300A7AE2B /* Request.swift */; };
 		87B371032846BFE100A7AE2B /* RepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B371022846BFE100A7AE2B /* RepositoryRequest.swift */; };
+		87B3710D2848125A00A7AE2B /* RepositoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3710C2848125A00A7AE2B /* RepositoryUseCase.swift */; };
+		87B3710F2848138C00A7AE2B /* RepositoriesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3710E2848138C00A7AE2B /* RepositoriesRepositoryProtocol.swift */; };
+		87B37111284814DE00A7AE2B /* RepositoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B37110284814DE00A7AE2B /* RepositoriesRepository.swift */; };
 		87F3195A284026790088AFFC /* ListViewControllerSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F31959284026790088AFFC /* ListViewControllerSnapshotTest.swift */; };
 		87F3195C28456D820088AFFC /* ListViewControllerUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F3195B28456D820088AFFC /* ListViewControllerUnitTest.swift */; };
 		8EE979A226FA6E038F4953A6 /* Pods_GitHubApp_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30938CFF1EB055C8EC3A0D17 /* Pods_GitHubApp_GitHubAppUITests.framework */; };
@@ -67,6 +70,9 @@
 		87B370FD2846BB4900A7AE2B /* ServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTest.swift; sourceTree = "<group>"; };
 		87B370FF2846BC0300A7AE2B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		87B371022846BFE100A7AE2B /* RepositoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRequest.swift; sourceTree = "<group>"; };
+		87B3710C2848125A00A7AE2B /* RepositoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryUseCase.swift; sourceTree = "<group>"; };
+		87B3710E2848138C00A7AE2B /* RepositoriesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		87B37110284814DE00A7AE2B /* RepositoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesRepository.swift; sourceTree = "<group>"; };
 		87F31959284026790088AFFC /* ListViewControllerSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerSnapshotTest.swift; sourceTree = "<group>"; };
 		87F3195B28456D820088AFFC /* ListViewControllerUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerUnitTest.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -151,12 +157,74 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		87B371012846BFC900A7AE2B /* Service */ = {
+		87B371042848107F00A7AE2B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9826D8F12788B43F00E05400 /* Screens */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		87B371052848108F00A7AE2B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9826D8E92788B43E00E05400 /* Network */,
+				87B3710A2848111900A7AE2B /* Repository */,
+				87B37107284810A100A7AE2B /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		87B371062848109700A7AE2B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				87B37109284810DE00A7AE2B /* Repository */,
+				87B37108284810CC00A7AE2B /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		87B37107284810A100A7AE2B /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				87B3710C2848125A00A7AE2B /* RepositoryUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		87B37108284810CC00A7AE2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98252C20279200C900199ECC /* Repository.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		87B37109284810DE00A7AE2B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				87B371022846BFE100A7AE2B /* RepositoryRequest.swift */,
+				87B37110284814DE00A7AE2B /* RepositoriesRepository.swift */,
 			);
-			path = Service;
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		87B3710A2848111900A7AE2B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				87B3710E2848138C00A7AE2B /* RepositoriesRepositoryProtocol.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		87B3710B2848118200A7AE2B /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				9826D8E42788B43E00E05400 /* Extensions */,
+				9826D9112788BAA200E05400 /* DebugYourViews */,
+				9826D9072788B48000E05400 /* AppDelegate */,
+			);
+			path = Infra;
 			sourceTree = "<group>";
 		};
 		87F31957284026450088AFFC /* Screens */ = {
@@ -214,13 +282,11 @@
 		9826D8B32788B40600E05400 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
-				9826D9072788B48000E05400 /* AppDelegate */,
-				9826D9112788BAA200E05400 /* DebugYourViews */,
-				9826D8E42788B43E00E05400 /* Extensions */,
-				9826D8F02788B43F00E05400 /* Models */,
 				9826D8EB2788B43F00E05400 /* Resources */,
-				9826D8F12788B43F00E05400 /* Screens */,
-				9826D8E92788B43E00E05400 /* Service */,
+				87B3710B2848118200A7AE2B /* Infra */,
+				87B371062848109700A7AE2B /* Data */,
+				87B371052848108F00A7AE2B /* Domain */,
+				87B371042848107F00A7AE2B /* Application */,
 			);
 			path = GitHubApp;
 			sourceTree = "<group>";
@@ -255,13 +321,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		9826D8E92788B43E00E05400 /* Service */ = {
+		9826D8E92788B43E00E05400 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				9826D8EA2788B43E00E05400 /* Service.swift */,
 				87B370FF2846BC0300A7AE2B /* Request.swift */,
 			);
-			path = Service;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		9826D8EB2788B43F00E05400 /* Resources */ = {
@@ -272,14 +338,6 @@
 				9826D8C22788B40800E05400 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		9826D8F02788B43F00E05400 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				98252C20279200C900199ECC /* Repository.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		9826D8F12788B43F00E05400 /* Screens */ = {
@@ -315,7 +373,6 @@
 		9826D8F62788B43F00E05400 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				87B371012846BFC900A7AE2B /* Service */,
 				F66AEFF5283DAA08001B2857 /* Cell */,
 				9826D8F82788B43F00E05400 /* ListView.swift */,
 				9826D8F72788B43F00E05400 /* ListViewController.swift */,
@@ -607,6 +664,7 @@
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				87B371002846BC0300A7AE2B /* Request.swift in Sources */,
+				87B3710F2848138C00A7AE2B /* RepositoriesRepositoryProtocol.swift in Sources */,
 				87B371032846BFE100A7AE2B /* RepositoryRequest.swift in Sources */,
 				B9EF909D283C4C7500802B52 /* EmptyView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
@@ -619,11 +677,13 @@
 				F66AF002283EE57A001B2857 /* ListViewCell.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
 				F66AEFFC283EBDED001B2857 /* Viewcode.swift in Sources */,
+				87B3710D2848125A00A7AE2B /* RepositoryUseCase.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
+				87B37111284814DE00A7AE2B /* RepositoriesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

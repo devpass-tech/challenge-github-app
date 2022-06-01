@@ -15,7 +15,7 @@ final class ListViewController: UIViewController, UISearchResultsUpdating {
 
     private var listView: ListViewProtocol
 
-    private let service: ServiceProtocol
+    private let useCase: RepositoryUseCaseProtocol
     
     // MARK: - UI Components
     private lazy var searchController: UISearchController = {
@@ -36,9 +36,9 @@ final class ListViewController: UIViewController, UISearchResultsUpdating {
     }()
 
     // MARK: Initializations
-    init(listView: ListViewProtocol = ListView(), service: ServiceProtocol = Service()) {
+    init(listView: ListViewProtocol = ListView(), useCase: RepositoryUseCaseProtocol = RepositoryUseCase()) {
         self.listView = listView
-        self.service = service
+        self.useCase = useCase
         
         super.init(nibName: nil, bundle: nil)
         
@@ -107,14 +107,16 @@ final class ListViewController: UIViewController, UISearchResultsUpdating {
     }
     
     private func fetchList(user: String = "rsarromatos") {
-        service.fetchData(request: RepositoryRequest(user: user)) { (result: Result<[Repository], ApiError>) in
-            switch result {
-            case .success(let items):
-                let configuration = ListViewConfiguration(listItems: items.map { RepositoryCellViewConfiguration(name: $0.name,
-                                                                                                                 description: $0.description ?? "") })
-                self.listView.updateView(with: configuration)
-            case .failure(let error):
-                print(error)
+        useCase.execute(user: user) { list in
+            let configuration = ListViewConfiguration(listItems: list.map { RepositoryCellViewConfiguration(name: $0.name,
+                                                                                                             description: $0.description ?? "") })
+            self.listView.updateView(with: configuration)
+        } failure: { error in
+            switch error {
+            case .empty:
+                print("Exibir empty state")
+            case .business:
+                print("Exibir msg de erro")
             }
         }
     }
