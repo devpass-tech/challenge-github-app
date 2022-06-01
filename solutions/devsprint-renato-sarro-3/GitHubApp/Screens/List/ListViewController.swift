@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
+protocol ListViewControllerProtocol: AnyObject {
+    func navigationDetail(listItens: RepositoryCellViewConfiguration)
+}
 
-    private lazy var listView: ListView = {
-        let listView = ListView()
-        listView.delegate = self
-        return listView
-    }()
+final class ListViewController: UIViewController, UISearchResultsUpdating {
 
-    private let service = Service()
+    private var listView: ListViewProtocol
+
+    private let service: ServiceProtocol
     
     // MARK: - UI Components
     private lazy var searchController: UISearchController = {
@@ -36,8 +36,13 @@ final class ListViewController: UIViewController {
     }()
 
     // MARK: Initializations
-    init() {
+    init(listView: ListViewProtocol = ListView(), service: ServiceProtocol = Service()) {
+        self.listView = listView
+        self.service = service
+        
         super.init(nibName: nil, bundle: nil)
+        
+        self.listView.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -55,7 +60,7 @@ final class ListViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = listView
+        self.view = listView as? UIView
     }
     
     // MARK: - Objcs
@@ -77,6 +82,15 @@ final class ListViewController: UIViewController {
     private func searchControllerUI() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchResultsUpdater = self
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        
+        fetchList(user: text.lowercased())
     }
     
     private func setupNavigationBar() {
@@ -92,15 +106,21 @@ final class ListViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearence
     }
     
-    private func fetchList() {
-        self.service.fetchList { items in
-            let configuration = ListViewConfiguration(listItems: items)
-            self.listView.updateView(with: configuration)
+    private func fetchList(user: String = "rsarromatos") {
+        service.fetchData(request: RepositoryRequest(user: user)) { (result: Result<[Repository], ApiError>) in
+            switch result {
+            case .success(let items):
+                let configuration = ListViewConfiguration(listItems: items.map { RepositoryCellViewConfiguration(name: $0.name,
+                                                                                                                 description: $0.description ?? "") })
+                self.listView.updateView(with: configuration)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }
 
-extension ListViewController: ListViewProtocol {
+extension ListViewController: ListViewControllerProtocol {
     func navigationDetail(listItens: RepositoryCellViewConfiguration) {
         let vc  = DetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)

@@ -1,5 +1,5 @@
 //
-//  ListViewControllerTest.swift
+//  ListViewControllerSnapshotTest.swift
 //  GitHubAppTests
 //
 //  Created by Renato Sarro on 26/05/22.
@@ -11,7 +11,7 @@ import XCTest
 
 @testable import GitHubApp
 
-class ListViewControllerTest: XCTestCase {
+class ListViewControllerSnapshotTest: XCTestCase {
     
     var sut: ListViewController!
     
