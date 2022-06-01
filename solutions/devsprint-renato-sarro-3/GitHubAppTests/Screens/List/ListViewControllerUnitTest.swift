@@ -12,12 +12,11 @@ import XCTest
 
 struct ServiceStub: ServiceProtocol {
     func fetchData<T>(request: RequestProtocol, _ completion: @escaping (Result<T, ApiError>) -> Void) where T : Decodable {
-//        completion([
-//            Repository(name: "Vinicius", description: "Vinicius Description"),
-//            Repository(name: "Tatiana", description: "Tatiana Description"),
-//            Repository(name: "Thyago", description: "Thyago Description"),
-//            Repository(name: "Renato", description: "Renato Description")
-//        ])
+        let list = [Repository(name: "Vinicius", description: "Vinicius Description"),
+                    Repository(name: "Tatiana", description: "Tatiana Description"),
+                    Repository(name: "Thyago", description: "Thyago Description"),
+                    Repository(name: "Renato", description: "Renato Description")]
+        completion(.success(list as! T))
     }
 }
 
