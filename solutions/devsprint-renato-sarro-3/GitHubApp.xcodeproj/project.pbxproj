@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C9AD5CD1456BBADD488F92E /* Pods_GitHubAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70F6F005EB13F19C1046A67 /* Pods_GitHubAppTests.framework */; };
+		876C5B392849672000DF4D3C /* DetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876C5B382849672000DF4D3C /* DetailStoryboard.storyboard */; };
 		87B370FE2846BB4900A7AE2B /* ServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B370FD2846BB4900A7AE2B /* ServiceTest.swift */; };
 		87B371002846BC0300A7AE2B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B370FF2846BC0300A7AE2B /* Request.swift */; };
 		87B371032846BFE100A7AE2B /* RepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B371022846BFE100A7AE2B /* RepositoryRequest.swift */; };
@@ -67,6 +68,7 @@
 		35DDD7510DA144B3A77F3258 /* Pods_GitHubApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A0B2DB45A846E051DBA514 /* Pods-GitHubApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.debug.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5C869C0E42D65190FA3C0FDD /* Pods-GitHubApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.release.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.release.xcconfig"; sourceTree = "<group>"; };
+		876C5B382849672000DF4D3C /* DetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailStoryboard.storyboard; sourceTree = "<group>"; };
 		87B370FD2846BB4900A7AE2B /* ServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTest.swift; sourceTree = "<group>"; };
 		87B370FF2846BC0300A7AE2B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		87B371022846BFE100A7AE2B /* RepositoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRequest.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			children = (
 				9826D8F52788B43F00E05400 /* DetailViewController.swift */,
 				9826D90D2788B8A900E05400 /* DetailView.swift */,
+				876C5B382849672000DF4D3C /* DetailStoryboard.storyboard */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 			files = (
 				9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */,
 				9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */,
+				876C5B392849672000DF4D3C /* DetailStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
