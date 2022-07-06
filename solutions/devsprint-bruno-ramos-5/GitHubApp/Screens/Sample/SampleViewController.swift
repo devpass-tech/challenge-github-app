@@ -2,10 +2,12 @@ import UIKit
 
 final class SampleViewController: UIViewController {
 
-    private let service: SampleService = SampleService()
-    private let customView = SampleView()
+    private let service: SampleServiceProtocol
+    private let customView: SampleViewProtocol & UIView
 
-    init() {
+    init(service: SampleServiceProtocol, customView: SampleViewProtocol & UIView) {
+        self.service = service
+        self.customView = customView
         super.init(nibName: nil, bundle: nil)
         view = customView
     }

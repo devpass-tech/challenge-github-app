@@ -7,10 +7,24 @@
 
 import Foundation
 
-struct Service {
+protocol SampleDataSource {
+    func fetchList(_ completion: ([String]) -> Void)
+}
 
+struct Service: SampleDataSource {
     func fetchList(_ completion: ([String]) -> Void) {
-
         completion(["Repository 1", "Repository 2", "Repository 3"])
+    }
+}
+
+final class SampleApiDataSource: SampleDataSource {
+    func fetchList(_ completion: ([String]) -> Void) {
+        completion([])
+    }
+}
+
+final class SampleCoreDataDataSource: SampleDataSource {
+    func fetchList(_ completion: ([String]) -> Void) {
+        completion([])
     }
 }

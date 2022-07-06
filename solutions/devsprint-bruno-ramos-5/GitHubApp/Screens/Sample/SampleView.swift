@@ -17,7 +17,11 @@ extension ViewCode {
     }
 }
 
-final class SampleView: UIView {
+protocol SampleViewProtocol {
+    func display()
+}
+
+final class SampleView: UIView, SampleViewProtocol {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Hello World!"
