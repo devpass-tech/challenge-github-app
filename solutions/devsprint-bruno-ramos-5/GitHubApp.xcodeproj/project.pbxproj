@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC3287500A3006C8C1A /* SampleViewController.swift */; };
+		704AAAC62875011B006C8C1A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC52875011B006C8C1A /* SampleView.swift */; };
+		704AAAC828750664006C8C1A /* SampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC728750664006C8C1A /* SampleService.swift */; };
+		704AAACC28750B79006C8C1A /* SampleServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAACB28750B79006C8C1A /* SampleServiceTests.swift */; };
 		98252C21279200C900199ECC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98252C20279200C900199ECC /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
-		9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8CB2788B40800E05400 /* GitHubAppTests.swift */; };
 		9826D8D62788B40800E05400 /* GitHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8D52788B40800E05400 /* GitHubAppUITests.swift */; };
 		9826D8D82788B40800E05400 /* GitHubAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8D72788B40800E05400 /* GitHubAppUITestsLaunchTests.swift */; };
 		9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E52788B43E00E05400 /* UIViewController+Extensions.swift */; };
@@ -47,13 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		704AAAC3287500A3006C8C1A /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		704AAAC52875011B006C8C1A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		704AAAC728750664006C8C1A /* SampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleService.swift; sourceTree = "<group>"; };
+		704AAACB28750B79006C8C1A /* SampleServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleServiceTests.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9826D8C02788B40800E05400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9826D8C22788B40800E05400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9826D8C72788B40800E05400 /* GitHubAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9826D8CB2788B40800E05400 /* GitHubAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppTests.swift; sourceTree = "<group>"; };
 		9826D8D12788B40800E05400 /* GitHubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8D52788B40800E05400 /* GitHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITests.swift; sourceTree = "<group>"; };
 		9826D8D72788B40800E05400 /* GitHubAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -98,6 +104,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		704AAAC228750091006C8C1A /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				704AAAC3287500A3006C8C1A /* SampleViewController.swift */,
+				704AAAC52875011B006C8C1A /* SampleView.swift */,
+				704AAAC728750664006C8C1A /* SampleService.swift */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		704AAAC928750B60006C8C1A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				704AAACA28750B66006C8C1A /* Sample */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		704AAACA28750B66006C8C1A /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				704AAACB28750B79006C8C1A /* SampleServiceTests.swift */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
 		9826D8A82788B40600E05400 = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +167,7 @@
 		9826D8CA2788B40800E05400 /* GitHubAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				9826D8CB2788B40800E05400 /* GitHubAppTests.swift */,
+				704AAAC928750B60006C8C1A /* Screens */,
 			);
 			path = GitHubAppTests;
 			sourceTree = "<group>";
@@ -189,7 +221,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				9826D90C2788B89400E05400 /* Components */,
+				704AAAC228750091006C8C1A /* Sample */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
 				9826D8F62788B43F00E05400 /* List */,
@@ -231,13 +263,6 @@
 				9826D9092788B48000E05400 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		9826D90C2788B89400E05400 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		9826D9112788BAA200E05400 /* DebugYourViews */ = {
@@ -319,6 +344,7 @@
 					};
 					9826D8C62788B40800E05400 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 						TestTargetID = 9826D8B02788B40600E05400;
 					};
 					9826D8D02788B40800E05400 = {
@@ -379,14 +405,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
+				704AAAC828750664006C8C1A /* SampleService.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
+				704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
+				704AAAC62875011B006C8C1A /* SampleView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
@@ -400,7 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */,
+				704AAACC28750B79006C8C1A /* SampleServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,15 +644,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8F644M47X;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.GitHubAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubApp.app/GitHubApp";
@@ -635,11 +671,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8F644M47X;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.GitHubAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
