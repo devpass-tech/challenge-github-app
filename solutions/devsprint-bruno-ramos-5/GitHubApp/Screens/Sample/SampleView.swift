@@ -2,21 +2,6 @@ import UIKit
 
 // Template Method
 
-protocol ViewCode {
-    func setupSubviews()
-    func setupConstraint()
-    func setupExtraConfiguration()
-    func setup()
-}
-
-extension ViewCode {
-    func setup() {
-        setupSubviews()
-        setupConstraint()
-        setupExtraConfiguration()
-    }
-}
-
 protocol SampleViewProtocol {
     func display()
 }
