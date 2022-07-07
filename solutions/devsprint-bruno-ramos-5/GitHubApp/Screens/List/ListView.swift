@@ -77,6 +77,7 @@ extension ListView {
 
 extension ListView: UITableViewDataSource, UITableViewDelegate {
     
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.listItems.count
@@ -87,11 +88,11 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: listViewCellIdentifier, for: indexPath) as! RepositoryViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: listViewCellIdentifier, for: indexPath) as? RepositoryViewCell
         
-        cell.updateCell(configuration: RepositoryViewCellConfiguration.init(repositoryName: self.listItems[indexPath.row], repsitoryOwnerName: "Owner"))
         
-        return cell
+        cell?.updateCell(configuration: RepositoryViewCellConfiguration(repositoryName: self.listItems[indexPath.row], repsitoryOwnerName: "Owner"))
+        
+        return cell ?? UITableViewCell()
     }
 }
-

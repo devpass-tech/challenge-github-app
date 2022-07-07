@@ -11,9 +11,22 @@ struct RepositoryViewCellConfiguration{
     let repositoryName: String
     let repsitoryOwnerName: String
 }
+protocol ConfigureView {
+    func setupSubviews()
+    func setupConstraint()
+    func setupExtraConfiguration()
+    func setup()
+}
 
+extension ConfigureView {
+    func setup() {
+        setupSubviews()
+        setupConstraint()
+        setupExtraConfiguration()
+    }
+}
 
-class RepositoryViewCell: UITableViewCell {
+final class RepositoryViewCell: UITableViewCell {
     
     private lazy var containerVS: UIStackView = {
         let stack = UIStackView()
@@ -24,7 +37,7 @@ class RepositoryViewCell: UITableViewCell {
         return stack
     }()
     
-    lazy var repositoryNameLabel: UILabel = {
+    private lazy var repositoryNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 18)
@@ -32,7 +45,7 @@ class RepositoryViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var repositoryOwnerNameLabel: UILabel = {
+    private lazy var repositoryOwnerNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
@@ -44,8 +57,7 @@ class RepositoryViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.accessoryType = .disclosureIndicator
-        self.configureSubview()
-        self.setUpConstraints()
+        setup()
         
         
     }
@@ -54,18 +66,16 @@ class RepositoryViewCell: UITableViewCell {
         return nil
     }
     
-    func configureSubview(){
+    
+}
+extension RepositoryViewCell: ConfigureView{
+    func setupSubviews() {
         self.addSubview(containerVS)
         containerVS.addArrangedSubview(repositoryNameLabel)
         containerVS.addArrangedSubview(repositoryOwnerNameLabel)
     }
     
-    
-    func updateCell(configuration: RepositoryViewCellConfiguration) {
-        repositoryNameLabel.text = configuration.repositoryName
-        repositoryOwnerNameLabel.text = configuration.repsitoryOwnerName
-    }
-    private func setUpConstraints() {
+    func setupConstraint() {
         NSLayoutConstraint.activate([
             containerVS.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             containerVS.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12),
@@ -74,4 +84,12 @@ class RepositoryViewCell: UITableViewCell {
             
         ])
     }
+    
+    func setupExtraConfiguration() {}
+    
+    func updateCell(configuration: RepositoryViewCellConfiguration) {
+        repositoryNameLabel.text = configuration.repositoryName
+        repositoryOwnerNameLabel.text = configuration.repsitoryOwnerName
+    }
+    
 }
