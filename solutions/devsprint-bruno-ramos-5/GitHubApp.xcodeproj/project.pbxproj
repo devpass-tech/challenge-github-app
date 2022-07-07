@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55998F7A28765878007ECB20 /* RepositoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55998F7928765878007ECB20 /* RepositoryViewCell.swift */; };
 		704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC3287500A3006C8C1A /* SampleViewController.swift */; };
 		704AAAC62875011B006C8C1A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC52875011B006C8C1A /* SampleView.swift */; };
 		704AAAC828750664006C8C1A /* SampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC728750664006C8C1A /* SampleService.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55998F7928765878007ECB20 /* RepositoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewCell.swift; sourceTree = "<group>"; };
 		704AAAC3287500A3006C8C1A /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		704AAAC52875011B006C8C1A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		704AAAC728750664006C8C1A /* SampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleService.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55998F782876582E007ECB20 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				55998F7928765878007ECB20 /* RepositoryViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		704AAAC228750091006C8C1A /* Sample */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +245,7 @@
 		9826D8F62788B43F00E05400 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				55998F782876582E007ECB20 /* Cell */,
 				9826D8F72788B43F00E05400 /* ListViewController.swift */,
 				9826D8F82788B43F00E05400 /* ListView.swift */,
 			);
@@ -373,6 +384,7 @@
 				704AAAC62875011B006C8C1A /* SampleView.swift in Sources */,
 				704AAACE28751793006C8C1A /* SampleConfigurator.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				55998F7A28765878007ECB20 /* RepositoryViewCell.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
