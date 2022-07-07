@@ -13,7 +13,7 @@ struct RepositoryViewCellConfiguration{
 }
 
 
-class RepositoryViewCell: UITableViewCell {
+final class RepositoryViewCell: UITableViewCell {
     
     private lazy var containerVS: UIStackView = {
         let stack = UIStackView()
