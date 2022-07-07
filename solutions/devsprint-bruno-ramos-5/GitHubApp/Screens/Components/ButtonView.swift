@@ -1,11 +1,10 @@
 import UIKit
 
-
 struct ButtonViewConfiguration {
     let buttonText: String
 }
 
-class ButtonView: UIView, ViewCode {
+final class ButtonView: UIView, ViewCode {
     private lazy var button: UIButton = {
         let element = UIButton()
         element.configuration = .filled()
