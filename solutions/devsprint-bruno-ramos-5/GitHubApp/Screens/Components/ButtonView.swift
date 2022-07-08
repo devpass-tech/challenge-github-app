@@ -1,9 +1,5 @@
 import UIKit
 
-struct ButtonViewConfiguration {
-    let buttonText: String
-}
-
 final class ButtonView: UIView, ViewCode {
     private lazy var button: UIButton = {
         let element = UIButton()
@@ -14,6 +10,10 @@ final class ButtonView: UIView, ViewCode {
         
         return element
     }()
+    
+    struct ButtonViewConfiguration {
+        let buttonText: String
+    }
     
     init() {
         super.init(frame: .zero)
