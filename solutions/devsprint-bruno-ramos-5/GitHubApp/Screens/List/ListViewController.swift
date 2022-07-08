@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ListViewControllerProtocol: AnyObject {
+    func navigationToDetail(listItem: String)
+}
+
 final class ListViewController: UIViewController {
 
     private let listView: ListView = {
@@ -40,10 +44,16 @@ final class ListViewController: UIViewController {
                 self.listView.updateView(with: repositories)
             }
         }
-
     }
 
     override func loadView() {
         self.view = listView
+    }
+}
+
+extension ListViewController: ListViewControllerProtocol {
+    func navigationToDetail(listItem: String) {
+        let detailVC = DetailViewController()
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
