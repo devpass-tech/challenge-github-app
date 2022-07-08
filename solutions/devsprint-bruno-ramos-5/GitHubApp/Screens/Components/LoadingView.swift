@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-struct LoadingViewConfiguration {
-    let text: String
-}
 
 final class LoadingView: UIView {
+    struct LoadingViewConfiguration {
+        let text: String
+    }
+    
     private lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
