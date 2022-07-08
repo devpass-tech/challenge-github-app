@@ -25,8 +25,9 @@ final class ListView: UIView {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(RepositoryViewCell.self, forCellReuseIdentifier: listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
     
@@ -79,18 +80,25 @@ extension ListView {
     }
 }
 
-extension ListView: UITableViewDataSource {
+extension ListView: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return self.listItems.count
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 62
+    }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: listViewCellIdentifier, for: indexPath) as? RepositoryViewCell
+        
+        
+        cell?.updateCell(configuration: .init(repositoryName: self.listItems[indexPath.row], repsitoryOwnerName: "Owner"))
+        
+        return cell ?? UITableViewCell()
     }
 }
 
