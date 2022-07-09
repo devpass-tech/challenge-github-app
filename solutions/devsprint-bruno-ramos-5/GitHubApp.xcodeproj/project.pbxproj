@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E81D8B72876443400F53463 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E81D8B62876443400F53463 /* ViewCode.swift */; };
+		254660772875E56600D2F9EF /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254660762875E56600D2F9EF /* ButtonView.swift */; };
 		704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC3287500A3006C8C1A /* SampleViewController.swift */; };
 		704AAAC62875011B006C8C1A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC52875011B006C8C1A /* SampleView.swift */; };
 		704AAAC828750664006C8C1A /* SampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC728750664006C8C1A /* SampleService.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		1E81D8B62876443400F53463 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		254660762875E56600D2F9EF /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		704AAAC3287500A3006C8C1A /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		704AAAC52875011B006C8C1A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		704AAAC728750664006C8C1A /* SampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleService.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 				1E81D8B62876443400F53463 /* ViewCode.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		254660752875E53F00D2F9EF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				254660762875E56600D2F9EF /* ButtonView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		704AAAC228750091006C8C1A /* Sample */ = {
@@ -217,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				1E81D8B52876442600F53463 /* Protocols */,
+				254660752875E53F00D2F9EF /* Components */,
 				704AAAC228750091006C8C1A /* Sample */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
@@ -372,6 +383,7 @@
 			files = (
 				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
 				704AAAC828750664006C8C1A /* SampleService.swift in Sources */,
+				254660772875E56600D2F9EF /* ButtonView.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
