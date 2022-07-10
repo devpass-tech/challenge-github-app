@@ -7,6 +7,22 @@
 
 import UIKit
 
-class DetailView: UIView {
+final class DetailView: UIView {
+    private lazy var ownerView: OwnerView = {
+        let ownerView = OwnerView()
+        ownerView.translatesAutoresizingMaskIntoConstraints = false
+        return ownerView
+    }()
+}
+
+extension DetailView: ViewCode {
+    func setupSubviews() {
+        addSubview(ownerView)
+    }
+    
+    func setupConstraint() {}
+    
+    func setupExtraConfiguration() {}
+    
     
 }

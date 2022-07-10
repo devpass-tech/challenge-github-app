@@ -14,9 +14,12 @@ struct ListViewConfiguration {
 
 final class ListView: UIView {
 
-    private let listViewCellIdentifier = "ListViewCellIdentifier"
-
-    private var listItems: [String] = []
+    private lazy var listSearchBar: UISearchBar = {
+        let listSearchBar = UISearchBar()
+        listSearchBar.placeholder = "Type a GitHub user name"
+        listSearchBar.translatesAutoresizingMaskIntoConstraints = false
+        return listSearchBar
+    }()
 
     private lazy var tableView: UITableView = {
 
@@ -26,12 +29,15 @@ final class ListView: UIView {
         tableView.dataSource = self
         return tableView
     }()
-
+    
+    // MARK: private properties
+    
+    private let listViewCellIdentifier = "ListViewCellIdentifier"
+    private var listItems: [String] = []
+    
     init() {
-
         super.init(frame: .zero)
-
-        self.setupViews()
+        self.setup()
     }
 
     required init?(coder: NSCoder) {
@@ -39,32 +45,30 @@ final class ListView: UIView {
     }
 }
 
-private extension ListView {
-
-    func setupViews() {
-
-        self.backgroundColor = .white
-
-        self.configureSubviews()
-        self.configureSubviewsConstraints()
-    }
-
-    func configureSubviews() {
-
+extension ListView: ViewCode {
+    func setupSubviews() {
+        self.addSubview(self.listSearchBar)
         self.addSubview(self.tableView)
     }
-
-    func configureSubviewsConstraints() {
-
+    
+    func setupConstraint() {
         NSLayoutConstraint.activate([
-
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.topAnchor.constraint(equalTo: self.listSearchBar.bottomAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.listSearchBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.listSearchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.listSearchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
         ])
     }
+    
+    func setupExtraConfiguration() {
+        self.backgroundColor = .systemBackground
+    }
 }
+
 
 extension ListView {
 
