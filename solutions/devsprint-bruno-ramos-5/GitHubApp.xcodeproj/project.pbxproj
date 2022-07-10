@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E01863C287B014C004E6ACA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E01863B287B014C004E6ACA /* ButtonView.swift */; };
 		1E81D8B72876443400F53463 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E81D8B62876443400F53463 /* ViewCode.swift */; };
-		254660772875E56600D2F9EF /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254660762875E56600D2F9EF /* ButtonView.swift */; };
 		1E89A55B2878F37900C28870 /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E89A55A2878F37900C28870 /* OwnerView.swift */; };
 		704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC3287500A3006C8C1A /* SampleViewController.swift */; };
 		704AAAC62875011B006C8C1A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC52875011B006C8C1A /* SampleView.swift */; };
@@ -46,8 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E01863B287B014C004E6ACA /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		1E81D8B62876443400F53463 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
-		254660762875E56600D2F9EF /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		1E89A55A2878F37900C28870 /* OwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		704AAAC3287500A3006C8C1A /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		704AAAC52875011B006C8C1A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
@@ -109,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				1E89A55A2878F37900C28870 /* OwnerView.swift */,
-        254660762875E56600D2F9EF /* ButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -233,7 +232,6 @@
 			children = (
 				EE05FEE328779BDD004F91B1 /* Components */,
 				1E81D8B52876442600F53463 /* Protocols */,
-				254660752875E53F00D2F9EF /* Components */,
 				704AAAC228750091006C8C1A /* Sample */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
@@ -290,6 +288,7 @@
 		EE05FEE328779BDD004F91B1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1E01863B287B014C004E6ACA /* ButtonView.swift */,
 				EE05FEE428779BF4004F91B1 /* LoadingView.swift */,
 			);
 			path = Components;
@@ -398,11 +397,11 @@
 			files = (
 				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
 				704AAAC828750664006C8C1A /* SampleService.swift in Sources */,
-				254660772875E56600D2F9EF /* ButtonView.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				EE05FEE528779BF4004F91B1 /* LoadingView.swift in Sources */,
+				1E01863C287B014C004E6ACA /* ButtonView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */,
