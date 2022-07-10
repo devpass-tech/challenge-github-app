@@ -35,6 +35,8 @@
 		9826D90E2788B8A900E05400 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90D2788B8A900E05400 /* DetailView.swift */; };
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
+		EE0278A6287A65DD00C67126 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0278A4287A65DD00C67126 /* LoadingView.swift */; };
+		EE0278A7287A65DD00C67126 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0278A5287A65DD00C67126 /* ButtonView.swift */; };
 		EEB8945F2878F5F400FB97D8 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8945E2878F5F400FB97D8 /* LicenseView.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,8 @@
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		EE0278A4287A65DD00C67126 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		EE0278A5287A65DD00C67126 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		EEB8945E2878F5F400FB97D8 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +241,8 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				EE0278A3287A65DD00C67126 /* Components */,
+				EE02789E287A657F00C67126 /* New Group */,
 				1E81D8B52876442600F53463 /* Protocols */,
 				704AAAC228750091006C8C1A /* Sample */,
 				9826D8F22788B43F00E05400 /* Settings */,
@@ -289,6 +295,22 @@
 				9826D9122788BAC200E05400 /* DebugViewController.swift */,
 			);
 			path = DebugYourViews;
+			sourceTree = "<group>";
+		};
+		EE02789E287A657F00C67126 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		EE0278A3287A65DD00C67126 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EE0278A4287A65DD00C67126 /* LoadingView.swift */,
+				EE0278A5287A65DD00C67126 /* ButtonView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		EEB8945D2878F5E600FB97D8 /* Components */ = {
@@ -402,9 +424,11 @@
 			files = (
 				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
 				704AAAC828750664006C8C1A /* SampleService.swift in Sources */,
+				EE0278A7287A65DD00C67126 /* ButtonView.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
+				EE0278A6287A65DD00C67126 /* LoadingView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */,

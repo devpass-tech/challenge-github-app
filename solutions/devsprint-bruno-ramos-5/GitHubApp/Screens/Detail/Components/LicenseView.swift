@@ -16,11 +16,10 @@ final class LicenseView: UIView {
         return label
     }()
     
-    private lazy var subtitleLabel: UILabel = {
+    private lazy var subTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "GNU General Public License v2.0 xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx xxxxx"
+        label.text = "GNU General Public License v2.0"
         label.font = .systemFont(ofSize: 17, weight: .light)
-        label.textColor = .black
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -36,13 +35,14 @@ final class LicenseView: UIView {
         return label
     }()
     
-    private lazy var button: UIButton = {
-        let button = UIButton(configuration: .filled())
-        button.setTitle("See License", for: .normal)
+    private lazy var button: ButtonView = {
+        let button = ButtonView()
+        button.updateView(with: .init(buttonText: "See License"))
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
+    // MARK: inits
     init() {
         super.init(frame: .zero)
         setup()
@@ -52,12 +52,26 @@ final class LicenseView: UIView {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    // MARK: configuration
+    struct LicenseViewConfiguration {
+        let title: String
+        let subTitle: String
+        let addicional: String
+    }
+    
+    // MARK: methods
+    func updateView(with configuration: LicenseViewConfiguration) {
+        titleLabel.text = configuration.title
+        subTitleLabel.text = configuration.subTitle
+        additionalLabel.text = configuration.addicional
+    }
 }
 
 extension LicenseView: ViewCode {
     func setupSubviews() {
         addSubview(titleLabel)
-        addSubview(subtitleLabel)
+        addSubview(subTitleLabel)
         addSubview(additionalLabel)
         addSubview(button)
     }
@@ -68,11 +82,11 @@ extension LicenseView: ViewCode {
             self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            self.subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            self.subtitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.subtitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            self.subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            self.additionalLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 8),
+            self.additionalLabel.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 8),
             self.additionalLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.additionalLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
