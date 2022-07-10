@@ -21,12 +21,6 @@ protocol ListViewDelegate: AnyObject {
 }
 
 final class ListView: UIView {
-    
-    private lazy var licenseView: LicenseView = {
-        let licenseView = LicenseView()
-        licenseView.translatesAutoresizingMaskIntoConstraints = false
-        return licenseView
-    }()
 
     private lazy var listSearchBar: UISearchBar = {
         let listSearchBar = UISearchBar()
@@ -67,7 +61,6 @@ extension ListView: ViewCode {
     func setupSubviews() {
         self.addSubview(self.listSearchBar)
         self.addSubview(self.tableView)
-        self.addSubview(self.licenseView)
     }
     
     func setupConstraint() {
@@ -80,10 +73,6 @@ extension ListView: ViewCode {
             self.listSearchBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             self.listSearchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.listSearchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
-            self.licenseView.topAnchor.constraint(equalTo: self.tableView.bottomAnchor, constant: -720),
-            self.licenseView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
-            self.licenseView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8)
         ])
     }
     

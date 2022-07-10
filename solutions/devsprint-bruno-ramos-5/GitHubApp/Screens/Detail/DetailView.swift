@@ -13,18 +13,11 @@ final class DetailView: UIView {
         ownerView.translatesAutoresizingMaskIntoConstraints = false
         return ownerView
     }()
-    
-    private lazy var licenseView: LicenseView = {
-        let licenseView = LicenseView()
-        licenseView.translatesAutoresizingMaskIntoConstraints = false
-        return licenseView
-    }()
 }
 
 extension DetailView: ViewCode {
     func setupSubviews() {
         addSubview(ownerView)
-        addSubview(licenseView)
     }
     
     func setupConstraint() {}
