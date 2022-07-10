@@ -37,6 +37,7 @@
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
 		EE0278A6287A65DD00C67126 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0278A4287A65DD00C67126 /* LoadingView.swift */; };
 		EE0278A7287A65DD00C67126 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0278A5287A65DD00C67126 /* ButtonView.swift */; };
+		EE1A7645287B5E92006C8836 /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1A7644287B5E92006C8836 /* OwnerView.swift */; };
 		EEB8945F2878F5F400FB97D8 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8945E2878F5F400FB97D8 /* LicenseView.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		EE0278A4287A65DD00C67126 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EE0278A5287A65DD00C67126 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		EE1A7644287B5E92006C8836 /* OwnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
 		EEB8945E2878F5F400FB97D8 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -316,6 +318,7 @@
 		EEB8945D2878F5E600FB97D8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EE1A7644287B5E92006C8836 /* OwnerView.swift */,
 				EEB8945E2878F5F400FB97D8 /* LicenseView.swift */,
 			);
 			path = Components;
@@ -430,6 +433,7 @@
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				EE0278A6287A65DD00C67126 /* LoadingView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
+				EE1A7645287B5E92006C8836 /* OwnerView.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,

@@ -88,7 +88,7 @@ extension ListView: ViewCode {
     }
     
     func setupExtraConfiguration() {
-        self.backgroundColor = .orange // .systemBackground
+        self.backgroundColor = .systemBackground
     }
 }
 
