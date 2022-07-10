@@ -12,7 +12,7 @@ struct ListViewConfiguration {
     let listItems: [String]
 }
 
-protocol ListViewProtocol {
+protocol ListViewDelegate {
     func updateView(with repositories: [String])
 }
 
@@ -31,6 +31,7 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
     
@@ -76,7 +77,7 @@ extension ListView: ViewCode {
     }
 }
 
-extension ListView: ListViewProtocol {
+extension ListView: ListViewDelegate {
 
     func updateView(with repositories: [String]) {
 

@@ -48,6 +48,7 @@ final class ListViewController: UIViewController {
 
     override func loadView() {
         self.view = listView
+        listView.delegate = self
     }
 }
 
