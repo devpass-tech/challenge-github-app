@@ -8,8 +8,19 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+    private let sectionTitle = "APP VERSION"
+    private let sectionItems = ["Version 1.0"]
+    
+    private let settingsView = SettingsView()
 
     override func loadView() {
-        self.view = SettingsView()
+        self.view = settingsView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        settingsView.addSection(section: .init(title: sectionTitle, values: sectionItems))
     }
 }
