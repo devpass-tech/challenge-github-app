@@ -14,6 +14,10 @@ final class ListViewController: UIViewController {
         let listView = ListView()
         return listView
     }()
+    
+    private lazy var settingsButton: UIBarButtonItem = {
+        return UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(navigateToSettings))
+    }()
 
     private let service = Service()
 
@@ -27,9 +31,15 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "GitHub App 🐙"
+        self.navigationItem.rightBarButtonItem = settingsButton
+    }
+    
+    @objc func navigateToSettings(){
+        let settingsVC = SettingsViewController()
+        settingsVC.modalPresentationStyle = .automatic
+        self.navigationController?.present(settingsVC, animated: true, completion: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
