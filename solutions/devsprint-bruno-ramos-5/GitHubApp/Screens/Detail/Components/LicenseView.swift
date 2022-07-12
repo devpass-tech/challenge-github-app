@@ -72,21 +72,40 @@ extension LicenseView: ViewCode {
         addSubview(additionalLabel)
         addSubview(button)
     }
-
+    
     func setupConstraint() {
+        setupTitleLabelConstraints()
+        setupSubTitleLabelConstraints()
+        setupAdditionalLabelConstraints()
+        setupButtonConstraints()
+    }
+    
+    func setupTitleLabelConstraints() {
         NSLayoutConstraint.activate([
             self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
             self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
+        ])
+    }
+    
+    func setupSubTitleLabelConstraints() {
+        NSLayoutConstraint.activate([
             self.subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             self.subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
+        ])
+    }
+    
+    func setupAdditionalLabelConstraints() {
+        NSLayoutConstraint.activate([
             self.additionalLabel.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 8),
             self.additionalLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.additionalLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
+        ])
+    }
+    
+    func setupButtonConstraints() {
+        NSLayoutConstraint.activate([
             self.button.topAnchor.constraint(equalTo: additionalLabel.bottomAnchor, constant: 16),
             self.button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.button.trailingAnchor.constraint(equalTo: self.trailingAnchor),
