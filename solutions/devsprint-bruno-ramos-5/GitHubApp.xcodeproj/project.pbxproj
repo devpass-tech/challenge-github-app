@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7004F9FA287CEC9B00D1B39F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004F9F9287CEC9B00D1B39F /* NetworkManager.swift */; };
 		704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC3287500A3006C8C1A /* SampleViewController.swift */; };
 		704AAAC62875011B006C8C1A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC52875011B006C8C1A /* SampleView.swift */; };
 		704AAAC828750664006C8C1A /* SampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC728750664006C8C1A /* SampleService.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7004F9F9287CEC9B00D1B39F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		704AAAC3287500A3006C8C1A /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		704AAAC52875011B006C8C1A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		704AAAC728750664006C8C1A /* SampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleService.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7004F9F8287CEC7F00D1B39F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7004F9F9287CEC9B00D1B39F /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		704AAAC228750091006C8C1A /* Sample */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		9826D8B32788B40600E05400 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
+				7004F9F8287CEC7F00D1B39F /* Network */,
 				9826D9072788B48000E05400 /* AppDelegate */,
 				9826D8EB2788B43F00E05400 /* Resources */,
 				9826D8F12788B43F00E05400 /* Screens */,
@@ -371,6 +382,7 @@
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				704AAAC62875011B006C8C1A /* SampleView.swift in Sources */,
+				7004F9FA287CEC9B00D1B39F /* NetworkManager.swift in Sources */,
 				704AAACE28751793006C8C1A /* SampleConfigurator.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,

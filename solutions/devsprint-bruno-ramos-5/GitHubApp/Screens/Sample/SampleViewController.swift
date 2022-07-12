@@ -28,3 +28,9 @@ final class SampleViewController: UIViewController {
         }
     }
 }
+
+extension SampleViewController: SampleViewDelegate {
+    func didTapOnRepository(at index: IndexPath) {
+        //TODO: - Route to next module
+    }
+}

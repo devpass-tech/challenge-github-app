@@ -1,10 +1,3 @@
-//
-//  Service.swift
-//  GitHubApp
-//
-//  Created by Rodrigo Borges on 30/09/21.
-//
-
 import Foundation
 
 protocol SampleDataSource {
@@ -19,7 +12,15 @@ struct Service: SampleDataSource {
 
 final class SampleApiDataSource: SampleDataSource {
     func fetchList(_ completion: ([String]) -> Void) {
-        completion([])
+        let url = URL(string: "https://raw.githubusercontent.com/devpass-tech/challenge-delivery-app/main/api/home_restaurant_list.json")!
+        NetworkManager().request(url: url) { (result: Result<[Restaurant], Error>) in
+            switch result {
+            case .success(let decodedObject):
+                print("deu bom")
+            case .failure(let error):
+                print("deu ruim")
+            }
+        }
     }
 }
 
