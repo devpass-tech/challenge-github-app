@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ListViewControllerProtocol: AnyObject {
-    func navigationToDetail(listItem: String)
-}
-
 final class ListViewController: UIViewController {
 
     private let listView: ListView = {
@@ -52,7 +48,7 @@ final class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: ListViewControllerProtocol {
+extension ListViewController: ListViewDelegate {
     func navigationToDetail(listItem: String) {
         let detailVC = DetailViewController()
         self.navigationController?.pushViewController(detailVC, animated: true)

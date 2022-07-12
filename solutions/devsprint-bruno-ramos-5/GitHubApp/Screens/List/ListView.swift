@@ -12,8 +12,12 @@ struct ListViewConfiguration {
     let listItems: [String]
 }
 
-protocol ListViewDelegate {
+protocol ListViewProtocol {
     func updateView(with repositories: [String])
+}
+
+protocol ListViewDelegate: AnyObject {
+    func navigationToDetail(listItem: String)
 }
 
 final class ListView: UIView {
@@ -36,7 +40,7 @@ final class ListView: UIView {
     }()
     
     // MARK: Delegate
-    weak var delegate: ListViewControllerProtocol?
+    weak var delegate: ListViewDelegate?
     
     // MARK: private properties
     
@@ -77,7 +81,7 @@ extension ListView: ViewCode {
     }
 }
 
-extension ListView: ListViewDelegate {
+extension ListView: ListViewProtocol {
 
     func updateView(with repositories: [String]) {
 
