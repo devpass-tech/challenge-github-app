@@ -51,10 +51,17 @@ final class ListViewController: UIViewController {
                 self.listView.updateView(with: repositories)
             }
         }
-
     }
 
     override func loadView() {
         self.view = listView
+        listView.delegate = self
+    }
+}
+
+extension ListViewController: ListViewDelegate {
+    func navigationToDetail(listItem: String) {
+        let detailVC = DetailViewController()
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

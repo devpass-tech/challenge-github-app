@@ -12,6 +12,14 @@ struct ListViewConfiguration {
     let listItems: [String]
 }
 
+protocol ListViewProtocol {
+    func updateView(with repositories: [String])
+}
+
+protocol ListViewDelegate: AnyObject {
+    func navigationToDetail(listItem: String)
+}
+
 final class ListView: UIView {
 
     private lazy var listSearchBar: UISearchBar = {
@@ -27,8 +35,12 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
+    
+    // MARK: Delegate
+    weak var delegate: ListViewDelegate?
     
     // MARK: private properties
     
@@ -69,8 +81,7 @@ extension ListView: ViewCode {
     }
 }
 
-
-extension ListView {
+extension ListView: ListViewProtocol {
 
     func updateView(with repositories: [String]) {
 
@@ -94,3 +105,8 @@ extension ListView: UITableViewDataSource {
     }
 }
 
+extension ListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.navigationToDetail(listItem: listItems[indexPath.row])
+    }
+}
