@@ -8,9 +8,9 @@ final class SampleServiceTests: XCTestCase {
     private lazy var sut = SampleService(dataSource: dataSourceSpy)
 
     // Triple A (AAA) & Given When Then
-    func test_fetchRepositories_givenANotEmptyArray_shouldReturnSuccessWithRightValues() {
+    func test_fetchRepositories_givenANotEmptyArray_shouldReturnSuccessWithRightValues() throws {
         // Arrange || Given
-        let expectedRepositories = ["GithubApp", "DeliveryApp", "SpaceApp"]
+        let expectedRepositories: Result<[String], Error> = .success(["GithubApp", "DeliveryApp", "SpaceApp"])
         dataSourceSpy.fetchListCompletionToBeReturned = expectedRepositories
 
         // Act || When
@@ -25,7 +25,7 @@ final class SampleServiceTests: XCTestCase {
 
         switch expectedResult {
         case .success(let repositories):
-            XCTAssertEqual(repositories, expectedRepositories)
+            XCTAssertEqual(repositories, try expectedRepositories.get())
         default:
             XCTFail("Result should be Success")
         }
@@ -33,7 +33,7 @@ final class SampleServiceTests: XCTestCase {
 
     func test_fetchRepositories_givenAnEmptyArray_shouldReturnFailureWithError() {
         // Arrange || Given
-        let expectedRepositories: [String] = []
+        let expectedRepositories: Result<[String], Error> = .success([])
         dataSourceSpy.fetchListCompletionToBeReturned = expectedRepositories
 
         // Act || When
@@ -57,11 +57,13 @@ final class SampleServiceTests: XCTestCase {
 
 final class SampleDataStoreStubSpy: SampleDataSource {
 
-    var fetchListCompletionToBeReturned: [String] = []
+    var fetchListCompletionToBeReturned: Result<[String], Error>?
     private(set) var fetchListCalled = false
 
-    func fetchList(_ completion: ([String]) -> Void) {
+    func fetchList(_ completion: @escaping (Result<[String], Error>) -> Void) {
         fetchListCalled = true
-        completion(fetchListCompletionToBeReturned)
+        if let fetchListCompletionToBeReturned = fetchListCompletionToBeReturned {
+            completion(fetchListCompletionToBeReturned)
+        }
     }
 }

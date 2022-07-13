@@ -1,6 +1,10 @@
 import Foundation
 
-final class NetworkManager {
+protocol NetworkProtocol {
+    func request<T: Codable>(url: URL, completion: @escaping (Result<[T], Error>) -> Void)
+}
+
+final class NetworkManager: NetworkProtocol {
     func request<T: Codable>(url: URL, completion: @escaping (Result<[T], Error>) -> Void) {
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -19,7 +23,7 @@ final class NetworkManager {
     }
 }
 
-struct Restaurant: Codable {
+struct RepositoryResponse: Codable {
     let name: String
     let category: String
 }

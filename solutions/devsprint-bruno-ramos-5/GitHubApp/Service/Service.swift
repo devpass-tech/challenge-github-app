@@ -1,31 +1,45 @@
 import Foundation
 
 protocol SampleDataSource {
-    func fetchList(_ completion: ([String]) -> Void)
+    func fetchList(_ completion: @escaping (Result<[String], Error>) -> Void)
 }
 
 struct Service: SampleDataSource {
-    func fetchList(_ completion: ([String]) -> Void) {
-        completion(["Repository 1", "Repository 2", "Repository 3"])
+    func fetchList(_ completion: @escaping (Result<[String], Error>) -> Void) {
+        completion(.success(["Repository 1", "Repository 2", "Repository 3"]))
     }
 }
 
 final class SampleApiDataSource: SampleDataSource {
-    func fetchList(_ completion: ([String]) -> Void) {
+    private let network: NetworkProtocol
+
+    init(network: NetworkProtocol) {
+        self.network = network
+    }
+
+    func fetchList(_ completion: @escaping (Result<[String], Error>) -> Void) {
         let url = URL(string: "https://raw.githubusercontent.com/devpass-tech/challenge-delivery-app/main/api/home_restaurant_list.json")!
-        NetworkManager().request(url: url) { (result: Result<[Restaurant], Error>) in
+        network.request(url: url) { (result: Result<[RepositoryResponse], Error>) in
             switch result {
-            case .success(let decodedObject):
-                print("deu bom")
+            case .success(let restaurants):
+                guard restaurants.isEmpty == false else {
+                    completion(.failure(FetchListEmptyError()))
+                    return
+                }
+
+                completion(.success(restaurants.map(\.name)))
             case .failure(let error):
-                print("deu ruim")
+                completion(.failure(FetchListError()))
             }
         }
     }
+
+    struct FetchListEmptyError: Error {}
+    struct FetchListError: Error {}
 }
 
 final class SampleCoreDataDataSource: SampleDataSource {
-    func fetchList(_ completion: ([String]) -> Void) {
-        completion([])
+    func fetchList(_ completion: @escaping (Result<[String], Error>) -> Void) {
+        completion(.success([]))
     }
 }

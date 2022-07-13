@@ -44,11 +44,14 @@ final class ListViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
 
-        service.fetchList { repositories in
-
+        service.fetchList { result in
             DispatchQueue.main.async {
-
-                self.listView.updateView(with: repositories)
+                switch result {
+                case .success(let repositories):
+                    self.listView.updateView(with: repositories)
+                case .failure(let error):
+                    print("Feature not implemented yet")
+                }
             }
         }
     }
