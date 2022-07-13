@@ -80,7 +80,7 @@ extension LicenseView: ViewCode {
         setupButtonConstraints()
     }
     
-    func setupTitleLabelConstraints() {
+    private func setupTitleLabelConstraints() {
         NSLayoutConstraint.activate([
             self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
             self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -88,7 +88,7 @@ extension LicenseView: ViewCode {
         ])
     }
     
-    func setupSubTitleLabelConstraints() {
+    private func setupSubTitleLabelConstraints() {
         NSLayoutConstraint.activate([
             self.subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             self.subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -96,7 +96,7 @@ extension LicenseView: ViewCode {
         ])
     }
     
-    func setupAdditionalLabelConstraints() {
+    private func setupAdditionalLabelConstraints() {
         NSLayoutConstraint.activate([
             self.additionalLabel.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 8),
             self.additionalLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -104,7 +104,7 @@ extension LicenseView: ViewCode {
         ])
     }
     
-    func setupButtonConstraints() {
+    private func setupButtonConstraints() {
         NSLayoutConstraint.activate([
             self.button.topAnchor.constraint(equalTo: additionalLabel.bottomAnchor, constant: 16),
             self.button.leadingAnchor.constraint(equalTo: self.leadingAnchor),

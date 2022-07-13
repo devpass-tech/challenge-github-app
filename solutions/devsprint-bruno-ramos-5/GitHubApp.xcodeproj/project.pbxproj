@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-		7004F9FA287CEC9B00D1B39F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7004F9F9287CEC9B00D1B39F /* NetworkManager.swift */; };
-		1E01863C287B014C004E6ACA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E01863B287B014C004E6ACA /* ButtonView.swift */; };
-=======
->>>>>>> cd762b9 (Conflitos de rebase resolvidos)
 		1E81D8B72876443400F53463 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E81D8B62876443400F53463 /* ViewCode.swift */; };
 		704AAAC4287500A4006C8C1A /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC3287500A3006C8C1A /* SampleViewController.swift */; };
 		704AAAC62875011B006C8C1A /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AAAC52875011B006C8C1A /* SampleView.swift */; };
@@ -38,6 +33,7 @@
 		EE0278A6287A65DD00C67126 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0278A4287A65DD00C67126 /* LoadingView.swift */; };
 		EE0278A7287A65DD00C67126 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0278A5287A65DD00C67126 /* ButtonView.swift */; };
 		EE1A7645287B5E92006C8836 /* OwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1A7644287B5E92006C8836 /* OwnerView.swift */; };
+		EE1CB951287F80E700FDB09C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1CB950287F80E700FDB09C /* NetworkManager.swift */; };
 		EEB8945F2878F5F400FB97D8 /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB8945E2878F5F400FB97D8 /* LicenseView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,11 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-		7004F9F9287CEC9B00D1B39F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		1E01863B287B014C004E6ACA /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-=======
->>>>>>> cd762b9 (Conflitos de rebase resolvidos)
 		1E81D8B62876443400F53463 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		704AAAC3287500A3006C8C1A /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		704AAAC52875011B006C8C1A /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
@@ -88,6 +79,7 @@
 		EE0278A4287A65DD00C67126 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EE0278A5287A65DD00C67126 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		EE1A7644287B5E92006C8836 /* OwnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerView.swift; sourceTree = "<group>"; };
+		EE1CB950287F80E700FDB09C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkManager.swift; path = GitHubApp/Network/NetworkManager.swift; sourceTree = "<group>"; };
 		EEB8945E2878F5F400FB97D8 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,14 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7004F9F8287CEC7F00D1B39F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				7004F9F9287CEC9B00D1B39F /* NetworkManager.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		1E81D8B52876442600F53463 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +139,7 @@
 		9826D8A82788B40600E05400 = {
 			isa = PBXGroup;
 			children = (
+				EE1CB950287F80E700FDB09C /* NetworkManager.swift */,
 				9826D8B32788B40600E05400 /* GitHubApp */,
 				9826D8CA2788B40800E05400 /* GitHubAppTests */,
 				9826D8D42788B40800E05400 /* GitHubAppUITests */,
@@ -174,7 +159,6 @@
 		9826D8B32788B40600E05400 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
-				7004F9F8287CEC7F00D1B39F /* Network */,
 				9826D9072788B48000E05400 /* AppDelegate */,
 				9826D8EB2788B43F00E05400 /* Resources */,
 				9826D8F12788B43F00E05400 /* Screens */,
@@ -441,13 +425,13 @@
 				EEB8945F2878F5F400FB97D8 /* LicenseView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				704AAAC62875011B006C8C1A /* SampleView.swift in Sources */,
-				7004F9FA287CEC9B00D1B39F /* NetworkManager.swift in Sources */,
 				704AAACE28751793006C8C1A /* SampleConfigurator.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				1E81D8B72876443400F53463 /* ViewCode.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
+				EE1CB951287F80E700FDB09C /* NetworkManager.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
 			);
