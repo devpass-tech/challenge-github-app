@@ -2,7 +2,8 @@ import UIKit
 
 enum SampleConfigurator {
     static func make() -> UIViewController {
-        let network = NetworkManager()
+        let session = URLSession.shared
+        let network = NetworkManager(session: session)
         let localDataSource = SampleApiDataSource(network: network)
         let service = SampleService(dataSource: localDataSource)
         let customView = SampleView()

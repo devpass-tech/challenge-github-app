@@ -43,3 +43,8 @@ final class SampleCoreDataDataSource: SampleDataSource {
         completion(.success([]))
     }
 }
+
+struct RepositoryResponse: Codable {
+    let name: String
+    let category: String
+}
