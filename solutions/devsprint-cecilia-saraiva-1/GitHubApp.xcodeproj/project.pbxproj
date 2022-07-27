@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740EAF9628919C9800C42AD0 /* EmptyViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740EAF9528919C9800C42AD0 /* EmptyViewConfiguration.swift */; };
 		74ABE1E7289028E80057A0A5 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ABE1E6289028E80057A0A5 /* EmptyView.swift */; };
 		74ABE1E928902A0E0057A0A5 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ABE1E828902A0E0057A0A5 /* ViewCodeProtocol.swift */; };
 		74BB2AD528909EA8008FE543 /* EmptyViewStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74BB2AD428909EA8008FE543 /* EmptyViewStrings.strings */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		740EAF9528919C9800C42AD0 /* EmptyViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewConfiguration.swift; sourceTree = "<group>"; };
 		74ABE1E6289028E80057A0A5 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		74ABE1E828902A0E0057A0A5 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		74BB2AD428909EA8008FE543 /* EmptyViewStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = EmptyViewStrings.strings; path = GitHubApp/Screens/Resources/EmptyViewStrings.strings; sourceTree = SOURCE_ROOT; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				74ABE1E828902A0E0057A0A5 /* ViewCodeProtocol.swift */,
+				740EAF9528919C9800C42AD0 /* EmptyViewConfiguration.swift */,
 			);
 			path = ViewConfiguration;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				740EAF9628919C9800C42AD0 /* EmptyViewConfiguration.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,

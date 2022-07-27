@@ -3,37 +3,50 @@ import Foundation
 import UIKit
 
 final class EmptyView: UIView, ViewConfiguration {
-   
-    func updateView(with configuration: EmptyView) {
-    lazy var labelTitle: UILabel = {
+  
+    private lazy var labelTitle: UILabel = {
         let label = UILabel()
-        label.text = EmptyViewString.labelTitle.localized
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         label.font = UIFont(name: "SFProText-Semibolt", size: 16)
         label.textAlignment = .center
-        label.backgroundColor = .white
+        label.numberOfLines = 0
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    lazy var labelSubtitle: UILabel = {
+
+    private lazy var labelSubtitle: UILabel = {
         let label = UILabel()
-        label.text = EmptyViewString.labelSubtitle.localized
         label.textColor = UIColor(red: 0.557, green: 0.557, blue: 0.576, alpha: 1)
         label.font = UIFont(name: "SFProText-Regular", size: 13)
         label.textAlignment = .center
-        label.backgroundColor = .white
+        label.numberOfLines = 0
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+ 
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 15
         
-        func buildViews() {
-            addSubview(stackView)
-            stackView.addArrangedSubview(labelTitle)
-            stackView.addArrangedSubview(labelSubtitle)
-        }
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+
+    func updateViews(with configuration: EmptyViewConfiguration) {
+        labelTitle.text = configuration.title
+        
+        labelSubtitle.text = configuration.subtitle
+        
+    }
+     
+    func buildViews() {
+        addSubview(stackView)
+        stackView.addArrangedSubview(labelTitle)
+        stackView.addArrangedSubview(labelSubtitle)
     }
     
     override init(frame: CGRect) {
@@ -45,17 +58,6 @@ final class EmptyView: UIView, ViewConfiguration {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.spacing = 15
-        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-      
-        return stackView
-    }()
     
     func configViews() {
         backgroundColor = .white

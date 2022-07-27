@@ -4,16 +4,15 @@ import Foundation
 protocol ViewConfiguration: AnyObject {
     func setupViews()
     func configViews()
-    func buidView()
+    func buildViews()
     func setupConstraints()
-    func updateView()
 }
 
 extension ViewConfiguration {
     func setupViews() {
         self.configViews()
+        self.buildViews()
         self.setupConstraints()
-        self.updateView()
     
     }
 }
