@@ -7,16 +7,12 @@
 
 import UIKit
 
-struct RepositoryCellVM {
-  let name: String
-  let owner:  String
-}
 
-class RepositoryCellView: UITableViewCell {
+final class RepositoryCellView: UITableViewCell {
   
   static let cellIdentifier = "ListViewCellIdentifier"
   
-  private let lblRepositoryName: UILabel = {
+  private let labelRepositoryName: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.font = UIFont.boldSystemFont(ofSize: 15)
@@ -24,7 +20,7 @@ class RepositoryCellView: UITableViewCell {
     return label
   }()
   
-  private let lblOwner: UILabel = {
+  private let labelOwner: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.font = UIFont.systemFont(ofSize: 13)
@@ -32,7 +28,7 @@ class RepositoryCellView: UITableViewCell {
     return label
   }()
   
-  private let sv: UIStackView = {
+  private let labelsStackView: UIStackView = {
     let sv = UIStackView()
     sv.translatesAutoresizingMaskIntoConstraints = false
     sv.axis = .vertical
@@ -44,6 +40,7 @@ class RepositoryCellView: UITableViewCell {
     setupUI()
   }
   
+  @available(*, unavailable)
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setupUI()
@@ -52,20 +49,20 @@ class RepositoryCellView: UITableViewCell {
   private func setupUI() {
     accessoryType = .disclosureIndicator
     
-    sv.addArrangedSubview(lblRepositoryName)
-    sv.addArrangedSubview(lblOwner)
-    contentView.addSubview(sv)
+    labelsStackView.addArrangedSubview(labelRepositoryName)
+    labelsStackView.addArrangedSubview(labelOwner)
+    contentView.addSubview(labelsStackView)
     
     NSLayoutConstraint.activate([
-      self.sv.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 17),
-      self.sv.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-      self.sv.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16),
-      self.sv.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -17)
+      self.labelsStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 17),
+      self.labelsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+      self.labelsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16),
+      self.labelsStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -17)
     ])
   }
   
-  func updateView(with configuration: RepositoryCellVM) {
-    lblRepositoryName.text  = configuration.name
-    lblOwner.text           = configuration.owner
+  func updateView(with configuration: RepositoryCellModel) {
+    labelRepositoryName.text = configuration.name
+    labelOwner.text = configuration.owner
   }
 }

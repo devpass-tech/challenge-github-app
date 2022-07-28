@@ -9,12 +9,12 @@ import UIKit
 
 struct ListViewConfiguration {
   
-  let listItems: [RepositoryCellVM]
+  let listItems: [RepositoryCellModel]
 }
 
 final class ListView: UIView {
   
-  private var listItems: [RepositoryCellVM] = []
+  private var listItems: [RepositoryCellModel] = []
   
   private lazy var tableView: UITableView = {
     
@@ -66,7 +66,7 @@ private extension ListView {
 
 extension ListView {
   
-  func updateView(with repositories: [RepositoryCellVM]) {
+  func updateView(with repositories: [RepositoryCellModel]) {
     
     self.listItems = repositories
     self.tableView.reloadData()
