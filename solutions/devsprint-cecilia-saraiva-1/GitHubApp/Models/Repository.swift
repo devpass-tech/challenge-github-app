@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Repository {
+struct Repository: Codable {
     let name: String
-    
+    let owner: Owner
 }
+
+
+
+
+

@@ -7,15 +7,32 @@
 
 import Foundation
 
+enum APIError: Error {
+    case URLError
+}
+
 struct Service {
 
-    func fetchList(_ completion: ([RepositoryCellModel]) -> Void) {
+    func fetchList(username: String, _ completion: @escaping (Result<[Repository], Error>) -> Void) {
+        guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
+            completion(.failure(APIError.URLError))
+        return
+        
+        }
+        let urlSession = URLSession.shared
+        let dataTask = urlSession.dataTask(with: url) { data, response, error in
+            guard let data = data else {
 
-      let repo1 = RepositoryCellModel(name: "hereminders-ios", owner: "devpass-tech")
-      let repo2 = RepositoryCellModel(name: "nexttunes-ios", owner: "devpass-tech")
-      let repo3 = RepositoryCellModel(name: "challenge-onboarding", owner: "devpass-tech")
-      let repo4 = RepositoryCellModel(name: "challeng-viewcode-realestate", owner: "devpass-tech")
-      let repo5 = RepositoryCellModel(name: "challenge-mvvm-delivery", owner: "devpass-tech")
-        completion([repo1, repo2, repo3, repo4, repo5])
+                return
+            }
+            do {
+                let repositories = try JSONDecoder().decode([Repository].self, from: data)
+                completion(.success(repositories))
+            }
+            catch {
+                
+            }
+        }
+        dataTask.resume()
     }
 }
