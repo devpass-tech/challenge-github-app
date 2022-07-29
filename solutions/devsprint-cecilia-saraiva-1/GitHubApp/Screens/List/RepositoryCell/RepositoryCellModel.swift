@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct RepositoryCellModel {
     let name: String
     let owner:  String
