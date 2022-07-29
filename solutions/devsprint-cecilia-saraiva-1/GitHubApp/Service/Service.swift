@@ -7,10 +7,32 @@
 
 import Foundation
 
+enum APIError: Error {
+    case URLError
+}
+
 struct Service {
 
-    func fetchList(_ completion: ([String]) -> Void) {
+    func fetchList(username: String, _ completion: @escaping (Result<[Repository], Error>) -> Void) {
+        guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
+            completion(.failure(APIError.URLError))
+        return
+        
+        }
+        let urlSession = URLSession.shared
+        let dataTask = urlSession.dataTask(with: url) { data, response, error in
+            guard let data = data else {
 
-        completion(["Repository 1", "Repository 2", "Repository 3"])
+                return
+            }
+            do {
+                let repositories = try JSONDecoder().decode([Repository].self, from: data)
+                completion(.success(repositories))
+            }
+            catch {
+                
+            }
+        }
+        dataTask.resume()
     }
 }
