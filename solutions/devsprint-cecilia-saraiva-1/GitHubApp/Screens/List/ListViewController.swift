@@ -14,6 +14,8 @@ final class ListViewController: UIViewController {
         let listView = ListView()
         return listView
     }()
+    
+    private let listLoadingView = ListLoadingView()
 
     private let service = Service()
 
