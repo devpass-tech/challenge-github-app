@@ -7,8 +7,12 @@
 
 import UIKit
 
+struct LoadingViewConfiguration {
+    let description: String
+}
 
-final class ListLoadingView: UIView {
+
+final class LoadingView: UIView {
     
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
@@ -39,7 +43,7 @@ final class ListLoadingView: UIView {
     }
 }
 
-private extension ListLoadingView {
+private extension LoadingView {
     
     func setupViews() {
         
@@ -50,7 +54,6 @@ private extension ListLoadingView {
     }
     
     func configureSubviews() {
-        labelLoadingDescription.text = "Searching repositories..."
         
         stackView.addArrangedSubview(labelLoadingDescription)
         stackView.addArrangedSubview(activityIndicator)
@@ -68,5 +71,13 @@ private extension ListLoadingView {
             self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
         ])
+    }
+}
+
+
+extension LoadingView {
+    
+    func updateView(with configuration: LoadingViewConfiguration) {
+        self.labelLoadingDescription.text = configuration.description
     }
 }

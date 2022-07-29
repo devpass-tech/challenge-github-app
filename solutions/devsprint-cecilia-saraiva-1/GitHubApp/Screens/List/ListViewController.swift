@@ -15,7 +15,7 @@ final class ListViewController: UIViewController {
         return listView
     }()
     
-    private let listLoadingView = ListLoadingView()
+    private let loadingView = LoadingView()
 
     private let service = Service()
 
@@ -32,6 +32,8 @@ final class ListViewController: UIViewController {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "GitHub App 🐙"
+        
+        self.loadingView.updateView(with: LoadingViewConfiguration(description: "Searching repositories..."))
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -49,4 +51,5 @@ final class ListViewController: UIViewController {
     override func loadView() {
         self.view = listView
     }
+    
 }
