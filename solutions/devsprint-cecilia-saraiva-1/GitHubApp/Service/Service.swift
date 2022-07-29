@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum APIError: Error {
-    case URLError
-}
-
 struct Service {
 
     func fetchList(username: String, _ completion: @escaping (Result<[Repository], Error>) -> Void) {
@@ -22,7 +18,6 @@ struct Service {
         let urlSession = URLSession.shared
         let dataTask = urlSession.dataTask(with: url) { data, response, error in
             guard let data = data else {
-
                 return
             }
             do {
@@ -30,7 +25,7 @@ struct Service {
                 completion(.success(repositories))
             }
             catch {
-                
+                completion(.failure(APIError.ParseError))
             }
         }
         dataTask.resume()

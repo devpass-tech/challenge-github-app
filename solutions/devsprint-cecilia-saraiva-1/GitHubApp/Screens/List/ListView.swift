@@ -83,8 +83,10 @@ extension ListView: UITableViewDataSource {
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.cellIdentifier) as! RepositoryCellView
-    let item = listItems[indexPath.row]
-    cell.updateView(with: item)
+      if indexPath.row < listItems.count {
+          let item = listItems[indexPath.row]
+          cell.updateView(with: item)
+      }
     return cell
   }
 }

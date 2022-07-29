@@ -33,18 +33,16 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
         service.fetchList(username: "lysonjeada") { result in
-            
             do {
                 let repositories = try result.get()
-                print(repositories)
+                let models = repositories.map { RepositoryCellModel(name: $0.name, owner: $0.owner.login) }
                 DispatchQueue.main.async {
-                    self.listView.updateView(with: repositories)
+                    self.listView.updateView(with: models)
                 }
             }
             catch {
-                
+                print(error.localizedDescription)
             }
         }
     }
