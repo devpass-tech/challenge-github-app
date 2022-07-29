@@ -7,10 +7,6 @@
 
 import UIKit
 
-struct LoadingViewConfiguration {
-    let description: String
-}
-
 
 final class LoadingView: UIView {
     
