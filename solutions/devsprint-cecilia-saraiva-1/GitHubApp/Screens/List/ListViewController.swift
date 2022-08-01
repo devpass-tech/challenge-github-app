@@ -14,6 +14,12 @@ final class ListViewController: UIViewController {
         let listView = ListView()
         return listView
     }()
+    
+    private let emptyView: EmptyView = {
+        
+        let emptyView = EmptyView()
+        return emptyView
+    }()
 
     private let service = Service()
 
@@ -30,6 +36,7 @@ final class ListViewController: UIViewController {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "GitHub App 🐙"
+    
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -45,6 +52,6 @@ final class ListViewController: UIViewController {
     }
 
     override func loadView() {
-        self.view = listView
+        self.view = emptyView
     }
 }

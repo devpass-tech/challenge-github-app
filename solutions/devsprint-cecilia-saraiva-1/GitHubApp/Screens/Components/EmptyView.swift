@@ -67,8 +67,7 @@ final class EmptyView: UIView, ViewConfiguration {
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor)
+            stackView.widthAnchor.constraint(equalToConstant: 283)
         ])
         
     }
