@@ -1,15 +1,20 @@
+------------ APAGAR ------------
+Emojis para os titulos dos MR's
+* ✨ - Introduce new features
+* 🚧 - Work in progress
+More on: https://gitmoji.dev
+------------ APAGAR ------------
  
-### Description of the new feature or improvement
+### Descrição simples da nova feature
  
  
-### Checklist
-Put an ```x``` in the boxes that apply.
-- [] Implements all acceptance criteria as described on the Task Board
-- [] Does not add duplicate code
-- [] Does not contain commented code
-- [] Does not contain WIP code
+### Checklist:
+Coloque um ```x``` nas caixas que se aplicam.
+- [] Não adiciona código duplicado
+- [] Não contém código comentado
+- [] Não contém código WIP
  
-### Screenshots
-| Screenshot 1 | Screenshot 2 |
+### Evidências da feature:
+| iPhone SE | iPhone 12 Max |
 | ------ | ------ |
 | print  | print |

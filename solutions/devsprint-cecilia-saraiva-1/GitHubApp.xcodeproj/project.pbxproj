@@ -7,18 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		740EAF9628919C9800C42AD0 /* EmptyViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740EAF9528919C9800C42AD0 /* EmptyViewConfiguration.swift */; };
 		74ABE1E7289028E80057A0A5 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ABE1E6289028E80057A0A5 /* EmptyView.swift */; };
 		74ABE1E928902A0E0057A0A5 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ABE1E828902A0E0057A0A5 /* ViewCodeProtocol.swift */; };
 		74BB2AD528909EA8008FE543 /* EmptyViewStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74BB2AD428909EA8008FE543 /* EmptyViewStrings.strings */; };
 		74BB2AD728909ED0008FE543 /* EmptyViewStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BB2AD628909ED0008FE543 /* EmptyViewStrings.swift */; };
-		706D45A52891A66300CF8557 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D45A42891A66300CF8557 /* Owner.swift */; };
-		706D45A7289445B100CF8557 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D45A6289445B100CF8557 /* APIError.swift */; };
-		7401CAC02892516000C759F2 /* RepositoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7401CABF2892516000C759F2 /* RepositoryCellModel.swift */; };
-		741F28AE288FB4C1007E8553 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741F28AD288FB4C1007E8553 /* RepositoryCellView.swift */; };
-		7483EA7E2893DD860053DB06 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483EA7D2893DD860053DB06 /* LoadingView.swift */; };
-		7483EA80289412D40053DB06 /* LoadingViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483EA7F289412D40053DB06 /* LoadingViewConfiguration.swift */; };
 		98252C21279200C900199ECC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98252C20279200C900199ECC /* Repository.swift */; };
 		9826D8BE2788B40800E05400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BD2788B40800E05400 /* Assets.xcassets */; };
 		9826D8C12788B40800E05400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9826D8BF2788B40800E05400 /* LaunchScreen.storyboard */; };
@@ -59,18 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-
 		740EAF9528919C9800C42AD0 /* EmptyViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewConfiguration.swift; sourceTree = "<group>"; };
 		74ABE1E6289028E80057A0A5 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		74ABE1E828902A0E0057A0A5 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		74BB2AD428909EA8008FE543 /* EmptyViewStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = EmptyViewStrings.strings; path = GitHubApp/Screens/Resources/EmptyViewStrings.strings; sourceTree = SOURCE_ROOT; };
 		74BB2AD628909ED0008FE543 /* EmptyViewStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyViewStrings.swift; path = GitHubApp/Screens/Resources/EmptyViewStrings.swift; sourceTree = SOURCE_ROOT; };
-		706D45A42891A66300CF8557 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
-		706D45A6289445B100CF8557 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		7401CABF2892516000C759F2 /* RepositoryCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellModel.swift; sourceTree = "<group>"; };
-		741F28AD288FB4C1007E8553 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
-		7483EA7D2893DD860053DB06 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		7483EA7F289412D40053DB06 /* LoadingViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewConfiguration.swift; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		9826D8B12788B40600E05400 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9826D8BD2788B40800E05400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-
 		74BB2AD328909E0A008FE543 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,15 +124,6 @@
 				740EAF9528919C9800C42AD0 /* EmptyViewConfiguration.swift */,
 			);
 			path = ViewConfiguration;
-
-		741F28AC288FB2DA007E8553 /* RepositoryCell */ = {
-			isa = PBXGroup;
-			children = (
-				741F28AD288FB4C1007E8553 /* RepositoryCellView.swift */,
-				7401CABF2892516000C759F2 /* RepositoryCellModel.swift */,
-			);
-			path = RepositoryCell;
-
 			sourceTree = "<group>";
 		};
 		9826D8A82788B40600E05400 = {
@@ -216,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				9826D8EA2788B43E00E05400 /* Service.swift */,
-				706D45A6289445B100CF8557 /* APIError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -235,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				98252C20279200C900199ECC /* Repository.swift */,
-				706D45A42891A66300CF8557 /* Owner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,11 +248,8 @@
 		9826D8F62788B43F00E05400 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				741F28AC288FB2DA007E8553 /* RepositoryCell */,
 				9826D8F72788B43F00E05400 /* ListViewController.swift */,
 				9826D8F82788B43F00E05400 /* ListView.swift */,
-				7483EA7D2893DD860053DB06 /* LoadingView.swift */,
-				7483EA7F289412D40053DB06 /* LoadingViewConfiguration.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -440,29 +411,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
-				706D45A52891A66300CF8557 /* Owner.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
-				7401CAC02892516000C759F2 /* RepositoryCellModel.swift in Sources */,
-				7483EA7E2893DD860053DB06 /* LoadingView.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				74BB2AD728909ED0008FE543 /* EmptyViewStrings.swift in Sources */,
 				74ABE1E928902A0E0057A0A5 /* ViewCodeProtocol.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
-				706D45A7289445B100CF8557 /* APIError.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				74ABE1E7289028E80057A0A5 /* EmptyView.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
-				7483EA80289412D40053DB06 /* LoadingViewConfiguration.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
 				740EAF9628919C9800C42AD0 /* EmptyViewConfiguration.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
-				741F28AE288FB4C1007E8553 /* RepositoryCellView.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,7 +599,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TCU89R96U3;
+				DEVELOPMENT_TEAM = UD3RT2RP82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitHubApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -661,7 +626,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TCU89R96U3;
+				DEVELOPMENT_TEAM = UD3RT2RP82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GitHubApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
