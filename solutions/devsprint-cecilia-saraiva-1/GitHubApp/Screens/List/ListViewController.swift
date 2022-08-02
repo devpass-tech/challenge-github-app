@@ -15,11 +15,15 @@ final class ListViewController: UIViewController {
         return listView
     }()
     
+
     private let emptyView: EmptyView = {
         
         let emptyView = EmptyView()
         return emptyView
     }()
+
+    private let loadingView = LoadingView()
+
 
     private let service = Service()
 
@@ -36,22 +40,28 @@ final class ListViewController: UIViewController {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "GitHub App 🐙"
-    
+        
+        self.loadingView.updateView(with: LoadingViewConfiguration(description: "Searching repositories..."))
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
-        service.fetchList { repositories in
-
-            DispatchQueue.main.async {
-
-                self.listView.updateView(with: repositories)
+        service.fetchList(username: "lysonjeada") { result in
+            do {
+                let repositories = try result.get()
+                let models = repositories.map { RepositoryCellModel(name: $0.name, owner: $0.owner.login) }
+                DispatchQueue.main.async {
+                    self.listView.updateView(with: models)
+                }
+            }
+            catch {
+                print(error.localizedDescription)
             }
         }
-
     }
 
     override func loadView() {
         self.view = emptyView
     }
+    
 }
