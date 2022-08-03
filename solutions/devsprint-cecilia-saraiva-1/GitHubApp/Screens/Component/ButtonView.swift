@@ -40,11 +40,6 @@ final class ButtonView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        
-    }
     
     func updateView(with configuration: ButtonViewConfiguration) {
         self.button.setTitle(configuration.title, for: .normal)
