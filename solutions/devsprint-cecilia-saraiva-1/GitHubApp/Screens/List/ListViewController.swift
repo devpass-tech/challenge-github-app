@@ -18,10 +18,11 @@ final class ListViewController: UIViewController {
     private let loadingView = LoadingView()
 
     private let service = Service()
+    
+    private let searchContoller = UISearchController()
 
     init() {
         super.init(nibName: nil, bundle: nil)
-
     }
 
     required init?(coder: NSCoder) {
@@ -32,6 +33,9 @@ final class ListViewController: UIViewController {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Repositories"
+        self.navigationItem.searchController = searchContoller
+        
+        self.searchContoller.searchBar.placeholder = "Type a GitHub user name"
         
         self.loadingView.updateView(with: LoadingViewConfiguration(description: "Searching repositories..."))
     }
