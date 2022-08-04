@@ -19,7 +19,7 @@ final class ListViewController: UIViewController {
 
     private let service = Service()
     
-    private let searchContoller = UISearchController()
+    private let searchController = UISearchController()
 
     init() {
         super.init(nibName: nil, bundle: nil)
