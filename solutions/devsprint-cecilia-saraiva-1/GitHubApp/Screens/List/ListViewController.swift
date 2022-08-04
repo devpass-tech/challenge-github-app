@@ -33,7 +33,7 @@ final class ListViewController: UIViewController {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Repositories"
-        self.navigationItem.searchController = searchContoller
+        self.navigationItem.searchController = searchController
         
         self.searchContoller.searchBar.placeholder = "Type a GitHub user name"
         
