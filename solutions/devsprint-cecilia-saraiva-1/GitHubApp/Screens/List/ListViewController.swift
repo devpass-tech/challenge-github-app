@@ -16,6 +16,12 @@ final class ListViewController: UIViewController {
     }()
     
     private let loadingView = LoadingView()
+    
+    private let emptyView: EmptyView = {
+
+        let emptyView = EmptyView()
+        return emptyView
+    }()
 
     private let service = Service()
     
@@ -57,6 +63,7 @@ final class ListViewController: UIViewController {
 
     override func loadView() {
         self.view = listView
+        self.view = emptyView
     }
     
 }
