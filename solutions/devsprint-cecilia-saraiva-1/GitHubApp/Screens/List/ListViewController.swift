@@ -31,7 +31,7 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "GitHub App 🐙"
+        self.navigationItem.title = "Repositories"
         
         self.loadingView.updateView(with: LoadingViewConfiguration(description: "Searching repositories..."))
     }
