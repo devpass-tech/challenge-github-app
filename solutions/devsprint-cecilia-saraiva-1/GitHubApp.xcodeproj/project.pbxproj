@@ -146,6 +146,8 @@
 				740DEB01289ADAE500B533D9 /* EmptyViewStrings.swift */,
 			);
 			path = Resources;
+      sourceTree = "<group>";
+    };
 		62A321AB2896E5990092636A /* Component */ = {
 			isa = PBXGroup;
 			children = (
