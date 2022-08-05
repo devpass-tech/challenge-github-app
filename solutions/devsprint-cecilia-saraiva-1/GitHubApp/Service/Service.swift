@@ -17,9 +17,17 @@ struct Service {
         }
         let urlSession = URLSession.shared
         let dataTask = urlSession.dataTask(with: url) { data, response, error in
-            guard let data = data else {
+            
+            if let error = error {
+                completion(.failure(error))
                 return
             }
+            
+            guard let data = data else {
+                completion(.failure(APIError.emptyData))
+                return
+            }
+            
             do {
                 let repositories = try JSONDecoder().decode([Repository].self, from: data)
                 completion(.success(repositories))
