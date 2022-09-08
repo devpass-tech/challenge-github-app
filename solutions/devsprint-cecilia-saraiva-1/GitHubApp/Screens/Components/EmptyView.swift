@@ -61,6 +61,9 @@ final class EmptyView: UIView, ViewConfiguration {
 
     func configureViews() {
         backgroundColor = .white
+        
+        labelTitle.text = "No repositories found"
+        labelSubtitle.text = "Search for users to see their public repositories here!"
     }
 
     func setupConstraints() {

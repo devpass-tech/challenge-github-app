@@ -40,29 +40,44 @@ final class ListViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Repositories"
         self.navigationItem.searchController = searchController
+        self.searchController.searchBar.delegate = self
         
-        self.searchContoller.searchBar.placeholder = "Type a GitHub user name"
+        self.searchController.searchBar.placeholder = "Type a GitHub user name"
         
         self.loadingView.updateView(with: LoadingViewConfiguration(description: "Searching repositories..."))
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        service.fetchList(username: "lysonjeada") { result in
+    override func loadView() {
+        
+        self.view = emptyView
+    }
+}
+
+
+extension ListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        self.view = loadingView
+        service.fetchList(username: text) { [weak self] result in
+            
             do {
                 let repositories = try result.get()
                 let models = repositories.map { RepositoryCellModel(name: $0.name, owner: $0.owner.login) }
                 DispatchQueue.main.async {
-                    self.listView.updateView(with: models)
+                    if models.isEmpty {
+                        self?.view = self?.emptyView
+                    } else {
+                        self?.listView.updateView(with: models)
+                        self?.view = self?.listView
+                    }
                 }
             }
             catch {
+                DispatchQueue.main.async {
+                    self?.view = self?.emptyView
+                }
                 print(error.localizedDescription)
             }
         }
     }
-
-    override func loadView() {
-        self.view = listView
-    }
-    
 }

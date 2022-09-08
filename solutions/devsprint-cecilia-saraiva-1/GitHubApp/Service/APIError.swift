@@ -10,4 +10,5 @@ import Foundation
 enum APIError: Error {
     case URLError
     case ParseError
+    case emptyData
 }
