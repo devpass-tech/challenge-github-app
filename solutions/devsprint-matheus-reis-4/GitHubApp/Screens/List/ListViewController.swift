@@ -37,7 +37,6 @@ final class ListViewController: UIViewController {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "GitHub App 🐙"
-        self.view = EmptyView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
