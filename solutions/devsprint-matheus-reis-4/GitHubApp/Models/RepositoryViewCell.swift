@@ -29,7 +29,7 @@ class RepositoryViewCell: UITableViewCell {
         ownerNameLabel.translatesAutoresizingMaskIntoConstraints = false
         ownerNameLabel.text = ""
         ownerNameLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
-        ownerNameLabel.textColor = UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.6)
+        ownerNameLabel.textColor = .secondaryLabel
         
         return ownerNameLabel
     }()
