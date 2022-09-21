@@ -8,7 +8,14 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-
+    
+    
+    private let emptyView: EmptyView = {
+        let emptyView = EmptyView()
+        return emptyView
+    }()
+    
+    
     private let listView: ListView = {
 
         let listView = ListView()
@@ -29,7 +36,7 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "Repositories"
+        self.navigationItem.title = "GitHub App 🐙"
     }
 
     override func viewDidAppear(_ animated: Bool) {
