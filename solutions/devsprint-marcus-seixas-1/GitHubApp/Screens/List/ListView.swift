@@ -24,6 +24,7 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.classIdentifier())
         return tableView
     }()
 
@@ -72,6 +73,14 @@ extension ListView {
 
         self.listItems = repositories
         self.tableView.reloadData()
+        //apresentacao tela de erro
+        //showEmptyView()
+    }
+    
+    func showEmptyView() {
+        let emptyView = EmptyView(frame: self.frame)
+        emptyView.updateView(with: EmptyViewConfiguration(labelText: "erro", labelText2: "algo deu errado"))
+        self.tableView.addSubview(emptyView)
     }
 }
 
@@ -84,9 +93,9 @@ extension ListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.classIdentifier()) as? RepositoryCellView
+        cell?.updateView(with: RepositoryCellViewConfiguration(title: self.listItems[indexPath.row], subtitle: "indexPath \(indexPath.debugDescription)"))
+        return cell ?? UITableViewCell()
     }
 }
 
