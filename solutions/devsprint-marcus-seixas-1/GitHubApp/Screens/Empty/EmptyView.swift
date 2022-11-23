@@ -53,13 +53,13 @@ final class EmptyView: UIView{
 
 extension EmptyView: ViewCodable{
     
-// aonde está sendo falado a ordem dos componentes da tela
+    // aonde está sendo falado a ordem dos componentes da tela
     func buildHierarchy() {
         addSubview(titleLabel)
         addSubview(subtitleLabel)
     }
     
-//está sendo passado as configurações de posicionamento
+    //está sendo passado as configurações de posicionamento
     func setupConstraints() {
         titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
@@ -68,4 +68,14 @@ extension EmptyView: ViewCodable{
         subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16).isActive = true
     }
     
+    //
+    func applyAdditionalChanges() {
+        self.backgroundColor = .white
+    }
+    
+    //
+    func updateView(with configuration:  EmptyViewConfiguration) {
+        titleLabel.text = configuration.labelTitle
+        subtitleLabel.text = configuration.labelSubtitle
+    }
 }

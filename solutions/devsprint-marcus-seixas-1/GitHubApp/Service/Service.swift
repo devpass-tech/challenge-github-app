@@ -15,10 +15,3 @@ struct Service {
     }
 }
 
-struct ServiceEmpty{
-    
-    func fetchList(_ completion: ([String]) -> Void) {
-        
-        completion(["No repositories found", "Search for users to see their public repositories here!"])
-    }
-}
