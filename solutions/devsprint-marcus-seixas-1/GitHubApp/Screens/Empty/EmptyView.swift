@@ -24,6 +24,7 @@ final class EmptyView: UIView{
         title.tintColor = .darkGray //font color
         title.autoresizesSubviews = true //
         title.translatesAutoresizingMaskIntoConstraints = false //
+        title.text = "No repositories found"
         return title
     }()
     
@@ -34,6 +35,7 @@ final class EmptyView: UIView{
         subtitle.tintColor = .gray //font color
         subtitle.autoresizesSubviews = true //
         subtitle.translatesAutoresizingMaskIntoConstraints = false //
+        subtitle.text = "Search for users to see their public repositories here!"
         return subtitle
     }()
     

@@ -6,7 +6,7 @@
 
 import Foundation
 
-//
+
 public protocol ViewCodable {
     
     func buildHierarchy()
