@@ -22,8 +22,8 @@ final class EmptyView: UIView{
         let title = UILabel()
         title.font = UIFont.boldSystemFont(ofSize: 20)  //font size
         title.tintColor = .darkGray //font color
-        title.autoresizesSubviews = true //
-        title.translatesAutoresizingMaskIntoConstraints = false //
+        title.autoresizesSubviews = true
+        title.translatesAutoresizingMaskIntoConstraints = false
         title.text = "No repositories found"
         return title
     }()
@@ -33,9 +33,11 @@ final class EmptyView: UIView{
         let subtitle = UILabel()
         subtitle.font = UIFont.boldSystemFont(ofSize: 14) //font size
         subtitle.tintColor = .gray //font color
-        subtitle.autoresizesSubviews = true //
-        subtitle.translatesAutoresizingMaskIntoConstraints = false //
-        subtitle.text = "Search for users to see their public repositories here!"
+        subtitle.autoresizesSubviews = true
+        subtitle.translatesAutoresizingMaskIntoConstraints = false
+        subtitle.text = "Search for users to see their public \n repositories here!"
+        subtitle.numberOfLines = 2
+        subtitle.textAlignment = NSTextAlignment.center
         return subtitle
     }()
     
@@ -70,12 +72,12 @@ extension EmptyView: ViewCodable{
         subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16).isActive = true
     }
     
-    //
+    //está sendo ajustado a cor do fundo
     func applyAdditionalChanges() {
         self.backgroundColor = .white
     }
     
-    //
+    //esta funçāo será chamada na tela de ListView para mostrar essa tela
     func updateView(with configuration:  EmptyViewConfiguration) {
         titleLabel.text = configuration.labelTitle
         subtitleLabel.text = configuration.labelSubtitle
