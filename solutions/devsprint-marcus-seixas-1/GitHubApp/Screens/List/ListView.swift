@@ -70,8 +70,14 @@ extension ListView {
 
     func updateView(with repositories: [String]) {
 
-        self.listItems = repositories
-        self.tableView.reloadData()
+        //self.listItems = repositories
+        //self.tableView.reloadData()
+        showEmptyView()
+    }
+    
+    func showEmptyView() {
+        let emptyView = EmptyView(frame: self.frame)
+        self.tableView.addSubview(emptyView)
     }
 }
 
