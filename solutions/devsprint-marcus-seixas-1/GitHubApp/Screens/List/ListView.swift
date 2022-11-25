@@ -74,13 +74,20 @@ extension ListView {
         self.listItems = repositories
         self.tableView.reloadData()
         //apresentacao tela de erro
-        //showEmptyView()
+        showLoadingView()
     }
     
     func showEmptyView() {
         let emptyView = EmptyView(frame: self.frame)
         emptyView.updateView(with: EmptyViewConfiguration(labelText: "erro", labelText2: "algo deu errado"))
+        //emptyView.isHidden = true
         self.tableView.addSubview(emptyView)
+    }
+    
+    func showLoadingView(){
+        let loadingView = LoadingView(frame: self.tableView.frame)
+        loadingView.updateView(with: LoadingViewConfiguration(labelText: "carregando"))
+        self.tableView.addSubview(loadingView)
     }
 }
 

@@ -19,6 +19,7 @@ final class EmptyView: UIView {
         label.tintColor = .darkGray
         label.autoresizesSubviews = true
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "tituloPadrao"
         return label
     }()
     
@@ -28,6 +29,7 @@ final class EmptyView: UIView {
         label2.tintColor = .gray
         label2.autoresizesSubviews = true
         label2.translatesAutoresizingMaskIntoConstraints = false
+        label2.text = "subtituloPadrao"
         return label2
     }()
     
