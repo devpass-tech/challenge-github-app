@@ -7,10 +7,40 @@
 
 import Foundation
 
-struct Service {
+import Foundation
 
-    func fetchList(_ completion: ([String]) -> Void) {
+protocol ServiceProtocol {
 
-        completion(["Repository 1", "Repository 2", "Repository 3"])
-    }
+    func fetchList(for user: String, _ completion: @escaping ([GitHubApp]) -> Void)
 }
+    
+struct Service: ServiceProtocol {
+
+        func fetchList(for name: String, _ completion: @escaping ([GitHubApp]) -> Void) {
+            if let url = URL(string: "https://api.github.com/users/" + name + "/repos") {
+                
+                let task = URLSession.shared.dataTask(with: url) { data, response, error in
+
+                    if let error = error {
+                        print(error)
+                        completion([])
+                    }
+                    
+                    let jsonDecoder = JSONDecoder()
+                    jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                    if let data = data {
+                        do {
+                            let repositories = try jsonDecoder.decode([GitHubApp].self, from: data)
+                            completion(repositories)
+
+                        } catch {
+                            print("Unexpected error: \(error)")
+                            completion([])
+                        }
+                    }
+                }
+                task.resume()
+            }
+        }
+    }

@@ -16,7 +16,9 @@ final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
-    private var listItems: [String] = []
+    private var listItems: [GitHubApp] = []
+        
+    var loadingView: LoadingView?
 
     private lazy var tableView: UITableView = {
 
@@ -69,12 +71,11 @@ private extension ListView {
 
 extension ListView {
 
-    func updateView(with repositories: [String]) {
-
-        self.listItems = repositories
-        self.tableView.reloadData()
-        //apresentacao tela de erro
-        showLoadingView()
+    func updateView(with repositories: [GitHubApp]) {
+        DispatchQueue.main.async {
+            self.listItems = repositories
+            self.tableView.reloadData()
+        }
     }
     
     func showEmptyView() {
@@ -85,9 +86,19 @@ extension ListView {
     }
     
     func showLoadingView(){
-        let loadingView = LoadingView(frame: self.tableView.frame)
-        loadingView.updateView(with: LoadingViewConfiguration(labelText: "carregando"))
-        self.tableView.addSubview(loadingView)
+        if loadingView == nil {
+            loadingView = LoadingView(frame: self.tableView.frame)
+            self.tableView.addSubview(loadingView ?? UIView())
+        }
+        
+        loadingView?.isHidden = false
+        self.loadingView?.updateView(with: LoadingViewConfiguration(labelText: "carregando"))
+    }
+    
+    func hideLoadingView() {
+        DispatchQueue.main.async {
+            self.loadingView?.isHidden = true
+        }
     }
 }
 
@@ -101,7 +112,10 @@ extension ListView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.classIdentifier()) as? RepositoryCellView
-        cell?.updateView(with: RepositoryCellViewConfiguration(title: self.listItems[indexPath.row], subtitle: "indexPath \(indexPath.debugDescription)"))
+        
+        let item = listItems[indexPath.row]
+
+        cell?.updateView(with: RepositoryCellViewConfiguration(title: item.name, subtitle: String(item.watchersCount)))
         return cell ?? UITableViewCell()
     }
 }

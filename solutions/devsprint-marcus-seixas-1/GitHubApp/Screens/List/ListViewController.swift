@@ -54,18 +54,18 @@ final class ListViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
 
-        service.fetchList { repositories in
-
-            DispatchQueue.main.async {
-
-                self.listView.updateView(with: repositories)
-            }
-        }
-
     }
 
     override func loadView() {
         self.view = listView
+    }
+
+    private func searchGitUser(username: String) {
+        listView.showLoadingView()
+        service.fetchList(for: username) { repositories in
+            self.listView.hideLoadingView()
+            self.listView.updateView(with: repositories)
+        }
     }
     
     private lazy var settingsButton: UIBarButtonItem = {
@@ -81,9 +81,18 @@ final class ListViewController: UIViewController {
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         //teste
+        if let username = searchBar.text {
+            searchGitUser(username: username)
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print(searchBar.text ?? "")
     }
 }
 
 extension ListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) { }
+    func updateSearchResults(for searchController: UISearchController) {
+        print(searchController.searchBar.text ?? "")
+    }
 }
