@@ -9,6 +9,8 @@ import UIKit
 
 final class ListViewController: UIViewController {
 
+    private let searchController = UISearchController(searchResultsController: nil)
+
     private let listView: ListView = {
 
         let listView = ListView()
@@ -27,24 +29,62 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "GitHub App 🐙"
+        navigationControllerSetup()
+        setupSettingButton()
+    }
+    
+    private func setupSettingButton() {
+        navigationItem.leftBarButtonItem = settingsButton
+    }
+    
+    private func navigationControllerSetup() {
+         self.navigationItem.searchController = searchController
+         self.navigationItem.title = "Repositories"
+         self.navigationController?.navigationBar.prefersLargeTitles = true
+         self.definesPresentationContext = true
+         self.searchBarControllerSetup()
+     }
+    
+    private func searchBarControllerSetup() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Type a GitHub user name"
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
-        service.fetchList { repositories in
-
-            DispatchQueue.main.async {
-
-                self.listView.updateView(with: repositories)
-            }
-        }
 
     }
 
     override func loadView() {
         self.view = listView
+    }
+
+
+    
+    private lazy var settingsButton: UIBarButtonItem = {
+        let settings = UIBarButtonItem()
+        settings.title = "Settings"
+        settings.style = .plain
+        settings.target = self
+        navigationItem.rightBarButtonItem = settings
+        //settings.action = #selector(navigateSettingsViewController)
+        return settings
+    }()
+}
+
+extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        //teste
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print(searchBar.text ?? "")
+    }
+}
+
+extension ListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print(searchController.searchBar.text ?? "")
     }
 }
