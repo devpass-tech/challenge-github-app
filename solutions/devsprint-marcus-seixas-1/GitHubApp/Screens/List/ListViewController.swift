@@ -53,7 +53,7 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
+        self.listView.showEmptyView()
     }
 
     override func loadView() {
@@ -62,8 +62,14 @@ final class ListViewController: UIViewController {
 
     private func searchGitUser(username: String) {
         listView.showLoadingView()
+        listView.hideEmptyView()
         service.fetchList(for: username) { repositories in
             self.listView.hideLoadingView()
+            if repositories.isEmpty {
+                self.listView.showEmptyView()
+            } else {
+                self.listView.hideEmptyView()
+            }
             self.listView.updateView(with: repositories)
         }
     }
@@ -80,7 +86,6 @@ final class ListViewController: UIViewController {
 
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        //teste
         if let username = searchBar.text {
             searchGitUser(username: username)
         }

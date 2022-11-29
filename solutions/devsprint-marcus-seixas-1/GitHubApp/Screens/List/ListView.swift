@@ -19,6 +19,7 @@ final class ListView: UIView {
     private var listItems: [GitHubApp] = []
         
     var loadingView: LoadingView?
+    var emptyView: EmptyView?
 
     private lazy var tableView: UITableView = {
 
@@ -64,7 +65,7 @@ private extension ListView {
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
@@ -79,19 +80,30 @@ extension ListView {
     }
     
     func showEmptyView() {
-        let emptyView = EmptyView(frame: self.frame)
-        emptyView.updateView(with: EmptyViewConfiguration(labelText: "erro", labelText2: "algo deu errado"))
-        //emptyView.isHidden = true
-        self.tableView.addSubview(emptyView)
+        if emptyView == nil {
+            emptyView = EmptyView(frame: self.tableView.bounds)
+            self.tableView.addSubview(emptyView ?? UIView())
+        }
+        DispatchQueue.main.async {
+            self.emptyView?.isHidden = false
+        }
+        emptyView?.updateView(with: EmptyViewConfiguration(labelText: "404", labelText2: "repositorio não encontrado"))
+    }
+    
+    func hideEmptyView() {
+        DispatchQueue.main.async {
+            self.emptyView?.isHidden = true
+        }
     }
     
     func showLoadingView(){
         if loadingView == nil {
-            loadingView = LoadingView(frame: self.tableView.frame)
+            loadingView = LoadingView(frame: self.tableView.bounds)
             self.tableView.addSubview(loadingView ?? UIView())
         }
-        
-        loadingView?.isHidden = false
+        DispatchQueue.main.async {
+            self.loadingView?.isHidden = false
+        }
         self.loadingView?.updateView(with: LoadingViewConfiguration(labelText: "carregando"))
     }
     
