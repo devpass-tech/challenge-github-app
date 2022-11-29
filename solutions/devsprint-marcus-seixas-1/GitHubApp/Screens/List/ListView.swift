@@ -72,8 +72,10 @@ extension ListView {
         
         //self.listItems = repositories
         //self.tableView.reloadData()
-        //self.showEmptyView()
-        self.showLoadingView()
+        //showEmptyView()
+        DispatchQueue.main.async { //serve para colocar em espera para depois rodar
+            self.showLoadingView()
+        }
     }
     
     func showEmptyView() {

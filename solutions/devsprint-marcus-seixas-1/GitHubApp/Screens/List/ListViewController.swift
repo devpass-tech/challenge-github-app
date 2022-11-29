@@ -31,6 +31,9 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         navigationControllerSetup()
         setupSettingButton()
+        service.fetchList { repositorie in
+            listView.updateView(with: repositorie)
+        }
     }
     
     private func setupSettingButton() {
