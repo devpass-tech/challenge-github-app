@@ -47,6 +47,7 @@ final class EmptyView: UIView{
         super.init(frame: frame)
         buildHierarchy()
         setupConstraints()
+        //applyAdditionalChanges()
         
         }
     

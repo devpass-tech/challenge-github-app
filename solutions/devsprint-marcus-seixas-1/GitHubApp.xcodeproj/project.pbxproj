@@ -29,6 +29,7 @@
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
 		B305FE68292CF76000E64E78 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305FE67292CF76000E64E78 /* EmptyView.swift */; };
 		B36A9F28292E44E100E214A7 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A9F27292E44E100E214A7 /* ViewCodable.swift */; };
+		B3E8056529364347003BE4A0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8056429364347003BE4A0 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		B305FE67292CF76000E64E78 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B36A9F27292E44E100E214A7 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewCodable.swift; path = GitHubApp/Screens/Empty/ViewCodable.swift; sourceTree = SOURCE_ROOT; };
+		B3E8056429364347003BE4A0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B3E8056329364337003BE4A0 /* Loader */,
 				B305FE66292CF71D00E64E78 /* Empty */,
 				9826D90C2788B89400E05400 /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
@@ -260,6 +263,14 @@
 				B305FE67292CF76000E64E78 /* EmptyView.swift */,
 			);
 			path = Empty;
+			sourceTree = "<group>";
+		};
+		B3E8056329364337003BE4A0 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				B3E8056429364347003BE4A0 /* LoadingView.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +420,7 @@
 				B36A9F28292E44E100E214A7 /* ViewCodable.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
+				B3E8056529364347003BE4A0 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
