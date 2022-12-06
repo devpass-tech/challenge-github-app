@@ -16,7 +16,10 @@ final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
-    private var listItems: [String] = []
+    private var listItems: [GitHubApp] = []
+        
+    var loadingView: LoadingView?
+    var emptyView: EmptyView?
 
     private lazy var tableView: UITableView = {
 
@@ -24,6 +27,7 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.classIdentifier())
         return tableView
     }()
 
@@ -61,31 +65,50 @@ private extension ListView {
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
 
 extension ListView {
-    
-    func updateView(with repositories: [String]) {
-        
-        //self.listItems = repositories
-        //self.tableView.reloadData()
-        //showEmptyView()
-        DispatchQueue.main.async { //serve para colocar em espera para depois rodar
-            self.showLoadingView()
+
+    func updateView(with repositories: [GitHubApp]) {
+        DispatchQueue.main.async {
+            self.listItems = repositories
+            self.tableView.reloadData()
         }
     }
     
     func showEmptyView() {
-        let emptyView = EmptyView(frame: self.frame)
-        self.tableView.addSubview(emptyView)
+        if emptyView == nil {
+            emptyView = EmptyView(frame: self.tableView.bounds)
+            self.tableView.addSubview(emptyView ?? UIView())
+        }
+        DispatchQueue.main.async {
+            self.emptyView?.isHidden = false
+        }
+    }
+    
+    func hideEmptyView() {
+        DispatchQueue.main.async {
+            self.emptyView?.isHidden = true
+        }
     }
     
     func showLoadingView(){
-        let loadingView = LoadingView(frame: self.frame)
-        self.tableView.addSubview(loadingView)
+        if loadingView == nil {
+            loadingView = LoadingView(frame: self.tableView.bounds)
+            self.tableView.addSubview(loadingView ?? UIView())
+        }
+        DispatchQueue.main.async {
+            self.loadingView?.isHidden = false
+        }
+    }
+    
+    func hideLoadingView() {
+        DispatchQueue.main.async {
+            self.loadingView?.isHidden = true
+        }
     }
 }
 
@@ -98,9 +121,11 @@ extension ListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.classIdentifier()) as? RepositoryCellView
+        
+        let item = listItems[indexPath.row]
+
+        cell?.updateView(with: RepositoryCellViewConfiguration(title: item.name, subtitle: String(item.watcherCount)))
+        return cell ?? UITableViewCell()
     }
 }
-

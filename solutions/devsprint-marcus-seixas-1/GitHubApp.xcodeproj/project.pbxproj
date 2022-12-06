@@ -28,6 +28,8 @@
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
 		B305FE68292CF76000E64E78 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305FE67292CF76000E64E78 /* EmptyView.swift */; };
+		B3603DF6293919000020C055 /* GitHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3603DF5293919000020C055 /* GitHubApp.swift */; };
+		B3603DF929391A730020C055 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3603DF829391A730020C055 /* RepositoryCellView.swift */; };
 		B36A9F28292E44E100E214A7 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A9F27292E44E100E214A7 /* ViewCodable.swift */; };
 		B3E8056529364347003BE4A0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8056429364347003BE4A0 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		B305FE67292CF76000E64E78 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		B3603DF5293919000020C055 /* GitHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApp.swift; sourceTree = "<group>"; };
+		B3603DF829391A730020C055 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
 		B36A9F27292E44E100E214A7 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewCodable.swift; path = GitHubApp/Screens/Empty/ViewCodable.swift; sourceTree = SOURCE_ROOT; };
 		B3E8056429364347003BE4A0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				98252C20279200C900199ECC /* Repository.swift */,
+				B3603DF5293919000020C055 /* GitHubApp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B3603DF729391A540020C055 /* RepositoryCellView */,
 				B3E8056329364337003BE4A0 /* Loader */,
 				B305FE66292CF71D00E64E78 /* Empty */,
 				9826D90C2788B89400E05400 /* Components */,
@@ -263,6 +269,14 @@
 				B305FE67292CF76000E64E78 /* EmptyView.swift */,
 			);
 			path = Empty;
+			sourceTree = "<group>";
+		};
+		B3603DF729391A540020C055 /* RepositoryCellView */ = {
+			isa = PBXGroup;
+			children = (
+				B3603DF829391A730020C055 /* RepositoryCellView.swift */,
+			);
+			path = RepositoryCellView;
 			sourceTree = "<group>";
 		};
 		B3E8056329364337003BE4A0 /* Loader */ = {
@@ -409,6 +423,7 @@
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
 				B305FE68292CF76000E64E78 /* EmptyView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
+				B3603DF929391A730020C055 /* RepositoryCellView.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
 				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
@@ -420,6 +435,7 @@
 				B36A9F28292E44E100E214A7 /* ViewCodable.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
 				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
+				B3603DF6293919000020C055 /* GitHubApp.swift in Sources */,
 				B3E8056529364347003BE4A0 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,9 +31,6 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         navigationControllerSetup()
         setupSettingButton()
-        service.fetchList { repositorie in
-            listView.updateView(with: repositorie)
-        }
     }
     
     private func setupSettingButton() {
@@ -56,21 +53,32 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
+        self.listView.showEmptyView()
     }
 
     override func loadView() {
         self.view = listView
     }
 
-
+    private func searchGitUser(username: String) {
+        listView.showLoadingView()
+        listView.hideEmptyView()
+        service.fetchList(for: username) { repositories in
+            self.listView.hideLoadingView()
+            if repositories.isEmpty {
+                self.listView.showEmptyView()
+            } else {
+                self.listView.hideEmptyView()
+            }
+            self.listView.updateView(with: repositories)
+        }
+    }
     
     private lazy var settingsButton: UIBarButtonItem = {
         let settings = UIBarButtonItem()
         settings.title = "Settings"
         settings.style = .plain
         settings.target = self
-        navigationItem.rightBarButtonItem = settings
         //settings.action = #selector(navigateSettingsViewController)
         return settings
     }()
@@ -78,7 +86,9 @@ final class ListViewController: UIViewController {
 
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        //teste
+        if let username = searchBar.text {
+            searchGitUser(username: username)
+        }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
