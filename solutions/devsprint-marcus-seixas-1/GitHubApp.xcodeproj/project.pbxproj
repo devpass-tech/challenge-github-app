@@ -18,20 +18,20 @@
 		9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */; };
 		9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8E82788B43E00E05400 /* UITableViewCell+Extensions.swift */; };
 		9826D8FE2788B43F00E05400 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8EA2788B43E00E05400 /* Service.swift */; };
-		9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F32788B43F00E05400 /* SettingsViewController.swift */; };
 		9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F52788B43F00E05400 /* DetailViewController.swift */; };
 		9826D9042788B43F00E05400 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F72788B43F00E05400 /* ListViewController.swift */; };
 		9826D9052788B43F00E05400 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D8F82788B43F00E05400 /* ListView.swift */; };
 		9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9082788B48000E05400 /* AppDelegate.swift */; };
 		9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9092788B48000E05400 /* SceneDelegate.swift */; };
 		9826D90E2788B8A900E05400 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90D2788B8A900E05400 /* DetailView.swift */; };
-		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
 		B305FE68292CF76000E64E78 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B305FE67292CF76000E64E78 /* EmptyView.swift */; };
 		B3603DF6293919000020C055 /* GitHubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3603DF5293919000020C055 /* GitHubApp.swift */; };
 		B3603DF929391A730020C055 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3603DF829391A730020C055 /* RepositoryCellView.swift */; };
 		B36A9F28292E44E100E214A7 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A9F27292E44E100E214A7 /* ViewCodable.swift */; };
 		B3E8056529364347003BE4A0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8056429364347003BE4A0 /* LoadingView.swift */; };
+		B3F1DED42940CAA40034BE08 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1DED32940CAA40034BE08 /* SettingsView.swift */; };
+		B3F1DED62940F80D0034BE08 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1DED52940F80D0034BE08 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,20 +67,20 @@
 		9826D8E72788B43E00E05400 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9826D8E82788B43E00E05400 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		9826D8EA2788B43E00E05400 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		9826D8F32788B43F00E05400 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9826D8F52788B43F00E05400 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9826D8F72788B43F00E05400 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		9826D8F82788B43F00E05400 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		9826D9082788B48000E05400 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9826D9092788B48000E05400 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		B305FE67292CF76000E64E78 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B3603DF5293919000020C055 /* GitHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApp.swift; sourceTree = "<group>"; };
 		B3603DF829391A730020C055 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
 		B36A9F27292E44E100E214A7 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewCodable.swift; path = GitHubApp/Screens/Empty/ViewCodable.swift; sourceTree = SOURCE_ROOT; };
 		B3E8056429364347003BE4A0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B3F1DED32940CAA40034BE08 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B3F1DED52940F80D0034BE08 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,24 +200,15 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B3F1DED22940CA5F0034BE08 /* Settings */,
 				B3603DF729391A540020C055 /* RepositoryCellView */,
 				B3E8056329364337003BE4A0 /* Loader */,
 				B305FE66292CF71D00E64E78 /* Empty */,
 				9826D90C2788B89400E05400 /* Components */,
-				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
 				9826D8F62788B43F00E05400 /* List */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		9826D8F22788B43F00E05400 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				9826D8F32788B43F00E05400 /* SettingsViewController.swift */,
-				9826D90F2788B8EA00E05400 /* SettingsView.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		9826D8F42788B43F00E05400 /* Detail */ = {
@@ -285,6 +276,15 @@
 				B3E8056429364347003BE4A0 /* LoadingView.swift */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		B3F1DED22940CA5F0034BE08 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B3F1DED32940CAA40034BE08 /* SettingsView.swift */,
+				B3F1DED52940F80D0034BE08 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F1DED42940CAA40034BE08 /* SettingsView.swift in Sources */,
 				9826D8FB2788B43F00E05400 /* String+Extensions.swift in Sources */,
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
@@ -426,15 +427,14 @@
 				B3603DF929391A730020C055 /* RepositoryCellView.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
 				9826D9042788B43F00E05400 /* ListViewController.swift in Sources */,
-				9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */,
 				9826D90E2788B8A900E05400 /* DetailView.swift in Sources */,
 				9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */,
+				B3F1DED62940F80D0034BE08 /* SettingsViewController.swift in Sources */,
 				9826D8FD2788B43F00E05400 /* UITableViewCell+Extensions.swift in Sources */,
 				98252C21279200C900199ECC /* Repository.swift in Sources */,
 				9826D9052788B43F00E05400 /* ListView.swift in Sources */,
 				B36A9F28292E44E100E214A7 /* ViewCodable.swift in Sources */,
 				9826D9032788B43F00E05400 /* DetailViewController.swift in Sources */,
-				9826D9022788B43F00E05400 /* SettingsViewController.swift in Sources */,
 				B3603DF6293919000020C055 /* GitHubApp.swift in Sources */,
 				B3E8056529364347003BE4A0 /* LoadingView.swift in Sources */,
 			);
