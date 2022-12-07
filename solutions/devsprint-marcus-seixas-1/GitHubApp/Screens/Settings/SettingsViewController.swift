@@ -11,5 +11,9 @@ class SettingsViewController: UIViewController {
 
     override func loadView() {
         self.view = SettingsView()
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .darkText
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        title = "Settings"
     }
 }

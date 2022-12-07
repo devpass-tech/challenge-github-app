@@ -18,10 +18,13 @@ final class ListViewController: UIViewController {
     }()
 
     private let service = Service()
+    private var buttonName: String?
+    private var titleName: String?
 
-    init() {
+    init(titulo: String? = "Repositories" , nomeBotao: String? = "Settings") {
         super.init(nibName: nil, bundle: nil)
-
+        buttonName = nomeBotao
+        titleName = titulo
     }
 
     required init?(coder: NSCoder) {
@@ -34,12 +37,12 @@ final class ListViewController: UIViewController {
     }
     
     private func setupSettingButton() {
-        navigationItem.leftBarButtonItem = settingsButton
+        navigationItem.rightBarButtonItem = settingsButton
     }
     
     private func navigationControllerSetup() {
          self.navigationItem.searchController = searchController
-         self.navigationItem.title = "Repositories"
+         self.navigationItem.title = titleName
          self.navigationController?.navigationBar.prefersLargeTitles = true
          self.definesPresentationContext = true
          self.searchBarControllerSetup()
@@ -76,12 +79,18 @@ final class ListViewController: UIViewController {
     
     private lazy var settingsButton: UIBarButtonItem = {
         let settings = UIBarButtonItem()
-        settings.title = "Settings"
+        settings.title = buttonName
         settings.style = .plain
         settings.target = self
-        //settings.action = #selector(navigateSettingsViewController)
+        settings.action = #selector(navigateSettingsViewController)
         return settings
     }()
+    
+    @objc private func navigateSettingsViewController() {
+        let settings = SettingsViewController()
+        navigationController?.present(settings, animated: true, completion: nil)
+    }
+    
 }
 
 extension ListViewController: UISearchBarDelegate, UISearchControllerDelegate {
