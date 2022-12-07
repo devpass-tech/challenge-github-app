@@ -125,7 +125,7 @@ extension ListView: UITableViewDataSource {
         
         let item = listItems[indexPath.row]
 
-        cell?.updateView(with: RepositoryCellViewConfiguration(title: item.name, subtitle: String(item.watcherCount)))
+        cell?.updateView(with: RepositoryCellViewConfiguration(title: item.name, subtitle: String(item.watchersCount)))
         return cell ?? UITableViewCell()
     }
 }

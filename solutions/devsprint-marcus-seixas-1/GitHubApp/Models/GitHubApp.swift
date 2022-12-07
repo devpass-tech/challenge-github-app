@@ -11,7 +11,7 @@ struct GitHubApp: Codable {
     var name: String
     var description: String?
     var stargazersCount: Int
-    var watcherCount: Int
+    var watchersCount: Int
     var owner: Owner
 }
 
