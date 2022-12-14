@@ -24,14 +24,14 @@ class RepositoryCellView: UITableViewCell {
     lazy var repositoryName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         return label
     }()
     
     lazy var repositoryUserName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = .gray
         return label
     }()
@@ -68,14 +68,14 @@ class RepositoryCellView: UITableViewCell {
         NSLayoutConstraint.activate([
             
             chevron.centerYAnchor.constraint(equalTo: centerYAnchor),
-            chevron.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            chevron.heightAnchor.constraint(equalToConstant: 17),
-            chevron.widthAnchor.constraint(equalToConstant: 12),
+            chevron.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.83),
+            chevron.heightAnchor.constraint(equalToConstant: 16),
+            chevron.widthAnchor.constraint(equalToConstant: 10),
             
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16.5),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: chevron.leadingAnchor, constant: -10),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16.5),
             
         ])
     }
