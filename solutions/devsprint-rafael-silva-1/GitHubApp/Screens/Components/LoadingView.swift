@@ -7,6 +7,10 @@
 
 import UIKit
 
+struct LoadingViewConfiguration {
+    let loadingLabelText = "Searching repositories..."
+}
+
 class LoadingView: UIView {
     
     lazy var stackView: UIStackView = {
@@ -72,7 +76,7 @@ private extension LoadingView {
 
 extension LoadingView {
 
-//    func updateView(with configuration: LoadingViewConfiguration) {
-//        loadingLabel.text = configuration...
-//    }
+    func updateView(with configuration: LoadingViewConfiguration) {
+        loadingLabel.text = configuration.loadingLabelText
+    }
 }
