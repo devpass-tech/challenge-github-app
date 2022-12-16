@@ -14,6 +14,15 @@ final class ListViewController: UIViewController {
         let listView = ListView()
         return listView
     }()
+    
+    private lazy var searchController: UISearchController = {
+        let controller = UISearchController()
+        controller.searchBar.placeholder = "Type a GitHub user name"
+//        controller.searchResultsUpdater = self
+//        controller.delegate = self
+        controller.obscuresBackgroundDuringPresentation = false
+        return controller
+    }()
 
     private let service = Service()
 
@@ -29,7 +38,8 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.title = "GitHub App 🐙"
+        self.navigationItem.title = "Repositories"
+        self.navigationItem.searchController = searchController
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -48,3 +58,9 @@ final class ListViewController: UIViewController {
         self.view = listView
     }
 }
+
+//extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+//    func updateSearchResults(for searchController: UISearchController) {
+//
+//    }
+//}
