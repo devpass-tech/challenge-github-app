@@ -12,4 +12,9 @@ class SettingsViewController: UIViewController {
     override func loadView() {
         self.view = SettingsView()
     }
+    
+    override func viewDidLoad() {
+        self.navigationItem.title = "Settings"
+        
+    }
 }

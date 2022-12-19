@@ -10,6 +10,7 @@ import UIKit
 final class ListViewController: UIViewController {
     
     private var userName: String = "devpass-tech"
+    private let service = Service()
 
     private let listView: ListView = {
 
@@ -25,9 +26,21 @@ final class ListViewController: UIViewController {
         controller.obscuresBackgroundDuringPresentation = false
         return controller
     }()
+    
+    private lazy var settingsButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.title = "Settings"
+        button.style = .plain
+        button.target = self
+        button.action = #selector(tappedSettingsButton)
+        return button
+    }()
 
-    private let service = Service()
-
+    @objc func tappedSettingsButton() {
+        let vc = SettingsViewController()
+        present(UINavigationController(rootViewController: vc), animated: true)
+    }
+    
     init() {
         super.init(nibName: nil, bundle: nil)
 
@@ -42,6 +55,7 @@ final class ListViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Repositories"
         self.navigationItem.searchController = searchController
+        self.navigationItem.rightBarButtonItem = settingsButton
     }
 
     override func viewDidAppear(_ animated: Bool) {
