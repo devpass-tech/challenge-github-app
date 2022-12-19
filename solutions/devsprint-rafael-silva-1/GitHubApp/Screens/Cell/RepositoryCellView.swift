@@ -83,9 +83,9 @@ class RepositoryCellView: UITableViewCell {
     
     // MARK: Public func
     
-    public func updateView(with configuration: String) {
-        repositoryName.text = configuration
-        repositoryUserName.text = configuration
+    public func updateView(with configuration: Repository) {
+        repositoryName.text = configuration.name
+        repositoryUserName.text = configuration.owner?.login
     }
 
 }
