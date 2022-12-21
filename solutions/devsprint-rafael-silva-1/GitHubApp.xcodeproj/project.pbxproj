@@ -30,6 +30,7 @@
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
 		DA348D122948D68100EA402A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA348D112948D68100EA402A /* EmptyView.swift */; };
+		DAF01A9129509F200083C1A9 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF01A9029509F200083C1A9 /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		DA348D112948D68100EA402A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		DAF01A9029509F200083C1A9 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				DA348D112948D68100EA402A /* EmptyView.swift */,
+				DAF01A9029509F200083C1A9 /* ButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
+				DAF01A9129509F200083C1A9 /* ButtonView.swift in Sources */,
 				DA348D122948D68100EA402A /* EmptyView.swift in Sources */,
 				0C1F1909294A395C003DE2C6 /* LoadingView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
