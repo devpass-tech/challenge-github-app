@@ -8,6 +8,8 @@
 import UIKit
 
 final class ListViewController: UIViewController {
+    
+    private var userName: String = "devpass-tech"
 
     private let listView: ListView = {
 
@@ -43,12 +45,17 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-
-        service.fetchList { repositories in
-
-            DispatchQueue.main.async {
-
-                self.listView.updateView(with: repositories)
+        
+        service.fetchUserRepositories(userName: userName) { [weak self] repositories, error in
+            
+            // TODO: Modificar para switch case, dependendo da view que é para apresentar.
+            
+            if let repositories {
+                DispatchQueue.main.async {
+                    self?.listView.updateView(with: repositories)
+                }
+            } else {
+                print("Error fetching")
             }
         }
 
@@ -59,8 +66,10 @@ final class ListViewController: UIViewController {
     }
 }
 
-//extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-//    func updateSearchResults(for searchController: UISearchController) {
-//
-//    }
-//}
+extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        // TODO: Implementar busca e fetching. Alterar variável userName e dar um reload?
+        
+    }
+}
