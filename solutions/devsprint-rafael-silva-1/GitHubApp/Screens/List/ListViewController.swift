@@ -13,6 +13,8 @@ final class ListViewController: UIViewController {
     private let emptyView = EmptyView()
     private let loadingView = LoadingView()
     
+    private let service = Service()
+    
     private lazy var searchController: UISearchController = {
         let controller = UISearchController()
         controller.searchBar.placeholder = "Type a GitHub user name"
@@ -21,8 +23,6 @@ final class ListViewController: UIViewController {
         controller.obscuresBackgroundDuringPresentation = false
         return controller
     }()
-
-    private let service = Service()
 
     init() {
         super.init(nibName: nil, bundle: nil)
