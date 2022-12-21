@@ -9,19 +9,15 @@ import UIKit
 
 final class ListViewController: UIViewController {
     
-    private var userName: String = "devpass-tech"
-
-    private let listView: ListView = {
-
-        let listView = ListView()
-        return listView
-    }()
+    private let listView = ListView()
+    private let emptyView = EmptyView()
+    private let loadingView = LoadingView()
     
     private lazy var searchController: UISearchController = {
         let controller = UISearchController()
         controller.searchBar.placeholder = "Type a GitHub user name"
-//        controller.searchResultsUpdater = self
-//        controller.delegate = self
+        controller.searchResultsUpdater = self
+        controller.delegate = self
         controller.obscuresBackgroundDuringPresentation = false
         return controller
     }()
@@ -39,6 +35,7 @@ final class ListViewController: UIViewController {
 
     override func viewDidLoad() {
 
+        self.view.backgroundColor = .systemBackground
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Repositories"
         self.navigationItem.searchController = searchController
@@ -46,30 +43,36 @@ final class ListViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         
-        service.fetchUserRepositories(userName: userName) { [weak self] repositories, error in
-            
-            // TODO: Modificar para switch case, dependendo da view que é para apresentar.
-            
-            if let repositories {
-                DispatchQueue.main.async {
-                    self?.listView.updateView(with: repositories)
-                }
-            } else {
-                print("Error fetching")
-            }
-        }
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
     }
 
     override func loadView() {
-        self.view = listView
+        self.view = emptyView
     }
 }
 
 extension ListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        
-        // TODO: Implementar busca e fetching. Alterar variável userName e dar um reload?
-        
+        guard let text = searchController.searchBar.text else { return }
+
+        self.view = loadingView
+
+        service.fetchUserRepositories(userName: text) { [weak self] repositories, error in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                if let repositories {
+                    self?.listView.updateView(with: repositories)
+                    self?.view = self?.listView
+                    
+                } else {
+                    self?.view = self?.emptyView
+                }
+                
+            }
+        }
     }
 }
