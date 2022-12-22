@@ -52,7 +52,8 @@ class LoadingView: UIView {
 private extension LoadingView {
 
     func setupViews() {
-
+        self.backgroundColor = .systemBackground
+        
         self.configureSubviews()
         self.configureSubviewsConstraints()
     }
