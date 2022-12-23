@@ -9,7 +9,6 @@ import UIKit
 
 final class ListViewController: UIViewController {
      
-    private let listView = ListView()
     private let emptyView = EmptyView()
     private let loadingView = LoadingView()
     
