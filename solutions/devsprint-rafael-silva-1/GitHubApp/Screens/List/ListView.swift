@@ -43,8 +43,6 @@ private extension ListView {
 
     func setupViews() {
 
-        self.backgroundColor = .white
-
         self.configureSubviews()
         self.configureSubviewsConstraints()
     }
