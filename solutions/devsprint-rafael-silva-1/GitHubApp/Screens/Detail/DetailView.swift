@@ -12,6 +12,8 @@ class DetailView: UIView {
     lazy var repositoryInfoView: RepositoryInfoView = {
         let view = RepositoryInfoView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Usar os dados do Repository
         view.updateView(with: RepositoryInfoViewConfiguration(repoTitle: "Título", repoDescription: "Descrição", stars: 15, forks: 4))
         return view
     }()
