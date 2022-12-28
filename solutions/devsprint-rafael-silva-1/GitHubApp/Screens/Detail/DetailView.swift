@@ -12,9 +12,12 @@ class DetailView: UIView {
     lazy var repositoryInfoView: RepositoryInfoView = {
         let view = RepositoryInfoView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Usar os dados do Repository
-        view.updateView(with: RepositoryInfoViewConfiguration(repoTitle: "Título", repoDescription: "Descrição", stars: 15, forks: 4))
+        return view
+    }()
+    
+    lazy var ownerView: OwnerView = {
+        let view = OwnerView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -48,6 +51,10 @@ extension DetailView {
             repositoryInfoView.leadingAnchor.constraint(equalTo: leadingAnchor),
             repositoryInfoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             repositoryInfoView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            ownerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            ownerView.topAnchor.constraint(equalTo: repositoryInfoView.bottomAnchor),
+            ownerView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
         ])
     }
