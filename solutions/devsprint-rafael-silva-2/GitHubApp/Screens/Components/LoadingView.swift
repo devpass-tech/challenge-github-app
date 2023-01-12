@@ -7,20 +7,20 @@
 
 import UIKit
 
-//struct LoadingVIewConfiguration {
-//
-//
-//
-//
-//}
+struct LoadingViewConfiguration {
+    
+    var title: String
+    
+}
 
 class LoadingView: UIView {
     
-    private let searchView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .green
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    private let stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
     }()
     
     private let searchingTitle: UILabel = {
@@ -40,54 +40,35 @@ class LoadingView: UIView {
         acitivity.translatesAutoresizingMaskIntoConstraints = false
         return acitivity
     }
-    
     //MARK: - Inits
     override init(frame: CGRect) {
-         super.init(frame: .zero)
+        super.init(frame: .zero)
         addSubviews()
         constraintsSubView()
-     }
-     required init?(coder: NSCoder) {
-         fatalError("init(coder:) has not been implemented")
-     }
-    
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     //MARK: - Adding subviews
     public func addSubviews() {
-        addSubview(searchView)
-        searchView.addSubview(searchingTitle)
-        searchView.addSubview(activityIndicator)
+        addSubview(stackView)
+        self.stackView.addArrangedSubview(searchingTitle)
+        self.stackView.addArrangedSubview(activityIndicator)
     }
-    
     //MARK: - addind setup constraints
     public func constraintsSubView(){
-        setupConstraintsView()
-        setUpConstraintsTitle()
-        setUpConstraintsActivity()
+        setUpConstraintsStack()
     }
-    
-    
-    //MARK: - Constrinats setup
-    private func setupConstraintsView(){
+    //MARK: - Constrinats
+    private func setUpConstraintsStack(){
         NSLayoutConstraint.activate([
-            searchView.topAnchor.constraint(equalTo: bottomAnchor),
-            searchView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            searchView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
-    
-    private func setUpConstraintsTitle(){
-        NSLayoutConstraint.activate([
-            searchingTitle.centerXAnchor.constraint(equalTo: self.searchView.centerXAnchor),
-            searchingTitle.centerYAnchor.constraint(equalTo: self.searchView.centerYAnchor)
-        ])
-    }
-
-    private func setUpConstraintsActivity(){
-        NSLayoutConstraint.activate([
-            activityIndicator.topAnchor.constraint(equalTo: searchingTitle.bottomAnchor),
-            activityIndicator.leftAnchor.constraint(equalTo: searchingTitle.leftAnchor)
-        ])
+    //MARK: - fun para update de view
+    public func updateView(with configuration: LoadingViewConfiguration){
+        searchingTitle.text = configuration.title
     }
 }
-
-
