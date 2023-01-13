@@ -26,6 +26,11 @@ final class ListView: UIView {
         tableView.dataSource = self
         return tableView
     }()
+    
+    private lazy var buttonView: ButtonView = {
+        let buttonView = ButtonView()
+        return buttonView
+    }()
 
     init() {
 
@@ -52,16 +57,21 @@ private extension ListView {
     func configureSubviews() {
 
         self.addSubview(self.tableView)
+        self.addSubview(self.buttonView)
     }
 
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
-
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.buttonView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.buttonView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.buttonView.topAnchor.constraint(equalTo: self.tableView.bottomAnchor),
+            //self.buttonView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
