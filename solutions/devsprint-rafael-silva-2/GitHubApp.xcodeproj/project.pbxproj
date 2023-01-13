@@ -27,6 +27,7 @@
 		9826D90E2788B8A900E05400 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90D2788B8A900E05400 /* DetailView.swift */; };
 		9826D9102788B8EA00E05400 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D90F2788B8EA00E05400 /* SettingsView.swift */; };
 		9826D9132788BAC200E05400 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D9122788BAC200E05400 /* DebugViewController.swift */; };
+		A9327343296E304E001F4AF6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9327342296E304E001F4AF6 /* EmptyView.swift */; };
 		B97EA23B296F06FE004A1EF0 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97EA23A296F06FE004A1EF0 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		9826D90D2788B8A900E05400 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9826D90F2788B8EA00E05400 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9826D9122788BAC200E05400 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		A9327342296E304E001F4AF6 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; }
 		B97EA23A296F06FE004A1EF0 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 		9826D8F12788B43F00E05400 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A9327341296E2FBB001F4AF6 /* Components */,
 				B97EA239296F029E004A1EF0 /* Components */,
 				9826D8F22788B43F00E05400 /* Settings */,
 				9826D8F42788B43F00E05400 /* Detail */,
@@ -243,6 +246,11 @@
 			path = DebugYourViews;
 			sourceTree = "<group>";
 		};
+		A9327341296E2FBB001F4AF6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A9327342296E304E001F4AF6 /* EmptyView.swift */,
+			);
 		B97EA239296F029E004A1EF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +393,7 @@
 				9826D8FE2788B43F00E05400 /* Service.swift in Sources */,
 				9826D8FC2788B43F00E05400 /* UIColor+Extensions.swift in Sources */,
 				9826D8FA2788B43F00E05400 /* UIViewController+Extensions.swift in Sources */,
+				A9327343296E304E001F4AF6 /* EmptyView.swift in Sources */,
 				9826D90A2788B48000E05400 /* AppDelegate.swift in Sources */,
 				B97EA23B296F06FE004A1EF0 /* LoadingView.swift in Sources */,
 				9826D90B2788B48000E05400 /* SceneDelegate.swift in Sources */,
