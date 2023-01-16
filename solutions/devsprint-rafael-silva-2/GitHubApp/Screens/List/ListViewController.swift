@@ -9,9 +9,18 @@ import UIKit
 
 final class ListViewController: UIViewController {
     
+    private func ConfigureSearchBar(){
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        self.navigationItem.searchController = searchController
+        searchController.searchBar.placeholder = "Type a GitHub user name"
+    }
+    
     private func configureNavBar(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "Repositories"
+        
         if #available(iOS 13.0, *) {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithOpaqueBackground()
@@ -43,6 +52,7 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         configureNavBar()
+        ConfigureSearchBar()
         
     }
     
@@ -55,10 +65,20 @@ final class ListViewController: UIViewController {
                 self.listView.updateView(with: repositories)
             }
         }
-        
     }
     
     override func loadView() {
         self.view = listView
+    }
+}
+
+extension ListViewController: UISearchResultsUpdating{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            listView.updateView(with: [])
+            return
+        }
+        
     }
 }
