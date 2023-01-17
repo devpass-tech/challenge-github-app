@@ -5,6 +5,10 @@
 //  Created by Rodrigo Borges on 30/09/21.
 //
 
+protocol CellDelegate: AnyObject {
+    func didClick()
+}
+
 import UIKit
 
 struct ListViewConfiguration {
@@ -13,6 +17,8 @@ struct ListViewConfiguration {
 }
 
 final class ListView: UIView {
+    
+    weak var delegate: CellDelegate?
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
@@ -24,6 +30,8 @@ final class ListView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
+        tableView.delegate = self
+        
         return tableView
     }()
 
@@ -90,3 +98,8 @@ extension ListView: UITableViewDataSource {
     }
 }
 
+extension ListView: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didClick()
+    }
+}

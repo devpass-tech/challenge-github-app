@@ -43,6 +43,7 @@ final class ListViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        listView.delegate = self
         
     }
     
@@ -80,5 +81,11 @@ extension ListViewController: UISearchResultsUpdating{
             return
         }
         
+    }
+}
+
+extension ListViewController: CellDelegate {
+    func didClick() {
+        navigationController?.pushViewController(DetailViewController(), animated: true)
     }
 }
