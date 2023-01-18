@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum ServiceError: Error{
+enum ServiceError: Error {
     case invalidURL
     case decodeFail(Error)
     case network(Error?)
