@@ -7,20 +7,12 @@
 
 import UIKit
 
-struct RepositoryCellViewConfiguration {
-    
-    let repoName: String
-    let repoOwner: String
-    
-}
-
 class RepositoryCellView: UITableViewCell {
     
     static let identifier = "RepoCell"
     
     lazy private var repositoryName: UILabel = {
         let labelRepo = UILabel()
-        labelRepo.text = "teste"
         labelRepo.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         labelRepo.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         labelRepo.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +21,6 @@ class RepositoryCellView: UITableViewCell {
     
     lazy private var ownerName: UILabel = {
         let ownerName = UILabel()
-        ownerName.text = "teste 2"
         ownerName.textColor = .gray
         ownerName.font = UIFont.systemFont(ofSize: 13, weight: .light)
         ownerName.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +29,6 @@ class RepositoryCellView: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .yellow
         addSubViews()
         constraintsSubView()
         
@@ -74,9 +64,8 @@ class RepositoryCellView: UITableViewCell {
         ])
     }
     
-    public func updateView(with configuration: RepositoryCellViewConfiguration){
-        repositoryName.text = configuration.repoName
-        ownerName.text = configuration.repoOwner
+    public func updateView(with configuration: Repository){
+        repositoryName.text = configuration.name
+        ownerName.text = configuration.owner.login
     }
-    
 }

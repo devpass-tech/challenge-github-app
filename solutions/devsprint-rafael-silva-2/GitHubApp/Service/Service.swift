@@ -20,23 +20,24 @@ class Service {
     
   private let url = "https://api.github.com/users/"
     
-    func getService(userAccount: String, callback: @escaping (Result<[Repository], ServiceError >) -> Void) {
+    func getService(userAccount: String, callback: @escaping ([Repository], _ error: Error?) -> Void) {
         let path = "\(userAccount)/repos"
         guard let request = URL(string: url + path) else {
-            callback(.failure(.invalidURL))
+            
+//            callback(.failure(.invalidURL))
             return
         }
         let task = URLSession.shared.dataTask(with: request){ data, response, error in
             
             guard let data = data else {
-                callback(.failure(.network(error)))
+//                callback(.failure(.network(error)))
                 return
             }
             do {
                 let userRepos = try JSONDecoder().decode([Repository].self, from: data)
-                callback(.success(userRepos))
+                callback(userRepos, error)
             } catch {
-                callback(.failure(.decodeFail(error)))
+                callback([], error)
             }
         }
         task.resume()
