@@ -20,6 +20,7 @@ class RepositoryCellView: UITableViewCell {
     
     lazy private var repositoryName: UILabel = {
         let labelRepo = UILabel()
+        labelRepo.text = "teste"
         labelRepo.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         labelRepo.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         labelRepo.translatesAutoresizingMaskIntoConstraints = false
@@ -28,6 +29,7 @@ class RepositoryCellView: UITableViewCell {
     
     lazy private var ownerName: UILabel = {
         let ownerName = UILabel()
+        ownerName.text = "teste 2"
         ownerName.textColor = .gray
         ownerName.font = UIFont.systemFont(ofSize: 13, weight: .light)
         ownerName.translatesAutoresizingMaskIntoConstraints = false
