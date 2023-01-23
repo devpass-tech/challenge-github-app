@@ -28,7 +28,7 @@ final class ListView: UIView {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(RepositoryCellView.self, forCellReuseIdentifier: RepositoryCellView.identifier)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -87,19 +87,36 @@ extension ListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
+        
+        
         return self.listItems.count
+        
+        
     }
+    
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.listItems[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.identifier, for: indexPath)
+        
+        
+        
+//        cell.textLabel?.text = self.listItems[indexPath.row] //here
+        
+        
+        
         return cell
+        
+        
     }
 }
 
 extension ListView: UITableViewDelegate {
+    
+    
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.didClick()
+        
+        
     }
 }

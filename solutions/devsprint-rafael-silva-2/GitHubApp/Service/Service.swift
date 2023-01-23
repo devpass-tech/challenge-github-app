@@ -16,6 +16,8 @@ enum ServiceError: Error {
 
 class Service {
     
+    static let sharedService = Service()
+    
   private let url = "https://api.github.com/users/"
     
     func getService(userAccount: String, callback: @escaping (Result<[Repository], ServiceError >) -> Void) {
@@ -37,6 +39,7 @@ class Service {
                 callback(.failure(.decodeFail(error)))
             }
         }
+        task.resume()
     }
     
     func fetchList(_ completion: ([String]) -> Void) {
