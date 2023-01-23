@@ -22,7 +22,7 @@ final class ListView: UIView {
 
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
-    private var listItems: [String] = []
+    private var listItems: [Repository] = []
 
     private lazy var tableView: UITableView = {
 
@@ -76,8 +76,7 @@ private extension ListView {
 
 extension ListView {
 
-    func updateView(with repositories: [String]) {
-
+    func updateView(with repositories: [Repository]) {
         self.listItems = repositories
         self.tableView.reloadData()
     }
@@ -87,27 +86,24 @@ extension ListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        
-        
         return self.listItems.count
-        
         
     }
     
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.identifier, for: indexPath)
-        
-        
-        
-//        cell.textLabel?.text = self.listItems[indexPath.row] //here
-        
-        
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryCellView.identifier, for: indexPath) as? RepositoryCellView else {
+            return UITableViewCell()
+        }
+
+        cell.updateView(with: listItems[indexPath.row])
         
         return cell
-        
-        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
     }
 }
 

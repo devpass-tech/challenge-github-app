@@ -54,16 +54,15 @@ final class ListViewController: UIViewController {
     override func viewDidLoad() {
         configureNavBar()
         ConfigureSearchBar()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        service.fetchList { repositories in
+        service.getService(userAccount: "celohenrique") { repositories, error in
             
             DispatchQueue.main.async {
                 
-                self.listView.updateView(with: repositories)
+                    self.listView.updateView(with: repositories)
             }
         }
     }
@@ -76,11 +75,13 @@ final class ListViewController: UIViewController {
 extension ListViewController: UISearchResultsUpdating{
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text, !filter.isEmpty else {
-            listView.updateView(with: [])
+
+            service.getService(userAccount: searchController.searchBar.text ?? "celohenrique") { repositories, error in
+                DispatchQueue.main.async {
+                        self.listView.updateView(with: repositories)
+                }
+            }
             return
-        }
-        
     }
 }
 
