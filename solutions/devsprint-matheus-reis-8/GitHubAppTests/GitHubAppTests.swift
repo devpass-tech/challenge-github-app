@@ -36,7 +36,7 @@ class GitHubAppTests: XCTestCase {
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
-        assertSnapshot(matching: view, as: .image(size: .init(width: 300, height: 300)), record: false)
+        assertSnapshot(matching: view, as: .image(size: .init(width: 300, height: 300)))
     }
 
     func testPerformanceExample() throws {
