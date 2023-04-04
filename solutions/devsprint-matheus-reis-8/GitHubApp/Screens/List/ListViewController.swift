@@ -8,11 +8,15 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-
+    
     private let listView: ListView = {
-
         let listView = ListView()
         return listView
+    }()
+    
+    private let loadingView: LoadingView = {
+        let loadingView = LoadingView()
+        return loadingView
     }()
 
     private let service = Service()
@@ -27,7 +31,7 @@ final class ListViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
+        showLoadingViewFeedback()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "GitHub App 🐙"
     }
@@ -46,5 +50,23 @@ final class ListViewController: UIViewController {
 
     override func loadView() {
         self.view = listView
+    }
+}
+
+private extension ListViewController {
+    func showLoadingViewFeedback(with configuration: LoadingViewConfiguration? = nil) {
+        self.view = loadingView
+        loadingView.showLoadingViewTitleLabel()
+        loadingView.showLoadingViewSpinnerActivityIndicator()
+        
+        if let configuration {
+            loadingView.updateView(with: configuration)
+        }
+    }
+    
+    func hideLoadingViewFeedback() {
+        self.view = listView
+        loadingView.showLoadingViewTitleLabel()
+        loadingView.showLoadingViewSpinnerActivityIndicator()
     }
 }
