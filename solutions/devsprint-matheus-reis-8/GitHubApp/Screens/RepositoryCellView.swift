@@ -13,14 +13,14 @@ struct RepositoryCellViewConfiguration {
 
 class RepositoryCellView: UITableViewCell {
     
-    private let repositoryNameLabel: UILabel = {
+    private lazy var repositoryNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
-    private let userNameLabel: UILabel = {
+    private lazy var userNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
@@ -30,17 +30,20 @@ class RepositoryCellView: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureSubviews()
+        setupSubviews()
+        setupContraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureSubviews() {
+    func setupSubviews() {
         addSubview(repositoryNameLabel)
         addSubview(userNameLabel)
-        
+    }
+    
+    func setupContraints(){
         NSLayoutConstraint.activate([
             repositoryNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             repositoryNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
