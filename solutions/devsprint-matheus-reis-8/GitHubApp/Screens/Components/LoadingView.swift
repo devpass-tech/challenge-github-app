@@ -19,7 +19,6 @@ final class LoadingView: UIView {
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.isHidden = true
         return label
     }()
     
@@ -27,13 +26,12 @@ final class LoadingView: UIView {
         let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.hidesWhenStopped = true
-        spinner.stopAnimating()
         return spinner
     }()
     
     init() {
         super.init(frame: .zero)
-        self.setupViews()
+        setupViews()
     }
 
     required init?(coder: NSCoder) {
@@ -43,22 +41,22 @@ final class LoadingView: UIView {
 
 private extension LoadingView {
     func setupViews() {
-        self.backgroundColor = .white
-        self.configureSubviews()
-        self.configureSubviewsConstraints()
+        backgroundColor = .white
+        configureSubviews()
+        configureSubviewsConstraints()
     }
 
     func configureSubviews() {
-        self.addSubview(self.titleLabel)
-        self.addSubview(self.spinnerActivityIndicator)
+        addSubview(titleLabel)
+        addSubview(spinnerActivityIndicator)
     }
 
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
-            self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            self.spinnerActivityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.spinnerActivityIndicator.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 14),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            spinnerActivityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            spinnerActivityIndicator.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14),
         ])
     }
 }
@@ -68,19 +66,11 @@ extension LoadingView {
         titleLabel.text = configuration.title
     }
     
-    func showLoadingViewSpinnerActivityIndicator() {
+    func startAnimating() {
         spinnerActivityIndicator.startAnimating()
     }
     
-    func hideLoadingViewSpinnerActivityIndicator() {
+    func stopAnimating() {
         spinnerActivityIndicator.stopAnimating()
-    }
-    
-    func showLoadingViewTitleLabel() {
-        titleLabel.isHidden = false
-    }
-    
-    func hideLoadingViewTitleLabel() {
-        titleLabel.isHidden = true
     }
 }
