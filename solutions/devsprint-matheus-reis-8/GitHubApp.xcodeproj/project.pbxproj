@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0989B90D29DF3B930033E72C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0989B90C29DF3B930033E72C /* LoadingView.swift */; };
+		0989B90F29DF52660033E72C /* LoadingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0989B90E29DF52660033E72C /* LoadingViewTests.swift */; };
 		1E7A48E307CEC492117A7753 /* Pods_GitHubApp_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B309D7C13581A35279EC70 /* Pods_GitHubApp_GitHubAppUITests.framework */; };
 		3401BFED9075192A99A0CB6F /* Pods_GitHubAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF72A13FAEF8D58FBBFFD31 /* Pods_GitHubAppTests.framework */; };
 		658DEC4D2248455D8072EE74 /* Pods_GitHubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50A9E30BE32837E97FA533F /* Pods_GitHubApp.framework */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		0989B90C29DF3B930033E72C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		0989B90E29DF52660033E72C /* LoadingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewTests.swift; sourceTree = "<group>"; };
 		4BF72A13FAEF8D58FBBFFD31 /* Pods_GitHubAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		777229C0BEB497AC659D0C1E /* Pods-GitHubAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppTests.release.xcconfig"; path = "Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		98252C20279200C900199ECC /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9826D8CB2788B40800E05400 /* GitHubAppTests.swift */,
+				0989B90E29DF52660033E72C /* LoadingViewTests.swift */,
 			);
 			path = GitHubAppTests;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9826D8CC2788B40800E05400 /* GitHubAppTests.swift in Sources */,
+				0989B90F29DF52660033E72C /* LoadingViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
