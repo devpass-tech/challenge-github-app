@@ -8,9 +8,36 @@
 import Foundation
 
 struct Service {
-
-    func fetchList(_ completion: ([String]) -> Void) {
-
-        completion(["Repository 1", "Repository 2", "Repository 3"])
+    
+    private let networkManager: NetworkManagerProtocol
+    
+    init(networkManager: NetworkManagerProtocol) {
+        self.networkManager = networkManager
     }
+    
+    func getRepositories(for user: String, completion: @escaping (Result<[String], Error>) -> Void) {
+        let urlString = "https://api.github.com/users/devpass-tech/repos"
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        networkManager.get(request: request) { (result: Result<[RepositoryModel], Error>) in
+            switch result {
+            case .success(let repositories):
+                let repositoryNames = repositories.prefix(10).map { $0.name }
+                let repositoryUrls = repositories.prefix(10).map { $0.repositoryUrl }
+                print("Repository names: \(repositoryNames)")
+                print("Repository URLs: \(repositoryUrls)")
+                completion(.success(repositoryNames))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
 }
+
