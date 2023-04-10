@@ -16,7 +16,7 @@ struct Service {
     }
     
     func getRepositories(for user: String, completion: @escaping (Result<[String], Error>) -> Void) {
-        let urlString = "https://api.github.com/users/\(user)/repos"
+        let urlString = "https://api.github.com/users/devpass-tech/repos"
         
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
@@ -25,24 +25,19 @@ struct Service {
         
         let request = URLRequest(url: url)
         
-        networkManager.get(request: request) { (result: Result<Data, Error>) in
+        networkManager.get(request: request) { (result: Result<[RepositoryModel], Error>) in
             switch result {
-            case .success(let data):
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    if let repositories = json as? [[String: Any]] {
-                        let repositoryNames = repositories.prefix(10).compactMap { $0["name"] as? String }
-                        completion(.success(repositoryNames))
-                    } else {
-                        completion(.failure(NSError(domain: "Invalid response format", code: 0, userInfo: nil)))
-                    }
-                } catch {
-                    completion(.failure(error))
-                }
+            case .success(let repositories):
+                let repositoryNames = repositories.prefix(10).map { $0.name }
+                let repositoryUrls = repositories.prefix(10).map { $0.repositoryUrl }
+                print("Repository names: \(repositoryNames)")
+                print("Repository URLs: \(repositoryUrls)")
+                completion(.success(repositoryNames))
             case .failure(let error):
                 completion(.failure(error))
             }
         }
     }
+
 }
 
