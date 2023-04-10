@@ -11,7 +11,7 @@ struct Service {
     
     private let networkManager: NetworkManagerProtocol
     
-    init(networkManager: NetworkManagerProtocol) {
+    init(networkManager: NetworkManagerProtocol = NetworkManager()) {
         self.networkManager = networkManager
     }
     
